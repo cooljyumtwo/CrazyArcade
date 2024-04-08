@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:8d0d10fd6a1f3e7dc7b2e30aa44a4beb:5ef15a634cf87c4dd750fa323697d560:d10153bdc6c10798a1e78d68d5a4b4af$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+with polygon mode enabled:
+vertices   => points in sprite coordinate system (x0,y0,x1,y1,x2,y2, ...)
+verticesUV => points in sheet coordinate system (x0,y0,x1,y1,x2,y2, ...)
+triangles  => sprite triangulation, 3 vertex indices per triangle
+-->
+<TextureAtlas imagePath="Cookie_JumpUp.png" width="704" height="352">
+    <sprite n="cookie0041z04x2_0008.png" x="1" y="1" w="350" h="350" pX="0.5" pY="0.5"/>
+    <sprite n="cookie0041z04x2_0009.png" x="353" y="1" w="350" h="350" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,11 @@
+key,Name,level,attack,range,amount,duration,speed,Knockback
+101,BaseAttack.png,1,10,0,1,1,300,0
+102,BaseAttack.png,2,15,0,1,0.9,300,0
+103,BaseAttack.png,3,20,0,1,0.8,350,0
+104,BaseAttack.png,4,25,0,1,0.7,350,0
+105,BaseAttack.png,5,50,0,1,0.5,450,0
+201,Wheel.png,1,10,100,1,0,2,30
+202,Wheel.png,2,15,120,2,0,2,40
+203,Wheel.png,3,20,140,3,0,2,50
+204,Wheel.png,4,25,160,4,0,2,60
+205,Wheel.png,5,50,180,5,0,4,70
