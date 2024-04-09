@@ -9,6 +9,8 @@
 #include "Scenes/RenderTargetScene.h"
 #include "Scenes/TileEditScene.h"
 #include "Scenes/TileGameScene.h"
+#include "Scenes/StageScene.h"
+
 
 GameManager::GameManager()
 {
@@ -22,7 +24,9 @@ GameManager::GameManager()
 	//SCENE->Add("Start", new PixelShaderScene());
 	//SCENE->Add("Start", new RenderTargetScene());
 	//SCENE->Add("Start", new TileEditScene());
-	SCENE->Add("Start", new TileGameScene());
+	//SCENE->Add("Start", new TileGameScene());
+	SCENE->Add("Start", new StageScene());
+	UIManager::Get()->Add("Start", new MapEditUI());
 
 	SCENE->ChangeScene("Start");
 }
@@ -39,11 +43,13 @@ void GameManager::Update()
 
 	Environment::Get()->Update();
 	ObjectManager::Get()->Update();
+	UIManager::Get()->Update();
 	SCENE->Update();
 }
 
 void GameManager::Render()
 {
+	UIManager::Get()->PreRender();
 	SCENE->PreRender();
 
 	Environment::Get()->SetViewport();
@@ -64,7 +70,9 @@ void GameManager::Render()
 	Font::Get()->RenderText(fps, { 0, SCREEN_HEIGHT - 10 });
 
 	ObjectManager::Get()->Render();
+	UIManager::Get()->Render();
 	SCENE->Render();	
+	
 
 	ImGui::Render();
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
@@ -79,6 +87,7 @@ void GameManager::Create()
 	Timer::Get();
 	Environment::Get();
 	Font::Get();
+	UIManager::Get();
 
 	ImGui::CreateContext();
 	ImGui::StyleColorsDark();

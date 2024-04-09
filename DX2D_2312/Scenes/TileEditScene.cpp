@@ -5,7 +5,7 @@ TileEditScene::TileEditScene()
 {
     CAM->SetFix(false);
 
-    tileMap = new EditTileMap(15);    
+    tileMap = new EditTileMap(15,13);    
     tileMap->UpdateWorld();
 }
 

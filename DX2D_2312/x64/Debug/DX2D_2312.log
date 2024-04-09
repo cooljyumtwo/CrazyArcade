@@ -1,1 +1,20 @@
-﻿
+﻿  EditTileMap.cpp
+F:\git\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(105,48): warning C4244: '인수': 'UINT'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+F:\git\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(105,65): warning C4244: '인수': 'UINT'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+F:\git\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(217,30): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+F:\git\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(224,31): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+F:\git\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(247,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+F:\git\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(256,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+  DX2D_2312.vcxproj -> F:\git\CrazyArcade\x64\Debug\DX2D_2312.exe

@@ -3,11 +3,11 @@
 #include "targetver.h"
 #define WIN32_LEAN_AND_MEAN             // 거의 사용되지 않는 내용을 Windows 헤더에서 제외합니다.
 
-#define WIN_START_X 100
-#define WIN_START_Y 0
+#define WIN_START_X 600
+#define WIN_START_Y 100
 
-#define SCREEN_WIDTH 1800
-#define SCREEN_HEIGHT 720
+#define SCREEN_WIDTH 1200
+#define SCREEN_HEIGHT 900
 
 #define CENTER_X (SCREEN_WIDTH * 0.5f)
 #define CENTER_Y (SCREEN_HEIGHT * 0.5f)
@@ -136,8 +136,10 @@ typedef function<void(void*)> ObjectParamEvent;
 
 #include "Objects/Map/Floor.h"
 #include "Objects/Map/FloorManager.h"
-#include "Objects/Map/Tile.h"
-#include "Objects/Map/EditTileMap.h"
+//#include "Objects/Map/Tile.h"
+
+
+
 
 #include "Objects/ShootingGame/ShootingDataManager.h"
 #include "Objects/ShootingGame/Skill/Skill.h"
@@ -155,7 +157,7 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/ShootingGame/UI/ItemManager.h"
 #include "Objects/ShootingGame/UI/Upgrade.h"
 #include "Objects/ShootingGame/UI/Inventory.h"
-#include "Objects/ShootingGame/UI/UIManager.h"
+//#include "Objects/ShootingGame/UI/UIManager.h"
 #include "Objects/ShootingGame/Plane.h"
 #include "Objects/ShootingGame/Background.h"
 
@@ -172,9 +174,16 @@ typedef function<void(void*)> ObjectParamEvent;
 
 #include "Objects/TileGame/Amazon.h"
 
+
+#include "Objects/CA/Map/Tile.h"
+#include "Objects/CA/Map/EditTileMap.h"
+#include "Objects/CA/UI/UI.h"
+#include "Objects/CA/UI/MapEditUI.h"
+
 //Scene Header
 #include "Scenes/Scene.h"
 #include "Manager/SceneManager.h"
+#include "Manager/UIManager.h"
 #include "Manager/GameManager.h"
 
 extern HWND hWnd;

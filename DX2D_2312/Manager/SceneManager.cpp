@@ -58,4 +58,6 @@ void SceneManager::ChangeScene(string key)
 
 	curScene = scenes[key];
 	curScene->Start();
+
+	UIManager::Get()->ChangeUI(key);
 }

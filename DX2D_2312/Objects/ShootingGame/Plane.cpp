@@ -107,7 +107,7 @@ void Plane::Collision()
 		}
 		else
 		{
-			UIManager::Get()->GetInventory()->AddItem(item);
+			//UIManager::Get()->GetInventory()->AddItem(item);
 		}
 	}
 }
@@ -128,10 +128,10 @@ void Plane::AddExp(int value)
 
 		nextLevelData = ShootingDataManager::Get()->GetLevelData(level);
 
-		UIManager::Get()->LevelUp();
+		//UIManager::Get()->LevelUp();
 	}
 
-	UIManager::Get()->GetExpBar()->SetAmount((float)exp / nextLevelData.exp);
+	//UIManager::Get()->GetExpBar()->SetAmount((float)exp / nextLevelData.exp);
 }
 
 void Plane::SkillLevelUp(int index)

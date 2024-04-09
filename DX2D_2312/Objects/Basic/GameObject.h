@@ -3,7 +3,7 @@
 class GameObject : public Transform
 {
 public:
-	GameObject(bool isAdd = true);
+	GameObject(bool isAdd = false);
 	virtual ~GameObject();
 
 	virtual void Update() = 0;
