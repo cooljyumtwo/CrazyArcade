@@ -1,13 +1,13 @@
 #include "Framework.h"
 
-EditTileMap::EditTileMap(UINT sizeX, UINT sizeY)
-    : sizeX(sizeX), sizeY(sizeY)
+EditTileMap::EditTileMap(UINT size)
+    : size(size)
 {
     SetTag("EditTileMap");
     CreateBGTile();
 
     Vector2 mapPos = CENTER;
-    mapPos.x = tileSize.x * sizeX ;
+    mapPos.x = tileSize.x * size * 0.5f;
 
     SetLocalPosition(mapPos);
 
@@ -61,21 +61,12 @@ void EditTileMap::Render()
     for (Tile* tile : bgTiles)
         tile->PostRender();
 
-    const char* list[] = {"BASIC", "OBSTACLE"};
+    const char* list[] = {"BG", "OBJ"};
     ImGui::Combo("Type", &type, list, 2);
 
+    Save();
+    ImGui::SameLine();
     Load();
-
-    if (ImGui::TreeNode((tag + "EditTileMap_Transform").c_str()))
-    {
-        ImGui::DragFloat2("Pos", (float*)&localPosition, 1.0f);
-
-        Save();
-        ImGui::SameLine();
-        Load();
-
-        ImGui::TreePop();
-    }
 }
 
 void EditTileMap::UpdateWorld()
@@ -91,22 +82,22 @@ void EditTileMap::UpdateWorld()
 
 void EditTileMap::CreateBGTile()
 {
-    wstring baseFile = L"ResourcesCA/Textures/Tiles/Tile.png";
+    wstring baseFile = L"Resources/Textures/Tiles/voxelTile_05.png";
     Texture* baseTile = Texture::Add(baseFile);
     tileSize = baseTile->GetSize();
 
-    bgTiles.reserve(sizeX * sizeX);
+    bgTiles.reserve(size * size);
 
-    Vector2 startPos = { 0, sizeX * 0.5f * tileSize.y * 0.5f };
+    Vector2 startPos = { 0, size * 0.5f * tileSize.y * 0.5f };
 
-    for (UINT y = 0; y < sizeY; y++)
+    for (UINT y = 0; y < size; y++)
     {
-        for (UINT x = 0; x < sizeX; x++)
+        for (UINT x = 0; x < size; x++)
         {
             Tile::Data data = {};
             data.textureFile = baseFile;
-            Vector2 xDirection = Vector2(tileSize.x, 0 );
-            Vector2 yDirection = Vector2(0, -tileSize.y ) ;
+            Vector2 xDirection = Vector2(tileSize.x, -tileSize.y * 0.5f) * 0.5f;
+            Vector2 yDirection = Vector2(-tileSize.x, -tileSize.y * 0.5f) * 0.5f;
 
             data.pos = startPos + xDirection * x + yDirection * y;
 
@@ -121,10 +112,10 @@ void EditTileMap::CreateSampleButtons()
 {
     WIN32_FIND_DATA findData;
 
-    HANDLE handle = FindFirstFile(L"ResourcesCA/Textures/Tiles/*.png", &findData);
+    HANDLE handle = FindFirstFile(L"Resources/Textures/Tiles/*.png", &findData);
 
     bool result = true;
-    wstring path = L"ResourcesCA/Textures/Tiles/";
+    wstring path = L"Resources/Textures/Tiles/";
 
     while (result)
     {
@@ -141,7 +132,7 @@ void EditTileMap::AddObjTile(const Vector2& pos)
     Tile::Data data = {};
     data.textureFile = selectTextureFile;    
     data.pos = pos + Vector2::Up() * tileSize.y * 0.5f;
-   // data.type = Tile::OBJ;    
+    data.type = Tile::OBJ;    
 
     Tile* tile = new Tile(data);
     tile->SetParent(this);
@@ -174,7 +165,7 @@ void EditTileMap::RemoveObjTile(const Vector2& pos)
 
 void EditTileMap::Save()
 {
-    string key = "SaveEditTile";
+    string key = "Save";
 
     if (ImGui::Button(key.c_str()))
         DIALOG->OpenDialog(key, key, ".map");
@@ -183,7 +174,7 @@ void EditTileMap::Save()
     {
         if (DIALOG->IsOk())
         {
-            string path = "ResourcesCA/TextData/Map/";
+            string path = "Resources/TextData/Map/";
             string file = DIALOG->GetCurrentFileName();
 
             SaveMapData(path + file);
@@ -191,12 +182,11 @@ void EditTileMap::Save()
 
         DIALOG->Close();
     }
-    Transform::Save();
 }
 
 void EditTileMap::Load()
 {
-    string key = "LoadEditTile";
+    string key = "Load";
 
     if (ImGui::Button(key.c_str()))
         DIALOG->OpenDialog(key, key, ".map");
@@ -205,7 +195,7 @@ void EditTileMap::Load()
     {
         if (DIALOG->IsOk())
         {
-            string path = "ResourcesCA/TextData/Map/";
+            string path = "Resources/TextData/Map/";
             string file = DIALOG->GetCurrentFileName();
 
             LoadMapData(path + file);
@@ -213,8 +203,6 @@ void EditTileMap::Load()
 
         DIALOG->Close();
     }
-
-    Transform::Load();
 }
 
 void EditTileMap::SaveMapData(string file)
@@ -265,7 +253,7 @@ void EditTileMap::LoadMapData(string file)
         Tile::Data data = {};
         data.textureFile = reader->WString();
         data.pos = reader->Vector();
-      //  data.type = Tile::OBJ;
+        data.type = Tile::OBJ;
 
         Tile* tile = new Tile(data);
         tile->SetParent(this);

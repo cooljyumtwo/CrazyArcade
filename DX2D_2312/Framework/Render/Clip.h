@@ -30,7 +30,7 @@ private:
     float speed;    
 
     bool isLoop;
-    bool isPlay = false;
+    bool isPlay = true;
 
     map<int, Event> events;
 };

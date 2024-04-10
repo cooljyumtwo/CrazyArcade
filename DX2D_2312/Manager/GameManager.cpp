@@ -9,7 +9,7 @@
 #include "Scenes/RenderTargetScene.h"
 #include "Scenes/TileEditScene.h"
 #include "Scenes/TileGameScene.h"
-#include "Scenes/StageScene.h"
+#include "Scenes/MapEditScene.h"
 
 
 GameManager::GameManager()
@@ -25,7 +25,7 @@ GameManager::GameManager()
 	//SCENE->Add("Start", new RenderTargetScene());
 	//SCENE->Add("Start", new TileEditScene());
 	//SCENE->Add("Start", new TileGameScene());
-	SCENE->Add("Start", new StageScene());
+	SCENE->Add("Start", new MapEditScene());
 	UIManager::Get()->Add("Start", new MapEditUI());
 
 	SCENE->ChangeScene("Start");
@@ -71,8 +71,8 @@ void GameManager::Render()
 
 	ObjectManager::Get()->Render();
 	UIManager::Get()->Render();
-	SCENE->Render();	
-	
+	SCENE->Render();
+
 
 	ImGui::Render();
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
@@ -97,14 +97,14 @@ void GameManager::Create()
 
 	Font::Get()->AddColor("White", 1, 1, 1);
 	Font::Get()->AddColor("Black", 0, 0, 0);
-	Font::Get()->AddStyle("Default", L"¹è¹Î À»Áö·Î10³âÈÄÃ¼");	
+	Font::Get()->AddStyle("Default", L"¹è¹Î À»Áö·Î10³âÈÄÃ¼");
 	Font::Get()->AddStyle("Button", L"¸¼Àº °íµñ", 40,
 		DWRITE_TEXT_ALIGNMENT_CENTER, DWRITE_PARAGRAPH_ALIGNMENT_FAR);
 }
 
 void GameManager::Delete()
 {
-	SceneManager::Delete();	
+	SceneManager::Delete();
 	Keyboard::Delete();
 	Timer::Delete();
 	Font::Delete();

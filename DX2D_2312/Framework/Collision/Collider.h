@@ -5,7 +5,7 @@ class Collider : public Transform
 protected:
 	enum class Type
 	{
-		RECT, CIRCLE, ISOMETRIC
+		RECT, CIRCLE, ISOMETRIC, LINE
 	};
 
 public:

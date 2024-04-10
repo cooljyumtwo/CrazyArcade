@@ -15,6 +15,14 @@ GameObject::~GameObject()
 	delete worldBuffer;
 }
 
+void GameObject::SetRender()
+{
+	worldBuffer->Set(world);
+	worldBuffer->SetVS(0);
+
+	material->Set();
+}
+
 bool GameObject::Compare(GameObject* obj1, GameObject* obj2)
 {
 	return obj1->GetDepth() < obj2->GetDepth();

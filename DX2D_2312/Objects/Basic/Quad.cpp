@@ -36,11 +36,16 @@ void Quad::Render()
 {
 	if (!IsActive()) return;
 
-	worldBuffer->Set(world);
-	worldBuffer->SetVS(0);
-
-	material->Set();
+	GameObject::SetRender();
 	mesh->Draw();
+}
+
+void Quad::SetRender()
+{
+	GameObject::SetRender();
+
+	mesh->GetVertexBuffer()->Set();
+	mesh->GetIndexBuffer()->Set();
 }
 
 void Quad::SetTexture(wstring textureFile)

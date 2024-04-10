@@ -11,6 +11,8 @@ public:
 	virtual void Update() override;
 	virtual void Render() override;
 
+	void SetRender();
+
 	void SetTexture(wstring textureFile);
 
 	Vector2 GetSize() { return size * GetGlobalScale(); }

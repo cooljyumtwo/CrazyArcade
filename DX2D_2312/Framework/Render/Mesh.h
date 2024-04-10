@@ -7,7 +7,7 @@ public:
 	Mesh() = default;
 	~Mesh();
 
-	void Draw(D3D11_PRIMITIVE_TOPOLOGY type = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	void Draw(D3D11_PRIMITIVE_TOPOLOGY type = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);	
 
 	void CreateMesh();
 
@@ -15,6 +15,9 @@ public:
 
 	vector<T>& GetVertices() { return vertices; }
 	vector<UINT>& GetIndices() { return indices; }
+
+	VertexBuffer* GetVertexBuffer() { return vertexBuffer; }
+	IndexBuffer* GetIndexBuffer() { return indexBuffer; }
 
 private:
 	VertexBuffer* vertexBuffer = nullptr;

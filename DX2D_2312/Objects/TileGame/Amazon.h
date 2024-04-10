@@ -24,6 +24,7 @@ public:
     void Update() override;
     void Render() override;
 
+    void SetPath(vector<Vector2> path) { this->path = path; }
 private:
     void AddAction(string file, int frameX, int frameY);
     void KeyControl();
@@ -35,7 +36,7 @@ private:
 
 private:
     vector<Action*> actions;
-    Compass compass = S;
+    Compass compass = NONE;
 
     float speed = 100.0f;
     int curState = 0;

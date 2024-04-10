@@ -28,6 +28,7 @@ public:
 
 	string GetTag() { return tag; }	
 
+	Matrix GetWorld() { return world; }
 	Transform* GetParent() { return parent; }
 
 	Vector2 GetLocalPosition() { return localPosition; }
@@ -46,7 +47,7 @@ public:
 	void SetParent(Transform* transform) { parent = transform; }
 	void SetActive(bool isActive) { this->isActive = isActive; }
 
-	void SetTag(string tag) { this->tag = tag; }
+	void SetTag(string tag) { this->tag = tag; }	
 
 protected:
 	string tag;	

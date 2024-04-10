@@ -9,6 +9,8 @@ public:
 	virtual void Update() = 0;
 	virtual void Render() = 0;
 
+	void SetRender();
+
 	int GetDepth() { return depth; }
 	Material* GetMaterial() { return material; }
 

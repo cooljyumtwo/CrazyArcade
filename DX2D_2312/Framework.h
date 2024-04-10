@@ -6,8 +6,8 @@
 #define WIN_START_X 600
 #define WIN_START_Y 100
 
-#define SCREEN_WIDTH 1200
-#define SCREEN_HEIGHT 900
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGHT 600
 
 #define CENTER_X (SCREEN_WIDTH * 0.5f)
 #define CENTER_Y (SCREEN_HEIGHT * 0.5f)
@@ -117,6 +117,7 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Framework/Collision/RectCollider.h"
 #include "Framework/Collision/CircleCollider.h"
 #include "Framework/Collision/IsometricCollider.h"
+#include "Framework/Collision/LineCollider.h"
 
 #include "Framework/Environment/Camera.h"
 #include "Framework/Environment/Environment.h"
@@ -130,16 +131,23 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/Basic/Effect.h"
 #include "Objects/Basic/EffectManager.h"
 
+#include "Objects/Algorithm/DNode.h"
+#include "Objects/Algorithm/Dijkstra.h"
+
 #include "Objects/UI/ProgressBar.h"
 #include "Objects/UI/Button.h"
 #include "Objects/UI/Panel.h"
 
 #include "Objects/Map/Floor.h"
 #include "Objects/Map/FloorManager.h"
+//#include "Objects/Map/GameTileMap.h"
 //#include "Objects/Map/Tile.h"
 
 
-
+#include "Objects/CA/Map/Tile.h"
+#include "Objects/CA/Map/EditTileMap.h"
+#include "Objects/CA/UI/UI.h"
+#include "Objects/CA/UI/MapEditUI.h"
 
 #include "Objects/ShootingGame/ShootingDataManager.h"
 #include "Objects/ShootingGame/Skill/Skill.h"
@@ -175,10 +183,7 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/TileGame/Amazon.h"
 
 
-#include "Objects/CA/Map/Tile.h"
-#include "Objects/CA/Map/EditTileMap.h"
-#include "Objects/CA/UI/UI.h"
-#include "Objects/CA/UI/MapEditUI.h"
+
 
 //Scene Header
 #include "Scenes/Scene.h"

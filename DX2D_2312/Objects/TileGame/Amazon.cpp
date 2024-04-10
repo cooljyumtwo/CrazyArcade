@@ -93,10 +93,10 @@ void Amazon::KeyControl()
 
 void Amazon::MouseControl()
 {
-    if (KEY->Down(VK_LBUTTON))
-    {
-        path.insert(path.begin(), mousePos);
-    }
+    //if (KEY->Down(VK_LBUTTON))
+    //{
+    //    path.insert(path.begin(), mousePos);
+    //}
 
     if (path.empty())
     {
@@ -126,24 +126,45 @@ void Amazon::SetAnimState()
         return;
     }
 
-    int inputCompass = 0;
+    float angle = XM_PIDIV2 - velocity.Angle();
 
-    if (velocity.y > 0.0f)
+    if (angle < 0.0f)
+        angle += XM_2PI;
+
+    float step = XM_PI / 8.0f;
+    int inputCompass = NONE;
+
+    if (angle > step && angle < step * 3)
     {
-        inputCompass |= N;
+        inputCompass = NE;
+    }
+    else if (angle > step * 3 && angle < step * 5)
+    {
+        inputCompass = E;
+    }
+    else if (angle > step * 5 && angle < step * 7)
+    {
+        inputCompass = SE;
+    }
+    else if (angle > step * 7 && angle < step * 9)
+    {
+        inputCompass = S;
+    }
+    else if (angle > step * 9 && angle < step * 11)
+    {
+        inputCompass = SW;
+    }
+    else if (angle > step * 11 && angle < step * 13)
+    {
+        inputCompass = W;
+    }
+    else if (angle > step * 13 && angle < step * 15)
+    {
+        inputCompass = NW;
     }
     else
     {
-        inputCompass |= S;
-    }
-
-    if (velocity.x > 0.0f)
-    {
-        inputCompass |= E;
-    }
-    else
-    {
-        inputCompass |= W;
+        inputCompass = N;
     }
 
     SetState(1, inputCompass);

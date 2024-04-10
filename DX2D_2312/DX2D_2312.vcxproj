@@ -150,6 +150,7 @@
     <ClInclude Include="Framework\Collision\CircleCollider.h" />
     <ClInclude Include="Framework\Collision\Collider.h" />
     <ClInclude Include="Framework\Collision\IsometricCollider.h" />
+    <ClInclude Include="Framework\Collision\LineCollider.h" />
     <ClInclude Include="Framework\Collision\RectCollider.h" />
     <ClInclude Include="Framework\Device\Device.h" />
     <ClInclude Include="Framework\Environment\Camera.h" />
@@ -176,6 +177,9 @@
     <ClInclude Include="Framework\Utilities\Utility.h" />
     <ClInclude Include="Manager\GameManager.h" />
     <ClInclude Include="Manager\SceneManager.h" />
+    <ClInclude Include="Manager\UIManager.h" />
+    <ClInclude Include="Objects\Algorithm\Dijkstra.h" />
+    <ClInclude Include="Objects\Algorithm\DNode.h" />
     <ClInclude Include="Objects\Basic\Action.h" />
     <ClInclude Include="Objects\Basic\Effect.h" />
     <ClInclude Include="Objects\Basic\EffectManager.h" />
@@ -183,6 +187,10 @@
     <ClInclude Include="Objects\Basic\ObjectManager.h" />
     <ClInclude Include="Objects\Basic\PoolingManager.h" />
     <ClInclude Include="Objects\Basic\Quad.h" />
+    <ClInclude Include="Objects\CA\Map\EditTileMap.h" />
+    <ClInclude Include="Objects\CA\Map\Tile.h" />
+    <ClInclude Include="Objects\CA\UI\MapEditUI.h" />
+    <ClInclude Include="Objects\CA\UI\UI.h" />
     <ClInclude Include="Objects\Cookie\Cookie.h" />
     <ClInclude Include="Objects\Cookie\CookieAction.h" />
     <ClInclude Include="Objects\Cookie\CookieBullet.h" />
@@ -194,10 +202,8 @@
     <ClInclude Include="Objects\Cookie\CookieMelee.h" />
     <ClInclude Include="Objects\Cookie\CookieRange.h" />
     <ClInclude Include="Objects\Cookie\CookieRun.h" />
-    <ClInclude Include="Objects\Map\EditTileMap.h" />
     <ClInclude Include="Objects\Map\Floor.h" />
     <ClInclude Include="Objects\Map\FloorManager.h" />
-    <ClInclude Include="Objects\Map\Tile.h" />
     <ClInclude Include="Objects\ShootingGame\Background.h" />
     <ClInclude Include="Objects\ShootingGame\Skill\BaseBullet.h" />
     <ClInclude Include="Objects\ShootingGame\Skill\BaseSkill.h" />
@@ -213,7 +219,6 @@
     <ClInclude Include="Objects\ShootingGame\Skill\WheelBullet.h" />
     <ClInclude Include="Objects\ShootingGame\Skill\WheelSkill.h" />
     <ClInclude Include="Objects\ShootingGame\UI\Inventory.h" />
-    <ClInclude Include="Objects\ShootingGame\UI\UIManager.h" />
     <ClInclude Include="Objects\ShootingGame\UI\Item.h" />
     <ClInclude Include="Objects\ShootingGame\UI\ItemManager.h" />
     <ClInclude Include="Objects\ShootingGame\UI\Upgrade.h" />
@@ -224,7 +229,10 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scenes\AnimationScene.h" />
     <ClInclude Include="Scenes\CollisionScene.h" />
+    <ClInclude Include="Scenes\DijstraScene.h" />
+    <ClInclude Include="Scenes\InstancingScene.h" />
     <ClInclude Include="Scenes\MapEditorScene.h" />
+    <ClInclude Include="Scenes\MapEditScene.h" />
     <ClInclude Include="Scenes\PixelShaderScene.h" />
     <ClInclude Include="Scenes\RenderTargetScene.h" />
     <ClInclude Include="Scenes\Scene.h" />
@@ -246,6 +254,7 @@
     <ClCompile Include="Framework\Collision\CircleCollider.cpp" />
     <ClCompile Include="Framework\Collision\Collider.cpp" />
     <ClCompile Include="Framework\Collision\IsometricCollider.cpp" />
+    <ClCompile Include="Framework\Collision\LineCollider.cpp" />
     <ClCompile Include="Framework\Collision\RectCollider.cpp" />
     <ClCompile Include="Framework\Device\Device.cpp" />
     <ClCompile Include="Framework\Environment\Camera.cpp" />
@@ -273,12 +282,18 @@
     </ClCompile>
     <ClCompile Include="Manager\GameManager.cpp" />
     <ClCompile Include="Manager\SceneManager.cpp" />
+    <ClCompile Include="Manager\UIManager.cpp" />
+    <ClCompile Include="Objects\Algorithm\Dijkstra.cpp" />
+    <ClCompile Include="Objects\Algorithm\DNode.cpp" />
     <ClCompile Include="Objects\Basic\Action.cpp" />
     <ClCompile Include="Objects\Basic\Effect.cpp" />
     <ClCompile Include="Objects\Basic\EffectManager.cpp" />
     <ClCompile Include="Objects\Basic\GameObject.cpp" />
     <ClCompile Include="Objects\Basic\ObjectManager.cpp" />
     <ClCompile Include="Objects\Basic\Quad.cpp" />
+    <ClCompile Include="Objects\CA\Map\EditTileMap.cpp" />
+    <ClCompile Include="Objects\CA\Map\Tile.cpp" />
+    <ClCompile Include="Objects\CA\UI\MapEditUI.cpp" />
     <ClCompile Include="Objects\Cookie\Cookie.cpp" />
     <ClCompile Include="Objects\Cookie\CookieAction.cpp" />
     <ClCompile Include="Objects\Cookie\CookieBullet.cpp" />
@@ -289,10 +304,8 @@
     <ClCompile Include="Objects\Cookie\CookieMelee.cpp" />
     <ClCompile Include="Objects\Cookie\CookieRange.cpp" />
     <ClCompile Include="Objects\Cookie\CookieRun.cpp" />
-    <ClCompile Include="Objects\Map\EditTileMap.cpp" />
     <ClCompile Include="Objects\Map\Floor.cpp" />
     <ClCompile Include="Objects\Map\FloorManager.cpp" />
-    <ClCompile Include="Objects\Map\Tile.cpp" />
     <ClCompile Include="Objects\ShootingGame\Background.cpp" />
     <ClCompile Include="Objects\ShootingGame\Skill\BaseBullet.cpp" />
     <ClCompile Include="Objects\ShootingGame\Skill\BaseSkill.cpp" />
@@ -308,7 +321,6 @@
     <ClCompile Include="Objects\ShootingGame\Skill\WheelBullet.cpp" />
     <ClCompile Include="Objects\ShootingGame\Skill\WheelSkill.cpp" />
     <ClCompile Include="Objects\ShootingGame\UI\Inventory.cpp" />
-    <ClCompile Include="Objects\ShootingGame\UI\UIManager.cpp" />
     <ClCompile Include="Objects\ShootingGame\UI\Item.cpp" />
     <ClCompile Include="Objects\ShootingGame\UI\ItemManager.cpp" />
     <ClCompile Include="Objects\ShootingGame\UI\Upgrade.cpp" />
@@ -318,7 +330,10 @@
     <ClCompile Include="Objects\UI\ProgressBar.cpp" />
     <ClCompile Include="Scenes\AnimationScene.cpp" />
     <ClCompile Include="Scenes\CollisionScene.cpp" />
+    <ClCompile Include="Scenes\DijstraScene.cpp" />
+    <ClCompile Include="Scenes\InstancingScene.cpp" />
     <ClCompile Include="Scenes\MapEditorScene.cpp" />
+    <ClCompile Include="Scenes\MapEditScene.cpp" />
     <ClCompile Include="Scenes\PixelShaderScene.cpp" />
     <ClCompile Include="Scenes\RenderTargetScene.cpp" />
     <ClCompile Include="Scenes\ShootingGameScene.cpp" />
@@ -391,6 +406,13 @@
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
     </FxCompile>
     <FxCompile Include="Resources\Shaders\Vertex.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
+    </FxCompile>
+    <FxCompile Include="Resources\Shaders\VertexInstancing.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
