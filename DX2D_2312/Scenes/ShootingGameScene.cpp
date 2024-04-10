@@ -13,7 +13,7 @@ ShootingGameScene::ShootingGameScene()
 
 	BulletManager::Get();
 	EnemyManager::Get()->SetTarget(plane);
-	UIManager::Get();
+	//UIManager::Get();
 
 	SetBG();	
 }
@@ -23,7 +23,7 @@ ShootingGameScene::~ShootingGameScene()
 	BulletManager::Delete();
 	EnemyManager::Delete();
 	ItemManager::Delete();
-	UIManager::Delete();
+	//UIManager::Delete();
 }
 
 void ShootingGameScene::Update()
@@ -36,7 +36,7 @@ void ShootingGameScene::Update()
 	EnemyManager::Get()->Update();
 
 	background->Update();
-	UIManager::Get()->Update();
+	//UIManager::Get()->Update();
 }
 
 void ShootingGameScene::Render()
@@ -46,7 +46,7 @@ void ShootingGameScene::Render()
 void ShootingGameScene::PostRender()
 {
 	plane->PostRender();
-	UIManager::Get()->Render();
+	//UIManager::Get()->Render();
 }
 
 void ShootingGameScene::SetBG()

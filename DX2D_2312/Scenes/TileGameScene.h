@@ -11,5 +11,7 @@ public:
     void PostRender() override;
 
 private:
+    //GameTileMap* tileMap;
+
     Amazon* amazon;
 };
