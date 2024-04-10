@@ -61,14 +61,20 @@ void EditTileMap::Render()
     for (Tile* tile : bgTiles)
         tile->PostRender();
 
-    const char* list[] = {"BG", "OBJ"};
+    const char* list[] = {"BASIC", "OBSTACLE"};
     ImGui::Combo("Type", &type, list, 2);
 
    // Save();
   //  ImGui::SameLine();
    // Load();
 
-    Transform::RenderUI();
+    if (ImGui::Button("Save"))
+        Save();
+
+    if (ImGui::Button("Load"))
+        Load();
+
+   // Transform::RenderUI();
   
 }
 
