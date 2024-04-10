@@ -2,42 +2,45 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>F:\git\CrazyArcade\x64\Debug\DX2D_2312.exe</FullPath>
+      <FullPath>C:\Cooljyum\CrazyArcade\x64\Debug\DX2D_2312.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles>
     <ContentFile>
-      <FullPath>F:\git\CrazyArcade\x64\Debug\Effect.cso</FullPath>
+      <FullPath>C:\Cooljyum\CrazyArcade\x64\Debug\Effect.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\git\CrazyArcade\x64\Debug\Filter.cso</FullPath>
+      <FullPath>C:\Cooljyum\CrazyArcade\x64\Debug\Filter.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\git\CrazyArcade\x64\Debug\Light.cso</FullPath>
+      <FullPath>C:\Cooljyum\CrazyArcade\x64\Debug\Light.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\git\CrazyArcade\x64\Debug\Multi.cso</FullPath>
+      <FullPath>C:\Cooljyum\CrazyArcade\x64\Debug\Multi.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\git\CrazyArcade\x64\Debug\Outline.cso</FullPath>
+      <FullPath>C:\Cooljyum\CrazyArcade\x64\Debug\Outline.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\git\CrazyArcade\x64\Debug\Pixel.cso</FullPath>
+      <FullPath>C:\Cooljyum\CrazyArcade\x64\Debug\Pixel.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\git\CrazyArcade\x64\Debug\PixelUV.cso</FullPath>
+      <FullPath>C:\Cooljyum\CrazyArcade\x64\Debug\PixelUV.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\git\CrazyArcade\x64\Debug\ProgressBar.cso</FullPath>
+      <FullPath>C:\Cooljyum\CrazyArcade\x64\Debug\ProgressBar.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\git\CrazyArcade\x64\Debug\Tutorial.cso</FullPath>
+      <FullPath>C:\Cooljyum\CrazyArcade\x64\Debug\Tutorial.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\git\CrazyArcade\x64\Debug\Vertex.cso</FullPath>
+      <FullPath>C:\Cooljyum\CrazyArcade\x64\Debug\Vertex.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\git\CrazyArcade\x64\Debug\VertexUV.cso</FullPath>
+      <FullPath>C:\Cooljyum\CrazyArcade\x64\Debug\VertexInstancing.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Cooljyum\CrazyArcade\x64\Debug\VertexUV.cso</FullPath>
     </ContentFile>
   </ContentFiles>
   <SatelliteDlls />
