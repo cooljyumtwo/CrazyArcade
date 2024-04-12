@@ -91,7 +91,7 @@ void EditTileMap::UpdateWorld()
 
 void EditTileMap::CreateBGTile()
 {
-    wstring baseFile = L"ResourcesCA/Textures/Tiles/Tile.png";
+    wstring baseFile = L"ResourcesCA/Textures/Tiles/Tile (1).png";
     Texture* baseTile = Texture::Add(baseFile);
     tileSize = baseTile->GetSize();
 

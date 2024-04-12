@@ -51,7 +51,7 @@ void Action::LoadClip(string path, string file, bool isLoop, float speed)
     }
 
     clips.push_back(new Clip(frames, isLoop, speed));
-    clips.back()->SetPixelShader(L"Outline.hlsl");
+  //  clips.back()->SetPixelShader(L"Outline.hlsl");
 
     delete document;
 }

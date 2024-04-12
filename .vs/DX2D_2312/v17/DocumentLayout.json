@@ -1,12 +1,765 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Cooljyum\\CrazyArcade\\",
-  "Documents": [],
+  "WorkspaceRootPath": "F:\\git\\CrazyArcade\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterAction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\CharacterAction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterAction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\CharacterAction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterMove.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\CharacterMove.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Action.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Basic\\Action.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\COMMUNITY\\VC\\TOOLS\\MSVC\\14.39.33519\\INCLUDE\\VECTOR||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieAction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieAction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieAction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieAction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieRun.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieRun.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJumpDouble.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieJumpDouble.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJump.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieJump.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJumpUp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieJumpUp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJumpDown.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieJumpDown.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJumpDown.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieJumpDown.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Libraries\\ImGui\\ImGuiFileDialog.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Libraries\\ImGui\\ImGuiFileDialog.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Framework\\Environment\\Environment.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Framework\\Environment\\Environment.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Framework\\Environment\\Environment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Framework\\Environment\\Environment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\ShootingGame\\Enemy\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\ShootingGame\\Enemy\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Effect.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Basic\\Effect.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Effect.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Basic\\Effect.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\EditTileMap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Map\\EditTileMap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieRange.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieRange.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieRange.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieRange.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieMelee.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieMelee.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieMelee.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieMelee.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Scenes\\MapEditScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Scenes\\MapEditScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Scenes\\MapEditScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Scenes\\MapEditScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Manager\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\Cookie.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\Cookie.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJump.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieJump.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\TileGame\\Amazon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\TileGame\\Amazon.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\TileGame\\Amazon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\TileGame\\Amazon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieRun.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieRun.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\Cookie.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\Cookie.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieBullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Cookie\\CookieBullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Scenes\\MapEditorScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Scenes\\MapEditorScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|F:\\git\\CrazyArcade\\DX2D_2312\\Scenes\\MapEditorScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Scenes\\MapEditorScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CharacterIdle.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T01:44:21.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CharacterIdle.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T01:43:20.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CharacterMove.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACYAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T00:28:14.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CookieAction.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieAction.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieAction.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieAction.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieAction.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T00:11:32.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Environment.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Framework\\Environment\\Environment.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Framework\\Environment\\Environment.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Framework\\Environment\\Environment.h",
+              "RelativeToolTip": "DX2D_2312\\Framework\\Environment\\Environment.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T01:08:07.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "vector",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "ViewState": "AQIAAEoHAAAAAAAAAAAUwGQHAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-12T01:12:48.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CookieAction.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieAction.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieAction.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieAction.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieAction.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-11T23:55:36.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CookieRun.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieRun.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieRun.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieRun.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieRun.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T00:05:10.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Player.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\Player.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Player.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\Player.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T00:38:46.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CharacterAction.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterAction.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterAction.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterAction.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\CharacterAction.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-11T23:54:52.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Player.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Player.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\Player.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Player.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\Player.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T00:27:19.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CharacterMove.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterMove.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterMove.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterMove.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\CharacterMove.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T00:26:54.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CharacterAction.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterAction.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterAction.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterAction.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\CharacterAction.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-11T23:54:53.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Character.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\Character.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\Character.cpp",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAgwGMAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-11T23:58:26.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Action.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Action.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Basic\\Action.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Action.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Basic\\Action.cpp",
+              "ViewState": "AQIAACAAAAAAAAAAAAAAADoAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-11T23:56:06.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Character.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\Character.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\Character.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T00:03:30.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CookieJump.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJump.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieJump.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJump.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieJump.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T00:12:04.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CookieJumpDouble.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJumpDouble.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieJumpDouble.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJumpDouble.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieJumpDouble.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwcAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T00:11:39.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Framework.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Framework.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Framework.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Framework.h",
+              "RelativeToolTip": "DX2D_2312\\Framework.h",
+              "ViewState": "AQIAAH4AAAAAAAAAAADwv5cAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T00:27:25.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CookieJumpDown.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJumpDown.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieJumpDown.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJumpDown.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieJumpDown.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T00:28:46.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CookieJumpDown.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJumpDown.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieJumpDown.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJumpDown.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieJumpDown.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T00:28:47.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CookieJumpUp.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJumpUp.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieJumpUp.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJumpUp.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieJumpUp.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwYAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T00:28:53.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "EditTileMap.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\EditTileMap.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\EditTileMap.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\EditTileMap.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\EditTileMap.cpp",
+              "ViewState": "AQIAAIQAAAAAAAAAAAAAAJ4AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T01:07:26.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Effect.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Effect.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Basic\\Effect.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Effect.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Basic\\Effect.cpp",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAACgAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T01:07:30.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Effect.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Effect.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Basic\\Effect.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Effect.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Basic\\Effect.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T01:07:57.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Enemy.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\ShootingGame\\Enemy\\Enemy.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\ShootingGame\\Enemy\\Enemy.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\ShootingGame\\Enemy\\Enemy.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\ShootingGame\\Enemy\\Enemy.cpp",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAFQAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T01:08:00.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ImGuiFileDialog.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Libraries\\ImGui\\ImGuiFileDialog.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Libraries\\ImGui\\ImGuiFileDialog.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Libraries\\ImGui\\ImGuiFileDialog.cpp",
+              "RelativeToolTip": "DX2D_2312\\Libraries\\ImGui\\ImGuiFileDialog.cpp",
+              "ViewState": "AQIAAJMFAAAAAAAAAAAAAJMFAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T01:08:09.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Environment.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Framework\\Environment\\Environment.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Framework\\Environment\\Environment.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Framework\\Environment\\Environment.cpp",
+              "RelativeToolTip": "DX2D_2312\\Framework\\Environment\\Environment.cpp",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACkAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T01:08:05.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CookieRange.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieRange.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieRange.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieRange.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieRange.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T01:07:24.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CookieRange.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieRange.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieRange.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieRange.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieRange.cpp",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAACMAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T01:07:22.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "CookieMelee.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieMelee.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieMelee.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieMelee.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieMelee.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T01:07:20.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "CookieMelee.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieMelee.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieMelee.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieMelee.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieMelee.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T01:07:14.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Cookie.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\Cookie.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\Cookie.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\Cookie.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\Cookie.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T00:22:57.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Amazon.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\TileGame\\Amazon.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\TileGame\\Amazon.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\TileGame\\Amazon.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\TileGame\\Amazon.cpp",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAAACYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-11T23:57:49.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "CookieJump.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJump.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieJump.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieJump.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieJump.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T00:28:35.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "MapEditScene.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Scenes\\MapEditScene.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\MapEditScene.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Scenes\\MapEditScene.h",
+              "RelativeToolTip": "DX2D_2312\\Scenes\\MapEditScene.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-11T23:58:52.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "MapEditScene.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Scenes\\MapEditScene.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\MapEditScene.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Scenes\\MapEditScene.cpp",
+              "RelativeToolTip": "DX2D_2312\\Scenes\\MapEditScene.cpp",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-11T23:58:57.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "CookieRun.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieRun.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieRun.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieRun.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieRun.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T00:27:17.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "GameManager.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Manager\\GameManager.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.cpp",
+              "RelativeToolTip": "DX2D_2312\\Manager\\GameManager.cpp",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAUwHIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T00:51:36.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Cookie.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\Cookie.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\Cookie.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\Cookie.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\Cookie.cpp",
+              "ViewState": "AQIAAGwAAAAAAAAAAADwv3gAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T00:11:22.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Amazon.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\TileGame\\Amazon.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\TileGame\\Amazon.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\TileGame\\Amazon.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\TileGame\\Amazon.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvxwAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T00:42:02.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "CookieBullet.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieBullet.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Cookie\\CookieBullet.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Objects\\Cookie\\CookieBullet.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Cookie\\CookieBullet.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T00:11:37.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "MapEditorScene.cpp",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Scenes\\MapEditorScene.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\MapEditorScene.cpp",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Scenes\\MapEditorScene.cpp",
+              "RelativeToolTip": "DX2D_2312\\Scenes\\MapEditorScene.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T00:08:10.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "MapEditorScene.h",
+              "DocumentMoniker": "F:\\git\\CrazyArcade\\DX2D_2312\\Scenes\\MapEditorScene.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\MapEditorScene.h",
+              "ToolTip": "F:\\git\\CrazyArcade\\DX2D_2312\\Scenes\\MapEditorScene.h",
+              "RelativeToolTip": "DX2D_2312\\Scenes\\MapEditorScene.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T00:08:09.778Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

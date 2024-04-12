@@ -12,4 +12,6 @@ public:
 
 private:
     EditTileMap* tileMap;
+    Player* player;
+    Quad* quad;
 };
