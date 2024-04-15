@@ -10,6 +10,7 @@
 #include "Scenes/TileEditScene.h"
 #include "Scenes/TileGameScene.h"
 #include "Scenes/MapEditScene.h"
+#include "Scenes/GameScene.h"
 
 
 GameManager::GameManager()
@@ -25,10 +26,13 @@ GameManager::GameManager()
 	//SCENE->Add("Start", new RenderTargetScene());
 	//SCENE->Add("Start", new TileEditScene());
 	//SCENE->Add("Start", new TileGameScene());
-	SCENE->Add("Start", new MapEditScene());
-	UIManager::Get()->Add("Start", new MapEditUI());
+	//SCENE->Add("Start", new MapEditScene());
+	SCENE->Add("Start", new GameScene());
+	//UIManager::Get()->Add("Start", new MapEditUI());
+	UIManager::Get()->Add("Start", new GameUI());
 
 	SCENE->ChangeScene("Start");
+	UIManager::Get()->ChangeUI("Start");
 }
 
 GameManager::~GameManager()
@@ -42,7 +46,7 @@ void GameManager::Update()
 	Timer::Get()->Update();
 
 	Environment::Get()->Update();
-	ObjectManager::Get()->Update();
+	//ObjectManager::Get()->Update();
 	UIManager::Get()->Update();
 	SCENE->Update();
 }
@@ -69,7 +73,7 @@ void GameManager::Render()
 	string fps = "FPS : " + to_string(Timer::Get()->GetFPS());
 	Font::Get()->RenderText(fps, { 0, SCREEN_HEIGHT - 10 });
 
-	ObjectManager::Get()->Render();
+	//ObjectManager::Get()->Render();
 	UIManager::Get()->Render();
 	SCENE->Render();
 

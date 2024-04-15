@@ -12,14 +12,17 @@ MapEditUI::~MapEditUI()
 
 void MapEditUI::Update()
 {
+	BG->UpdateWorld();
 }
 
 void MapEditUI::PreRender()
 {
+	
 }
 
 void MapEditUI::Render()
 {
+	BG->Render();
 }
 
 void MapEditUI::PostRender()

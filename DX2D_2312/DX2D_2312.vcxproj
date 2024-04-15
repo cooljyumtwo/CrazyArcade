@@ -111,6 +111,7 @@
       <AdditionalIncludeDirectories>./</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Framework.h</PrecompiledHeaderFile>
+      <AdditionalOptions>"/FS" %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -193,8 +194,14 @@
     <ClInclude Include="Objects\CA\Character\CharacterMove.h" />
     <ClInclude Include="Objects\CA\Character\Player.h" />
     <ClInclude Include="Objects\CA\Bubble\Bubble.h" />
+    <ClInclude Include="Objects\CA\Map\BasicTile.h" />
     <ClInclude Include="Objects\CA\Map\EditTileMap.h" />
+    <ClInclude Include="Objects\CA\Map\ObstacleTile.h" />
     <ClInclude Include="Objects\CA\Map\Tile.h" />
+    <ClInclude Include="Objects\CA\Map\TileManager.h" />
+    <ClInclude Include="Objects\CA\Map\TileObject.h" />
+    <ClInclude Include="Objects\CA\Map\TileObjectManager.h" />
+    <ClInclude Include="Objects\CA\UI\GameUI.h" />
     <ClInclude Include="Objects\CA\UI\MapEditUI.h" />
     <ClInclude Include="Objects\CA\UI\UI.h" />
     <ClInclude Include="Objects\CA\Bubble\BubbleManager.h" />
@@ -237,6 +244,7 @@
     <ClInclude Include="Scenes\AnimationScene.h" />
     <ClInclude Include="Scenes\CollisionScene.h" />
     <ClInclude Include="Scenes\DijstraScene.h" />
+    <ClInclude Include="Scenes\GameScene.h" />
     <ClInclude Include="Scenes\InstancingScene.h" />
     <ClInclude Include="Scenes\MapEditorScene.h" />
     <ClInclude Include="Scenes\MapEditScene.h" />
@@ -303,8 +311,14 @@
     <ClCompile Include="Objects\CA\Character\CharacterIdle.cpp" />
     <ClCompile Include="Objects\CA\Character\CharacterMove.cpp" />
     <ClCompile Include="Objects\CA\Character\Player.cpp" />
+    <ClCompile Include="Objects\CA\Map\BasicTile.cpp" />
     <ClCompile Include="Objects\CA\Map\EditTileMap.cpp" />
+    <ClCompile Include="Objects\CA\Map\ObstacleTile.cpp" />
     <ClCompile Include="Objects\CA\Map\Tile.cpp" />
+    <ClCompile Include="Objects\CA\Map\TileManager.cpp" />
+    <ClCompile Include="Objects\CA\Map\TileObject.cpp" />
+    <ClCompile Include="Objects\CA\Map\TileObjectManager.cpp" />
+    <ClCompile Include="Objects\CA\UI\GameUI.cpp" />
     <ClCompile Include="Objects\CA\UI\MapEditUI.cpp" />
     <ClCompile Include="Objects\CA\Bubble\Bubble.cpp" />
     <ClCompile Include="Objects\CA\Bubble\BubbleManager.cpp" />
@@ -345,6 +359,7 @@
     <ClCompile Include="Scenes\AnimationScene.cpp" />
     <ClCompile Include="Scenes\CollisionScene.cpp" />
     <ClCompile Include="Scenes\DijstraScene.cpp" />
+    <ClCompile Include="Scenes\GameScene.cpp" />
     <ClCompile Include="Scenes\InstancingScene.cpp" />
     <ClCompile Include="Scenes\MapEditorScene.cpp" />
     <ClCompile Include="Scenes\MapEditScene.cpp" />

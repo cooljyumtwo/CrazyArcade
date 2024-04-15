@@ -5,7 +5,8 @@ Character::Character()
     CreateActions();
     actions[curState]->Start();
 
-    collider = new RectCollider({ 100, 100 });
+    collider = new RectCollider({ Tile::TILE_SIZE, Tile::TILE_SIZE });
+    collider->Translate(Vector2::Down() * Tile::TILE_SIZE * 0.2f);
     collider->SetParent(this);
     collider->SetTag("Character");
     collider->Load();

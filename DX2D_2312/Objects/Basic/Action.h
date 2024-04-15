@@ -15,8 +15,11 @@ public:
 
     void SetEvent(string key, Event event) { events[key] = event; }
 
+
     Clip* GetClip(int index) { return clips[index]; }
     Clip* GetCurClip() { return clips[curState]; }
+
+    bool IsCurClip() { return clips.size() > curState ? true : false; }
 
     void LoadClip(string path, string file, bool isLoop, float speed = 1.0f);
     void LoadClip(wstring file, int frameX, int frameY, bool isLoop, float speed = 1.0f);

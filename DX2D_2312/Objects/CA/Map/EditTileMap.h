@@ -7,21 +7,24 @@ public:
     ~EditTileMap();
 
     void Update();
+    void PreRender();
     void Render();
+    void PostRender();
     void RenderSampleButtons();
 
     void UpdateWorld() override;    
+
+    void Save();
+    void Load();
 private:
     void CreateBGTile();
     void CreateSampleButtons();     
 
     void SetType();
 
-    void AddObjTile(const Vector2& pos);
+    void AddObjTile(const Vector2& pos, const Vector2& size, const int idx);
     void RemoveObjTile(const Vector2& pos);
 
-    void Save();
-    void Load();
 
     void SaveMapData(string file);
     void LoadMapData(string file);
@@ -35,7 +38,7 @@ private:
     wstring selectTextureFile;
 
     vector<Tile*> bgTiles;
-    vector<Tile*> objTiles;
+    vector<ObstacleTile*> objTiles;
     vector<Texture*> sampleTextures;
 
     int type = 0;

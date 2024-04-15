@@ -20,4 +20,5 @@ private:
 
 private:    
     Quad* sampleTile;
+    TileObject* t;
 };

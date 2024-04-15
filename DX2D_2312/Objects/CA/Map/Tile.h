@@ -3,6 +3,7 @@
 class Tile : public Quad
 {
 public:
+
     enum Type
     {
         BASIC, OBSTACLE
@@ -14,6 +15,9 @@ public:
         Vector2 pos;
         Type type = BASIC;
     };
+
+public:
+    static float TILE_SIZE;
 
 public:
     Tile(Data data);
@@ -31,8 +35,18 @@ public:
 
     void SetType(Type type) { data.type = type; }
 
-private:
+    void SetTileObj(TileObject* tileObj) { this->tileObj = tileObj; }
+
+    void SetCurIdx(int curIdx) { this->curIdx = curIdx; }
+    int GetCurIdx() { return curIdx; }
+   
+
+protected:
     Data data;
 
     RectCollider* collider;
+
+    TileObject* tileObj = nullptr;
+
+    int curIdx;
 };

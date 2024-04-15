@@ -14,4 +14,5 @@ private:
     EditTileMap* tileMap;
     Player* player;
     Quad* quad;
+    TileObject* t;
 };

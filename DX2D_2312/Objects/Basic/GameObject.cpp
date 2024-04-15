@@ -5,8 +5,8 @@ GameObject::GameObject(bool isAdd)
 	material = new Material();
 	worldBuffer = new MatrixBuffer();
 
-	if(isAdd)
-		ObjectManager::Get()->Add(this);
+	//if(isAdd)
+		//ObjectManager::Get()->Add(this);
 }
 
 GameObject::~GameObject()

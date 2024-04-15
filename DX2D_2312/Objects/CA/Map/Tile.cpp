@@ -1,12 +1,13 @@
 #include "Framework.h"
 
+float Tile::TILE_SIZE = 40.0f;
+
 Tile::Tile(Data data)
     : Quad(data.textureFile, false), data(data)
 {
     SetLocalPosition(data.pos);    
 
     collider = new RectCollider(size);
-   // collider->Translate(Vector2::Up() * size.y * 0.25f);
     collider->SetParent(this);
 }
 
@@ -21,16 +22,15 @@ void Tile::Render()
 
     Quad::Render();
     collider->Render();
-
-    string fps = to_string(data.type);
-    Font::Get()->RenderText(fps, GetGlobalPosition());
-
 }
 
 void Tile::PostRender()
 {
     //FONT->SetStyle("Button");
     //FONT->RenderText("Tile", CAM->WorldToScreen(GetGlobalPosition()));
+
+    string fps = to_string(data.type);
+    Font::Get()->RenderText(fps, GetGlobalPosition());
 }
 
 void Tile::UpdateWorld()

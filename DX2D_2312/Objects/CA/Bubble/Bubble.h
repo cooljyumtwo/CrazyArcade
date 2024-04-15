@@ -14,7 +14,7 @@ public:
 	Bubble();
 	~Bubble();
 
-	virtual void Update();
+	void Update();
 	void Render();
 
 	void Spawn(const Vector2& pos, int power);
@@ -23,13 +23,13 @@ public:
 
 
 protected:
-	State state;
+	State state = STAND;
 
 	int power;
 
 	Vector2 velocity;
 
-	Collider* collider;
+	RectCollider* collider;
 
 	map<State, Action*> actions;
 };

@@ -4,6 +4,8 @@
 MapEditorScene::MapEditorScene()
 {
     sampleTile = new Quad(L"Resources/Textures/BG/Floor.png");
+    t = new TileObject();
+    TileObjectManager::Get();
 }
 
 MapEditorScene::~MapEditorScene()
@@ -30,11 +32,14 @@ void MapEditorScene::Update()
     {
         FloorManager::Get()->Remove();
     }
+    t->Update();
 }
 
 void MapEditorScene::Render()
 {
     FloorManager::Get()->Render();
+
+    t->Render();
 }
 
 void MapEditorScene::PostRender()

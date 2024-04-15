@@ -4,7 +4,17 @@ Bubble::Bubble()
 {
 	SetActive(false);
 
-	//action.push_back(LoadClip(ToWString(PATH) + L"Bazzi/Stand.png", 1, 1, false));
+	Action* action = new Action();
+
+	wstring actionFile = ToWString("ResourcesCA/Textures/Character/Bazzi/Run") + L".png";
+
+	action->LoadClip(ToWString(PATH) + L"Stand.png", 3, 1, true);
+
+	actions[STAND] = action;
+	//actions[STAND]->SetParent(this);
+
+	collider = new RectCollider({ Tile::TILE_SIZE-10.0f, Tile::TILE_SIZE - 10.0f });
+	collider->SetParent(this);
 
 }
 
@@ -15,13 +25,20 @@ Bubble::~Bubble()
 
 void Bubble::Update()
 {
+	if (!this->IsActive()) return;
+
 	UpdateWorld();
 	collider->UpdateWorld();
+	actions[state]->Update();
+	
 }
 
 void Bubble::Render()
 {
+	if (!this->IsActive()) return;
+
 	collider->Render();
+	actions[state]->Render();
 }
 
 void Bubble::Spawn(const Vector2& pos, int speed)
@@ -29,7 +46,11 @@ void Bubble::Spawn(const Vector2& pos, int speed)
 	SetActive(true);
 	this->power = power;
 
-	SetLocalPosition(pos);
+	Translate(pos);
 
 	UpdateWorld();
+	collider->UpdateWorld();
+
+	Tile* tile = TileManager::Get()->SetNearPosState(collider);
+	this->SetGlobalPosition(tile->GetGlobalPosition());
 }

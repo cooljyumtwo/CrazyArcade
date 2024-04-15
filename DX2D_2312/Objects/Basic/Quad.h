@@ -3,8 +3,8 @@
 class Quad : public GameObject
 {
 public:
-	Quad(Vector2 size = { 100, 100 }, bool isAdd = true);
-	Quad(wstring textureFile, bool isAdd = true, Vector2 startUV = Vector2(), 
+	Quad(Vector2 size = { 100, 100 }, bool isAdd = false);
+	Quad(wstring textureFile, bool isAdd = false, Vector2 startUV = Vector2(), 
 		Vector2 endUV = Vector2(1, 1), Vector2 pos = Vector2());	
 	~Quad();
 

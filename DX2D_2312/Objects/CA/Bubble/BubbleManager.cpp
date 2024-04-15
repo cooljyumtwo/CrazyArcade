@@ -6,10 +6,26 @@ BubbleManager::BubbleManager()
 
 	for (GameObject*& bubble : totalObject["BasicBubble"])
 		bubble = new Bubble();
+
+		
 }
 
 BubbleManager::~BubbleManager()
 {
+}
+
+void BubbleManager::Render()
+{
+	for (GameObject*& bubble : totalObject["BasicBubble"])
+		bubble->Render();
+
+}
+
+void BubbleManager::Update()
+{
+	for (GameObject*& bubble : totalObject["BasicBubble"])
+		bubble->Update();
+
 }
 
 Bubble* BubbleManager::Collision(string key, Collider* collider)

@@ -11,8 +11,14 @@ private:
 	~BubbleManager();
 
 public:
+	void Render();
+	void Update();
+
+public:
 	Bubble* Collision(string key, Collider* collider);
 
 public:
 	void Spawn(const Vector2& pos, int power);
+
+	vector<Bubble*> bubbles;
 };
