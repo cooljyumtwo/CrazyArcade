@@ -192,10 +192,12 @@
     <ClInclude Include="Objects\CA\Character\CharacterIdle.h" />
     <ClInclude Include="Objects\CA\Character\CharacterMove.h" />
     <ClInclude Include="Objects\CA\Character\Player.h" />
+    <ClInclude Include="Objects\CA\Bubble\Bubble.h" />
     <ClInclude Include="Objects\CA\Map\EditTileMap.h" />
     <ClInclude Include="Objects\CA\Map\Tile.h" />
     <ClInclude Include="Objects\CA\UI\MapEditUI.h" />
     <ClInclude Include="Objects\CA\UI\UI.h" />
+    <ClInclude Include="Objects\CA\Bubble\BubbleManager.h" />
     <ClInclude Include="Objects\Cookie\Cookie.h" />
     <ClInclude Include="Objects\Cookie\CookieAction.h" />
     <ClInclude Include="Objects\Cookie\CookieBullet.h" />
@@ -304,6 +306,8 @@
     <ClCompile Include="Objects\CA\Map\EditTileMap.cpp" />
     <ClCompile Include="Objects\CA\Map\Tile.cpp" />
     <ClCompile Include="Objects\CA\UI\MapEditUI.cpp" />
+    <ClCompile Include="Objects\CA\Bubble\Bubble.cpp" />
+    <ClCompile Include="Objects\CA\Bubble\BubbleManager.cpp" />
     <ClCompile Include="Objects\Cookie\Cookie.cpp" />
     <ClCompile Include="Objects\Cookie\CookieAction.cpp" />
     <ClCompile Include="Objects\Cookie\CookieBullet.cpp" />

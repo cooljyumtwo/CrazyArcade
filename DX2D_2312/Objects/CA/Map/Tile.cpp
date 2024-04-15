@@ -20,7 +20,11 @@ void Tile::Render()
     if (!IsActive()) return;
 
     Quad::Render();
-    collider->Render();    
+    collider->Render();
+
+    string fps = to_string(data.type);
+    Font::Get()->RenderText(fps, GetGlobalPosition());
+
 }
 
 void Tile::PostRender()

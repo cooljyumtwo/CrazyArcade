@@ -1,2 +1,114 @@
-﻿  CharacterMove.cpp
-  DX2D_2312.vcxproj -> F:\git\CrazyArcade\x64\Debug\DX2D_2312.exe
+﻿  DX2D_2312.cpp
+  PixelShader.cpp
+  Shader.cpp
+  ObjectManager.cpp
+  Quad.cpp
+C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Render\Mesh.h(47,31): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/Basic/Quad.cpp'을(를) 컴파일하는 중)
+  C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Render\Mesh.h(47,31):
+  템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
+  	C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\Basic\Quad.cpp(7,13):
+  	컴파일되는 클래스 템플릿 인스턴스화 'Mesh<VertexUV>'에 대한 참조를 확인하세요.
+  	C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Render\Mesh.h(41,1):
+  	클래스 템플릿 멤버 함수 'void Mesh<VertexUV>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'을(를) 컴파일하는 중입니다.
+  		C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\Basic\Quad.cpp(40,12):
+  		'Quad::Render'에서 'Mesh<VertexUV>::Draw'에 대한 첫 번째 참조를 확인하세요.
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Render\Mesh.h(51,25): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/Basic/Quad.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Render\Mesh.h(58,75): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/Basic/Quad.cpp'을(를) 컴파일하는 중)
+  C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Render\Mesh.h(58,75):
+  템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
+  	C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Render\Mesh.h(57,1):
+  	클래스 템플릿 멤버 함수 'void Mesh<VertexUV>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
+  		C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\Basic\Quad.cpp(9,18):
+  		'Quad::Quad'에서 'Mesh<VertexUV>::CreateMesh'에 대한 첫 번째 참조를 확인하세요.
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Render\Mesh.h(62,61): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/Basic/Quad.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Render\Mesh.h(69,53): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/Basic/Quad.cpp'을(를) 컴파일하는 중)
+  C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Render\Mesh.h(69,53):
+  템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
+  	C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Render\Mesh.h(68,1):
+  	클래스 템플릿 멤버 함수 'void Mesh<VertexUV>::UpdateVertices(void)'을(를) 컴파일하는 중입니다.
+  		C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\Basic\Quad.cpp(56,22):
+  		'Quad::SetTexture'에서 'Mesh<VertexUV>::UpdateVertices'에 대한 첫 번째 참조를 확인하세요.
+  
+  EditTileMap.cpp
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(114,48): warning C4244: '인수': 'UINT'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(114,65): warning C4244: '인수': 'UINT'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(139,21): error C2664: 'HANDLE FindFirstFileW(LPCWSTR,LPWIN32_FIND_DATAW)': 인수 1을(를) 'std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(139,45):
+  이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\fileapi.h(248,1):
+  'FindFirstFileW' 선언을 참조하십시오.
+  C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(139,21):
+  인수 목록 '(std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>, WIN32_FIND_DATA *)'을(를) 일치시키는 동안
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(244,30): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(251,31): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(274,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(283,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+  Tile.cpp
+  CookieRange.cpp
+  CookieRun.cpp
+  ItemManager.cpp
+  TutorialScene.cpp
+C:\Cooljyum\CrazyArcade\DX2D_2312\Scenes\TutorialScene.cpp(27,88): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Scenes/TutorialScene.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Scenes\TutorialScene.cpp(46,63): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Scenes/TutorialScene.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Scenes\TutorialScene.cpp(151,33): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Scenes/TutorialScene.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xmemory(727,103): warning C4244: '인수': '_Ty'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xmemory(727,103): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xmemory(727,103): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xmemory(727,103): warning C4244:             _Ty=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xmemory(727,103): warning C4244:         ]
+  (소스 파일 '/Scenes/TutorialScene.cpp'을(를) 컴파일하는 중)
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xmemory(727,103):
+  템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
+  	C:\Cooljyum\CrazyArcade\DX2D_2312\Scenes\TutorialScene.cpp(23,13):
+  	컴파일되는 함수 템플릿 인스턴스화 'void std::vector<VertexColor,std::allocator<VertexColor>>::emplace_back<int,int,int,int,int>(int &&,int &&,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\vector(862,24):
+  	컴파일되는 함수 템플릿 인스턴스화 '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_one_at_back<int,int,int,int,int>(int &&,int &&,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=VertexColor
+          ]
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\vector(780,20):
+  	컴파일되는 함수 템플릿 인스턴스화 '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<int,int,int,int,int>(int &&,int &&,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=VertexColor
+          ]
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\vector(798,27):
+  	컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,int,int,int,int,int>(_Alloc &,_Objty *const ,int &&,int &&,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Alloc=std::allocator<VertexColor>,
+              _Ty=VertexColor,
+              _Objty=VertexColor
+          ]
+  
+  코드를 생성하고 있습니다...

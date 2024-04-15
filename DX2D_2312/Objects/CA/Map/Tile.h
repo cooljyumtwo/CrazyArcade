@@ -29,6 +29,8 @@ public:
 
     static bool IsCompare(Tile* tile1, Tile* tile2);
 
+    void SetType(Type type) { data.type = type; }
+
 private:
     Data data;
 

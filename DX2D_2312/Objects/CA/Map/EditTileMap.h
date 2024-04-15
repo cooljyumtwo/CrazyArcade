@@ -13,7 +13,9 @@ public:
     void UpdateWorld() override;    
 private:
     void CreateBGTile();
-    void CreateSampleButtons();        
+    void CreateSampleButtons();     
+
+    void SetType();
 
     void AddObjTile(const Vector2& pos);
     void RemoveObjTile(const Vector2& pos);
@@ -36,5 +38,5 @@ private:
     vector<Tile*> objTiles;
     vector<Texture*> sampleTextures;
 
-    int type;
+    int type = 0;
 };

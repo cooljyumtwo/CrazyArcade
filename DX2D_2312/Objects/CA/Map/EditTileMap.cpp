@@ -62,7 +62,10 @@ void EditTileMap::Render()
         tile->PostRender();
 
     const char* list[] = {"BASIC", "OBSTACLE"};
-    ImGui::Combo("Type", &type, list, 2);
+    if (ImGui::Combo("Type", &type, list, 2)) 
+    {
+        SetType();
+    }
 
     Load();
 
@@ -121,10 +124,22 @@ void EditTileMap::CreateSampleButtons()
 {
     WIN32_FIND_DATA findData;
 
-    HANDLE handle = FindFirstFile(L"ResourcesCA/Textures/Tiles/*.png", &findData);
+    wstring typePath = L"ResourcesCA/Textures/Tiles/";
+    switch (type)
+    {
+    case 0:
+        typePath += L"Basic";
+    case 1:
+        typePath += L"Obstacle";
+        break;
+    default:
+        break;
+    }
+
+    HANDLE handle = FindFirstFile( typePath + L"* .png", &findData);
 
     bool result = true;
-    wstring path = L"ResourcesCA/Textures/Tiles/";
+    wstring path =  typePath;
 
     while (result)
     {
@@ -134,6 +149,11 @@ void EditTileMap::CreateSampleButtons()
 
         result = FindNextFile(handle, &findData);
     }
+}
+
+void EditTileMap::SetType()
+{
+    CreateSampleButtons();
 }
 
 void EditTileMap::AddObjTile(const Vector2& pos)

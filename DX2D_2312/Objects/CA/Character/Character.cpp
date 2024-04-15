@@ -10,7 +10,7 @@ Character::Character()
     collider->SetTag("Character");
     collider->Load();
 
-//    BulletManager::Get();
+    BubbleManager::Get();
 }
 
 Character::~Character()
@@ -20,7 +20,7 @@ Character::~Character()
 
     delete collider;
 
-    //BulletManager::Delete();
+    BubbleManager::Delete();
 }
 
 void Character::Update()
@@ -70,6 +70,8 @@ void Character::Jump()
 
 void Character::Attack()
 {
+    if (KEY->Down(VK_SPACE))
+        BubbleManager::Get()->Spawn(GetLocalPosition(),1);
 }
 
 void Character::Landing()

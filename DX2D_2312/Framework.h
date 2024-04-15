@@ -143,18 +143,21 @@ typedef function<void(void*)> ObjectParamEvent;
 //#include "Objects/Map/GameTileMap.h"
 //#include "Objects/Map/Tile.h"
 
+#include "Objects/ShootingGame/ShootingDataManager.h"
 
 #include "Objects/CA/Map/Tile.h"
+#include "Objects/CA/Map/TileManager.h"
 #include "Objects/CA/Map/EditTileMap.h"
 #include "Objects/CA/UI/UI.h"
 #include "Objects/CA/UI/MapEditUI.h"
+#include "Objects/CA/Bubble/Bubble.h"
+#include "Objects/CA/Bubble/BubbleManager.h"
 #include "Objects/CA/Character/CharacterAction.h"
 #include "Objects/CA/Character/CharacterIdle.h"
 #include "Objects/CA/Character/CharacterMove.h"
 #include "Objects/CA/Character/Character.h"
 #include "Objects/CA/Character/Player.h"
 
-#include "Objects/ShootingGame/ShootingDataManager.h"
 #include "Objects/ShootingGame/Skill/Skill.h"
 #include "Objects/ShootingGame/Skill/BaseSkill.h"
 #include "Objects/ShootingGame/Skill/WheelSkill.h"

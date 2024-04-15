@@ -1,11 +1,13 @@
 #pragma once
 
+
 class CharacterAction : public Action
 {
 protected:
     const string PATH = "ResourcesCA/Textures/Character/";
     const float MOVE_SPEED = 100.0f;
 
+public:
     enum Compass
     {
         S, N, E, W
@@ -13,18 +15,16 @@ protected:
 
 public:
     CharacterAction() = default;
-    CharacterAction(string file, bool isLoop, float speed = 1.0f);
     ~CharacterAction() = default;
 
     void SetTarget(Transform* target) { this->target = target; }
-    void SetCompass(Compass compass) { this->compass = compass; curState = compass;}
+    void SetCompass(Compass compass) { this->compass = compass; curState = compass; }
 
-protected:
-    void Update() override;
+    Compass GetCompass() { return compass; }
 
 protected:
     Transform* target;
     Vector2 velocity;
 
-    Compass compass = S;
+    static Compass compass;
 };
