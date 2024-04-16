@@ -26,7 +26,8 @@ public:
 	void ClearObjTile();
 
 	//void SetNearPosState(RectCollider* target,Tile::Type type);
-	Tile* SetNearPosState(RectCollider* target, Tile::Type type = Tile::BASIC);
+	Tile* SetNearPosState(GameObject* target, Tile::Type type = Tile::BASIC);
+
 public:
 	Tile* Collision(string key, Collider* collider);
 
@@ -34,8 +35,10 @@ public:
 	//void Spawn(const Vector2& pos, int power);
 
 	GameObject* tiles;
-	vector<Tile*> bgTiles;
+	vector<vector<Tile*>> bgTiles;
 	vector<ObstacleTile*> objTiles;
+
+	vector<GameObject*> gameObjects;
 
 	string mapNameStr="Map";
 

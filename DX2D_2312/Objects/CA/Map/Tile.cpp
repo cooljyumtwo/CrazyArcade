@@ -43,3 +43,8 @@ bool Tile::IsCompare(Tile* tile1, Tile* tile2)
 {
     return tile1->GetGlobalPosition().y > tile2->GetGlobalPosition().y;
 }
+
+float Tile::GetDepth()
+{
+    return collider->Bottom();
+}

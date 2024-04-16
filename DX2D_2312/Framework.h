@@ -202,6 +202,7 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Scenes/Scene.h"
 #include "Manager/SceneManager.h"
 #include "Manager/UIManager.h"
+#include "Manager/RenderManager.h"
 #include "Manager/GameManager.h"
 
 extern HWND hWnd;

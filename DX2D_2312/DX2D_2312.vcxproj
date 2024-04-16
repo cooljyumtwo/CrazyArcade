@@ -177,6 +177,7 @@
     <ClInclude Include="Framework\Utilities\tinyxml2.h" />
     <ClInclude Include="Framework\Utilities\Utility.h" />
     <ClInclude Include="Manager\GameManager.h" />
+    <ClInclude Include="Manager\RenderManager.h" />
     <ClInclude Include="Manager\SceneManager.h" />
     <ClInclude Include="Manager\UIManager.h" />
     <ClInclude Include="Objects\Algorithm\Dijkstra.h" />
@@ -296,6 +297,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Manager\GameManager.cpp" />
+    <ClCompile Include="Manager\RenderManager.cpp" />
     <ClCompile Include="Manager\SceneManager.cpp" />
     <ClCompile Include="Manager\UIManager.cpp" />
     <ClCompile Include="Objects\Algorithm\Dijkstra.cpp" />

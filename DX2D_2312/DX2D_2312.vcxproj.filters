@@ -363,6 +363,9 @@
     <ClInclude Include="Objects\CA\Map\TileManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Manager\RenderManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DX2D_2312.cpp">
@@ -681,6 +684,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Objects\CA\Map\TileManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager\RenderManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

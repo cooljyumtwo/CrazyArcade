@@ -1,6 +1,6 @@
 #pragma once
 
-class EditTileMap : public Transform
+class EditTileMap : public Transform 
 {
 public:
     EditTileMap(UINT sizeX, UINT sizeY);
@@ -22,7 +22,7 @@ private:
 
     void SetType();
 
-    void AddObjTile(const Vector2& pos, const Vector2& size, const int idx);
+    void AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx);
     void RemoveObjTile(const Vector2& pos);
 
 
@@ -37,9 +37,10 @@ private:
     Vector2 tileSize;
     wstring selectTextureFile;
 
-    vector<Tile*> bgTiles;
+    vector<vector<Tile*>> bgTiles;
     vector<ObstacleTile*> objTiles;
     vector<Texture*> sampleTextures;
+
 
     int type = 0;
 };

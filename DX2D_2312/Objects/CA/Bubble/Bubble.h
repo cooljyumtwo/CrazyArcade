@@ -21,6 +21,8 @@ public:
 
 	Collider* GetCollider() { return collider; }
 
+	float GetDepth() override;
+
 
 protected:
 	State state = STAND;

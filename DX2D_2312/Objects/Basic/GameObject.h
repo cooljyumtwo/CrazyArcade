@@ -11,16 +11,13 @@ public:
 
 	void SetRender();
 
-	int GetDepth() { return depth; }
 	Material* GetMaterial() { return material; }
 
-	void SetDepth(int depth) { this->depth = depth; }
+	virtual float GetDepth();
 
 	static bool Compare(GameObject* obj1, GameObject* obj2);
 
 protected:
-	int depth = 0;
-
 	Material* material;
 	MatrixBuffer* worldBuffer;
 };

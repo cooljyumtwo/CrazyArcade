@@ -6,7 +6,7 @@ public:
 
     enum Type
     {
-        BASIC, OBSTACLE
+        BASIC, OBSTACLE , PLAYER
     };
 
     struct Data
@@ -38,8 +38,10 @@ public:
 
     void SetTileObj(TileObject* tileObj) { this->tileObj = tileObj; }
 
-    void SetCurIdx(int curIdx) { this->curIdx = curIdx; }
-    int GetCurIdx() { return curIdx; }
+    void SetCurIdx(Vector2 curIdx) { this->curIdx = curIdx; }
+    Vector2 GetCurIdx() { return curIdx; }
+
+    float GetDepth() override;
    
 
 protected:
@@ -49,5 +51,5 @@ protected:
 
     TileObject* tileObj = nullptr;
 
-    int curIdx;
+    Vector2 curIdx;
 };

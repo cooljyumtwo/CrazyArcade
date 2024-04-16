@@ -34,6 +34,10 @@ void Character::Update()
 
     UpdateWorld();
     collider->UpdateWorld();
+
+    Tile* tile = TileManager::Get()->SetNearPosState(this, Tile::PLAYER);
+    if(tile)
+        posIdx = tile->GetCurIdx();
 }
 
 void Character::Render()
@@ -49,6 +53,11 @@ void Character::Render()
 void Character::PostRender()
 {
     collider->RenderUI();
+}
+
+float Character::GetDepth()
+{
+    return collider->Bottom();
 }
 
 void Character::Move()

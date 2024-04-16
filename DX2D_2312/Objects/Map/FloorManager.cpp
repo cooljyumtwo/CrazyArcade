@@ -5,7 +5,7 @@ FloorManager::FloorManager()
     background = new Quad(L"Resources/Textures/BG/bg.png", false);
     background->SetLocalPosition(CENTER);
     background->SetTag("BG");
-    background->SetDepth(-10);
+  //  background->SetDepth(-10);
     background->Update();
 }
 

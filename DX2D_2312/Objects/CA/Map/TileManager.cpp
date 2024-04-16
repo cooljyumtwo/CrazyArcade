@@ -16,33 +16,68 @@ TileManager::~TileManager()
 
 void TileManager::PreRender()
 {
-    for (Tile* tile : bgTiles)
+    for (UINT y = 0; y < SIZEY; y++)
     {
-        tile->Render();
-        tile->PostRender();
+        for (UINT x = 0; x < SIZEX; x++)
+        {
+            Tile* tile = bgTiles[x][y];
+            tile->Render();
+        }
     }
 }
 
 void TileManager::Render()
 {
+    RenderManager::Get()->Render("BG");
+    RenderManager::Get()->Render("GameObject");
 }
 
 void TileManager::PostRender()
 {
-    for (Tile* tile : bgTiles)
-        tile->PostRender();
+    for (UINT y = 0; y < SIZEY; y++)
+    {
+        for (UINT x = 0; x < SIZEX; x++)
+        {
+            Tile* tile = bgTiles[x][y];
+            tile->PostRender();
+        }
+    }
     
+
+
     for (Tile* tile : objTiles)
         tile->Render();
 }
 
 void TileManager::Update()
 {
-    for (Tile* tile : bgTiles)
-        tile->UpdateWorld();
-
+    for (UINT y = 0; y < SIZEY; y++)
+    {
+        for (UINT x = 0; x < SIZEX; x++)
+        {
+            Tile* tile = bgTiles[x][y];
+            if (tile->GetType() == Tile::PLAYER)
+            {
+                for (GameObject* gameObj : gameObjects)
+                {
+                    if (tile->GetGlobalPosition().y > gameObj->GetGlobalPosition().y)
+                    {
+                       // gameObj->SetDepth(-1);
+                    }
+                    else 
+                    {
+                     //   gameObj->SetDepth(10);
+                    }
+                }
+            }
+            tile->UpdateWorld();
+        }
+    }
+        
     for (Tile* tile : objTiles)
         tile->UpdateWorld();
+
+
 
     UpdateWorld();
 }
@@ -53,7 +88,15 @@ void TileManager::CreateBGTile()
     Texture* baseTile = Texture::Add(baseFile);
     tileSize = baseTile->GetSize();
 
-    bgTiles.reserve(SIZEX * SIZEX);
+    bgTiles.resize(SIZEX);
+
+    // 각 행 벡터를 초기화합니다.
+    for (UINT y = 0; y < SIZEX; y++) {
+        // 각 행 벡터를 추가합니다.
+        // 각 행 벡터의 용량을 sizeX만큼 예약합니다.
+        bgTiles[y].resize(SIZEY);
+    }
+
 
     Vector2 startPos = { 0, SIZEX * 0.5f * tileSize.y * 0.5f };
 
@@ -70,8 +113,8 @@ void TileManager::CreateBGTile()
 
             BasicTile* tile = new BasicTile(data);
             tile->SetParent(this);
-            tile->SetCurIdx(bgTiles.size());
-            bgTiles.push_back(tile);
+            tile->SetCurIdx(Vector2{ (float)x,(float)y });
+            bgTiles[x][y] = tile;
         }
     }
 }
@@ -90,7 +133,7 @@ void TileManager::LoadMapData(string file)
 
     FOR(size)
     {
-        bgTiles[i]->SetTexture(reader->WString());
+        bgTiles[size / SIZEX][size % SIZEX]->SetTexture(reader->WString());
     }
 
     size = reader->UInt();
@@ -135,27 +178,40 @@ void TileManager::ClearObjTile()
 //    }
 //}
 
-Tile* TileManager::SetNearPosState(RectCollider* target, Tile::Type type)
+Tile* TileManager::SetNearPosState(GameObject* target, Tile::Type type)
 {
-    float minDistance = Distance(bgTiles[0]->GetGlobalPosition(), target->GetGlobalPosition());
-    Tile* minDistanceTile = bgTiles[0];
+    float minDistance = Distance(bgTiles[0][0]->GetGlobalPosition(), target->GetGlobalPosition());
+    Tile* minDistanceTile = nullptr;
 
-    for (Tile* tile : bgTiles)
+    for (UINT y = 0; y < SIZEY; y++)
     {
-        if (tile->GetCollider()->IsRectCollision(target, nullptr) && tile->GetType() == Tile::BASIC)
+        for (UINT x = 0; x < SIZEX; x++)
         {
+            Tile* tile = bgTiles[x][y];
+            tile->SetType(Tile::BASIC);
+
             float distance = Distance(tile->GetGlobalPosition(), target->GetGlobalPosition());
 
-            if(distance < minDistance)
+            if (distance < minDistance)
+                //if (distance < minDistance tile->GetType() == Tile::BASIC)
+            {
                 minDistance = distance;
-
-            minDistanceTile = tile;
+                minDistanceTile = tile;
+            }
+            
         }
     }
     if(minDistanceTile)
         minDistanceTile->SetType(type);
+
+    if(type != Tile::PLAYER)
+        RenderManager::Get()->Add("GameObject", target);
+        
+
     return minDistanceTile;
 }
+
+
 
 Tile* TileManager::Collision(string key, Collider* collider)
 {

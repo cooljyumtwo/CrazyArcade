@@ -16,6 +16,7 @@ Bubble::Bubble()
 	collider = new RectCollider({ Tile::TILE_SIZE-10.0f, Tile::TILE_SIZE - 10.0f });
 	collider->SetParent(this);
 
+	//SetDepth(10);
 }
 
 Bubble::~Bubble()
@@ -48,11 +49,16 @@ void Bubble::Spawn(const Vector2& pos, int speed)
 	UpdateWorld();
 	collider->UpdateWorld();
 
-	Tile* tile = TileManager::Get()->SetNearPosState(collider, Tile::OBSTACLE);
+	Tile* tile = TileManager::Get()->SetNearPosState(this, Tile::OBSTACLE);
 
 	if (!tile) return;
 
 	SetActive(true);
 	this->power = power;
 	this->SetGlobalPosition(tile->GetGlobalPosition());
+}
+
+float Bubble::GetDepth()
+{
+	return collider->Bottom();
 }

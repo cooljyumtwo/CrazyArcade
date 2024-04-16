@@ -28,8 +28,8 @@ GameManager::GameManager()
 	//SCENE->Add("Start", new TileGameScene());
 	//SCENE->Add("Start", new MapEditScene());
 	SCENE->Add("Start", new GameScene());
-	//UIManager::Get()->Add("Start", new MapEditUI());
-	UIManager::Get()->Add("Start", new GameUI());
+	UIManager::Get()->Add("Start", new MapEditUI());
+	//UIManager::Get()->Add("Start", new GameUI());
 
 	SCENE->ChangeScene("Start");
 	UIManager::Get()->ChangeUI("Start");

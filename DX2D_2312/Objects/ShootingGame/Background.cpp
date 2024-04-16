@@ -45,7 +45,7 @@ void Background::CreateBG()
 
             Quad* bg = new Quad(textureFile);
             bg->SetLocalPosition(pos);
-            bg->SetDepth(-10);
+        //    bg->SetDepth(-10);
 
             bgs[y + 1][x + 1] = bg;
         }

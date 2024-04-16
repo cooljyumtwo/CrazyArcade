@@ -15,6 +15,7 @@ GameScene::GameScene()
     TileObjectManager::Get();
     TileManager::Get();
     BubbleManager::Get();
+    RenderManager::Get()->Add("GameObject", player);
 }
 
 GameScene::~GameScene()
@@ -37,10 +38,11 @@ void GameScene::Update()
 void GameScene::Render()
 {
     TileManager::Get()->PreRender();
-    player->Render();
+    //player->Render();
+    RenderManager::Get()->Render();
     TileObjectManager::Get()->Render();
     TileManager::Get()->Render();
-    BubbleManager::Get()->Render();
+   // BubbleManager::Get()->Render();
     TileManager::Get()->PostRender();
 }
 
