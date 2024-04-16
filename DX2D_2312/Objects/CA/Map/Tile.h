@@ -34,6 +34,7 @@ public:
     static bool IsCompare(Tile* tile1, Tile* tile2);
 
     void SetType(Type type) { data.type = type; }
+    Type GetType() { return data.type; }
 
     void SetTileObj(TileObject* tileObj) { this->tileObj = tileObj; }
 

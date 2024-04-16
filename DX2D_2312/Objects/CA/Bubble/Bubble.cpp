@@ -43,14 +43,16 @@ void Bubble::Render()
 
 void Bubble::Spawn(const Vector2& pos, int speed)
 {
-	SetActive(true);
-	this->power = power;
-
 	Translate(pos);
 
 	UpdateWorld();
 	collider->UpdateWorld();
 
-	Tile* tile = TileManager::Get()->SetNearPosState(collider);
+	Tile* tile = TileManager::Get()->SetNearPosState(collider, Tile::OBSTACLE);
+
+	if (!tile) return;
+
+	SetActive(true);
+	this->power = power;
 	this->SetGlobalPosition(tile->GetGlobalPosition());
 }

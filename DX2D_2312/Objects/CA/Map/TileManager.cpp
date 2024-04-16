@@ -1,28 +1,39 @@
 #include "Framework.h"
 
-TileManager::TileManager()
+TileManager::TileManager(): Quad()
 {
+    SetTag("TileManager");
+
     CreateBGTile();
+    Load();
     LoadMapData(PATH + mapNameStr+ ".map");
+
 }
 
 TileManager::~TileManager()
 {
 }
 
-void TileManager::Render()
+void TileManager::PreRender()
 {
     for (Tile* tile : bgTiles)
     {
         tile->Render();
         tile->PostRender();
-
     }
-        
+}
 
+void TileManager::Render()
+{
+}
+
+void TileManager::PostRender()
+{
+    for (Tile* tile : bgTiles)
+        tile->PostRender();
+    
     for (Tile* tile : objTiles)
         tile->Render();
-
 }
 
 void TileManager::Update()
@@ -32,6 +43,8 @@ void TileManager::Update()
 
     for (Tile* tile : objTiles)
         tile->UpdateWorld();
+
+    UpdateWorld();
 }
 
 void TileManager::CreateBGTile()
@@ -56,7 +69,7 @@ void TileManager::CreateBGTile()
             data.pos = startPos + xDirection * x + yDirection * y;
 
             BasicTile* tile = new BasicTile(data);
-          //  tile->SetParent(this);
+            tile->SetParent(this);
             tile->SetCurIdx(bgTiles.size());
             bgTiles.push_back(tile);
         }
@@ -92,7 +105,7 @@ void TileManager::LoadMapData(string file)
         //  data.type = Tile::OBJ;
 
         ObstacleTile* tile = new ObstacleTile(data);
-       // tile->SetParent(this);
+        tile->SetParent(this);
         tile->Update();
 
         objTiles.push_back(tile);
@@ -111,28 +124,37 @@ void TileManager::ClearObjTile()
 
 }
 
-void TileManager::SetNearPosState( RectCollider* target, Tile::Type type)
+//void TileManager::SetNearPosState( RectCollider* target, Tile::Type type)
+//{
+//    for (Tile* tile : bgTiles)
+//    {
+//        if (tile->GetCollider()->IsRectCollision(target, nullptr))
+//        {
+//            tile->SetType(type);
+//        }
+//    }
+//}
+
+Tile* TileManager::SetNearPosState(RectCollider* target, Tile::Type type)
 {
+    float minDistance = Distance(bgTiles[0]->GetGlobalPosition(), target->GetGlobalPosition());
+    Tile* minDistanceTile = bgTiles[0];
+
     for (Tile* tile : bgTiles)
     {
-        if (tile->GetCollider()->IsRectCollision(target, nullptr))
+        if (tile->GetCollider()->IsRectCollision(target, nullptr) && tile->GetType() == Tile::BASIC)
         {
-            tile->SetType(type);
+            float distance = Distance(tile->GetGlobalPosition(), target->GetGlobalPosition());
+
+            if(distance < minDistance)
+                minDistance = distance;
+
+            minDistanceTile = tile;
         }
     }
-
-}
-
-Tile* TileManager::SetNearPosState(RectCollider* target)
-{
-    for (Tile* tile : bgTiles)
-    {
-        if (tile->GetCollider()->IsRectCollision(target, nullptr))
-        {
-            return tile;
-        }
-    }
-    return nullptr;
+    if(minDistanceTile)
+        minDistanceTile->SetType(type);
+    return minDistanceTile;
 }
 
 Tile* TileManager::Collision(string key, Collider* collider)
