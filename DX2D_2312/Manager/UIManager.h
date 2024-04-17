@@ -13,6 +13,7 @@ public:
 
 	void PreRender();
 	void Render();
+	void PostRender();
 
 	void Add(string key, UI* scene);
 

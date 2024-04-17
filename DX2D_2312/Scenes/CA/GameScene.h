@@ -10,6 +10,9 @@ public:
     void Render() override;
     void PostRender() override;
 
+    void Start() override;
+
+
 private:
     EditTileMap* tileMap;
     Player* player;

@@ -3,44 +3,42 @@
 class EditTileMap : public Transform 
 {
 public:
-    EditTileMap(UINT sizeX, UINT sizeY);
+    EditTileMap();
     ~EditTileMap();
 
-    void Update();
-    void PreRender();
     void Render();
-    void PostRender();
+    void Update();
+    void UpdateWorld() override;
+
     void RenderSampleButtons();
 
-    void UpdateWorld() override;    
-
-    void Save();
-    void Load();
 private:
     void CreateBGTile();
     void CreateSampleButtons();     
 
     void SetType();
 
-    void AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx);
-    void RemoveObjTile(const Vector2& pos);
-
+    void Save();
+    void Load();
 
     void SaveMapData(string file);
     void LoadMapData(string file);
 
     void ClearObjTile();
+    void CheckAddObjTile(Vector2 pos);
+    void AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx);
+    void RemoveObjTile(const Vector2& pos);
 
 private:
+    int type = 0;
+
     UINT sizeX;
     UINT sizeY;
+
     Vector2 tileSize;
     wstring selectTextureFile;
 
     vector<vector<Tile*>> bgTiles;
     vector<ObstacleTile*> objTiles;
     vector<Texture*> sampleTextures;
-
-
-    int type = 0;
 };

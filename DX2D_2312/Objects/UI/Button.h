@@ -21,7 +21,9 @@ public:
 
     void UpdateWorld() override;
 
-    void SetEvent(Event event) { clickEvent = event; }
+    void SetEvent(Event event) { 
+        clickEvent = event; 
+    }
     void SetIntEvent(IntParamEvent event, int param)
     { clickIntParamEvent = event, intParam = param; }
     void SetObjectEvent(ObjectParamEvent event, void* param)

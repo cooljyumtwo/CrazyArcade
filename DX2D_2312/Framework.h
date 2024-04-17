@@ -145,11 +145,11 @@ typedef function<void(void*)> ObjectParamEvent;
 
 #include "Objects/ShootingGame/ShootingDataManager.h"
 
-#include "Objects/CA/Map/TileObject.h"
-#include "Objects/CA/Map/TileObjectManager.h"
-#include "Objects/CA/Map/Tile.h"
-#include "Objects/CA/Map/BasicTile.h"
-#include "Objects/CA/Map/ObstacleTile.h"
+#include "Objects/CA/Map/TileObject/TileObject.h"
+#include "Objects/CA/Map/TileObject/TileObjectManager.h"
+#include "Objects/CA/Map/Tile/Tile.h"
+#include "Objects/CA/Map/Tile/BasicTile.h"
+#include "Objects/CA/Map/Tile/ObstacleTile.h"
 #include "Objects/CA/Map/TileManager.h"
 #include "Objects/CA/Map/EditTileMap.h"
 #include "Objects/CA/UI/UI.h"

@@ -1,19 +1,15 @@
 #include "Framework.h"
 
-EditTileMap::EditTileMap(UINT sizeX, UINT sizeY)
-    : sizeX(sizeX), sizeY(sizeY)
+EditTileMap::EditTileMap()
 {
     SetTag("EditTileMap");
+
     CreateBGTile();
-
-    Vector2 mapPos = CENTER;
-    mapPos.x = tileSize.x * sizeX ;
-
-    SetLocalPosition(mapPos);
-
     CreateSampleButtons();
 
     Transform::Load();
+
+    UpdateWorld();
 }
 
 EditTileMap::~EditTileMap()
@@ -25,47 +21,9 @@ EditTileMap::~EditTileMap()
             delete bgTiles[x][y];
         }
     }
-
 }
 
-void EditTileMap::Update()
-{
-    Vector2 pos = CAM->ScreenToWorld(mousePos);
-
-    for (UINT y = 0; y < sizeY; y++)
-    {
-        for (UINT x = 0; x < sizeX; x++)
-        {
-            Tile* tile = bgTiles[x][y];
-
-            if (tile->GetCollider()->IsPointCollision(pos))
-            {
-                tile->GetMaterial()->SetColor(0, 1.0f, 0);
-
-                if (!ImGui::GetIO().WantCaptureMouse && selectTextureFile.size() != 0 && KEY->Press(VK_LBUTTON))
-                {
-                    if (type == 0)
-                        tile->SetTexture(selectTextureFile);
-                    else
-                    {
-                        Vector2 size = tile->GetSize();
-                        AddObjTile(tile->GetLocalPosition(), tile->GetSize(), tile->GetCurIdx());
-                        tile->SetType(Tile::OBSTACLE);
-                    }
-                }
-            }
-            else
-            {
-                tile->GetMaterial()->SetColor(1, 1, 1);
-            }
-        }
-    }
-
-    if (KEY->Down(VK_RBUTTON))
-        RemoveObjTile(pos);
-}
-
-void EditTileMap::PreRender()
+void EditTileMap::Render()
 {
     for (UINT y = 0; y < sizeY; y++)
     {
@@ -74,16 +32,21 @@ void EditTileMap::PreRender()
             bgTiles[x][y]->Render();
         }
     }
-}
-
-void EditTileMap::Render()
-{
 
     sort(objTiles.begin(), objTiles.end(), &Tile::IsCompare);
 
     for (ObstacleTile* tile : objTiles)
         tile->Render();
 
+    for (UINT y = 0; y < sizeY; y++)
+    {
+        for (UINT x = 0; x < sizeX; x++)
+        {
+           bgTiles[x][y]->PostRender();
+        }
+    }
+
+    //ImGui
     const char* list[] = {"BASIC", "OBSTACLE"};
     if (ImGui::Combo("Type", &type, list, 2)) 
     {
@@ -92,7 +55,7 @@ void EditTileMap::Render()
 
     if (ImGui::TreeNode((tag + "EditTileMap_Transform").c_str()))
     {
-        ImGui::DragFloat2("Pos", (float*)&localPosition, 1.0f);
+        //ImGui::DragFloat2("Pos", (float*)&localPosition, 1.0f);
 
         Save();
         ImGui::SameLine();
@@ -100,17 +63,22 @@ void EditTileMap::Render()
 
         ImGui::TreePop();
     }
+
+    ImGui::DragFloat2("Pos", (float*)&localPosition, 1.0f);
+    if (ImGui::Button("S"))
+        Transform::Save();
+    if (ImGui::Button("L"))
+        Transform::Load();
 }
 
-void EditTileMap::PostRender()
+void EditTileMap::Update()
 {
-    for (UINT y = 0; y < sizeY; y++)
-    {
-        for (UINT x = 0; x < sizeX; x++)
-        {
-            bgTiles[x][y]->PostRender();
-        }
-    }
+    Vector2 pos = CAM->ScreenToWorld(mousePos);
+
+    CheckAddObjTile(pos);
+
+    if (KEY->Down(VK_RBUTTON))
+        RemoveObjTile(pos);
 }
 
 void EditTileMap::UpdateWorld()
@@ -125,45 +93,52 @@ void EditTileMap::UpdateWorld()
         }
     }
 
-    //for (ObstacleTile* tile : objTiles)
-    //    tile->UpdateWorld();
+    for (ObstacleTile* tile : objTiles)
+        tile->UpdateWorld();
+}
+
+void EditTileMap::RenderSampleButtons()
+{
+    UINT width = 5;
+
+    if (ImGui::TreeNode("Sample Buttons"))
+    {
+        int count = 0;
+
+        for (Texture* texture : sampleTextures)
+        {
+            if (ImGui::ImageButton(texture->GetSRV(), ImVec2(50, 50)))
+            {
+                selectTextureFile = texture->GetFile();
+            }
+
+            count++;
+
+            if (count % 5)
+                ImGui::SameLine();
+        }
+
+        ImGui::TreePop();
+    }
 }
 
 void EditTileMap::CreateBGTile()
 {
-    wstring baseFile = L"ResourcesCA/Textures/Tiles/Basic/Tile (1).png";
-    Texture* baseTile = Texture::Add(baseFile);
-    tileSize = baseTile->GetSize();
+    bgTiles = TileManager::Get()->GetBGTile();
 
-    bgTiles.resize(sizeX);
-
-    // 각 행 벡터를 초기화합니다.
-    for (UINT y = 0; y < sizeX; y++) {
-        // 각 행 벡터를 추가합니다.
-        // 각 행 벡터의 용량을 sizeX만큼 예약합니다.
-        bgTiles[y].resize(sizeY);
-    }
-
-
-    Vector2 startPos = { 0, sizeX * 0.5f * tileSize.y * 0.5f };
-
+    sizeX = bgTiles.size();
+    sizeY = bgTiles[0].size();
+    
     for (UINT y = 0; y < sizeY; y++)
     {
         for (UINT x = 0; x < sizeX; x++)
         {
-            BasicTile::Data data = {};
-            data.textureFile = baseFile;
-            Vector2 xDirection = Vector2(tileSize.x, 0);
-            Vector2 yDirection = Vector2(0, -tileSize.y);
-
-            data.pos = startPos + xDirection * x + yDirection * y;
-
-            BasicTile* tile = new BasicTile(data);
+            Tile* tile = bgTiles[x][y];
             tile->SetParent(this);
-            tile->SetCurIdx(Vector2{(float)x,(float)y});
-            bgTiles[x][y]=tile;
         }
     }
+
+    tileSize = bgTiles[0][0]->GetSize();
 }
 
 void EditTileMap::CreateSampleButtons()
@@ -204,62 +179,18 @@ void EditTileMap::SetType()
     CreateSampleButtons();
 }
 
-void EditTileMap::AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx)
-{
-    Tile::Data data = {};
-    data.textureFile = selectTextureFile;    
-    data.pos = pos;
-   // data.type = Tile::OBJ;    
-
-    ObstacleTile* tile = new ObstacleTile(data);
-    tile->SetParent(this);
-    tile->Translate(Vector2::Up() * (tile->GetSize().y - size.y)*0.5);
-    tile->Update();
-    tile->SetCurIdx(idx);
-
-    RemoveObjTile(tile->GetCollider()->GetGlobalPosition());
-
-    objTiles.push_back(tile);
-    tile->UpdateWorld();
-
-}
-
-void EditTileMap::RemoveObjTile(const Vector2& pos)
-{
-
-    vector<ObstacleTile*>::iterator iter = objTiles.begin();
-
-    for (; iter != objTiles.end() ; )
-    {
-        Tile* tile = *iter;
-
-        if (tile->GetCollider()->IsPointCollision(pos))
-        {
-            int curIdxX = tile->GetCurIdx().x;
-            int curIdxY = tile->GetCurIdx().y;
-            bgTiles[curIdxX][curIdxY]->SetType(Tile::BASIC);
-            delete tile;
-            iter = objTiles.erase(iter);
-        }
-        else
-        {
-            iter++;
-        }
-    }
-}
-
 void EditTileMap::Save()
 {
     string key = "SaveEditTile";
+    string path = "ResourcesCA/TextData/Map/";
 
     if (ImGui::Button(key.c_str()))
-        DIALOG->OpenDialog(key, key, ".map");
+        DIALOG->OpenDialog(key, path, ".map");
 
     if (DIALOG->Display(key))
     {
         if (DIALOG->IsOk())
         {
-            string path = "ResourcesCA/TextData/Map/";
             string file = DIALOG->GetCurrentFileName();
 
             SaveMapData(path + file);
@@ -267,7 +198,6 @@ void EditTileMap::Save()
 
         DIALOG->Close();
     }
-    Transform::Save();
 }
 
 void EditTileMap::Load()
@@ -289,15 +219,14 @@ void EditTileMap::Load()
 
         DIALOG->Close();
     }
-
-    Transform::Load();
 }
 
 void EditTileMap::SaveMapData(string file)
 {
     BinaryWriter* writer = new BinaryWriter(file);
     
-    writer->UInt(bgTiles.size());
+    writer->UInt(sizeX);
+    writer->UInt(sizeY);
 
     for (UINT y = 0; y < sizeY; y++)
     {
@@ -329,14 +258,18 @@ void EditTileMap::LoadMapData(string file)
         return;
     }
 
-    UINT size = reader->UInt();
+    UINT SIZE_X = reader->UInt();
+    UINT SIZE_Y = reader->UInt();
 
-    FOR(size)
+    for (UINT y = 0; y < SIZE_Y; y++)
     {
-        bgTiles[size/sizeX][size % sizeX]->SetTexture(reader->WString());
+        for (UINT x = 0; x < SIZE_X; x++)
+        {
+            bgTiles[x][y]->SetTexture(reader->WString());
+        }
     }
 
-    size = reader->UInt();
+    int size = reader->UInt();
 
     ClearObjTile();
 
@@ -345,13 +278,9 @@ void EditTileMap::LoadMapData(string file)
         Tile::Data data = {};
         data.textureFile = reader->WString();
         data.pos = reader->Vector();
-      //  data.type = Tile::OBJ;
 
-        ObstacleTile* tile = new ObstacleTile(data);
-        tile->SetParent(this);
-        tile->Update();        
-
-        objTiles.push_back(tile);
+        selectTextureFile = data.textureFile;
+        AddObjTile(data.pos, tileSize, {1,1});
     }
 
     delete reader;
@@ -365,27 +294,77 @@ void EditTileMap::ClearObjTile()
     objTiles.clear();
 }
 
-void EditTileMap::RenderSampleButtons()
+void EditTileMap::CheckAddObjTile(Vector2 pos)
 {
-    UINT width = 5;
-
-    if (ImGui::TreeNode("Sample Buttons"))
+    for (UINT y = 0; y < sizeY; y++)
     {
-        int count = 0;
-
-        for (Texture* texture : sampleTextures)
+        for (UINT x = 0; x < sizeX; x++)
         {
-            if (ImGui::ImageButton(texture->GetSRV(), ImVec2(50, 50)))
+            Tile* tile = bgTiles[x][y];
+
+            if (tile->GetCollider()->IsPointCollision(pos))
             {
-                selectTextureFile = texture->GetFile();
+                tile->GetMaterial()->SetColor(0, 1.0f, 0);
+
+                if (!ImGui::GetIO().WantCaptureMouse && selectTextureFile.size() != 0 && KEY->Press(VK_LBUTTON))
+                {
+                    if (type == 0)
+                        tile->SetTexture(selectTextureFile);
+                    else
+                    {
+                        Vector2 size = tile->GetSize();
+                        AddObjTile(tile->GetLocalPosition(), tile->GetSize(), tile->GetCurIdx());
+                        tile->SetType(Tile::OBSTACLE);
+                    }
+                }
             }
-
-            count++;
-
-            if (count % 5)
-                ImGui::SameLine();
+            else
+            {
+                tile->GetMaterial()->SetColor(1, 1, 1);
+            }
         }
+    }
+}
 
-        ImGui::TreePop();
+void EditTileMap::AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx)
+{
+    Tile::Data data = {};
+    data.textureFile = selectTextureFile;
+    data.pos = pos;
+    // data.type = Tile::OBJ;    
+
+    ObstacleTile* tile = new ObstacleTile(data);
+    tile->SetParent(this);
+    tile->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5);
+    tile->Update();
+    tile->SetCurIdx(idx);
+
+    RemoveObjTile(tile->GetCollider()->GetGlobalPosition());
+
+    objTiles.push_back(tile);
+    tile->UpdateWorld();
+}
+
+void EditTileMap::RemoveObjTile(const Vector2& pos)
+{
+
+    vector<ObstacleTile*>::iterator iter = objTiles.begin();
+
+    for (; iter != objTiles.end(); )
+    {
+        Tile* tile = *iter;
+
+        if (tile->GetCollider()->IsPointCollision(pos))
+        {
+            int curIdxX = tile->GetCurIdx().x;
+            int curIdxY = tile->GetCurIdx().y;
+            bgTiles[curIdxX][curIdxY]->SetType(Tile::BASIC);
+            delete tile;
+            iter = objTiles.erase(iter);
+        }
+        else
+        {
+            iter++;
+        }
     }
 }

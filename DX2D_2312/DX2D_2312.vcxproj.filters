@@ -30,7 +30,7 @@
     <ClInclude Include="Scenes\Scene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\TutorialScene.h">
+    <ClInclude Include="Scenes\Etc\TutorialScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Manager\GameManager.h">
@@ -81,7 +81,7 @@
     <ClInclude Include="Framework\Utilities\Timer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\ShootingGameScene.h">
+    <ClInclude Include="Scenes\Etc\ShootingGameScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Environment\Environment.h">
@@ -105,7 +105,7 @@
     <ClInclude Include="Framework\Render\Texture.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\CollisionScene.h">
+    <ClInclude Include="Scenes\Etc\CollisionScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Collision\Collider.h">
@@ -210,7 +210,7 @@
     <ClInclude Include="Framework\Render\Frame.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\AnimationScene.h">
+    <ClInclude Include="Scenes\Etc\AnimationScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Objects\Cookie\Cookie.h">
@@ -240,7 +240,7 @@
     <ClInclude Include="Objects\Cookie\CookieJumpDouble.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\MapEditorScene.h">
+    <ClInclude Include="Scenes\Etc\MapEditorScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Objects\Map\Floor.h">
@@ -267,31 +267,31 @@
     <ClInclude Include="Objects\Basic\EffectManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\PixelShaderScene.h">
+    <ClInclude Include="Scenes\Etc\PixelShaderScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\RenderTargetScene.h">
+    <ClInclude Include="Scenes\Etc\RenderTargetScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Render\RenderTarget.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\TileEditScene.h">
+    <ClInclude Include="Scenes\Etc\TileEditScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Collision\IsometricCollider.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\TileGameScene.h">
+    <ClInclude Include="Scenes\Etc\TileGameScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Objects\TileGame\Amazon.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\InstancingScene.h">
+    <ClInclude Include="Scenes\Etc\InstancingScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\DijstraScene.h">
+    <ClInclude Include="Scenes\Etc\DijstraScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Objects\Algorithm\DNode.h">
@@ -312,7 +312,7 @@
     <ClInclude Include="Objects\CA\Map\EditTileMap.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\CA\Map\Tile.h">
+    <ClInclude Include="Objects\CA\Map\Tile\Tile.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Objects\CA\UI\MapEditUI.h">
@@ -321,7 +321,7 @@
     <ClInclude Include="Objects\CA\UI\UI.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\MapEditScene.h">
+    <ClInclude Include="Scenes\CA\MapEditScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Objects\CA\Character\Player.h">
@@ -342,19 +342,19 @@
     <ClInclude Include="Objects\CA\Bubble\BubbleManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\CA\Map\BasicTile.h">
+    <ClInclude Include="Objects\CA\Map\Tile\BasicTile.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\CA\Map\ObstacleTile.h">
+    <ClInclude Include="Objects\CA\Map\Tile\ObstacleTile.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\CA\Map\TileObject.h">
+    <ClInclude Include="Objects\CA\Map\TileObject\TileObject.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\CA\Map\TileObjectManager.h">
+    <ClInclude Include="Objects\CA\Map\TileObject\TileObjectManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scenes\GameScene.h">
+    <ClInclude Include="Scenes\CA\GameScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Objects\CA\UI\GameUI.h">
@@ -366,6 +366,9 @@
     <ClInclude Include="Manager\RenderManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="ResourcesCA\Code.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DX2D_2312.cpp">
@@ -374,7 +377,7 @@
     <ClCompile Include="Framework.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\TutorialScene.cpp">
+    <ClCompile Include="Scenes\Etc\TutorialScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Manager\GameManager.cpp">
@@ -413,7 +416,7 @@
     <ClCompile Include="Framework\Utilities\Timer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\ShootingGameScene.cpp">
+    <ClCompile Include="Scenes\Etc\ShootingGameScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framework\Environment\Environment.cpp">
@@ -434,7 +437,7 @@
     <ClCompile Include="Framework\Render\Texture.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\CollisionScene.cpp">
+    <ClCompile Include="Scenes\Etc\CollisionScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framework\Collision\Collider.cpp">
@@ -536,7 +539,7 @@
     <ClCompile Include="Framework\Render\Clip.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\AnimationScene.cpp">
+    <ClCompile Include="Scenes\Etc\AnimationScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Objects\Cookie\Cookie.cpp">
@@ -566,7 +569,7 @@
     <ClCompile Include="Objects\Cookie\CookieJumpDouble.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\MapEditorScene.cpp">
+    <ClCompile Include="Scenes\Etc\MapEditorScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Libraries\ImGui\ImGuiFileDialog.cpp">
@@ -593,31 +596,31 @@
     <ClCompile Include="Objects\Basic\EffectManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\PixelShaderScene.cpp">
+    <ClCompile Include="Scenes\Etc\PixelShaderScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\RenderTargetScene.cpp">
+    <ClCompile Include="Scenes\Etc\RenderTargetScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framework\Render\RenderTarget.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\TileEditScene.cpp">
+    <ClCompile Include="Scenes\Etc\TileEditScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framework\Collision\IsometricCollider.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\TileGameScene.cpp">
+    <ClCompile Include="Scenes\Etc\TileGameScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Objects\TileGame\Amazon.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\InstancingScene.cpp">
+    <ClCompile Include="Scenes\Etc\InstancingScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\DijstraScene.cpp">
+    <ClCompile Include="Scenes\Etc\DijstraScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framework\Collision\LineCollider.cpp">
@@ -635,13 +638,13 @@
     <ClCompile Include="Objects\CA\Map\EditTileMap.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Objects\CA\Map\Tile.cpp">
+    <ClCompile Include="Objects\CA\Map\Tile\Tile.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Objects\CA\UI\MapEditUI.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\MapEditScene.cpp">
+    <ClCompile Include="Scenes\CA\MapEditScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Objects\CA\Character\Character.cpp">
@@ -665,19 +668,19 @@
     <ClCompile Include="Objects\CA\Bubble\Bubble.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Objects\CA\Map\BasicTile.cpp">
+    <ClCompile Include="Objects\CA\Map\Tile\BasicTile.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Objects\CA\Map\ObstacleTile.cpp">
+    <ClCompile Include="Objects\CA\Map\Tile\ObstacleTile.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Objects\CA\Map\TileObject.cpp">
+    <ClCompile Include="Objects\CA\Map\TileObject\TileObject.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Objects\CA\Map\TileObjectManager.cpp">
+    <ClCompile Include="Objects\CA\Map\TileObject\TileObjectManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes\GameScene.cpp">
+    <ClCompile Include="Scenes\CA\GameScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Objects\CA\UI\GameUI.cpp">

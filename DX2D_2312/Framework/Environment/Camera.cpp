@@ -25,13 +25,13 @@ void Camera::Update()
 
 void Camera::RenderUI()
 {
-    if (ImGui::TreeNode("Camera Option"))
-    {
-        ImGui::DragFloat("Speed", &speed);
-        ImGui::DragFloat2("Offset", (float*)&targetOffset);
+    //if (ImGui::TreeNode("Camera Option"))
+    //{
+    //    ImGui::DragFloat("Speed", &speed);
+    //    ImGui::DragFloat2("Offset", (float*)&targetOffset);
 
-        ImGui::TreePop();
-    }    
+    //    ImGui::TreePop();
+    //}    
 }
 
 void Camera::SetView()

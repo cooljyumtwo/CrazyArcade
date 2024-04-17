@@ -21,9 +21,15 @@ public:
 
 	void SetMap(string mapNameStr) { this->mapNameStr = mapNameStr; }
 
+	void SetBGTile(vector<vector<Tile*>> bgTiles) { this->bgTiles = bgTiles; }
+	vector<vector<Tile*>> GetBGTile() { return bgTiles; }
+
 	void CreateBGTile();
 	void LoadMapData(string file);
+	void LoadGameMap() { LoadMapData(PATH + mapNameStr + ".map"); }
+
 	void ClearObjTile();
+	void AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx, const wstring textureFile);
 
 	//void SetNearPosState(RectCollider* target,Tile::Type type);
 	Tile* SetNearPosState(GameObject* target, Tile::Type type = Tile::BASIC);
@@ -40,7 +46,7 @@ public:
 
 	vector<GameObject*> gameObjects;
 
-	string mapNameStr="Map";
+	string mapNameStr="Map1";
 
 	Vector2 tileSize;
 };

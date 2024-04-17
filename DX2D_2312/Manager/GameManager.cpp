@@ -1,38 +1,29 @@
 #include "Framework.h"
 
-#include "Scenes/TutorialScene.h"
-#include "Scenes/ShootingGameScene.h"
-#include "Scenes/CollisionScene.h"
-#include "Scenes/AnimationScene.h"
-#include "Scenes/MapEditorScene.h"
-#include "Scenes/PixelShaderScene.h"
-#include "Scenes/RenderTargetScene.h"
-#include "Scenes/TileEditScene.h"
-#include "Scenes/TileGameScene.h"
-#include "Scenes/MapEditScene.h"
-#include "Scenes/GameScene.h"
+#include "Scenes/Etc/TutorialScene.h"
+#include "Scenes/Etc/ShootingGameScene.h"
+#include "Scenes/Etc/CollisionScene.h"
+#include "Scenes/Etc/AnimationScene.h"
+#include "Scenes/Etc/MapEditorScene.h"
+#include "Scenes/Etc/PixelShaderScene.h"
+#include "Scenes/Etc/RenderTargetScene.h"
+#include "Scenes/Etc/TileEditScene.h"
+#include "Scenes/Etc/TileGameScene.h"
+#include "Scenes/CA/MapEditScene.h"
+#include "Scenes/CA/GameScene.h"
 
 
 GameManager::GameManager()
 {
 	Create();
 
-	//SCENE->Add("Start", new TutorialScene());
-	//SCENE->Add("Start", new ShootingGameScene());
-	//SCENE->Add("Start", new CollisionScene());
-	//SCENE->Add("Start", new AnimationScene());
-	//SCENE->Add("Start", new MapEditorScene());
-	//SCENE->Add("Start", new PixelShaderScene());
-	//SCENE->Add("Start", new RenderTargetScene());
-	//SCENE->Add("Start", new TileEditScene());
-	//SCENE->Add("Start", new TileGameScene());
-	//SCENE->Add("Start", new MapEditScene());
-	SCENE->Add("Start", new GameScene());
-	UIManager::Get()->Add("Start", new MapEditUI());
-	//UIManager::Get()->Add("Start", new GameUI());
+	SCENE->Add("MapEdit", new MapEditScene());
+	SCENE->Add("Game", new GameScene());
 
-	SCENE->ChangeScene("Start");
-	UIManager::Get()->ChangeUI("Start");
+	UIManager::Get()->Add("MapEdit", new MapEditUI());
+	UIManager::Get()->Add("Game", new GameUI());
+
+	SCENE->ChangeScene("MapEdit");
 }
 
 GameManager::~GameManager()
@@ -46,7 +37,6 @@ void GameManager::Update()
 	Timer::Get()->Update();
 
 	Environment::Get()->Update();
-	//ObjectManager::Get()->Update();
 	UIManager::Get()->Update();
 	SCENE->Update();
 }
@@ -73,10 +63,9 @@ void GameManager::Render()
 	string fps = "FPS : " + to_string(Timer::Get()->GetFPS());
 	Font::Get()->RenderText(fps, { 0, SCREEN_HEIGHT - 10 });
 
-	//ObjectManager::Get()->Render();
 	UIManager::Get()->Render();
 	SCENE->Render();
-
+	UIManager::Get()->PostRender();
 
 	ImGui::Render();
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());

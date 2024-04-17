@@ -62,7 +62,7 @@ void Transform::RenderUI()
 
 void Transform::Save()
 {
-	BinaryWriter* writer = new BinaryWriter("Resources/TextData/Transforms/" + tag + ".srt");
+	BinaryWriter* writer = new BinaryWriter("ResourcesCA/TextData/Transforms/" + tag + ".srt");
 
 	writer->Float(localPosition.x);
 	writer->Float(localPosition.y);
@@ -79,7 +79,7 @@ void Transform::Save()
 
 void Transform::Load()
 {
-	BinaryReader* reader = new BinaryReader("Resources/TextData/Transforms/" + tag + ".srt");
+	BinaryReader* reader = new BinaryReader("ResourcesCA/TextData/Transforms/" + tag + ".srt");
 
 	if (reader->IsFailed())
 		return;

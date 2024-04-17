@@ -22,13 +22,11 @@ void Tile::Render()
 
     Quad::Render();
     collider->Render();
+
 }
 
 void Tile::PostRender()
 {
-    //FONT->SetStyle("Button");
-    //FONT->RenderText("Tile", CAM->WorldToScreen(GetGlobalPosition()));
-
     string fps = to_string(data.type);
     Font::Get()->RenderText(fps, GetGlobalPosition());
 }

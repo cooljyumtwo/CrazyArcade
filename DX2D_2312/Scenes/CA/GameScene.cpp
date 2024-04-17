@@ -13,7 +13,6 @@ GameScene::GameScene()
     quad->Update();
 
     TileObjectManager::Get();
-    TileManager::Get();
     BubbleManager::Get();
     RenderManager::Get()->Add("GameObject", player);
 }
@@ -48,4 +47,9 @@ void GameScene::Render()
 
 void GameScene::PostRender()
 {
+}
+
+void GameScene::Start()
+{
+    TileManager::Get()->LoadGameMap();
 }

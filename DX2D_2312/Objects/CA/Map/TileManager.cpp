@@ -6,8 +6,6 @@ TileManager::TileManager(): Quad()
 
     CreateBGTile();
     Load();
-    LoadMapData(PATH + mapNameStr+ ".map");
-
 }
 
 TileManager::~TileManager()
@@ -42,8 +40,6 @@ void TileManager::PostRender()
             tile->PostRender();
         }
     }
-    
-
 
     for (Tile* tile : objTiles)
         tile->Render();
@@ -74,8 +70,8 @@ void TileManager::Update()
         }
     }
         
-    for (Tile* tile : objTiles)
-        tile->UpdateWorld();
+    //for (Tile* tile : objTiles)
+    //    tile->UpdateWorld();
 
 
 
@@ -129,14 +125,18 @@ void TileManager::LoadMapData(string file)
         return;
     }
 
-    UINT size = reader->UInt();
+    UINT SIZE_X = reader->UInt();
+    UINT SIZE_Y = reader->UInt();
 
-    FOR(size)
+    for (UINT y = 0; y < SIZE_Y; y++)
     {
-        bgTiles[size / SIZEX][size % SIZEX]->SetTexture(reader->WString());
+        for (UINT x = 0; x < SIZE_X; x++)
+        {
+            bgTiles[x][y]->SetTexture(reader->WString());
+        }
     }
 
-    size = reader->UInt();
+    int size = reader->UInt();
 
     ClearObjTile();
 
@@ -145,17 +145,11 @@ void TileManager::LoadMapData(string file)
         Tile::Data data = {};
         data.textureFile = reader->WString();
         data.pos = reader->Vector();
-        //  data.type = Tile::OBJ;
 
-        ObstacleTile* tile = new ObstacleTile(data);
-        tile->SetParent(this);
-        tile->Update();
-
-        objTiles.push_back(tile);
+        AddObjTile(data.pos, tileSize, { 1,1 }, data.textureFile);
     }
 
     delete reader;
-
 }
 
 void TileManager::ClearObjTile()
@@ -165,6 +159,23 @@ void TileManager::ClearObjTile()
 
     objTiles.clear();
 
+}
+
+void TileManager::AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx, const wstring textureFile)
+{
+    Tile::Data data = {};
+    data.textureFile = textureFile;
+    data.pos = pos;
+    // data.type = Tile::OBJ;    
+
+    ObstacleTile* tile = new ObstacleTile(data);
+   // tile->SetParent(this);
+   // tile->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5);
+    tile->Update();
+    tile->SetCurIdx(idx);
+
+    objTiles.push_back(tile);
+    tile->UpdateWorld();
 }
 
 //void TileManager::SetNearPosState( RectCollider* target, Tile::Type type)

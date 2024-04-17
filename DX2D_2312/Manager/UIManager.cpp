@@ -27,6 +27,12 @@ void UIManager::Render()
 	curUI->Render();
 
 	Environment::Get()->RenderUI();
+}
+
+void UIManager::PostRender()
+{
+	if (curUI == nullptr) return;
+
 	curUI->PostRender();
 }
 
