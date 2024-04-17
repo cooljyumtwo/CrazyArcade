@@ -28,7 +28,7 @@ void Tile::Render()
 void Tile::PostRender()
 {
     string fps = to_string(data.type);
-    Font::Get()->RenderText(fps, GetGlobalPosition());
+    Font::Get()->RenderText(to_string(data.type), GetGlobalPosition());
 }
 
 void Tile::UpdateWorld()

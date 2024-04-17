@@ -1,12 +1,12 @@
 #pragma once
 
-class TileManager : public Singleton<TileManager>, Quad
+class TileManager : public Singleton<TileManager>, Transform
 {
 private:
 	string PATH = "ResourcesCA/TextData/Map/";
 
-	UINT SIZEX=15;
-	UINT SIZEY=13;
+	UINT SIZE_X = 15;
+	UINT SIZE_Y = 13;
 private:
 	friend class Singleton;
 
@@ -14,15 +14,15 @@ private:
 	~TileManager();
 
 public:
-	void PreRender();
 	void Render();
-	void PostRender();
 	void Update();
 
 	void SetMap(string mapNameStr) { this->mapNameStr = mapNameStr; }
 
 	void SetBGTile(vector<vector<Tile*>> bgTiles) { this->bgTiles = bgTiles; }
 	vector<vector<Tile*>> GetBGTile() { return bgTiles; }
+
+	void SetIdxBgTileType(Vector2 idx,Tile::Type type) { bgTiles[idx.x][idx.y]->SetType(type); }
 
 	void CreateBGTile();
 	void LoadMapData(string file);
@@ -31,14 +31,11 @@ public:
 	void ClearObjTile();
 	void AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx, const wstring textureFile);
 
-	//void SetNearPosState(RectCollider* target,Tile::Type type);
 	Tile* SetNearPosState(GameObject* target, Tile::Type type = Tile::BASIC);
 
-public:
-	Tile* Collision(string key, Collider* collider);
+	void PushPlayer(Character* player, Vector2 velocity);
 
 public:
-	//void Spawn(const Vector2& pos, int power);
 
 	GameObject* tiles;
 	vector<vector<Tile*>> bgTiles;

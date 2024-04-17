@@ -32,8 +32,7 @@ void Character::Update()
 
     actions[curState]->Update();
 
-    UpdateWorld();
-    collider->UpdateWorld();
+    UpdateWorld();    
 
     Tile* tile = TileManager::Get()->SetNearPosState(this, Tile::PLAYER);
     if(tile)
@@ -58,6 +57,12 @@ void Character::PostRender()
 float Character::GetDepth()
 {
     return collider->Bottom();
+}
+
+void Character::UpdateWorld()
+{
+    Transform::UpdateWorld();
+    collider->UpdateWorld();
 }
 
 void Character::Move()

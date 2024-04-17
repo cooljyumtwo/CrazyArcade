@@ -8,11 +8,4 @@ BasicTile::~BasicTile()
 {
 }
 
-void BasicTile::Render()
-{
-	Tile::Render();
-
-
-}
-
 

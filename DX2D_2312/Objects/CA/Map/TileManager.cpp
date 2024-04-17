@@ -1,79 +1,35 @@
 #include "Framework.h"
 
-TileManager::TileManager(): Quad()
+TileManager::TileManager()
 {
     SetTag("TileManager");
 
     CreateBGTile();
-    Load();
+
+    Transform::Load(); 
+
+    UpdateWorld();
 }
 
 TileManager::~TileManager()
 {
 }
 
-void TileManager::PreRender()
-{
-    for (UINT y = 0; y < SIZEY; y++)
-    {
-        for (UINT x = 0; x < SIZEX; x++)
-        {
-            Tile* tile = bgTiles[x][y];
-            tile->Render();
-        }
-    }
-}
-
 void TileManager::Render()
 {
-    RenderManager::Get()->Render("BG");
+    RenderManager::Get()->Render("BGTile");
     RenderManager::Get()->Render("GameObject");
-}
-
-void TileManager::PostRender()
-{
-    for (UINT y = 0; y < SIZEY; y++)
-    {
-        for (UINT x = 0; x < SIZEX; x++)
-        {
-            Tile* tile = bgTiles[x][y];
-            tile->PostRender();
-        }
-    }
-
-    for (Tile* tile : objTiles)
-        tile->Render();
+    RenderManager::Get()->Render("BGTileTxt");
 }
 
 void TileManager::Update()
 {
-    for (UINT y = 0; y < SIZEY; y++)
-    {
-        for (UINT x = 0; x < SIZEX; x++)
-        {
-            Tile* tile = bgTiles[x][y];
-            if (tile->GetType() == Tile::PLAYER)
-            {
-                for (GameObject* gameObj : gameObjects)
-                {
-                    if (tile->GetGlobalPosition().y > gameObj->GetGlobalPosition().y)
-                    {
-                       // gameObj->SetDepth(-1);
-                    }
-                    else 
-                    {
-                     //   gameObj->SetDepth(10);
-                    }
-                }
-            }
-            tile->UpdateWorld();
-        }
-    }
+    FOR_X(SIZE_X)
+        FOR_Y(SIZE_Y)
+            bgTiles[x][y]->UpdateWorld();
         
-    //for (Tile* tile : objTiles)
-    //    tile->UpdateWorld();
-
-
+    for (Tile* tile : objTiles)
+        tile->UpdateWorld();
 
     UpdateWorld();
 }
@@ -84,21 +40,16 @@ void TileManager::CreateBGTile()
     Texture* baseTile = Texture::Add(baseFile);
     tileSize = baseTile->GetSize();
 
-    bgTiles.resize(SIZEX);
+    bgTiles.resize(SIZE_X);
 
-    // 각 행 벡터를 초기화합니다.
-    for (UINT y = 0; y < SIZEX; y++) {
-        // 각 행 벡터를 추가합니다.
-        // 각 행 벡터의 용량을 sizeX만큼 예약합니다.
-        bgTiles[y].resize(SIZEY);
+    for (UINT y = 0; y < SIZE_X; y++) {
+        bgTiles[y].resize(SIZE_Y);
     }
 
+    Vector2 startPos = { 0, SIZE_X * 0.5f * tileSize.y * 0.5f };
 
-    Vector2 startPos = { 0, SIZEX * 0.5f * tileSize.y * 0.5f };
-
-    for (UINT y = 0; y < SIZEY; y++)
-    {
-        for (UINT x = 0; x < SIZEX; x++)
+    FOR_X(SIZE_X)
+        FOR_Y(SIZE_Y)
         {
             BasicTile::Data data = {};
             data.textureFile = baseFile;
@@ -111,8 +62,10 @@ void TileManager::CreateBGTile()
             tile->SetParent(this);
             tile->SetCurIdx(Vector2{ (float)x,(float)y });
             bgTiles[x][y] = tile;
+
+            RenderManager::Get()->Add("BGTile",tile);
+            RenderManager::Get()->Add("BGTileTxt",tile);
         }
-    }
 }
 
 void TileManager::LoadMapData(string file)
@@ -128,14 +81,11 @@ void TileManager::LoadMapData(string file)
     UINT SIZE_X = reader->UInt();
     UINT SIZE_Y = reader->UInt();
 
-    for (UINT y = 0; y < SIZE_Y; y++)
-    {
-        for (UINT x = 0; x < SIZE_X; x++)
-        {
-            bgTiles[x][y]->SetTexture(reader->WString());
-        }
-    }
+    FOR_Y(SIZE_Y)
+        FOR_X(SIZE_X)
+        bgTiles[x][y]->SetTexture(reader->WString());
 
+    
     int size = reader->UInt();
 
     ClearObjTile();
@@ -145,8 +95,9 @@ void TileManager::LoadMapData(string file)
         Tile::Data data = {};
         data.textureFile = reader->WString();
         data.pos = reader->Vector();
+        Vector2 curIdx = reader->Vector();
 
-        AddObjTile(data.pos, tileSize, { 1,1 }, data.textureFile);
+        AddObjTile(data.pos, tileSize, curIdx, data.textureFile);
     }
 
     delete reader;
@@ -166,52 +117,43 @@ void TileManager::AddObjTile(const Vector2& pos, const Vector2& size, const Vect
     Tile::Data data = {};
     data.textureFile = textureFile;
     data.pos = pos;
-    // data.type = Tile::OBJ;    
 
     ObstacleTile* tile = new ObstacleTile(data);
-   // tile->SetParent(this);
-   // tile->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5);
+    tile->SetParent(this);
+    tile->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5);
     tile->Update();
     tile->SetCurIdx(idx);
+    
+    SetIdxBgTileType(idx, Tile::OBSTACLE);
 
     objTiles.push_back(tile);
     tile->UpdateWorld();
+
+    RenderManager::Get()->Add("GameObject", tile);
 }
 
-//void TileManager::SetNearPosState( RectCollider* target, Tile::Type type)
-//{
-//    for (Tile* tile : bgTiles)
-//    {
-//        if (tile->GetCollider()->IsRectCollision(target, nullptr))
-//        {
-//            tile->SetType(type);
-//        }
-//    }
-//}
 
 Tile* TileManager::SetNearPosState(GameObject* target, Tile::Type type)
 {
     float minDistance = Distance(bgTiles[0][0]->GetGlobalPosition(), target->GetGlobalPosition());
     Tile* minDistanceTile = nullptr;
 
-    for (UINT y = 0; y < SIZEY; y++)
+    for (UINT y = 0; y < SIZE_Y; y++)
     {
-        for (UINT x = 0; x < SIZEX; x++)
+        for (UINT x = 0; x < SIZE_X; x++)
         {
             Tile* tile = bgTiles[x][y];
-            tile->SetType(Tile::BASIC);
 
             float distance = Distance(tile->GetGlobalPosition(), target->GetGlobalPosition());
 
             if (distance < minDistance)
-                //if (distance < minDistance tile->GetType() == Tile::BASIC)
             {
                 minDistance = distance;
                 minDistanceTile = tile;
             }
-            
         }
     }
+
     if(minDistanceTile)
         minDistanceTile->SetType(type);
 
@@ -222,9 +164,26 @@ Tile* TileManager::SetNearPosState(GameObject* target, Tile::Type type)
     return minDistanceTile;
 }
 
-
-
-Tile* TileManager::Collision(string key, Collider* collider)
+void TileManager::PushPlayer(Character* player, Vector2 velocity)
 {
-    return nullptr;
+    for (Tile* objTile : objTiles)
+    {
+        Vector2 overlab;
+
+        if (objTile->GetCollider()->IsCollision(player->GetCollider(), &overlab))
+        {
+            if (overlab.x < overlab.y) 
+            {
+                if (player->GetGlobalPosition().x > objTile->GetGlobalPosition().x)
+                {
+                    player->Translate(Vector2::Right()*overlab.x);
+                }
+            }
+            else 
+            {
+            }
+
+            player->UpdateWorld();
+        }
+    }
 }

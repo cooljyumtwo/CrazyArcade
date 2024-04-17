@@ -15,6 +15,8 @@
 #define CENTER Vector2(CENTER_X, CENTER_Y)
 
 #define FOR(n) for(int i = 0 ; i < n ; i++)
+#define FOR_X(n) for(int x = 0 ; x < n ; x++)
+#define FOR_Y(n) for(int y = 0 ; y < n ; y++)
 
 #define DEVICE Device::Get()->GetDevice()
 #define DC Device::Get()->GetDeviceContext()
@@ -145,6 +147,20 @@ typedef function<void(void*)> ObjectParamEvent;
 
 #include "Objects/ShootingGame/ShootingDataManager.h"
 
+
+#include "Objects/CA/UI/UI.h"
+#include "Objects/CA/UI/MapEditUI.h"
+#include "Objects/CA/UI/GameUI.h"
+
+#include "Objects/CA/Bubble/Bubble.h"
+#include "Objects/CA/Bubble/BubbleManager.h"
+
+#include "Objects/CA/Character/CharacterAction.h"
+#include "Objects/CA/Character/CharacterIdle.h"
+#include "Objects/CA/Character/CharacterMove.h"
+#include "Objects/CA/Character/Character.h"
+#include "Objects/CA/Character/Player.h"
+
 #include "Objects/CA/Map/TileObject/TileObject.h"
 #include "Objects/CA/Map/TileObject/TileObjectManager.h"
 #include "Objects/CA/Map/Tile/Tile.h"
@@ -152,16 +168,15 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/Map/Tile/ObstacleTile.h"
 #include "Objects/CA/Map/TileManager.h"
 #include "Objects/CA/Map/EditTileMap.h"
-#include "Objects/CA/UI/UI.h"
-#include "Objects/CA/UI/MapEditUI.h"
-#include "Objects/CA/UI/GameUI.h"
-#include "Objects/CA/Bubble/Bubble.h"
-#include "Objects/CA/Bubble/BubbleManager.h"
-#include "Objects/CA/Character/CharacterAction.h"
-#include "Objects/CA/Character/CharacterIdle.h"
-#include "Objects/CA/Character/CharacterMove.h"
-#include "Objects/CA/Character/Character.h"
-#include "Objects/CA/Character/Player.h"
+
+
+
+
+
+
+
+
+
 
 #include "Objects/ShootingGame/Skill/Skill.h"
 #include "Objects/ShootingGame/Skill/BaseSkill.h"

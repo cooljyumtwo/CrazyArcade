@@ -67,10 +67,11 @@ void GameManager::Render()
 	SCENE->Render();
 	UIManager::Get()->PostRender();
 
+	Font::Get()->GetDC()->EndDraw();
+
 	ImGui::Render();
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
-
-	Font::Get()->GetDC()->EndDraw();
+	
 	Device::Get()->Present();
 }
 

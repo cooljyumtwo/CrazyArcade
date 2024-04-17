@@ -243,6 +243,7 @@ void EditTileMap::SaveMapData(string file)
     {
         writer->WString(tile->GetData().textureFile);
         writer->Vector(tile->GetData().pos);
+        writer->Vector(tile->GetCurIdx());
     }
 
     delete writer;
@@ -261,9 +262,8 @@ void EditTileMap::LoadMapData(string file)
     UINT SIZE_X = reader->UInt();
     UINT SIZE_Y = reader->UInt();
 
-    for (UINT y = 0; y < SIZE_Y; y++)
-    {
-        for (UINT x = 0; x < SIZE_X; x++)
+    FOR_Y(SIZE_Y){
+        FOR_X(SIZE_X)
         {
             bgTiles[x][y]->SetTexture(reader->WString());
         }
@@ -278,9 +278,10 @@ void EditTileMap::LoadMapData(string file)
         Tile::Data data = {};
         data.textureFile = reader->WString();
         data.pos = reader->Vector();
+        Vector2 curIdx = reader->Vector();
 
         selectTextureFile = data.textureFile;
-        AddObjTile(data.pos, tileSize, {1,1});
+        AddObjTile(data.pos, tileSize, curIdx);
     }
 
     delete reader;
@@ -338,6 +339,7 @@ void EditTileMap::AddObjTile(const Vector2& pos, const Vector2& size, const Vect
     tile->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5);
     tile->Update();
     tile->SetCurIdx(idx);
+    bgTiles[idx.x][idx.y]->SetType(Tile::OBSTACLE);
 
     RemoveObjTile(tile->GetCollider()->GetGlobalPosition());
 

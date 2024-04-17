@@ -16,6 +16,9 @@ public:
     void Render(); 
     void PostRender();
     float GetDepth() override;
+
+    void UpdateWorld() override;
+
     RectCollider* GetCollider() { return collider; }
 
 private:
@@ -40,5 +43,4 @@ private:
     State curState = IDLE;
 
     Vector2 posIdx;
-
 };
