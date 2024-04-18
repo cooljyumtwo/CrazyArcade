@@ -152,6 +152,7 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/UI/MapEditUI.h"
 #include "Objects/CA/UI/GameUI.h"
 
+#include "Objects/CA/Bubble/Wave.h"
 #include "Objects/CA/Bubble/Bubble.h"
 #include "Objects/CA/Bubble/BubbleManager.h"
 

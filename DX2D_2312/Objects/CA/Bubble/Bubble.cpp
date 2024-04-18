@@ -4,19 +4,12 @@ Bubble::Bubble()
 {
 	SetActive(false);
 
-	Action* action = new Action();
-
-	wstring actionFile = ToWString("ResourcesCA/Textures/Character/Bazzi/Run") + L".png";
-
-	action->LoadClip(ToWString(PATH) + L"Stand.png", 3, 1, true);
-
-	actions[STAND] = action;
-	//actions[STAND]->SetParent(this);
+	CreatActions();
 
 	collider = new RectCollider({ Tile::TILE_SIZE-10.0f, Tile::TILE_SIZE - 10.0f });
 	collider->SetParent(this);
 
-	//SetDepth(10);
+	wave = new Wave();
 }
 
 Bubble::~Bubble()
@@ -28,9 +21,17 @@ void Bubble::Update()
 {
 	if (!this->IsActive()) return;
 
+	playTime += DELTA;
+	if (playTime > MAX_PLAY_TIME)
+	{
+		playTime -= MAX_PLAY_TIME;
+		SetAction(POP);
+	}
+
 	UpdateWorld();
 	collider->UpdateWorld();
-	actions[state]->Update();
+	actions[curState]->Update();
+	wave->Update();
 	
 }
 
@@ -39,21 +40,40 @@ void Bubble::Render()
 	if (!this->IsActive()) return;
 
 	collider->Render();
-	actions[state]->Render();
+	actions[curState]->Render();
+	wave->Render();
+}
+
+void Bubble::CreatActions()
+{
+	Action* action = new Action();
+	action->LoadClip(ToWString(PATH) + L"Stand.png", 3, 1, true);
+	actions[STAND] = action;
+
+
+	action = new Action();
+	action->LoadClip(ToWString(PATH) + L"Pop.png", 6, 1, false);
+	action->GetClip(0)->SetEvent([this]() {
+		wave->Spawn(this->GetGlobalPosition(), 1);
+		},0);
+	action->GetClip(0)->SetEvent([this]() {
+		SetActive(false);
+		});
+	actions[POP] = action;
+	
 }
 
 void Bubble::Spawn(const Vector2& pos, int speed)
 {
-	Translate(pos);
-
 	UpdateWorld();
 	collider->UpdateWorld();
 
-	Tile* tile = TileManager::Get()->SetNearPosState(this, Tile::OBSTACLE);
+	Tile* tile = TileManager::Get()->SetNearPosState(pos, Tile::OBSTACLE);
 
 	if (!tile) return;
 
 	SetActive(true);
+	SetAction(STAND);
 	this->power = power;
 	this->SetGlobalPosition(tile->GetGlobalPosition());
 }
@@ -61,4 +81,12 @@ void Bubble::Spawn(const Vector2& pos, int speed)
 float Bubble::GetDepth()
 {
 	return collider->Bottom();
+}
+
+void Bubble::SetAction(int state)
+{
+	if (curState == state) return;
+
+	curState = (State)state;
+	actions[curState]->Start();
 }

@@ -15,7 +15,6 @@ public:
 
     void SetEvent(string key, Event event) { events[key] = event; }
 
-
     Clip* GetClip(int index) { return clips[index]; }
     Clip* GetCurClip() { return clips[curState]; }
 

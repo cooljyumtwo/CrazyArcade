@@ -32,6 +32,7 @@ public:
 	void AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx, const wstring textureFile);
 
 	Tile* SetNearPosState(GameObject* target, Tile::Type type = Tile::BASIC);
+	Tile* SetNearPosState(Vector2 pos, Tile::Type type = Tile::BASIC);
 
 	void PushPlayer(Character* player, Vector2 velocity);
 

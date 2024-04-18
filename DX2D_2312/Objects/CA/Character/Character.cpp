@@ -5,8 +5,8 @@ Character::Character()
     CreateActions();
     actions[curState]->Start();
 
-    collider = new RectCollider({ Tile::TILE_SIZE, Tile::TILE_SIZE });
-    collider->Translate(Vector2::Down() * Tile::TILE_SIZE * 0.2f);
+    collider = new RectCollider({ Tile::TILE_SIZE , Tile::TILE_SIZE * 0.5f });
+    collider->Translate(Vector2::Down() * Tile::TILE_SIZE * 0.4f);
     collider->SetParent(this);
     collider->SetTag("Character");
     collider->Load();
@@ -33,10 +33,6 @@ void Character::Update()
     actions[curState]->Update();
 
     UpdateWorld();    
-
-    Tile* tile = TileManager::Get()->SetNearPosState(this, Tile::PLAYER);
-    if(tile)
-        posIdx = tile->GetCurIdx();
 }
 
 void Character::Render()

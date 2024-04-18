@@ -30,6 +30,8 @@ void RenderManager::Render(string key)
 
 	for (GameObject* gameObj : gameObjects[key])
 	{
+		if (!gameObj->IsActive()) continue;
+
 		gameObj->Render();
 	}
 }

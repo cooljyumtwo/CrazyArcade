@@ -189,6 +189,7 @@
     <ClInclude Include="Objects\Basic\ObjectManager.h" />
     <ClInclude Include="Objects\Basic\PoolingManager.h" />
     <ClInclude Include="Objects\Basic\Quad.h" />
+    <ClInclude Include="Objects\CA\Bubble\Wave.h" />
     <ClInclude Include="Objects\CA\Character\Character.h" />
     <ClInclude Include="Objects\CA\Character\CharacterAction.h" />
     <ClInclude Include="Objects\CA\Character\CharacterIdle.h" />
@@ -309,6 +310,7 @@
     <ClCompile Include="Objects\Basic\GameObject.cpp" />
     <ClCompile Include="Objects\Basic\ObjectManager.cpp" />
     <ClCompile Include="Objects\Basic\Quad.cpp" />
+    <ClCompile Include="Objects\CA\Bubble\Wave.cpp" />
     <ClCompile Include="Objects\CA\Character\Character.cpp" />
     <ClCompile Include="Objects\CA\Character\CharacterAction.cpp" />
     <ClCompile Include="Objects\CA\Character\CharacterIdle.cpp" />

@@ -157,11 +157,21 @@ Tile* TileManager::SetNearPosState(GameObject* target, Tile::Type type)
     if(minDistanceTile)
         minDistanceTile->SetType(type);
 
-    if(type != Tile::PLAYER)
-        RenderManager::Get()->Add("GameObject", target);
+    RenderManager::Get()->Add("GameObject", target);
         
 
     return minDistanceTile;
+}
+
+Tile* TileManager::SetNearPosState(Vector2 pos, Tile::Type type)
+{
+    Vector2 firstTilePos = bgTiles[0][0]->GetGlobalPosition();
+
+    Vector2 calPos = { pos.x - firstTilePos.x,firstTilePos.y-pos.y };
+     calPos /=  Tile::TILE_SIZE;
+     calPos= { round(calPos.x), round(calPos.y) };
+
+    return bgTiles[calPos.x][calPos.y];
 }
 
 void TileManager::PushPlayer(Character* player, Vector2 velocity)
@@ -178,9 +188,21 @@ void TileManager::PushPlayer(Character* player, Vector2 velocity)
                 {
                     player->Translate(Vector2::Right()*overlab.x);
                 }
+                else 
+                {
+                    player->Translate(Vector2::Left() * overlab.x);
+                }
             }
             else 
             {
+                if (player->GetGlobalPosition().y > objTile->GetGlobalPosition().y)
+                {
+                    player->Translate(Vector2::Up() * overlab.y);
+                }
+                else
+                {
+                    player->Translate(Vector2::Down() * overlab.y);
+                }
             }
 
             player->UpdateWorld();

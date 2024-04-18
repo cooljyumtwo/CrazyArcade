@@ -4,10 +4,11 @@ BubbleManager::BubbleManager()
 {
 	totalObject["BasicBubble"].resize(POOL_SIZE);
 
-	for (GameObject*& bubble : totalObject["BasicBubble"])
+	for (GameObject*& bubble : totalObject["BasicBubble"]) 
+	{
 		bubble = new Bubble();
-
-		
+		RenderManager::Get()->Add("GameObject", bubble);
+	}
 }
 
 BubbleManager::~BubbleManager()

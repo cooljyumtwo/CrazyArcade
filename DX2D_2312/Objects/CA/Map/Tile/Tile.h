@@ -6,7 +6,7 @@ public:
 
     enum Type
     {
-        BASIC, OBSTACLE , PLAYER
+        BASIC, OBSTACLE , ATTACK
     };
 
     struct Data
