@@ -2,7 +2,7 @@
 
 Wave::Wave()
 {
-	SetActive(true);
+	SetActive(false);
 
 	CreatActions();
 
@@ -19,12 +19,6 @@ void Wave::Update()
 {
 	if (!this->IsActive()) return;
 
-	playTime += DELTA;
-	if (playTime > MAX_PLAY_TIME)
-	{
-		playTime -= MAX_PLAY_TIME;
-		//SetAction(POP);
-	}
 
 	UpdateWorld();
 	collider->UpdateWorld();
@@ -43,15 +37,18 @@ void Wave::Render()
 void Wave::CreatActions()
 {
 	Action* action = new Action();
-	action->LoadClip(ToWString(PATH) + L"Stand.png", 3, 1, true);
-	actions[L] = action;
+	action->LoadClip(ToWString(PATH) + L"Wave_Start.png", 11, 1, true);
+	//action->GetClip(0)->SetEvent([this]() {
+	//	SetActive(false);
+	//	});
+	actions[START] = action;
 
 	action = new Action();
-	action->LoadClip(ToWString(PATH) + L"Pop.png", 6, 1, false);
-	action->GetClip(0)->SetEvent([this]() {
-		SetActive(false);
-		});
-	actions[R] = action;
+	action->LoadClip(ToWString(PATH) + L"Wave_End.png", 11, 1, false);
+	//action->GetClip(0)->SetEvent([this]() {
+	//	SetActive(false);
+	//	});
+	actions[END] = action;
 
 }
 
@@ -66,7 +63,7 @@ void Wave::Spawn(const Vector2& pos, int power, State state)
 	//if (!tile) return;
 
 	SetActive(true);
-	//SetAction(state);
+	SetAction(state);
 	//actions[state]->Start();
 	//this->power = power;
 	////this->SetGlobalPosition(tile->GetGlobalPosition());

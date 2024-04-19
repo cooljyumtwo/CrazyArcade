@@ -32,6 +32,7 @@ void Bubble::Update()
 	collider->UpdateWorld();
 	actions[curState]->Update();
 	wave->Update();
+	wave->UpdateWorld();
 	
 }
 
@@ -55,9 +56,10 @@ void Bubble::CreatActions()
 	action->LoadClip(ToWString(PATH) + L"Pop.png", 6, 1, false);
 	action->GetClip(0)->SetEvent([this]() {
 		wave->Spawn(this->GetGlobalPosition(), 1);
-		},0);
+		},1);
 	action->GetClip(0)->SetEvent([this]() {
 		SetActive(false);
+		wave->SetActive(false);
 		});
 	actions[POP] = action;
 	

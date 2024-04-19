@@ -4,12 +4,11 @@ class Wave : public GameObject
 {
 private:
 	const string PATH = "ResourcesCA/Textures/Bubble/";
-	const float MAX_PLAY_TIME = 2.0f;
 	const int MAX_POWER = 5.0f;
 
 	enum State
 	{
-		L, R, U, D
+		START, END
 	};
 
 public:
@@ -21,12 +20,12 @@ public:
 
 	void CreatActions();
 
-	void Spawn(const Vector2& pos, int power, State state = L);
+	void Spawn(const Vector2& pos, int power, State state = START);
 
 	void SetAction(int state);
 
 private:
-	State curState = L;
+	State curState = START;
 
 	int power;
 
@@ -36,6 +35,5 @@ private:
 
 	map<State, Action*> actions;
 	
-
-	float playTime = 0.0f;
+	Action* action;
 };
