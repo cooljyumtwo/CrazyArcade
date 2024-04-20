@@ -18,7 +18,7 @@ public:
     ~CharacterAction() = default;
 
     void SetTarget(Transform* target) { this->target = target; }
-    void SetCompass(Compass compass) { this->compass = compass; curState = compass; }
+    void SetCompass(Compass compass) { this->compass = compass; SetState(compass); }
 
     Compass GetCompass() { return compass; }
 

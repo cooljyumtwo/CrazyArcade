@@ -9,7 +9,6 @@ Bubble::Bubble()
 	collider = new RectCollider({ Tile::TILE_SIZE-10.0f, Tile::TILE_SIZE - 10.0f });
 	collider->SetParent(this);
 
-	wave = new Wave();
 }
 
 Bubble::~Bubble()
@@ -19,6 +18,7 @@ Bubble::~Bubble()
 
 void Bubble::Update()
 {
+
 	if (!this->IsActive()) return;
 
 	playTime += DELTA;
@@ -31,9 +31,6 @@ void Bubble::Update()
 	UpdateWorld();
 	collider->UpdateWorld();
 	actions[curState]->Update();
-	wave->Update();
-	wave->UpdateWorld();
-	
 }
 
 void Bubble::Render()
@@ -42,24 +39,24 @@ void Bubble::Render()
 
 	collider->Render();
 	actions[curState]->Render();
-	wave->Render();
 }
 
 void Bubble::CreatActions()
 {
 	Action* action = new Action();
-	action->LoadClip(ToWString(PATH) + L"Stand.png", 3, 1, true);
+	action->LoadClip(ToWString(PATH) + L"Stand.png", 3, 1, true, 1.4f);
 	actions[STAND] = action;
 
 
 	action = new Action();
-	action->LoadClip(ToWString(PATH) + L"Pop.png", 6, 1, false);
+	action->LoadClip(ToWString(PATH) + L"Pop.png", 6, 1, false, 2.0f);
 	action->GetClip(0)->SetEvent([this]() {
-		wave->Spawn(this->GetGlobalPosition(), 1);
+		BubbleManager::Get()->SpawnWaves(this->GetGlobalPosition(), 1);
 		},1);
+
 	action->GetClip(0)->SetEvent([this]() {
+		TileManager::Get()->SetIdxBgTileType(posTileIdx,Tile::BASIC);
 		SetActive(false);
-		wave->SetActive(false);
 		});
 	actions[POP] = action;
 	
@@ -70,7 +67,7 @@ void Bubble::Spawn(const Vector2& pos, int speed)
 	UpdateWorld();
 	collider->UpdateWorld();
 
-	Tile* tile = TileManager::Get()->SetNearPosState(pos, Tile::OBSTACLE);
+	Tile* tile = TileManager::Get()->GetNearPosTileState(pos);
 
 	if (!tile) return;
 
@@ -78,6 +75,9 @@ void Bubble::Spawn(const Vector2& pos, int speed)
 	SetAction(STAND);
 	this->power = power;
 	this->SetGlobalPosition(tile->GetGlobalPosition());
+	tile->SetType(Tile::OBSTACLE);
+
+	posTileIdx = tile->GetCurIdx();
 }
 
 float Bubble::GetDepth()

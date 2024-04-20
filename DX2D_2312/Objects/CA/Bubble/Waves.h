@@ -1,37 +1,33 @@
 #pragma once
 
-class WaveManager : public GameObject
+class Waves : public GameObject
 {
 private:
 	const string PATH = "ResourcesCA/Textures/Bubble/";
 
-	const float MAX_PLAY_TIME = 2.0f;
-	const int MAX_POWER;
+	const int MAX_POWER = 5;
 
-	enum State
+	enum Direction
 	{
-		L, R, U, D
+		R, L, U, D
 	};
 
 public:
-	WaveManager();
-	~WaveManager();
+	Waves();
+	~Waves();
 
 	void Update();
 	void Render();
 
-	void CreatActions();
+	void CreateWaves();
+	void CreateDirectionWaves(Direction direction);
 
 	void Spawn(const Vector2& pos, int power);
 
-	void SetAction(int state);
+	void End();
+	void ClearWaves();
 
 private:
-	State curState = L;
-
 	int power;
-
-	map<State, Wave*> waves;
-
-	float playTime = 0.0f;
+	map<Direction, vector<Wave*>> waves;
 };

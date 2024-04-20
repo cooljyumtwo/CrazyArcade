@@ -133,7 +133,7 @@ void TileManager::AddObjTile(const Vector2& pos, const Vector2& size, const Vect
 }
 
 
-Tile* TileManager::SetNearPosState(GameObject* target, Tile::Type type)
+Tile* TileManager::GetNearPosTileState(GameObject* target, Tile::Type type)
 {
     float minDistance = Distance(bgTiles[0][0]->GetGlobalPosition(), target->GetGlobalPosition());
     Tile* minDistanceTile = nullptr;
@@ -163,7 +163,7 @@ Tile* TileManager::SetNearPosState(GameObject* target, Tile::Type type)
     return minDistanceTile;
 }
 
-Tile* TileManager::SetNearPosState(Vector2 pos, Tile::Type type)
+Tile* TileManager::GetNearPosTileState(Vector2 pos)
 {
     Vector2 firstTilePos = bgTiles[0][0]->GetGlobalPosition();
 
@@ -174,7 +174,7 @@ Tile* TileManager::SetNearPosState(Vector2 pos, Tile::Type type)
     return bgTiles[calPos.x][calPos.y];
 }
 
-void TileManager::PushPlayer(Character* player, Vector2 velocity)
+void TileManager::PushPlayer(Character* player)
 {
     for (Tile* objTile : objTiles)
     {

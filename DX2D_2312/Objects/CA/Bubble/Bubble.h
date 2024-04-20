@@ -28,6 +28,7 @@ public:
 
 	void SetAction(int state);
 
+	//void CheckWavesIsActive();
 
 protected:
 	State curState = STAND;
@@ -42,5 +43,6 @@ protected:
 
 	float playTime = 0.0f;
 
-	Wave* wave;
+	Vector2 posTileIdx;
+
 };

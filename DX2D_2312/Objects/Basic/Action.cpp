@@ -23,7 +23,7 @@ void Action::Render()
 
 void Action::Start()
 {
-    clips[curState]->Play();
+    Play();
 }
 
 void Action::LoadClip(string path, string file, bool isLoop, float speed)
@@ -81,5 +81,16 @@ void Action::SetState(int state)
     if (curState == state) return;
 
     curState = state;
-    clips[state]->Play();
+
+    Play();
+}
+
+void Action::Play()
+{
+    if (clips.size() <= 0) return;
+
+    if (clips.size() <= curState)
+        curState = 0;
+
+    clips[curState]->Play();
 }

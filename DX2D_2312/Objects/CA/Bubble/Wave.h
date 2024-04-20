@@ -6,9 +6,15 @@ private:
 	const string PATH = "ResourcesCA/Textures/Bubble/";
 	const int MAX_POWER = 5.0f;
 
+public:
 	enum State
 	{
 		START, END
+	};
+
+	enum Direction
+	{
+		R, L, U, D
 	};
 
 public:
@@ -18,14 +24,16 @@ public:
 	void Update();
 	void Render();
 
-	void CreatActions();
+	void CreateActions();
 
-	void Spawn(const Vector2& pos, int power, State state = START);
+	void Spawn(const Vector2& pos, Direction direction = R ,State state = START);
 
 	void SetAction(int state);
+	void SetPosTileIdx(Vector2 posTileIdx) { this->posTileIdx = posTileIdx; }
 
 private:
 	State curState = START;
+	Direction direction = R;
 
 	int power;
 
@@ -36,4 +44,6 @@ private:
 	map<State, Action*> actions;
 	
 	Action* action;
+
+	Vector2 posTileIdx;
 };

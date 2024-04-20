@@ -1,6 +1,6 @@
 #pragma once
 
-class BubbleManager : public Singleton<BubbleManager>, public PoolingManager<Bubble>
+class BubbleManager : public Singleton<BubbleManager>, public PoolingManager<GameObject>
 {
 private:
 	friend class Singleton;
@@ -19,6 +19,8 @@ public:
 
 public:
 	void Spawn(const Vector2& pos, int power);
+	void SpawnWaves(const Vector2& pos, int power);
 
 	vector<Bubble*> bubbles;
+	vector<Wave*> waves;
 };

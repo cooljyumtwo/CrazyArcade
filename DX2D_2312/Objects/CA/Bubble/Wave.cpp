@@ -4,7 +4,7 @@ Wave::Wave()
 {
 	SetActive(false);
 
-	CreatActions();
+	CreateActions();
 
 	collider = new RectCollider({ Tile::TILE_SIZE - 10.0f, Tile::TILE_SIZE - 10.0f });
 	collider->SetParent(this);
@@ -19,11 +19,9 @@ void Wave::Update()
 {
 	if (!this->IsActive()) return;
 
-
+	actions[curState]->Update();
 	UpdateWorld();
 	collider->UpdateWorld();
-	actions[curState]->Update();
-
 }
 
 void Wave::Render()
@@ -34,54 +32,48 @@ void Wave::Render()
 	actions[curState]->Render();
 }
 
-void Wave::CreatActions()
+void Wave::CreateActions()
 {
 	Action* action = new Action();
-	action->LoadClip(ToWString(PATH) + L"Wave_Start.png", 11, 1, true);
-	//action->GetClip(0)->SetEvent([this]() {
-	//	SetActive(false);
-	//	});
+	action->LoadClip(ToWString(PATH) + L"Wave_Start.png", 11, 1, false, 2.6f);
+	action->GetClip(0)->SetEvent([this]() {this->SetActive(false); });
 	actions[START] = action;
 
 	action = new Action();
-	action->LoadClip(ToWString(PATH) + L"Wave_End.png", 11, 1, false);
-	//action->GetClip(0)->SetEvent([this]() {
-	//	SetActive(false);
-	//	});
+	action->LoadClip(ToWString(PATH) + L"Wave_End.png", 11, 1, false, 2.6f);
+	action->GetClip(0)->SetEvent([this]() {
+		this->SetActive(false);
+		TileManager::Get()->SetIdxBgTileType(posTileIdx, Tile::BASIC);
+		});
 	actions[END] = action;
-
 }
 
-void Wave::Spawn(const Vector2& pos, int power, State state)
+void Wave::Spawn(const Vector2& pos, Direction direction, State state)
 {
-	SetGlobalPosition(pos+Tile::TILE_SIZE);
-	UpdateWorld();
-	collider->UpdateWorld();
-
-	//Tile* tile = TileManager::Get()->SetNearPosState(pos, Tile::OBSTACLE);
-
-	//if (!tile) return;
-
 	SetActive(true);
 	SetAction(state);
-	//actions[state]->Start();
-	//this->power = power;
-	////this->SetGlobalPosition(tile->GetGlobalPosition());
 
-	//curState = state;
-	//actions[curState]->Start();
+	switch (direction)
+	{
+	case Wave::R:
+		SetLocalRotation(0, 0, 0);
+		break;
+	case Wave::L:
+		SetLocalRotation(0, 0, XM_PI);
+		break;
+	case Wave::U:
+		SetLocalRotation(0, 0, XM_PI * 0.5f);
+		break;
+	case Wave::D:
+		SetLocalRotation(0, 0, -XM_PI * 0.5f);
+		break;
+	default:
+		break;
+	}
 }
-
-//
-//float Wave::GetDepth()
-//{
-//	return collider->Bottom();
-//}
 
 void Wave::SetAction(int state)
 {
-	if (curState == state) return;
-
 	curState = (State)state;
 	actions[curState]->Start();
 }

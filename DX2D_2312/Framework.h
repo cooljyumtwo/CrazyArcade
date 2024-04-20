@@ -153,12 +153,15 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/UI/GameUI.h"
 
 #include "Objects/CA/Bubble/Wave.h"
+#include "Objects/CA/Bubble/Waves.h"
 #include "Objects/CA/Bubble/Bubble.h"
 #include "Objects/CA/Bubble/BubbleManager.h"
+
 
 #include "Objects/CA/Character/CharacterAction.h"
 #include "Objects/CA/Character/CharacterIdle.h"
 #include "Objects/CA/Character/CharacterMove.h"
+#include "Objects/CA/Character/CharacterBubble.h"
 #include "Objects/CA/Character/Character.h"
 #include "Objects/CA/Character/Player.h"
 

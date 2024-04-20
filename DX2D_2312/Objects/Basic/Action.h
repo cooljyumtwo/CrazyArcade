@@ -25,6 +25,8 @@ public:
 
     void SetState(int state);
 
+    void Play();
+
 protected:
     vector<Clip*> clips;
     int curState = 0;

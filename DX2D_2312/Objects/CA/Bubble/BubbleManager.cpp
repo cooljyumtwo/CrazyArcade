@@ -9,6 +9,14 @@ BubbleManager::BubbleManager()
 		bubble = new Bubble();
 		RenderManager::Get()->Add("GameObject", bubble);
 	}
+
+	totalObject["BasicWaves"].resize(POOL_SIZE);
+
+	for (GameObject*& waves : totalObject["BasicWaves"])
+	{
+		waves = new Waves();
+		RenderManager::Get()->Add("GameObject", waves);
+	}
 }
 
 BubbleManager::~BubbleManager()
@@ -17,9 +25,6 @@ BubbleManager::~BubbleManager()
 
 void BubbleManager::Render()
 {
-	for (GameObject*& bubble : totalObject["BasicBubble"])
-		bubble->Render();
-
 }
 
 void BubbleManager::Update()
@@ -27,6 +32,8 @@ void BubbleManager::Update()
 	for (GameObject*& bubble : totalObject["BasicBubble"])
 		bubble->Update();
 
+	for (GameObject*& waves : totalObject["BasicWaves"])
+		waves->Update();
 }
 
 Bubble* BubbleManager::Collision(string key, Collider* collider)
@@ -44,5 +51,12 @@ Bubble* BubbleManager::Collision(string key, Collider* collider)
 
 void BubbleManager::Spawn(const Vector2& pos, int power)
 {
-	Pop("BasicBubble")->Spawn(pos, power);
+	Bubble* bubble = (Bubble*)Pop("BasicBubble");
+	bubble->Spawn(pos, power);
+}
+
+void BubbleManager::SpawnWaves(const Vector2& pos, int power)
+{
+	Waves* wave = (Waves*)Pop("BasicWaves");
+	wave->Spawn(pos, power);
 }

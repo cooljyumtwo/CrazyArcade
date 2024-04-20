@@ -31,10 +31,10 @@ public:
 	void ClearObjTile();
 	void AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx, const wstring textureFile);
 
-	Tile* SetNearPosState(GameObject* target, Tile::Type type = Tile::BASIC);
-	Tile* SetNearPosState(Vector2 pos, Tile::Type type = Tile::BASIC);
+	Tile* GetNearPosTileState(GameObject* target, Tile::Type type = Tile::BASIC);
+	Tile* GetNearPosTileState(Vector2 pos);
 
-	void PushPlayer(Character* player, Vector2 velocity);
+	void PushPlayer(Character* player);
 
 public:
 

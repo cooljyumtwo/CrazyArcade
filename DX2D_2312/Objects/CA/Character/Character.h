@@ -5,7 +5,7 @@ class Character : public GameObject
 public:
     enum State
     {
-        IDLE, MOVE, //,INCARCERATION, LIVE, DIE
+        IDLE, MOVE, BUBBLE//,INCARCERATION, LIVE, DIE
     };
 
 public:

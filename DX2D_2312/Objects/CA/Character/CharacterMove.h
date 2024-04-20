@@ -10,7 +10,6 @@ public:
     void Update() override;
 
     void Move();
-    void Render();
 
 private:
     RectCollider* frontCollider;

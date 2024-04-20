@@ -111,6 +111,7 @@ void Character::SetAction(int state)
 void Character::CreateActions()
 {
     actions[IDLE] = new CharacterIdle();
-    actions[MOVE] = new CharacterMove(this);
+    actions[MOVE] = new CharacterBubble(this);
+    actions[BUBBLE] = new CharacterBubble(this);
 }
 

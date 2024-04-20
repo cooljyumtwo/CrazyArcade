@@ -10,10 +10,10 @@ CharacterMove::CharacterMove(Transform* target)
     LoadClip(ToWString(PATH) + L"Bazzi/Run.png", 4, 1, true);
 
 
-    frontCollider = new RectCollider({ Tile::TILE_SIZE, Tile::TILE_SIZE });
-    frontCollider->SetParent(target);
-    frontCollider->SetTag("CharacterFront");
-    frontCollider->GetColor()->SetColor(1.0f, 0.0f, 0.0f);
+    //frontCollider = new RectCollider({ Tile::TILE_SIZE, Tile::TILE_SIZE });
+    //frontCollider->SetParent(target);
+    //frontCollider->SetTag("CharacterFront");
+    //frontCollider->GetColor()->SetColor(1.0f, 0.0f, 0.0f);
 }
 
 void CharacterMove::Update()
@@ -23,7 +23,7 @@ void CharacterMove::Update()
     Move();
 
     target->UpdateWorld();
-    frontCollider->UpdateWorld();
+    //frontCollider->UpdateWorld();
 }
 
 void CharacterMove::Move()
@@ -73,14 +73,8 @@ void CharacterMove::Move()
 
     target->Translate(velocity * MOVE_SPEED * DELTA);
 
-    TileManager::Get()->PushPlayer(character, velocity);
+    TileManager::Get()->PushPlayer(character);
 
     if (compass == W) velocity.x = 1.0f;
-    frontCollider->SetLocalPosition(character->GetCollider()->GetLocalPosition() + velocity * Tile::TILE_SIZE);
-}
-
-void CharacterMove::Render()
-{
-    CharacterAction::Render();
-    frontCollider->Render();
+    //frontCollider->SetLocalPosition(character->GetCollider()->GetLocalPosition() + velocity * Tile::TILE_SIZE);
 }
