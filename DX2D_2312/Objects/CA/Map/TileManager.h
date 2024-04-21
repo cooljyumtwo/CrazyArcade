@@ -35,6 +35,7 @@ public:
 	Tile* GetNearPosTileState(Vector2 pos);
 
 	void PushPlayer(Character* player);
+	void AttackPlayer(Character* player);
 
 public:
 

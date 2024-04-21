@@ -32,6 +32,8 @@ void Clip::Update()
     {
         if (curFrameNum >= frames.size())
         {
+            if (events.count(curFrameNum) > 0)
+                events[curFrameNum]();
             curFrameNum--;
             Stop();
         }
@@ -55,11 +57,11 @@ void Clip::Play()
 
 void Clip::SetEvent(Event event, int frameNum)
 {
-    if (frameNum >= (int)frames.size())
+    if (frameNum > (int)frames.size())
         assert(false);
 
     if (frameNum == -1)
-        frameNum = frames.size() - 1;
+        frameNum = frames.size();
 
     events[frameNum] = event;
 }

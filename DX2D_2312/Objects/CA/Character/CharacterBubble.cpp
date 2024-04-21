@@ -24,6 +24,12 @@ void CharacterBubble::Start()
     SetCompass(Compass::E);
 }
 
+void CharacterBubble::End()
+{
+    Character* character = (Character*)target;
+    character->SetAction(Character::DIE);
+}
+
 void CharacterBubble::Move()
 {
     velocity = { 0, 0 };

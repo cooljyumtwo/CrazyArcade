@@ -29,6 +29,7 @@ void Character::Update()
     Move();
     Jump();
     Attack();
+    Hit();
 
     actions[curState]->Update();
 
@@ -63,7 +64,7 @@ void Character::UpdateWorld()
 
 void Character::Move()
 {
-
+    if (curState == BUBBLE || curState == DIE) return;
     bool isMove = false;
 
     isMove |= KEY->Press('D');
@@ -83,6 +84,15 @@ void Character::Attack()
 {
     if (KEY->Down(VK_SPACE))
         BubbleManager::Get()->Spawn(GetLocalPosition(),1);
+}
+
+void Character::Hit()
+{
+    Tile* tile = TileManager::Get()->GetNearPosTileState(collider->GetGlobalPosition());
+    if (tile->GetType() == Tile::ATTACK)
+    {
+        SetAction(BUBBLE);
+    }
 }
 
 void Character::Landing()
@@ -111,7 +121,8 @@ void Character::SetAction(int state)
 void Character::CreateActions()
 {
     actions[IDLE] = new CharacterIdle();
-    actions[MOVE] = new CharacterBubble(this);
+    actions[MOVE] = new CharacterMove(this);
     actions[BUBBLE] = new CharacterBubble(this);
+    actions[DIE] = new CharacterDie(this);
 }
 

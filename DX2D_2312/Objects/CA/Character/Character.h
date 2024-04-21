@@ -5,7 +5,7 @@ class Character : public GameObject
 public:
     enum State
     {
-        IDLE, MOVE, BUBBLE//,INCARCERATION, LIVE, DIE
+        IDLE, MOVE, BUBBLE, DIE//,INCARCERATION, LIVE, DIE
     };
 
 public:
@@ -21,18 +21,20 @@ public:
 
     RectCollider* GetCollider() { return collider; }
 
+    void SetAction(int state);
+
 private:
     void Move();
     void Jump();
     void Attack();
+    void Hit();
 
     void Landing();
-
-    void SetAction(int state);
 
     void CreateActions();
 
     void AddAction(string file, int frameX, int frameY);
+
 
 private:
 

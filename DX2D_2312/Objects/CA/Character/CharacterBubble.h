@@ -10,9 +10,8 @@ public:
     void Update() override;
 
     void Start();
+    void End();
 
     void Move();
 
-
-private:
 };

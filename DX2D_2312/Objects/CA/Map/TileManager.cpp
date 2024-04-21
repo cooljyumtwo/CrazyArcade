@@ -209,3 +209,8 @@ void TileManager::PushPlayer(Character* player)
         }
     }
 }
+
+void TileManager::AttackPlayer(Character* player)
+{
+
+}
