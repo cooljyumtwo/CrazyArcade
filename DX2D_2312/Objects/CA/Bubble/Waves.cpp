@@ -115,11 +115,15 @@ void Waves::Spawn(const Vector2& pos, int power)
 
 			waveList[i]->SetPosTileIdx(tile->GetCurIdx());
 		}
+
+		if (next(it) == waves.end())
+			waveList[0]->GetAction()->GetCurClip()->SetEvent([this]() { this->End(); }, 1);
 	}
 }
 
 void Waves::End()
 {
+	TileManager::Get()->PopObjTile();
 }
 
 void Waves::ClearWaves()

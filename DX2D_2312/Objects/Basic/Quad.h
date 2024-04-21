@@ -14,6 +14,7 @@ public:
 	void SetRender();
 
 	void SetTexture(wstring textureFile);
+	wstring GetTexture() { return textureFile; }
 
 	Vector2 GetSize() { return size * GetGlobalScale(); }
 
@@ -22,6 +23,7 @@ private:
 
 protected:
 	Mesh<VertexUV>* mesh;	
+	wstring textureFile;
 
 	Vector2 size;	
 };

@@ -31,6 +31,10 @@ public:
 	void SetAction(int state);
 	void SetPosTileIdx(Vector2 posTileIdx) { this->posTileIdx = posTileIdx; }
 
+	Action* GetAction() { return actions[curState]; }
+
+	void End();
+
 private:
 	State curState = START;
 	Direction direction = R;
@@ -42,8 +46,7 @@ private:
 	RectCollider* collider;
 
 	map<State, Action*> actions;
-	
-	Action* action;
+
 
 	Vector2 posTileIdx;
 };

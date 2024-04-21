@@ -10,9 +10,11 @@ CharacterBubble::CharacterBubble(Transform* target)
 
 void CharacterBubble::Update()
 {
+
 	CharacterAction::Update();
 
 	Move();
+    Alive();
 
 	target->UpdateWorld();
 }
@@ -54,5 +56,14 @@ void CharacterBubble::Move()
 
     Character* character = (Character*)target;
     TileManager::Get()->PushPlayer(character);
+}
+
+void CharacterBubble::Alive()
+{
+    if (KEY->Down(VK_CONTROL))
+    {
+        Character* character = (Character*)target;
+        character->SetAction(Character::ALIVE);
+    }
 }
 

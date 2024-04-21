@@ -5,7 +5,7 @@ class Character : public GameObject
 public:
     enum State
     {
-        IDLE, MOVE, BUBBLE, DIE//,INCARCERATION, LIVE, DIE
+        IDLE, MOVE, BUBBLE, ALIVE,DIE//,INCARCERATION, LIVE, DIE
     };
 
 public:
@@ -27,7 +27,7 @@ private:
     void Move();
     void Jump();
     void Attack();
-    void Hit();
+    void Bubble();
 
     void Landing();
 

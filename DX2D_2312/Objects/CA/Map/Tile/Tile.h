@@ -9,18 +9,11 @@ public:
         BASIC, OBSTACLE , ATTACK
     };
 
-    struct Data
-    {
-        wstring textureFile;
-        Vector2 pos;
-        Type type = BASIC;
-    };
-
 public:
     static float TILE_SIZE;
 
 public:
-    Tile(Data data);
+    Tile( wstring textureFile, Vector2 pos, Type type = BASIC);
     ~Tile();
 
     void Render() override;
@@ -28,13 +21,12 @@ public:
 
     void UpdateWorld() override;
 
-    Data GetData() { return data; }
     RectCollider* GetCollider() { return collider; }
 
     static bool IsCompare(Tile* tile1, Tile* tile2);
 
-    void SetType(Type type) { data.type = type; }
-    Type GetType() { return data.type; }
+    void SetType(Type changeType) { this->type = changeType; }
+    Type GetType() { return type; }
 
     void SetTileObj(TileObject* tileObj) { this->tileObj = tileObj; }
 
@@ -45,11 +37,13 @@ public:
    
 
 protected:
-    Data data;
 
     RectCollider* collider;
 
     TileObject* tileObj = nullptr;
 
     Vector2 curIdx;
+
+   // wstring textureFile;
+    Type type = BASIC;
 };

@@ -162,6 +162,7 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/Character/CharacterIdle.h"
 #include "Objects/CA/Character/CharacterMove.h"
 #include "Objects/CA/Character/CharacterBubble.h"
+#include "Objects/CA/Character/CharacterAlive.h"
 #include "Objects/CA/Character/CharacterDie.h"
 #include "Objects/CA/Character/Character.h"
 #include "Objects/CA/Character/Player.h"

@@ -381,6 +381,9 @@
     <ClInclude Include="Objects\CA\Character\CharacterDie.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Objects\CA\Character\CharacterAlive.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DX2D_2312.cpp">
@@ -714,6 +717,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Objects\CA\Character\CharacterDie.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\CA\Character\CharacterAlive.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

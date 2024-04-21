@@ -54,6 +54,8 @@ void Quad::SetTexture(wstring textureFile)
 	size = material->GetTexture()->GetSize();
 	MakeMesh();
 	mesh->UpdateVertices();
+
+	this->textureFile = textureFile;
 }
 
 void Quad::MakeMesh(Vector2 startUV, Vector2 endUV, Vector2 pos)

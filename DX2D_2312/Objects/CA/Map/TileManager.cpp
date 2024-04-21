@@ -51,14 +51,13 @@ void TileManager::CreateBGTile()
     FOR_X(SIZE_X)
         FOR_Y(SIZE_Y)
         {
-            BasicTile::Data data = {};
-            data.textureFile = baseFile;
+            wstring textureFile = baseFile;
             Vector2 xDirection = Vector2(tileSize.x, 0);
             Vector2 yDirection = Vector2(0, -tileSize.y);
 
-            data.pos = startPos + xDirection * x + yDirection * y;
+            Vector2 pos = startPos + xDirection * x + yDirection * y;
 
-            BasicTile* tile = new BasicTile(data);
+            BasicTile* tile = new BasicTile(textureFile, pos);
             tile->SetParent(this);
             tile->SetCurIdx(Vector2{ (float)x,(float)y });
             bgTiles[x][y] = tile;
@@ -92,12 +91,11 @@ void TileManager::LoadMapData(string file)
 
     FOR(size)
     {
-        Tile::Data data = {};
-        data.textureFile = reader->WString();
-        data.pos = reader->Vector();
+        wstring textureFile = reader->WString();
+        Vector2 pos = reader->Vector();
         Vector2 curIdx = reader->Vector();
 
-        AddObjTile(data.pos, tileSize, curIdx, data.textureFile);
+        AddObjTile(pos, tileSize, curIdx, textureFile);
     }
 
     delete reader;
@@ -114,22 +112,34 @@ void TileManager::ClearObjTile()
 
 void TileManager::AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx, const wstring textureFile)
 {
-    Tile::Data data = {};
-    data.textureFile = textureFile;
-    data.pos = pos;
-
-    ObstacleTile* tile = new ObstacleTile(data);
+    ObstacleTile* tile = new ObstacleTile(textureFile, pos, true);
     tile->SetParent(this);
     tile->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5);
     tile->Update();
     tile->SetCurIdx(idx);
     
-    SetIdxBgTileType(idx, Tile::OBSTACLE);
+    BasicTile* bgTile = (BasicTile*)bgTiles[idx.x][idx.y];
+    bgTile->SetObstacleTile(tile);
+    bgTile->SetType(Tile::OBSTACLE);
+
 
     objTiles.push_back(tile);
     tile->UpdateWorld();
 
     RenderManager::Get()->Add("GameObject", tile);
+}
+
+void TileManager::PopObjTile()
+{
+    for (Tile* objTile : objTiles)
+    {
+        Tile::Type tiletype = TileManager::Get()->GetIdxBgTileType(objTile->GetCurIdx());
+        if (tiletype == Tile::ATTACK)
+        {
+            ObstacleTile* tile = (ObstacleTile*)objTile;
+            tile->PopObjTile();
+        }
+    }
 }
 
 

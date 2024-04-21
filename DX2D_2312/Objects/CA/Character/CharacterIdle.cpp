@@ -10,6 +10,5 @@ CharacterIdle::CharacterIdle()
 
 void CharacterIdle::Start()
 {
-    //여기서 방향을..?
     curState = compass;
 }

@@ -193,6 +193,7 @@
     <ClInclude Include="Objects\CA\Bubble\Waves.h" />
     <ClInclude Include="Objects\CA\Character\Character.h" />
     <ClInclude Include="Objects\CA\Character\CharacterAction.h" />
+    <ClInclude Include="Objects\CA\Character\CharacterAlive.h" />
     <ClInclude Include="Objects\CA\Character\CharacterBubble.h" />
     <ClInclude Include="Objects\CA\Character\CharacterDie.h" />
     <ClInclude Include="Objects\CA\Character\CharacterIdle.h" />
@@ -317,6 +318,7 @@
     <ClCompile Include="Objects\CA\Bubble\Waves.cpp" />
     <ClCompile Include="Objects\CA\Character\Character.cpp" />
     <ClCompile Include="Objects\CA\Character\CharacterAction.cpp" />
+    <ClCompile Include="Objects\CA\Character\CharacterAlive.cpp" />
     <ClCompile Include="Objects\CA\Character\CharacterBubble.cpp" />
     <ClCompile Include="Objects\CA\Character\CharacterDie.cpp" />
     <ClCompile Include="Objects\CA\Character\CharacterIdle.cpp" />

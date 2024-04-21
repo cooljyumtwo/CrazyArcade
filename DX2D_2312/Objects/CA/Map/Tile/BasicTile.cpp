@@ -1,6 +1,6 @@
 #include "Framework.h"
 
-BasicTile::BasicTile(Data data) : Tile(data)
+BasicTile::BasicTile(wstring textureFile, Vector2 pos) : Tile(textureFile, pos)
 {
 }
 

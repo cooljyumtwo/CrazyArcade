@@ -44,6 +44,10 @@ void Wave::CreateActions()
 	action->GetClip(0)->SetEvent([this]() {
 		this->SetActive(false);
 		TileManager::Get()->SetIdxBgTileType(posTileIdx, Tile::BASIC);
+		TileManager::Get()->PopObjTile();
+		//BasicTile* tile = (BasicTile*)TileManager::Get()->GetBgTile(posTileIdx);
+		//if(tile->GetObstacleTile()!=nullptr)
+		//	tile->GetObstacleTile()->SetActive(false);
 		});
 	actions[END] = action;
 }
@@ -76,4 +80,8 @@ void Wave::SetAction(int state)
 {
 	curState = (State)state;
 	actions[curState]->Start();
+}
+
+void Wave::End()
+{
 }

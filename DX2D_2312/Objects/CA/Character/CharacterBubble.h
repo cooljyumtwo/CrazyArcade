@@ -13,5 +13,6 @@ public:
     void End();
 
     void Move();
+    void Alive();
 
 };

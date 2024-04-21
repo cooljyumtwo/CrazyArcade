@@ -2,10 +2,12 @@
 
 float Tile::TILE_SIZE = 40.0f;
 
-Tile::Tile(Data data)
-    : Quad(data.textureFile, false), data(data)
+Tile::Tile(wstring textureFile, Vector2 pos, Type type)
+    : Quad(textureFile, false)
 {
-    SetLocalPosition(data.pos);    
+    type = type;
+    
+    SetLocalPosition(pos);
 
     collider = new RectCollider(size);
     collider->SetParent(this);
@@ -27,8 +29,8 @@ void Tile::Render()
 
 void Tile::PostRender()
 {
-    string fps = to_string(data.type);
-    Font::Get()->RenderText(to_string(data.type), GetGlobalPosition());
+    string fps = to_string(type);
+    Font::Get()->RenderText(to_string(type), GetGlobalPosition());
 }
 
 void Tile::UpdateWorld()
