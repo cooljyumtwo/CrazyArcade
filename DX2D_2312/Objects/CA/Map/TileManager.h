@@ -40,7 +40,6 @@ public:
 	void PushPlayer(Character* player);
 	void AttackPlayer(Character* player);
 
-
 public:
 
 	GameObject* tiles;

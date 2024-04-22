@@ -22,12 +22,12 @@ public:
 	void CreateWaves();
 	void CreateDirectionWaves(Direction direction);
 
-	void Spawn(const Vector2& pos, int power);
-
-	void End();
 	void ClearWaves();
+
+	void Spawn(const Vector2& pos, int power);
 
 private:
 	int power;
+
 	map<Direction, vector<Wave*>> waves;
 };

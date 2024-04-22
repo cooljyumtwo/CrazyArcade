@@ -5,6 +5,14 @@ class Item : public Quad
 private:
     wstring PATH = L"ResourcesCA/Textures/Item/";
     const float MAX_PLAY_TIME = 0.1f;
+
+public:
+    enum Type
+    {
+        B_POWER, B_CNTUP, U_SPEED, 
+        B_NEEDLE
+    };
+
 public:
     Item();
 
@@ -23,6 +31,8 @@ public:
     void SetInven() { isField = false; }
 
     RectCollider* GetCollider() { return collider; }
+
+    void Play();
 
 private:
     void SetLevelColor();

@@ -2,7 +2,8 @@
 
 class CharacterMove : public CharacterAction
 {
-protected:
+private:
+    int MAX_SPEED = 5;
 
 public:
     CharacterMove(Transform* target);

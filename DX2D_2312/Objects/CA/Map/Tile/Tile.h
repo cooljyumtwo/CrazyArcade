@@ -35,15 +35,12 @@ public:
 
     float GetDepth() override;
    
-
 protected:
+    Vector2 curIdx;
+
+    Type type = BASIC;
 
     RectCollider* collider;
 
     TileObject* tileObj = nullptr;
-
-    Vector2 curIdx;
-
-   // wstring textureFile;
-    Type type = BASIC;
 };

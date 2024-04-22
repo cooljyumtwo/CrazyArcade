@@ -18,29 +18,27 @@ public:
 	void Update();
 	void Render();
 
-	void CreatActions();
-
-	void Spawn(const Vector2& pos, int power);
-
+	float GetDepth() override;
 	Collider* GetCollider() { return collider; }
 
-	float GetDepth() override;
-
+	void CreatActions();
 	void SetAction(int state);
 
+	void Spawn(const Vector2& pos, int power, Character* target);
+
 protected:
-	State curState = STAND;
-
 	int power;
-
-	Vector2 velocity;
-
-	RectCollider* collider;
-
-	map<State, Action*> actions;
 
 	float playTime = 0.0f;
 
+	Vector2 velocity;
 	Vector2 posTileIdx;
 
+	RectCollider* collider;
+
+	Character* target;
+
+	State curState = STAND;
+
+	map<State, Action*> actions;
 };

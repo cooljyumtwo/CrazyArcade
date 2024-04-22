@@ -7,11 +7,18 @@ private:
 
     ItemManager();
     ~ItemManager();
+
 public:
     void Update();
     void Render();
 
+    void SetTotalProbability();
+
     void Spawn(const Vector2& pos);
 
-    Item* Collision(Collider* collider);
+    void Collision(Character* target);
+
+private:
+    int sizeItemDatas;
+    int totalProbability = 0;
 };

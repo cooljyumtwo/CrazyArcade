@@ -5,13 +5,11 @@ Character::Character()
     CreateActions();
     actions[curState]->Start();
 
-    collider = new RectCollider({ Tile::TILE_SIZE * 0.7f , Tile::TILE_SIZE * 0.5f });
-    collider->Translate(Vector2::Down() * Tile::TILE_SIZE * 0.4f);
+    collider = new RectCollider({ Tile::TILE_SIZE * 0.9f , Tile::TILE_SIZE * 0.6f });
+    collider->Translate(Vector2::Down() * Tile::TILE_SIZE * 0.2f);
     collider->SetParent(this);
     collider->SetTag("Character");
     collider->Load();
-
-    BubbleManager::Get();
 }
 
 Character::~Character()
@@ -20,14 +18,11 @@ Character::~Character()
         delete action.second;
 
     delete collider;
-
-    BubbleManager::Delete();
 }
 
 void Character::Update()
 {
     Move();
-    Jump();
     Attack();
     Bubble();
 
@@ -76,15 +71,13 @@ void Character::Move()
     isMove ? SetAction(MOVE) : SetAction(IDLE);
 }
 
-void Character::Jump()
-{
-
-}
-
 void Character::Attack()
 {
-    if (KEY->Down(VK_SPACE))
-        BubbleManager::Get()->Spawn(GetLocalPosition(), 1); 
+    if (KEY->Down(VK_SPACE) && bubbleCurCnt < stat.bubbleCnt)
+    {
+        bubbleCurCnt++;
+        BubbleManager::Get()->Spawn(GetLocalPosition(), stat.bubblePower, this);
+    }
 }
 
 void Character::Bubble()

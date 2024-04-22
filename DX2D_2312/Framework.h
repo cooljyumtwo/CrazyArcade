@@ -158,10 +158,11 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/Character/CharacterAlive.h"
 #include "Objects/CA/Character/CharacterDie.h"
 #include "Objects/CA/Character/Character.h"
-#include "Objects/CA/Character/Player.h"
 
 #include "Objects/CA/Item/Item.h"
 #include "Objects/CA/Item/ItemManager.h"
+
+#include "Objects/CA/Character/Player.h"
 
 #include "Objects/CA/Bubble/Wave.h"
 #include "Objects/CA/Bubble/Waves.h"

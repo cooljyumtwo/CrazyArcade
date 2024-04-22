@@ -3,6 +3,7 @@
 #include "Scenes/CA/MapEditScene.h"
 #include "Scenes/CA/GameScene.h"
 
+bool GameManager::isDraw = true;
 
 GameManager::GameManager()
 {
@@ -24,12 +25,17 @@ GameManager::~GameManager()
 
 void GameManager::Update()
 {
+
 	Keyboard::Get()->Update();
 	Timer::Get()->Update();
 
 	Environment::Get()->Update();
 	UIManager::Get()->Update();
+
 	SCENE->Update();
+
+	if (KEY->Down(VK_F2))
+		OnDraw();
 }
 
 void GameManager::Render()

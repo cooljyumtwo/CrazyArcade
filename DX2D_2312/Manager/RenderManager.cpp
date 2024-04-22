@@ -20,6 +20,7 @@ void RenderManager::Render(string key)
 
 	if (key == "BGTileTxt")
 	{
+		if (!GameManager::isDraw) return;
 		for (GameObject* gameObj : gameObjects[key])
 		{
 			Tile* tile = (Tile*)gameObj;

@@ -23,30 +23,26 @@ public:
 
 	void Update();
 	void Render();
+	float GetDepth() override;
 
 	void CreateActions();
 
 	void Spawn(const Vector2& pos, Direction direction = R ,State state = START);
 
+	Action* GetAction() { return actions[curState]; }
+
 	void SetAction(int state);
 	void SetPosTileIdx(Vector2 posTileIdx) { this->posTileIdx = posTileIdx; }
 
-	Action* GetAction() { return actions[curState]; }
-
-	void End();
-
 private:
+	int power;
+	
+	Vector2 posTileIdx;
+
 	State curState = START;
 	Direction direction = R;
-
-	int power;
-
-	Vector2 velocity;
 
 	RectCollider* collider;
 
 	map<State, Action*> actions;
-
-
-	Vector2 posTileIdx;
 };

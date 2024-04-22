@@ -5,7 +5,7 @@ class CharacterAction : public Action
 {
 protected:
     const string PATH = "ResourcesCA/Textures/Character/";
-    const float MOVE_SPEED = 100.0f;
+    const float MOVE_SPEED = 50.0f;
 
 public:
     enum Compass

@@ -2,8 +2,6 @@
 
 class CharacterBubble : public CharacterAction
 {
-protected:
-
 public:
     CharacterBubble(Transform* target);
 
@@ -12,7 +10,7 @@ public:
     void Start();
     void End();
 
+private:
     void Move();
     void Alive();
-
 };

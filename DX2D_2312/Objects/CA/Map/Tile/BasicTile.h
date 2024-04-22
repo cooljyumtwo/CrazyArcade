@@ -6,8 +6,8 @@ public:
 	BasicTile(wstring textureFile, Vector2 pos);
 	~BasicTile();
 
-	void SetObstacleTile(Tile* tile) { this->obstacleTile = tile; };
 	Tile* GetObstacleTile() { return obstacleTile; }
+	void SetObstacleTile(Tile* tile) { this->obstacleTile = tile; };
 
 private:
 	Tile* obstacleTile = nullptr;

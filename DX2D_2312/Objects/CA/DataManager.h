@@ -4,10 +4,9 @@ struct ItemData
 {
 	int key;
 	string name;
-	float power;
-	float speed;
 	int type;
 	int value;
+	int probability;
 	wstring textureFile;
 };
 
@@ -21,6 +20,7 @@ private:
 
 public:
 	ItemData GetItemData(int key) { return itemDatas[key]; }
+	int SizeItemData() { return itemDatas.size(); }
 
 private:
 	void LoadItemData();

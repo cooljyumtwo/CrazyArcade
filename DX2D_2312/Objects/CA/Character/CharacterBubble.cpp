@@ -5,12 +5,10 @@ CharacterBubble::CharacterBubble(Transform* target)
 	SetTarget(target);
 
 	LoadClip(ToWString(PATH) + L"Bazzi/Bubble.png", 4, 1, false, 0.3f);
-
 }
 
 void CharacterBubble::Update()
 {
-
 	CharacterAction::Update();
 
 	Move();

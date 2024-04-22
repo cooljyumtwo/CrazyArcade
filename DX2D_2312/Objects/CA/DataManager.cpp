@@ -28,15 +28,13 @@ void DataManager::LoadItemData()
 
 		vector<string> datas = SplitString(temp, ",");
 
-		//key, name, hp, power, speed, type, value, Image 
 		ItemData data;
 		data.key = stoi(datas[0]);
 		data.name = datas[1];
-		data.power = stof(datas[2]);
-		data.speed = stof(datas[3]);
-		data.type = stoi(datas[4]);
-		data.value = stoi(datas[5]);
-		data.textureFile = ToWString(datas[6]);
+		data.type = stoi(datas[2]);
+		data.value = stoi(datas[3]);
+		data.probability = stoi(datas[4]);
+		data.textureFile = ToWString(datas[5]);
 
 		itemDatas[data.key] = data;
 	}

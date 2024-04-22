@@ -13,6 +13,11 @@ Wave::Wave()
 Wave::~Wave()
 {
 	delete collider;
+
+	//Áú¹®¿é
+	for (auto& pair : actions) 
+		delete pair.second;
+	actions.clear();
 }
 
 void Wave::Update()
@@ -32,11 +37,19 @@ void Wave::Render()
 	actions[curState]->Render();
 }
 
+float Wave::GetDepth()
+{
+	return collider->Bottom();
+}
+
 void Wave::CreateActions()
 {
 	Action* action = new Action();
 	action->LoadClip(ToWString(PATH) + L"Wave_Start.png", 11, 1, false, 2.6f);
-	action->GetClip(0)->SetEvent([this]() {this->SetActive(false); });
+	action->GetClip(0)->SetEvent([this]() {
+		this->SetActive(false);
+		TileManager::Get()->SetIdxBgTileType(posTileIdx, Tile::BASIC);
+		});
 	actions[START] = action;
 
 	action = new Action();
@@ -76,8 +89,4 @@ void Wave::SetAction(int state)
 {
 	curState = (State)state;
 	actions[curState]->Start();
-}
-
-void Wave::End()
-{
 }

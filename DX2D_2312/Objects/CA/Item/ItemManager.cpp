@@ -9,6 +9,8 @@ ItemManager::ItemManager()
 		item = new Item();	
 		RenderManager::Get()->Add("GameObject", item);
 	}
+
+	SetTotalProbability();
 }
 
 ItemManager::~ItemManager()
@@ -29,53 +31,36 @@ void ItemManager::Render()
 {
 }
 
+void ItemManager::SetTotalProbability()
+{
+	sizeItemDatas = DataManager::Get()->SizeItemData();
+
+	FOR(sizeItemDatas)
+		totalProbability += DataManager::Get()->GetItemData(1).probability;
+}
+
 void ItemManager::Spawn(const Vector2& pos)
 {
 	Item* item = Pop("Item", true);
 
-	//int random = Random(0, 100);
-
-	ItemData data;	
-	//if (random < 50)
-	//{
-	//	random = Random(1, 4);
-	//	int type = 0;
-	//	if (random == 1)
-	//		type = Random(0, 2);
-
-	//	int level = Random(0, 100);
-	//	if (level < 10)
-	//		level = 3;
-	//	else if (level < 30)
-	//		level = 2;
-	//	else
-	//		level = 1;
-
-	//	int key = random * 100 + type * 10 + level;
-	//	data = DataManager::Get()->GetItemData(key);
-	//}
-	//else if(random < 60)
-	//	data = DataManager::Get()->GetItemData(1);
-	//else if(random < 90)
-	//	data = DataManager::Get()->GetItemData(2);
-	//else
-
-	data = DataManager::Get()->GetItemData(1);
-
-	item->Spawn(pos, data);
+	int random = Random(0, totalProbability);
+	random %= sizeItemDatas;
+	item->Spawn(pos, DataManager::Get()->GetItemData(random));
 }
 
-Item* ItemManager::Collision(Collider* collider)
+void ItemManager::Collision(Character* target)
 {
 	for (GameObject* object : totalObject["Item"])
 	{
-		Item* item = (Item*)object;
+		if (!object->IsActive()) continue;
 
-		if (item->IsField() && item->GetCollider()->IsCollision(collider))
+		Item* item = (Item*)object;
+		if (item->GetCollider()->IsCollision(target->GetCollider()))
 		{
-			return item;
+			item->SetActive(false);
+
+			Player* player = (Player*)target;
+			player->AddItem(item);
 		}
 	}
-
-	return nullptr;
 }

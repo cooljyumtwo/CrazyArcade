@@ -8,12 +8,6 @@ CharacterMove::CharacterMove(Transform* target)
     LoadClip(ToWString(PATH) + L"Bazzi/Up.png", 5, 1, true);
     LoadClip(ToWString(PATH) + L"Bazzi/Run.png", 4, 1, true);
     LoadClip(ToWString(PATH) + L"Bazzi/Run.png", 4, 1, true);
-
-
-    //frontCollider = new RectCollider({ Tile::TILE_SIZE, Tile::TILE_SIZE });
-    //frontCollider->SetParent(target);
-    //frontCollider->SetTag("CharacterFront");
-    //frontCollider->GetColor()->SetColor(1.0f, 0.0f, 0.0f);
 }
 
 void CharacterMove::Update()
@@ -23,7 +17,6 @@ void CharacterMove::Update()
     Move();
 
     target->UpdateWorld();
-    //frontCollider->UpdateWorld();
 }
 
 void CharacterMove::Move()
@@ -71,11 +64,13 @@ void CharacterMove::Move()
         break;
     }
 
-    target->Translate(velocity * MOVE_SPEED * DELTA);
+    int speed = (character->GetStat().speed > MAX_SPEED) ? MAX_SPEED : character->GetStat().speed;
+    target->Translate(velocity * MOVE_SPEED * speed * DELTA );
 
     TileManager::Get()->PushPlayer(character);
     BubbleManager::Get()->PushPlayer(character);
 
+    ItemManager::Get()->Collision(character);
+
     if (compass == W) velocity.x = 1.0f;
-    //frontCollider->SetLocalPosition(character->GetCollider()->GetLocalPosition() + velocity * Tile::TILE_SIZE);
 }

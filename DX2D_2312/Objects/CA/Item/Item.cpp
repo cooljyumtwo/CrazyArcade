@@ -12,7 +12,6 @@ Item::Item()
     shadow->SetParent(this);
     shadow->Translate(Vector2::Down() * Vector2{ 0, 20.0f});
     
-   // RenderManager::Get()->Add("GameObject", shadow);
 }
 
 void Item::Update()
@@ -23,22 +22,7 @@ void Item::Update()
     UpdateWorld();
     collider->UpdateWorld();
 
-    
-    if (playTime <= MAX_PLAY_TIME)
-    {
-        Translate(Vector2::Up() * Vector2{ 0, 0.07f });
-    }
-    else if(playTime <= MAX_PLAY_TIME * 2 && playTime > MAX_PLAY_TIME)
-    { 
-        Translate(Vector2::Down() * Vector2 { 0, 0.07f });
-    }
-    else if (playTime > MAX_PLAY_TIME * 2)
-    {
-        playTime -= MAX_PLAY_TIME * 2;
-
-    }
-    playTime += DELTA * 0.2f;
-    
+    Play();
 }
 
 void Item::Render()
@@ -57,7 +41,7 @@ void Item::Spawn(const Vector2& pos, ItemData data)
     isField = true;
 
     this->data = data;
-    wstring t = data.textureFile;
+
     wstring textureFile = PATH + data.textureFile;
     SetTexture(textureFile);
     collider->SetSize(size);
@@ -65,7 +49,7 @@ void Item::Spawn(const Vector2& pos, ItemData data)
     SetLocalPosition(pos);
 
     UpdateWorld();
-    collider->UpdateWorld();      
+    collider->UpdateWorld();
 }
 
 void Item::SetData(ItemData data)
@@ -78,6 +62,24 @@ void Item::SetData(ItemData data)
     wstring textureFile = PATH + data.textureFile;
     SetTexture(textureFile);
     collider->SetSize(size);
+}
+
+void Item::Play()
+{
+    if (playTime <= MAX_PLAY_TIME)
+    {
+        Translate(Vector2::Up() * Vector2 { 0, 0.07f });
+    }
+    else if (playTime <= MAX_PLAY_TIME * 2 && playTime > MAX_PLAY_TIME)
+    {
+        Translate(Vector2::Down() * Vector2 { 0, 0.07f });
+    }
+    else if (playTime > MAX_PLAY_TIME * 2)
+    {
+        playTime -= MAX_PLAY_TIME * 2;
+
+    }
+    playTime += DELTA * 0.2f;
 }
 
 void Item::SetLevelColor()

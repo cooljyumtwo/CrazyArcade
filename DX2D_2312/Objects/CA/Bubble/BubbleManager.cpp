@@ -36,23 +36,10 @@ void BubbleManager::Update()
 		waves->Update();
 }
 
-Bubble* BubbleManager::Collision(string key, Collider* collider)
-{
-	for (GameObject* bullet : totalObject[key])
-	{
-		if (((Bubble*)bullet)->GetCollider()->IsCollision(collider))
-		{
-			return (Bubble*)bullet;
-		}
-	}
-
-	return nullptr;
-}
-
-void BubbleManager::Spawn(const Vector2& pos, int power)
+void BubbleManager::Spawn(const Vector2& pos, int power, Character* target)
 {
 	Bubble* bubble = (Bubble*)Pop("BasicBubble");
-	bubble->Spawn(pos, power);
+	bubble->Spawn(pos, power, target);
 }
 
 void BubbleManager::SpawnWaves(const Vector2& pos, int power)
@@ -63,12 +50,15 @@ void BubbleManager::SpawnWaves(const Vector2& pos, int power)
 
 void BubbleManager::PushPlayer(Character* player)
 {
-	for (Bubble* bubble : bubbles)
+	for (GameObject*& bubbleObj : totalObject["BasicBubble"])
 	{
+		Bubble* bubble = (Bubble*)bubbleObj;
 		Vector2 overlab;
 
 		if (bubble->GetCollider()->IsCollision(player->GetCollider(), &overlab))
 		{
+			if (overlab.x > 20.0f) return;
+
 			if (overlab.x < overlab.y)
 			{
 				if (player->GetGlobalPosition().x > bubble->GetGlobalPosition().x)

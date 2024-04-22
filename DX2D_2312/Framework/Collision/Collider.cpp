@@ -23,11 +23,15 @@ Collider::~Collider()
 void Collider::Render()
 {
     if (!IsActive()) return;
+    
 
     worldBuffer->Set(world);
     worldBuffer->SetVS(0);
 
     material->Set();
+
+    if (!GameManager::isDraw) return;
+
     mesh->Draw(D3D11_PRIMITIVE_TOPOLOGY_LINESTRIP);
 }
 
