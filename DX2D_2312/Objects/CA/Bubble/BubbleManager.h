@@ -14,13 +14,14 @@ public:
 	void Render();
 	void Update();
 
-public:
 	Bubble* Collision(string key, Collider* collider);
 
-public:
 	void Spawn(const Vector2& pos, int power);
 	void SpawnWaves(const Vector2& pos, int power);
 
+	void PushPlayer(Character* player);
+
+public:
 	vector<Bubble*> bubbles;
 	vector<Wave*> waves;
 };

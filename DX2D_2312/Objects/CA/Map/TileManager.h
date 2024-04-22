@@ -20,14 +20,11 @@ public:
 	void SetMap(string mapNameStr) { this->mapNameStr = mapNameStr; }
 
 	void SetBGTile(vector<vector<Tile*>> bgTiles) { this->bgTiles = bgTiles; }
-	vector<vector<Tile*>> GetBGTile() { return bgTiles; }
+	vector<vector<Tile*>> GetBGTiles() { return bgTiles; }
 
 	Tile::Type GetIdxBgTileType(Vector2 idx) { return bgTiles[idx.x][idx.y]->GetType(); }
 	void SetIdxBgTileType(Vector2 idx,Tile::Type type) { bgTiles[idx.x][idx.y]->SetType(type); }
-	Tile* GetBgTile(Vector2 idx) {
-		return bgTiles[idx.x][idx.y]
-			;
-	}
+	Tile* GetBgTile(Vector2 idx) {return bgTiles[idx.x][idx.y];}
 
 	void CreateBGTile();
 	void LoadMapData(string file);

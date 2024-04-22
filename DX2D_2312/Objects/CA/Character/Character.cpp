@@ -5,7 +5,7 @@ Character::Character()
     CreateActions();
     actions[curState]->Start();
 
-    collider = new RectCollider({ Tile::TILE_SIZE , Tile::TILE_SIZE * 0.5f });
+    collider = new RectCollider({ Tile::TILE_SIZE * 0.5f , Tile::TILE_SIZE * 0.5f });
     collider->Translate(Vector2::Down() * Tile::TILE_SIZE * 0.4f);
     collider->SetParent(this);
     collider->SetTag("Character");
@@ -84,7 +84,7 @@ void Character::Jump()
 void Character::Attack()
 {
     if (KEY->Down(VK_SPACE))
-        BubbleManager::Get()->Spawn(GetLocalPosition(),1);
+        BubbleManager::Get()->Spawn(GetLocalPosition(), 1); 
 }
 
 void Character::Bubble()

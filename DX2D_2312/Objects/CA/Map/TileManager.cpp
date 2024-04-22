@@ -9,6 +9,9 @@ TileManager::TileManager()
     Transform::Load(); 
 
     UpdateWorld();
+
+    EffectManager::Get()->Add("RemoveObstacle", 50, L"ResourcesCA/Textures/Effect/RemoveEffect.png",
+        Vector2(4, 1));
 }
 
 TileManager::~TileManager()
@@ -20,6 +23,8 @@ void TileManager::Render()
     RenderManager::Get()->Render("BGTile");
     RenderManager::Get()->Render("GameObject");
     RenderManager::Get()->Render("BGTileTxt");
+
+    EffectManager::Get()->Render();
 }
 
 void TileManager::Update()
@@ -29,9 +34,15 @@ void TileManager::Update()
             bgTiles[x][y]->UpdateWorld();
         
     for (Tile* tile : objTiles)
+    {
+        tile->Update();
         tile->UpdateWorld();
+    }
+       
 
     UpdateWorld();
+
+    EffectManager::Get()->Update();
 }
 
 void TileManager::CreateBGTile()
@@ -137,7 +148,7 @@ void TileManager::PopObjTile()
         if (tiletype == Tile::ATTACK)
         {
             ObstacleTile* tile = (ObstacleTile*)objTile;
-            tile->PopObjTile();
+            tile->End();
         }
     }
 }

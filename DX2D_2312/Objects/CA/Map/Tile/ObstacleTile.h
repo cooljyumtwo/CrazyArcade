@@ -9,7 +9,7 @@ public:
 	void SetIsPop(bool isPop) { this->isPop = isPop; }
 	bool GetIsPop() { return isPop; }
 
-	void PopObjTile();
+	void End() { SetActive(false); EffectManager::Get()->Play("RemoveObstacle",GetGlobalPosition());}
 
 private:
 	bool isPop = false;

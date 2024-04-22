@@ -9,6 +9,10 @@ private:
     ~EffectManager() = default;
 
 public:
+    void Render();
+    void Update();
+
+public:
     void Add(string key, UINT poolSize, wstring textureFile,
         Vector2 maxFrame, float speed = 1.0f, bool isAdditive = false);
 

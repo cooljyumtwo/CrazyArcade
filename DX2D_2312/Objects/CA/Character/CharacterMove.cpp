@@ -74,6 +74,7 @@ void CharacterMove::Move()
     target->Translate(velocity * MOVE_SPEED * DELTA);
 
     TileManager::Get()->PushPlayer(character);
+    BubbleManager::Get()->PushPlayer(character);
 
     if (compass == W) velocity.x = 1.0f;
     //frontCollider->SetLocalPosition(character->GetCollider()->GetLocalPosition() + velocity * Tile::TILE_SIZE);

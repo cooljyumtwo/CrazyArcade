@@ -145,18 +145,11 @@ typedef function<void(void*)> ObjectParamEvent;
 //#include "Objects/Map/GameTileMap.h"
 //#include "Objects/Map/Tile.h"
 
-#include "Objects/ShootingGame/ShootingDataManager.h"
-
+#include "Objects/CA/DataManager.h"
 
 #include "Objects/CA/UI/UI.h"
 #include "Objects/CA/UI/MapEditUI.h"
 #include "Objects/CA/UI/GameUI.h"
-
-#include "Objects/CA/Bubble/Wave.h"
-#include "Objects/CA/Bubble/Waves.h"
-#include "Objects/CA/Bubble/Bubble.h"
-#include "Objects/CA/Bubble/BubbleManager.h"
-
 
 #include "Objects/CA/Character/CharacterAction.h"
 #include "Objects/CA/Character/CharacterIdle.h"
@@ -167,6 +160,14 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/Character/Character.h"
 #include "Objects/CA/Character/Player.h"
 
+#include "Objects/CA/Item/Item.h"
+#include "Objects/CA/Item/ItemManager.h"
+
+#include "Objects/CA/Bubble/Wave.h"
+#include "Objects/CA/Bubble/Waves.h"
+#include "Objects/CA/Bubble/Bubble.h"
+#include "Objects/CA/Bubble/BubbleManager.h"
+
 #include "Objects/CA/Map/TileObject/TileObject.h"
 #include "Objects/CA/Map/TileObject/TileObjectManager.h"
 #include "Objects/CA/Map/Tile/Tile.h"
@@ -174,6 +175,7 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/Map/Tile/ObstacleTile.h"
 #include "Objects/CA/Map/TileManager.h"
 #include "Objects/CA/Map/EditTileMap.h"
+
 
 
 
@@ -195,8 +197,8 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/ShootingGame/Enemy/RangeEnemy.h"
 #include "Objects/ShootingGame/Enemy/DashEnemy.h"
 #include "Objects/ShootingGame/Enemy/EnemyManager.h"
-#include "Objects/ShootingGame/UI/Item.h"
-#include "Objects/ShootingGame/UI/ItemManager.h"
+//#include "Objects/ShootingGame/UI/Item.h"
+//#include "Objects/ShootingGame/UI/ItemManager.h"
 #include "Objects/ShootingGame/UI/Upgrade.h"
 #include "Objects/ShootingGame/UI/Inventory.h"
 //#include "Objects/ShootingGame/UI/UIManager.h"

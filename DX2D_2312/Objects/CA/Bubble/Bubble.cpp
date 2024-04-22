@@ -51,6 +51,7 @@ void Bubble::CreatActions()
 	action = new Action();
 	action->LoadClip(ToWString(PATH) + L"Pop.png", 6, 1, false, 2.0f);
 	action->GetClip(0)->SetEvent([this]() {
+		TileManager::Get()->SetIdxBgTileType(posTileIdx,Tile::ATTACK);
 		BubbleManager::Get()->SpawnWaves(this->GetGlobalPosition(), 1);
 		},1);
 
@@ -75,7 +76,6 @@ void Bubble::Spawn(const Vector2& pos, int speed)
 	SetAction(STAND);
 	this->power = power;
 	this->SetGlobalPosition(tile->GetGlobalPosition());
-	tile->SetType(Tile::OBSTACLE);
 
 	posTileIdx = tile->GetCurIdx();
 }

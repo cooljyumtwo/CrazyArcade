@@ -103,8 +103,19 @@ void Waves::Spawn(const Vector2& pos, int power)
 			}
 
 			Tile* tile = TileManager::Get()->GetNearPosTileState(GetGlobalPosition() + waveList[i]->GetLocalPosition());
-			if (tile->GetType() == Tile::OBSTACLE) 
+
+			if (tile->GetType() == Tile::OBSTACLE)
+			{
+				BasicTile* basicTile = (BasicTile*)tile;
+
+				ObstacleTile* obstacleTile = (ObstacleTile*)basicTile->GetObstacleTile();
+				if (obstacleTile != nullptr)
+					obstacleTile->End();
+
+				basicTile->SetType(Tile::BASIC);
 				break;
+			}
+
 			else 
 				tile->SetType(Tile::ATTACK);
 
@@ -114,6 +125,7 @@ void Waves::Spawn(const Vector2& pos, int power)
 				waveList[i]->Spawn(pos, waveType, Wave::START);
 
 			waveList[i]->SetPosTileIdx(tile->GetCurIdx());
+
 		}
 
 		if (next(it) == waves.end())

@@ -124,7 +124,7 @@ void EditTileMap::RenderSampleButtons()
 
 void EditTileMap::CreateBGTile()
 {
-    bgTiles = TileManager::Get()->GetBGTile();
+    bgTiles = TileManager::Get()->GetBGTiles();
 
     sizeX = bgTiles.size();
     sizeY = bgTiles[0].size();

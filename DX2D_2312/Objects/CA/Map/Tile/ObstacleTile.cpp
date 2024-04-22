@@ -9,8 +9,3 @@ ObstacleTile::ObstacleTile(wstring textureFile, Vector2 pos, bool isPop)
 ObstacleTile::~ObstacleTile()
 {
 }
-
-void ObstacleTile::PopObjTile()
-{
-	SetActive(false);
-}

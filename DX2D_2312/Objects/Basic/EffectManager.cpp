@@ -1,5 +1,25 @@
 #include "Framework.h"
 
+void EffectManager::Render()
+{
+	for (const auto& pair : totalObject) {
+		const vector<GameObject*>& gameObjects = pair.second;
+		for (GameObject* object : gameObjects) {
+			object->Render();
+		}
+	}
+}
+
+void EffectManager::Update()
+{
+	for (const auto& pair : totalObject) {
+		const vector<GameObject*>& gameObjects = pair.second;
+		for (GameObject* object : gameObjects) {
+			object->Update();
+		}
+	}
+}
+
 void EffectManager::Add(string key, UINT poolSize, wstring textureFile, Vector2 maxFrame, float speed, bool isAdditive)
 {
 	vector<GameObject*> objects(poolSize);

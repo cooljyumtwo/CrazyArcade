@@ -41,7 +41,7 @@ void Item::Spawn(const Vector2& pos, ItemData data)
     isField = true;
 
     this->data = data;
-    wstring textureFile = L"Resources/Textures/Shooting/Item/" + data.textureFile;
+    wstring textureFile = L"ResourcesCA/Textures/Item/" + data.textureFile;
     SetTexture(textureFile);
     collider->SetSize(size);
 
@@ -58,7 +58,7 @@ void Item::SetData(ItemData data)
     isField = false;    
 
     this->data = data;
-    wstring textureFile = L"Resources/Textures/Shooting/Item/" + data.textureFile;
+    wstring textureFile = L"ResourcesCA/Textures/Item/" + data.textureFile;
     SetTexture(textureFile);
     collider->SetSize(size);
 }

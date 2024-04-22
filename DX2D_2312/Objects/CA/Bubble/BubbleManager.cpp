@@ -60,3 +60,39 @@ void BubbleManager::SpawnWaves(const Vector2& pos, int power)
 	Waves* wave = (Waves*)Pop("BasicWaves");
 	wave->Spawn(pos, power);
 }
+
+void BubbleManager::PushPlayer(Character* player)
+{
+	for (Bubble* bubble : bubbles)
+	{
+		Vector2 overlab;
+
+		if (bubble->GetCollider()->IsCollision(player->GetCollider(), &overlab))
+		{
+			if (overlab.x < overlab.y)
+			{
+				if (player->GetGlobalPosition().x > bubble->GetGlobalPosition().x)
+				{
+					player->Translate(Vector2::Right() * overlab.x);
+				}
+				else
+				{
+					player->Translate(Vector2::Left() * overlab.x);
+				}
+			}
+			else
+			{
+				if (player->GetGlobalPosition().y > bubble->GetGlobalPosition().y)
+				{
+					player->Translate(Vector2::Up() * overlab.y);
+				}
+				else
+				{
+					player->Translate(Vector2::Down() * overlab.y);
+				}
+			}
+
+			player->UpdateWorld();
+		}
+	}
+}
