@@ -8,6 +8,8 @@ private:
     ItemManager();
     ~ItemManager();
 
+    void Update();
+    void Render();
 public:
     void Spawn(const Vector2& pos);
 

@@ -1,12 +1,9 @@
 #include "Framework.h"
 
-GameObject::GameObject(bool isAdd)
+GameObject::GameObject()
 {
 	material = new Material();
 	worldBuffer = new MatrixBuffer();
-
-	//if(isAdd)
-		//ObjectManager::Get()->Add(this);
 }
 
 GameObject::~GameObject()

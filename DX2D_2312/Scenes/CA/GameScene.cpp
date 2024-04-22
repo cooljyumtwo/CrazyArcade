@@ -14,6 +14,8 @@ GameScene::GameScene()
 
     TileObjectManager::Get();
     BubbleManager::Get();
+    ItemManager::Get();
+    DataManager::Get();
     RenderManager::Get()->Add("GameObject", player);
 }
 

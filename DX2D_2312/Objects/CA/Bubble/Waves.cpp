@@ -109,10 +109,13 @@ void Waves::Spawn(const Vector2& pos, int power)
 				BasicTile* basicTile = (BasicTile*)tile;
 
 				ObstacleTile* obstacleTile = (ObstacleTile*)basicTile->GetObstacleTile();
-				if (obstacleTile != nullptr)
+				if (obstacleTile != nullptr && obstacleTile->IsActive())
 					obstacleTile->End();
 
+				basicTile->SetObstacleTile(nullptr);
 				basicTile->SetType(Tile::BASIC);
+
+				ItemManager::Get()->Spawn(tile->GetGlobalPosition());
 				break;
 			}
 
@@ -135,12 +138,13 @@ void Waves::Spawn(const Vector2& pos, int power)
 
 void Waves::End()
 {
-	TileManager::Get()->PopObjTile();
+	//TileManager::Get()->PopObjTile();
 }
 
 void Waves::ClearWaves()
 {
-	for (auto it = waves.begin(); it != waves.end(); ++it) {
+	for (auto it = waves.begin(); it != waves.end(); ++it) 
+	{
 		auto& waveList = it->second;
 		for (Wave* wave : waveList) {
 			wave->SetActive(false);

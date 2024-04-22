@@ -1,14 +1,5 @@
 #include "Framework.h"
 
-#include "Scenes/Etc/TutorialScene.h"
-#include "Scenes/Etc/ShootingGameScene.h"
-#include "Scenes/Etc/CollisionScene.h"
-#include "Scenes/Etc/AnimationScene.h"
-#include "Scenes/Etc/MapEditorScene.h"
-#include "Scenes/Etc/PixelShaderScene.h"
-#include "Scenes/Etc/RenderTargetScene.h"
-#include "Scenes/Etc/TileEditScene.h"
-#include "Scenes/Etc/TileGameScene.h"
 #include "Scenes/CA/MapEditScene.h"
 #include "Scenes/CA/GameScene.h"
 

@@ -1,12 +1,12 @@
 #pragma once
 
-class Item : public Button
+class Item : public Quad
 {
 public:
     Item();
 
     void Update() override;
-    void Render() override;
+    
 
     void Spawn(const Vector2& pos, ItemData data);
     void SetData(ItemData data);
@@ -19,11 +19,15 @@ public:
 
     void SetInven() { isField = false; }
 
+    RectCollider* GetCollider() { return collider; }
+
 private:
     void SetLevelColor();
 
 private:
     ItemData data;
+
+    RectCollider* collider;
 
     bool isField = false;    
 

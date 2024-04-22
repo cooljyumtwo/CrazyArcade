@@ -2,36 +2,17 @@
 
 Item::Item()
 {
-    SetActive(false);
+    SetActive(false); 
+    collider = new RectCollider({ Tile::TILE_SIZE, Tile::TILE_SIZE });
+    collider->SetParent(this);
 }
 
 void Item::Update()
 {
     if (!IsActive()) return;
 
-    if (!isField)
-        ClickEvent();
-
     UpdateWorld();
     collider->UpdateWorld();
-}
-
-void Item::Render()
-{
-    if (!IsActive()) return;
-
-    SetLevelColor();
-
-    Button::Render();
-
-    if (!isField)
-    {
-        Font::Get()->SetColor("White");
-        Font::Get()->SetStyle("Default");
-
-        Vector2 pos = GetGlobalPosition() + Vector2(30, -30);
-        Font::Get()->RenderText(to_string(count), pos);
-    }    
 }
 
 void Item::Spawn(const Vector2& pos, ItemData data)

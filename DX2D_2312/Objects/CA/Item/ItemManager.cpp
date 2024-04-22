@@ -6,7 +6,8 @@ ItemManager::ItemManager()
 
 	for (GameObject*& item : totalObject["Item"])
 	{
-		item = new Item();		
+		item = new Item();	
+		RenderManager::Get()->Add("GameObject", item);
 	}
 }
 
@@ -14,39 +15,54 @@ ItemManager::~ItemManager()
 {
 }
 
+void ItemManager::Update()
+{
+	for (const auto& pair : totalObject) {
+		const vector<GameObject*>& gameObjects = pair.second;
+		for (GameObject* object : gameObjects) {
+			object->Update();
+		}
+	}
+}
+
+void ItemManager::Render()
+{
+}
+
 void ItemManager::Spawn(const Vector2& pos)
 {
 	Item* item = Pop("Item", true);
 
-	ObjectManager::Get()->Add(item);
 
-	int random = Random(0, 100);
+
+	//int random = Random(0, 100);
 
 	ItemData data;	
-	if (random < 50)
-	{
-		random = Random(1, 4);
-		int type = 0;
-		if (random == 1)
-			type = Random(0, 2);
+	//if (random < 50)
+	//{
+	//	random = Random(1, 4);
+	//	int type = 0;
+	//	if (random == 1)
+	//		type = Random(0, 2);
 
-		int level = Random(0, 100);
-		if (level < 10)
-			level = 3;
-		else if (level < 30)
-			level = 2;
-		else
-			level = 1;
+	//	int level = Random(0, 100);
+	//	if (level < 10)
+	//		level = 3;
+	//	else if (level < 30)
+	//		level = 2;
+	//	else
+	//		level = 1;
 
-		int key = random * 100 + type * 10 + level;
-		data = ShootingDataManager::Get()->GetItemData(key);
-	}
-	else if(random < 60)
-		data = ShootingDataManager::Get()->GetItemData(1);
-	else if(random < 90)
-		data = ShootingDataManager::Get()->GetItemData(2);
-	else
-		data = ShootingDataManager::Get()->GetItemData(3);
+	//	int key = random * 100 + type * 10 + level;
+	//	data = DataManager::Get()->GetItemData(key);
+	//}
+	//else if(random < 60)
+	//	data = DataManager::Get()->GetItemData(1);
+	//else if(random < 90)
+	//	data = DataManager::Get()->GetItemData(2);
+	//else
+
+	data = DataManager::Get()->GetItemData(1);
 
 	item->Spawn(pos, data);
 }
@@ -59,7 +75,6 @@ Item* ItemManager::Collision(Collider* collider)
 
 		if (item->IsField() && item->GetCollider()->IsCollision(collider))
 		{
-			//item->SetActive(false);
 			return item;
 		}
 	}

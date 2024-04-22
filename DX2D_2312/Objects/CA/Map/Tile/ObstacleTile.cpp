@@ -9,3 +9,9 @@ ObstacleTile::ObstacleTile(wstring textureFile, Vector2 pos, bool isPop)
 ObstacleTile::~ObstacleTile()
 {
 }
+
+void ObstacleTile::End()
+{
+	SetActive(false);
+	EffectManager::Get()->Play("RemoveObstacle", GetGlobalPosition());
+}

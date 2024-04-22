@@ -24,6 +24,7 @@ public:
 
 private:
 	void LoadItemData();
+
 public:
 	map<int, ItemData> itemDatas;
 };

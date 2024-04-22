@@ -28,8 +28,6 @@ public:
 
 	void SetAction(int state);
 
-	//void CheckWavesIsActive();
-
 protected:
 	State curState = STAND;
 

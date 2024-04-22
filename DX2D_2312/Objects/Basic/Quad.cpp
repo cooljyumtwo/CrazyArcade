@@ -1,6 +1,6 @@
 #include "Framework.h"
 
-Quad::Quad(Vector2 size, bool isAdd) : size(size), GameObject(isAdd)
+Quad::Quad(Vector2 size) : size(size), GameObject()
 {
 	tag = "Quad";
 
@@ -9,8 +9,8 @@ Quad::Quad(Vector2 size, bool isAdd) : size(size), GameObject(isAdd)
 	mesh->CreateMesh();
 }
 
-Quad::Quad(wstring textureFile, bool isAdd, Vector2 startUV, Vector2 endUV, Vector2 pos)
-	: GameObject(isAdd)
+Quad::Quad(wstring textureFile, Vector2 startUV, Vector2 endUV, Vector2 pos)
+	: GameObject()
 {
 	tag = "Quad";
 

@@ -176,46 +176,6 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/Map/TileManager.h"
 #include "Objects/CA/Map/EditTileMap.h"
 
-
-
-
-
-
-
-
-
-
-
-#include "Objects/ShootingGame/Skill/Skill.h"
-#include "Objects/ShootingGame/Skill/BaseSkill.h"
-#include "Objects/ShootingGame/Skill/WheelSkill.h"
-#include "Objects/ShootingGame/Skill/Bullet.h"
-#include "Objects/ShootingGame/Skill/BaseBullet.h"
-#include "Objects/ShootingGame/Skill/WheelBullet.h"
-#include "Objects/ShootingGame/Skill/BulletManager.h"
-#include "Objects/ShootingGame/Enemy/Enemy.h"
-#include "Objects/ShootingGame/Enemy/RangeEnemy.h"
-#include "Objects/ShootingGame/Enemy/DashEnemy.h"
-#include "Objects/ShootingGame/Enemy/EnemyManager.h"
-//#include "Objects/ShootingGame/UI/Item.h"
-//#include "Objects/ShootingGame/UI/ItemManager.h"
-#include "Objects/ShootingGame/UI/Upgrade.h"
-#include "Objects/ShootingGame/UI/Inventory.h"
-//#include "Objects/ShootingGame/UI/UIManager.h"
-#include "Objects/ShootingGame/Plane.h"
-#include "Objects/ShootingGame/Background.h"
-
-#include "Objects/Cookie/CookieAction.h"
-#include "Objects/Cookie/CookieJump.h"
-#include "Objects/Cookie/CookieRun.h"
-#include "Objects/Cookie/CookieJumpUp.h"
-#include "Objects/Cookie/CookieJumpDown.h"
-#include "Objects/Cookie/CookieJumpDouble.h"
-#include "Objects/Cookie/CookieRange.h"
-#include "Objects/Cookie/CookieMelee.h"
-#include "Objects/Cookie/CookieBullet.h"
-#include "Objects/Cookie/Cookie.h"
-
 #include "Objects/TileGame/Amazon.h"
 
 
