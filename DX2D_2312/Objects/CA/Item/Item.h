@@ -2,11 +2,14 @@
 
 class Item : public Quad
 {
+private:
+    wstring PATH = L"ResourcesCA/Textures/Item/";
+    const float MAX_PLAY_TIME = 0.1f;
 public:
     Item();
 
     void Update() override;
-    
+    void Render() override;
 
     void Spawn(const Vector2& pos, ItemData data);
     void SetData(ItemData data);
@@ -25,6 +28,7 @@ private:
     void SetLevelColor();
 
 private:
+    Quad* shadow;
     ItemData data;
 
     RectCollider* collider;
@@ -32,4 +36,6 @@ private:
     bool isField = false;    
 
     int count = 1;
+
+    float playTime = 0.0f;
 };

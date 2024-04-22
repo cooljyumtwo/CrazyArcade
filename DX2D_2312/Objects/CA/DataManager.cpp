@@ -28,6 +28,7 @@ void DataManager::LoadItemData()
 
 		vector<string> datas = SplitString(temp, ",");
 
+		//key, name, hp, power, speed, type, value, Image 
 		ItemData data;
 		data.key = stoi(datas[0]);
 		data.name = datas[1];

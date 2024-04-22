@@ -33,8 +33,6 @@ void ItemManager::Spawn(const Vector2& pos)
 {
 	Item* item = Pop("Item", true);
 
-
-
 	//int random = Random(0, 100);
 
 	ItemData data;	

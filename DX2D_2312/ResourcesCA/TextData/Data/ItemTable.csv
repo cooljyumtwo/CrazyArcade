@@ -1,5 +1,5 @@
-key,name,hp,power,speed,type,value,Image
-1,BubblePower,0,1,0,0,10,BubblePower.png
-2,BubbleCntUp,0,1,0,1,50,BubbleCntUp.png
-3,BubbleNeedle,0,1,0,2,100,BubbleNeedle.png
-4,Speed,0,1,100,3,10,Speed.png
+key,name,power,speed,type,value,Image
+1,BubblePower,1,0,0,10,BubblePower.png
+2,BubbleCntUp,1,0,1,50,BubbleCntUp.png
+3,BubbleNeedle,1,0,2,100,BubbleNeedle.png
+4,Speed,1,100,3,10,Speed.png

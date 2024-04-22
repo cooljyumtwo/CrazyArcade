@@ -3,16 +3,51 @@
 Item::Item()
 {
     SetActive(false); 
+
     collider = new RectCollider({ Tile::TILE_SIZE, Tile::TILE_SIZE });
     collider->SetParent(this);
+    collider->GetColor()->SetColor(0.0f,1.0f,1.0f);
+
+    shadow = new Quad(PATH + L"Shadow.png");
+    shadow->SetParent(this);
+    shadow->Translate(Vector2::Down() * Vector2{ 0, 20.0f});
+    
+   // RenderManager::Get()->Add("GameObject", shadow);
 }
 
 void Item::Update()
 {
     if (!IsActive()) return;
 
+    shadow->UpdateWorld();
     UpdateWorld();
     collider->UpdateWorld();
+
+    
+    if (playTime <= MAX_PLAY_TIME)
+    {
+        Translate(Vector2::Up() * Vector2{ 0, 0.07f });
+    }
+    else if(playTime <= MAX_PLAY_TIME * 2 && playTime > MAX_PLAY_TIME)
+    { 
+        Translate(Vector2::Down() * Vector2 { 0, 0.07f });
+    }
+    else if (playTime > MAX_PLAY_TIME * 2)
+    {
+        playTime -= MAX_PLAY_TIME * 2;
+
+    }
+    playTime += DELTA * 0.2f;
+    
+}
+
+void Item::Render()
+{
+    if (!IsActive()) return;
+
+    shadow->Render();
+    Quad::Render();
+    collider->Render();
 }
 
 void Item::Spawn(const Vector2& pos, ItemData data)
@@ -22,7 +57,8 @@ void Item::Spawn(const Vector2& pos, ItemData data)
     isField = true;
 
     this->data = data;
-    wstring textureFile = L"ResourcesCA/Textures/Item/" + data.textureFile;
+    wstring t = data.textureFile;
+    wstring textureFile = PATH + data.textureFile;
     SetTexture(textureFile);
     collider->SetSize(size);
 
@@ -39,7 +75,7 @@ void Item::SetData(ItemData data)
     isField = false;    
 
     this->data = data;
-    wstring textureFile = L"ResourcesCA/Textures/Item/" + data.textureFile;
+    wstring textureFile = PATH + data.textureFile;
     SetTexture(textureFile);
     collider->SetSize(size);
 }

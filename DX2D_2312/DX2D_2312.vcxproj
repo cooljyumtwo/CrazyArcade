@@ -203,6 +203,7 @@
     <ClInclude Include="Objects\CA\DataManager.h" />
     <ClInclude Include="Objects\CA\Item\Item.h" />
     <ClInclude Include="Objects\CA\Item\ItemManager.h" />
+    <ClInclude Include="Objects\CA\Item\Shadow.h" />
     <ClInclude Include="Objects\CA\Map\Tile\BasicTile.h" />
     <ClInclude Include="Objects\CA\Map\EditTileMap.h" />
     <ClInclude Include="Objects\CA\Map\Tile\ObstacleTile.h" />

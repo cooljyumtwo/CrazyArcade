@@ -8,6 +8,12 @@ public:
         IDLE, MOVE, BUBBLE, ALIVE,DIE//,INCARCERATION, LIVE, DIE
     };
 
+    struct Stat 
+    {
+        int bubbleCnt = 1;
+        int bubblePower = 1;
+        int speed = 100.0f;
+    };
 public:
     Character();
     ~Character();

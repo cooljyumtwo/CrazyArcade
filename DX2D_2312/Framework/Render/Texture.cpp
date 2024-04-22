@@ -22,8 +22,8 @@ Texture* Texture::Add(wstring file)
     if (textures.count(file) > 0)
         return textures[file];
 
-    ScratchImage image;    
-    LoadFromWICFile(file.c_str(), WIC_FLAGS_DEFAULT_SRGB, nullptr, image);
+    ScratchImage image;
+    LoadFromWICFile(file.c_str(), WIC_FLAGS_IGNORE_SRGB, nullptr, image);
 
     ID3D11ShaderResourceView* srv;
 
@@ -40,7 +40,7 @@ Texture* Texture::Add(wstring key, ID3D11ShaderResourceView* srv)
     if (textures.count(key) > 0)
         return textures[key];
 
-    ScratchImage image;    
+    ScratchImage image;
 
     textures[key] = new Texture(srv, image, key);
 

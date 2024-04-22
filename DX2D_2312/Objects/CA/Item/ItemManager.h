@@ -7,10 +7,10 @@ private:
 
     ItemManager();
     ~ItemManager();
-
+public:
     void Update();
     void Render();
-public:
+
     void Spawn(const Vector2& pos);
 
     Item* Collision(Collider* collider);

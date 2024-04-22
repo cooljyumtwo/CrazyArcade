@@ -26,14 +26,13 @@ GameScene::~GameScene()
 
 void GameScene::Update()
 {
-
     player->Update();
     player->UpdateWorld();
 
     TileObjectManager::Get()->Update();
     TileManager::Get()->Update();
     BubbleManager::Get()->Update();
-   
+    ItemManager::Get()->Update();
 }
 
 void GameScene::Render()
@@ -41,6 +40,7 @@ void GameScene::Render()
     RenderManager::Get()->Render();
     TileObjectManager::Get()->Render();
     TileManager::Get()->Render();
+    ItemManager::Get()->Render();
 }
 
 void GameScene::PostRender()
