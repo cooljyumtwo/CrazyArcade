@@ -5,7 +5,6 @@ class CharacterAction : public Action
 {
 protected:
     const string PATH = "ResourcesCA/Textures/Character/";
-    const float MOVE_SPEED = 50.0f;
 
 public:
     enum Compass
@@ -19,12 +18,15 @@ public:
 
     void SetTarget(Transform* target) { this->target = target; }
     void SetCompass(Compass compass) { this->compass = compass; SetState(compass); }
+    void SetMoveSpeed(float moveSpeed) { this->moveSpeed = moveSpeed; }
 
     Compass GetCompass() { return compass; }
 
 protected:
+    float moveSpeed = 120.0f;
+
     Transform* target;
     Vector2 velocity;
 
-    static Compass compass;
+    Compass compass = S;
 };

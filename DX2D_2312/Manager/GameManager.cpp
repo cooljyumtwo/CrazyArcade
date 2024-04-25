@@ -15,7 +15,7 @@ GameManager::GameManager()
 	UIManager::Get()->Add("MapEdit", new MapEditUI());
 	UIManager::Get()->Add("Game", new GameUI());
 
-	SCENE->ChangeScene("Game");
+	SCENE->ChangeScene("MapEdit");
 }
 
 GameManager::~GameManager()

@@ -10,6 +10,14 @@ struct ItemData
 	wstring textureFile;
 };
 
+struct MonsterData
+{
+	int key;
+	string name;
+	float speed;
+	bool isBubble;
+};
+
 class DataManager : public Singleton<DataManager>
 {
 private:
@@ -22,9 +30,13 @@ public:
 	ItemData GetItemData(int key) { return itemDatas[key]; }
 	int SizeItemData() { return itemDatas.size(); }
 
+	MonsterData GetMonsterData(int key) { return monsterDatas[key]; }
+
 private:
 	void LoadItemData();
+	void LoadMonsterData();
 
 public:
 	map<int, ItemData> itemDatas;
+	map<int, MonsterData> monsterDatas;
 };

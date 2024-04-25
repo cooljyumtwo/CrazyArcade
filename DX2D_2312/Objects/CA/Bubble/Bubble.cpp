@@ -22,6 +22,8 @@ Bubble::~Bubble()
 void Bubble::Update()
 {
 	if (!this->IsActive()) return;
+	
+
 
 	playTime += DELTA;
 	if (playTime > MAX_PLAY_TIME)
@@ -33,6 +35,9 @@ void Bubble::Update()
 	UpdateWorld();
 	collider->UpdateWorld();
 	actions[curState]->Update();
+
+	if (isTarget && !GetCollider()->IsCollision(target->GetCollider()))
+		SetIsTarget(false);
 }
 
 void Bubble::Render()
@@ -69,6 +74,8 @@ void Bubble::CreatActions()
 
 void Bubble::Spawn(const Vector2& pos, int power, Character* target)
 {
+	isTarget = true;
+
 	UpdateWorld();
 	collider->UpdateWorld();
 

@@ -26,10 +26,15 @@ public:
 
 	void Spawn(const Vector2& pos, int power, Character* target);
 
+	bool GetIsTarget() { return  isTarget; }
+	void SetIsTarget(bool isTarget) {this->isTarget = isTarget;}
+
 protected:
 	int power;
 
 	float playTime = 0.0f;
+
+	bool isTarget = false;
 
 	Vector2 velocity;
 	Vector2 posTileIdx;
@@ -41,4 +46,5 @@ protected:
 	State curState = STAND;
 
 	map<State, Action*> actions;
+
 };

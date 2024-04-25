@@ -10,7 +10,7 @@ TileManager::TileManager()
 
     UpdateWorld();
 
-    EffectManager::Get()->Add("RemoveObstacle", 50, L"ResourcesCA/Textures/Effect/RemoveEffect.png",
+    EffectManager::Get()->Add("RemoveObstacle", 50, L"RemoveEffect.png",
         Vector2(4, 1));
 }
 
@@ -23,8 +23,6 @@ void TileManager::Render()
     RenderManager::Get()->Render("BGTile");
     RenderManager::Get()->Render("GameObject");
     RenderManager::Get()->Render("BGTileTxt");
-
-    EffectManager::Get()->Render();
 }
 
 void TileManager::Update()
@@ -112,6 +110,18 @@ void TileManager::LoadMapData(string file)
     delete reader;
 }
 
+void TileManager::LoadMapSize()
+{
+    mapSize["Left"] = bgTiles[0][0]->GetGlobalPosition().x;
+    mapSize["Right"] = bgTiles[SIZE_X - 1][0]->GetGlobalPosition().x + Tile::TILE_SIZE;
+    mapSize["Up"] = bgTiles[0][0]->GetGlobalPosition().y;
+    mapSize["Down"] = bgTiles[0][SIZE_Y - 1]->GetGlobalPosition().y - Tile::TILE_SIZE;
+}
+
+void TileManager::LoadMonster()
+{
+}
+
 void TileManager::ClearObjTile()
 {
     for (ObstacleTile* tile : objTiles)
@@ -186,6 +196,10 @@ Tile* TileManager::GetNearPosTileState(GameObject* target, Tile::Type type)
 
 Tile* TileManager::GetNearPosTileState(Vector2 pos)
 {
+    if (pos.x < mapSize["Left"] || pos.x + Tile::TILE_SIZE > mapSize["Right"]
+        || pos.y > mapSize["Up"] || pos.y - Tile::TILE_SIZE < mapSize["Down"]) 
+        return nullptr;
+
     Vector2 firstTilePos = bgTiles[0][0]->GetGlobalPosition();
 
     Vector2 calPos = { pos.x - firstTilePos.x,firstTilePos.y-pos.y };
@@ -231,7 +245,18 @@ void TileManager::PushPlayer(Character* player)
     }
 }
 
-void TileManager::AttackPlayer(Character* player)
+void TileManager::CheckMapPosPlayer(Character* player)
 {
+    Vector2 pos = player->GetGlobalPosition();
+    if (pos.x < mapSize["Left"])
+        player->Translate(Vector2::Right() * (mapSize["Left"] - pos.x));
 
+    if (pos.x + Tile::TILE_SIZE > mapSize["Right"])
+        player->Translate(Vector2::Left() * ((pos.x + Tile::TILE_SIZE) - mapSize["Right"]));
+
+    if (pos.y > mapSize["Up"])
+        player->Translate(Vector2::Down() * (pos.y - mapSize["Up"]));
+
+    if (pos.y - Tile::TILE_SIZE - OFFSET < mapSize["Down"])
+        player->Translate(Vector2::Up() * (mapSize["Down"] - (pos.y - Tile::TILE_SIZE - OFFSET)));
 }

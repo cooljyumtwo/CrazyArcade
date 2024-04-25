@@ -3,6 +3,7 @@
 DataManager::DataManager()
 {
 	LoadItemData();
+	LoadMonsterData();
 }
 
 void DataManager::LoadItemData()
@@ -37,5 +38,38 @@ void DataManager::LoadItemData()
 		data.textureFile = ToWString(datas[5]);
 
 		itemDatas[data.key] = data;
+	}
+}
+
+void DataManager::LoadMonsterData()
+{
+	ifstream loadFile(L"ResourcesCA/TextData/Data/MonsterTable.csv");
+
+	string temp;
+
+	bool isFirstLine = true;
+
+	while (!loadFile.eof())
+	{
+		getline(loadFile, temp);
+
+		if (temp.size() == 0)
+			return;
+
+		if (isFirstLine)
+		{
+			isFirstLine = false;
+			continue;
+		}
+
+		vector<string> datas = SplitString(temp, ",");
+
+		MonsterData data;
+		data.key = stoi(datas[0]);
+		data.name = datas[1];
+		data.speed = stof(datas[2]);
+		data.isBubble = stoi(datas[3]);
+
+		monsterDatas[data.key] = data;
 	}
 }

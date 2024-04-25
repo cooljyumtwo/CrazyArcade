@@ -1,18 +1,12 @@
 #include "Framework.h"
 
 Effect::Effect(wstring textureFile, Vector2 maxFrame, float speed, bool isAdditive)
-    : Quad(textureFile, true, Vector2(),
-        Vector2(1 / maxFrame.x, 1 / maxFrame.y)),
-    speed(speed), isAdditive(isAdditive), maxFrame(maxFrame)
 {
-    material->SetPixelShader(L"Effect.hlsl");
-
     SetActive(false);
 
-    frameBuffer = new FrameBuffer();
-    frameBuffer->SetMaxFrame(maxFrame);
-
-    maxFrameNum = (UINT)(maxFrame.x * maxFrame.y);    
+    action = new Action();
+    action->LoadClip(PATH + textureFile, 4, 1, false);
+    action->GetClip(0)->SetEvent([this]() { End(); });
 }
 
 Effect::~Effect()
@@ -24,46 +18,25 @@ void Effect::Update()
 {
     if (!IsActive()) return;
 
-    frameTime += DELTA;
-
-    if (frameTime >= delayTime)
-    {
-        frameTime -= delayTime;
-
-        curFrameNum++;
-
-        curFrame.x = curFrameNum % (int)maxFrame.x;
-        curFrame.y = curFrameNum / (int)maxFrame.x;
-
-        frameBuffer->SetCurFrame(curFrame);
-
-        if (curFrameNum >= maxFrameNum)
-            End();
-    }
-
+    action->Update();
     UpdateWorld();
+
 }
 
 void Effect::Render()
 {
-    if (isAdditive)
-        Environment::Get()->SetAdditiveBlend();
+    if (!IsActive()) return;
 
-    frameBuffer->SetPS(1);
-    Quad::Render();
-
-    Environment::Get()->SetAlphaBlend();
+    GameObject::SetRender();
+    action->Render();
 }
 
 void Effect::Play(const Vector2& pos)
 {
     SetActive(true);
-    SetLocalPosition(pos);
+    SetGlobalPosition(pos);
 
-    frameTime = 0.0f;
-    curFrameNum = 0;
-
-    frameBuffer->SetCurFrame(Vector2());
+    action->Start();
 }
 
 void Effect::End()

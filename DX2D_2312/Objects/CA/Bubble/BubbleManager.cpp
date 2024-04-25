@@ -55,9 +55,10 @@ void BubbleManager::PushPlayer(Character* player)
 		Bubble* bubble = (Bubble*)bubbleObj;
 		Vector2 overlab;
 
+
 		if (bubble->GetCollider()->IsCollision(player->GetCollider(), &overlab))
 		{
-			if (overlab.x > 20.0f) return;
+			if (bubble->GetIsTarget()) continue;
 
 			if (overlab.x < overlab.y)
 			{

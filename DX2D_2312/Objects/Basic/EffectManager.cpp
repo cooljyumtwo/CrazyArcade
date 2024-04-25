@@ -15,7 +15,8 @@ void EffectManager::Update()
 	for (const auto& pair : totalObject) {
 		const vector<GameObject*>& gameObjects = pair.second;
 		for (GameObject* object : gameObjects) {
-			object->Update();
+			Effect* effect = (Effect*)object;
+			effect->Update();
 		}
 	}
 }
@@ -24,7 +25,7 @@ void EffectManager::Add(string key, UINT poolSize, wstring textureFile, Vector2 
 {
 	vector<GameObject*> objects(poolSize);
 
-	for (GameObject*& object : objects)
+	for (GameObject*& object : objects) 
 		object = new Effect(textureFile, maxFrame, speed, isAdditive);
 
 	totalObject[key] = objects;

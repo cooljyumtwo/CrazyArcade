@@ -159,6 +159,11 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/Character/CharacterDie.h"
 #include "Objects/CA/Character/Character.h"
 
+#include "Objects/CA/Monster/MonsterMove.h"
+#include "Objects/CA/Monster/MonsterDie.h"
+#include "Objects/CA/Monster/Monster.h"
+#include "Objects/CA/Monster/MonsterManager.h"
+
 #include "Objects/CA/Item/Item.h"
 #include "Objects/CA/Item/ItemManager.h"
 

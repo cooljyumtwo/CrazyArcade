@@ -1,1 +1,44 @@
-﻿  DX2D_2312.vcxproj -> F:\git\CrazyArcade\x64\Debug\DX2D_2312.exe
+﻿  EditTileMap.cpp
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(144,25): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(145,28): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(260,31): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(287,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(288,9): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(367,16): warning C4244: '인수': 'const float'에서 'const unsigned __int64'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(367,23): warning C4244: '인수': 'const float'에서 'const unsigned __int64'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(385,25): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(386,25): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(404,20): warning C4244: '인수': 'const float'에서 'const unsigned __int64'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(404,27): warning C4244: '인수': 'const float'에서 'const unsigned __int64'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(443,35): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(477,37): warning C4244: '인수': 'float'에서 'const unsigned __int64'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+C:\Cooljyum\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(477,47): warning C4244: '인수': 'float'에서 'const unsigned __int64'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
+  
+  DX2D_2312.vcxproj -> C:\Cooljyum\CrazyArcade\x64\Debug\DX2D_2312.exe

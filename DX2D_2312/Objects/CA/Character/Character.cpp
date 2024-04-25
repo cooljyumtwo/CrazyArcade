@@ -2,8 +2,6 @@
 
 Character::Character()
 {
-    CreateActions();
-    actions[curState]->Start();
 
     collider = new RectCollider({ Tile::TILE_SIZE * 0.9f , Tile::TILE_SIZE * 0.6f });
     collider->Translate(Vector2::Down() * Tile::TILE_SIZE * 0.2f);
@@ -77,6 +75,7 @@ void Character::Attack()
     {
         bubbleCurCnt++;
         BubbleManager::Get()->Spawn(GetLocalPosition(), stat.bubblePower, this);
+        MonsterManager::Get()->Spawn(GetLocalPosition());
     }
 }
 
@@ -85,10 +84,11 @@ void Character::Bubble()
     if (curState == BUBBLE || curState == ALIVE || curState == DIE) return;
 
     Tile* tile = TileManager::Get()->GetNearPosTileState(collider->GetGlobalPosition());
+    
+    if (!tile) return;
+
     if (tile->GetType() == Tile::ATTACK)
-    {
         SetAction(BUBBLE);
-    }
 }
 
 

@@ -26,8 +26,17 @@ private:
 
     void ClearObjTile();
     void CheckAddObjTile(Vector2 pos);
-    void AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx);
+    void AddObjTile(const Vector2& pos, const Vector2& size, const Vector2& idx);
     void RemoveObjTile(const Vector2& pos);
+
+   // void ClearMonster();
+   // void CheckAddObjTile(Vector2 pos);
+    void AddMonster(const Vector2& pos, const Vector2& idx, wstring textureFile = L"");
+    void RemoveMonster(const Vector2& pos);
+  //  void RemoveObjTile(const Vector2& pos);
+
+    void SaveMonster(string file);
+    void LoadMonster(string file);
 
 private:
     int type = 0;
@@ -40,5 +49,6 @@ private:
 
     vector<vector<Tile*>> bgTiles;
     vector<ObstacleTile*> objTiles;
+    vector<pair<Tile*,int>> monsterTiles;
     vector<Texture*> sampleTextures;
 };

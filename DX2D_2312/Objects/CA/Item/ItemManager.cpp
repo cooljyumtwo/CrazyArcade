@@ -2,7 +2,7 @@
 
 ItemManager::ItemManager()
 {
-	totalObject["Item"].resize(300);
+	totalObject["Item"].resize(TileManager::Get()->SIZE_X * TileManager::Get()->SIZE_Y);
 
 	for (GameObject*& item : totalObject["Item"])
 	{

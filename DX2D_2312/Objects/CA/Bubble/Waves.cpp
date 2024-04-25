@@ -105,6 +105,8 @@ void Waves::Spawn(const Vector2& pos, int power)
 
 			Tile* tile = TileManager::Get()->GetNearPosTileState(GetGlobalPosition() + waveList[i]->GetLocalPosition());
 
+			if (!tile) continue;
+
 			if (tile->GetType() == Tile::OBSTACLE)
 			{
 				BasicTile* basicTile = (BasicTile*)tile;

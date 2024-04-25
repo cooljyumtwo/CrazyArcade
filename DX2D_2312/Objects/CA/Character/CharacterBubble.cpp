@@ -50,7 +50,7 @@ void CharacterBubble::Move()
     {
         velocity.y = -1.0f;
     }
-    target->Translate(velocity * MOVE_SPEED * 0.5f * DELTA);
+    target->Translate(velocity * moveSpeed * 0.5f * DELTA);
 
     Character* character = (Character*)target;
     TileManager::Get()->PushPlayer(character);

@@ -39,25 +39,21 @@ void Wave::Render()
 
 float Wave::GetDepth()
 {
-	return collider->Bottom();
+	return collider->Top();
 }
 
 void Wave::CreateActions()
 {
 	Action* action = new Action();
 	action->LoadClip(ToWString(PATH) + L"Wave_Start.png", 11, 1, false, 2.6f);
-	action->GetClip(0)->SetEvent([this]() {
-		this->SetActive(false);
-		TileManager::Get()->SetIdxBgTileType(posTileIdx, Tile::BASIC);
-		});
+	action->GetClip(0)->SetEvent([this]() {TileManager::Get()->SetIdxBgTileType(posTileIdx, Tile::BASIC); }, 7);
+	action->GetClip(0)->SetEvent([this]() {this->SetActive(false); });
 	actions[START] = action;
 
 	action = new Action();
 	action->LoadClip(ToWString(PATH) + L"Wave_End.png", 11, 1, false, 2.6f);
-	action->GetClip(0)->SetEvent([this]() {
-		this->SetActive(false);
-		TileManager::Get()->SetIdxBgTileType(posTileIdx, Tile::BASIC);
-		});
+	action->GetClip(0)->SetEvent([this]() {TileManager::Get()->SetIdxBgTileType(posTileIdx, Tile::BASIC);}, 7);
+	action->GetClip(0)->SetEvent([this]() {this->SetActive(false);});
 	actions[END] = action;
 }
 

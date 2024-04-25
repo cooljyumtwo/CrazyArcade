@@ -2,11 +2,14 @@
 
 class TileManager : public Singleton<TileManager>, Transform
 {
-private:
-	string PATH = "ResourcesCA/TextData/Map/";
-
+public:
 	UINT SIZE_X = 15;
 	UINT SIZE_Y = 13;
+
+private:
+	string PATH = "ResourcesCA/TextData/Map/";
+	float OFFSET = 10.0f;
+
 private:
 	friend class Singleton;
 
@@ -28,7 +31,9 @@ public:
 
 	void CreateBGTile();
 	void LoadMapData(string file);
-	void LoadGameMap() { LoadMapData(PATH + mapNameStr + ".map"); }
+	void LoadMapSize();
+	void LoadGameMap() { LoadMapData(PATH + mapNameStr + ".map"); LoadMapSize(); }
+	void LoadMonster();
 
 	void ClearObjTile();
 	void AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx, const wstring textureFile);
@@ -38,9 +43,10 @@ public:
 	Tile* GetNearPosTileState(Vector2 pos);
 
 	void PushPlayer(Character* player);
-	void AttackPlayer(Character* player);
+	void CheckMapPosPlayer(Character* player);
 
 public:
+	map<string, float> mapSize;
 
 	GameObject* tiles;
 	vector<vector<Tile*>> bgTiles;

@@ -2,20 +2,18 @@
 
 class Character : public GameObject
 {
-private:
-    vector<int> MAX_STAT = { 7, 5, 5 };
-
 public:
     enum State
     {
         IDLE, MOVE, BUBBLE, ALIVE, DIE
     };
 
+protected:
     struct Stat 
     {
         int bubbleCnt = 1;
-        int bubblePower = 2;
-        int speed = 1;
+        int bubblePower = 1;
+        int speed = 2;
     };
 
 public:
@@ -37,21 +35,20 @@ public:
 
     Stat GetStat() { return stat; }
 
-private:
+protected:
     void Move();
     void Attack();
     void Bubble();
 
     void Landing();
 
-    void CreateActions();
+    virtual void CreateActions();
 
     void AddAction(string file, int frameX, int frameY);
 
 protected:
     Stat stat;
 
-private:
     RectCollider* collider;
 
     map<State, Action*> actions;

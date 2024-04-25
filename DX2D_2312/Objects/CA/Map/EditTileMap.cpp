@@ -38,6 +38,12 @@ void EditTileMap::Render()
     for (ObstacleTile* tile : objTiles)
         tile->Render();
 
+    for (auto iter = monsterTiles.begin(); iter != monsterTiles.end(); )
+    {
+        Tile* tile = iter->first;
+        tile->Render();
+    }
+
     for (UINT y = 0; y < sizeY; y++)
     {
         for (UINT x = 0; x < sizeX; x++)
@@ -47,8 +53,8 @@ void EditTileMap::Render()
     }
 
     //ImGui
-    const char* list[] = {"BASIC", "OBSTACLE"};
-    if (ImGui::Combo("Type", &type, list, 2)) 
+    const char* list[] = {"BASIC", "OBSTACLE","MONSTER"};
+    if (ImGui::Combo("Type", &type, list, 3)) 
     {
         SetType();
     }
@@ -78,7 +84,10 @@ void EditTileMap::Update()
     CheckAddObjTile(pos);
 
     if (KEY->Down(VK_RBUTTON))
+    {
         RemoveObjTile(pos);
+        RemoveMonster(pos);
+    }
 }
 
 void EditTileMap::UpdateWorld()
@@ -95,6 +104,12 @@ void EditTileMap::UpdateWorld()
 
     for (ObstacleTile* tile : objTiles)
         tile->UpdateWorld();
+
+    for (auto iter = monsterTiles.begin(); iter != monsterTiles.end(); )
+    {
+        Tile* tile = iter->first;
+        tile->UpdateWorld();
+    }
 }
 
 void EditTileMap::RenderSampleButtons()
@@ -154,6 +169,9 @@ void EditTileMap::CreateSampleButtons()
     case 1:
         typePath += L"Obstacle/";
         break;
+    case 2:
+        typePath = L"ResourcesCA/Textures/Character/Monster/Monster_Collection/";
+        break;
     default:
         break;
     }
@@ -194,6 +212,7 @@ void EditTileMap::Save()
             string file = DIALOG->GetCurrentFileName();
 
             SaveMapData(path + file);
+            SaveMonster(path + "Monster/" + file);
         }
 
         DIALOG->Close();
@@ -215,6 +234,7 @@ void EditTileMap::Load()
             string file = DIALOG->GetCurrentFileName();
 
             LoadMapData(path + file);
+            LoadMonster(path + "Monster/" + file);
         }
 
         DIALOG->Close();
@@ -241,7 +261,9 @@ void EditTileMap::SaveMapData(string file)
 
     for (ObstacleTile* tile : objTiles)
     {
-        writer->WString(tile->GetTexture());
+        writer->WString(
+            tile->GetTexture()
+        );
         writer->Vector(tile->GetLocalPosition());
         writer->Vector(tile->GetCurIdx());
     }
@@ -310,10 +332,15 @@ void EditTileMap::CheckAddObjTile(Vector2 pos)
                 {
                     if (type == 0)
                         tile->SetTexture(selectTextureFile);
-                    else
+                    else if(type == 1)
                     {
                         Vector2 size = tile->GetSize();
                         AddObjTile(tile->GetLocalPosition(), tile->GetSize(), tile->GetCurIdx());
+                        tile->SetType(Tile::OBSTACLE);
+                    }
+                    else 
+                    {
+                        AddMonster(tile->GetLocalPosition(), tile->GetCurIdx());
                         tile->SetType(Tile::OBSTACLE);
                     }
                 }
@@ -326,15 +353,17 @@ void EditTileMap::CheckAddObjTile(Vector2 pos)
     }
 }
 
-void EditTileMap::AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx)
+void EditTileMap::AddObjTile(const Vector2& pos, const Vector2& size, const Vector2& idx)
 {
     wstring textureFile = selectTextureFile;
-
-    ObstacleTile* tile = new ObstacleTile(textureFile, pos, true);
+    
+    ObstacleTile* tile = new ObstacleTile(textureFile, pos);
     tile->SetParent(this);
     tile->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5);
     tile->Update();
     tile->SetCurIdx(idx);
+    tile->SetTexture(textureFile);
+
     bgTiles[idx.x][idx.y]->SetType(Tile::OBSTACLE);
 
     RemoveObjTile(tile->GetCollider()->GetGlobalPosition());
@@ -345,7 +374,6 @@ void EditTileMap::AddObjTile(const Vector2& pos, const Vector2& size, const Vect
 
 void EditTileMap::RemoveObjTile(const Vector2& pos)
 {
-
     vector<ObstacleTile*>::iterator iter = objTiles.begin();
 
     for (; iter != objTiles.end(); )
@@ -365,4 +393,92 @@ void EditTileMap::RemoveObjTile(const Vector2& pos)
             iter++;
         }
     }
+}
+
+void EditTileMap::AddMonster(const Vector2& pos, const Vector2& idx, wstring textureFile)
+{
+   if(textureFile.empty())
+       textureFile = selectTextureFile;
+
+
+    if (bgTiles[idx.x][idx.y]->GetType() == Tile::OBSTACLE) return;
+
+    Tile* tile = new Tile(textureFile, pos);
+    tile->SetParent(this);
+    tile->Update();
+    tile->SetCurIdx(idx);
+
+    size_t posStr = textureFile.find_last_of(L'/');
+    wstring fileName = textureFile.substr(posStr + 1);
+    posStr = fileName.find(L'.');
+    wstring numStr = fileName.substr(0, posStr);
+    int num = stoi(numStr);
+
+    monsterTiles.push_back(make_pair(tile, num));
+}
+
+void EditTileMap::RemoveMonster(const Vector2& pos)
+{
+    for (auto iter = monsterTiles.begin(); iter != monsterTiles.end(); )
+    {
+        Tile* tile = iter->first;
+        int curIdx = iter->second;
+
+        if (tile->GetCollider()->IsPointCollision(pos))
+        {
+            delete tile;
+            iter = monsterTiles.erase(iter);
+        }
+        else
+        {
+            iter++;
+        }
+    }
+}
+
+void EditTileMap::SaveMonster(string file)
+{
+    BinaryWriter* writer = new BinaryWriter(file);
+
+    writer->UInt(monsterTiles.size());
+
+    for (const auto& pair : monsterTiles) 
+    {
+        Tile* tile = pair.first;
+        int key = pair.second;
+
+        writer->Int(key);
+        writer->Vector(tile->GetCurIdx());
+    }
+
+    delete writer;
+}
+
+void EditTileMap::LoadMonster(string file)
+{
+    BinaryReader* reader = new BinaryReader(file);
+
+    if (reader->IsFailed())
+    {
+        delete reader;
+        return;
+    }
+
+    int size = reader->UInt();
+
+   // ClearObjTile();
+
+    wstring path = L"ResourcesCA/Textures/Character/Monster/Monster_Collection/";
+
+    FOR(size)
+    {
+        int key= reader->Int();
+        Vector2 curIdx = reader->Vector();
+        Vector2 pos = bgTiles[curIdx.x][curIdx.y]->GetGlobalPosition();
+        wstring textureFile = path + to_wstring(key)+L".png";
+
+        AddMonster(pos, curIdx, textureFile);
+    }
+
+    delete reader;
 }

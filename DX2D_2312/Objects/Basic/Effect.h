@@ -1,9 +1,10 @@
 #pragma once
 
-class Effect : public Quad
+class Effect : public GameObject
 {
 private:
     const float FPS = 10.0f;
+    const wstring PATH = L"ResourcesCA/Textures/Effect/";
 
 public:
     Effect(wstring textureFile, Vector2 maxFrame, float speed, bool isAdditive);
@@ -29,4 +30,6 @@ private:
     Vector2 maxFrame;
 
     bool isAdditive;
+
+    Action* action;
 };
