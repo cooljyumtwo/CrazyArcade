@@ -2,19 +2,21 @@
 
 void EffectManager::Render()
 {
-	for (const auto& pair : totalObject) {
+	for (const auto& pair : totalObject) 
+	{
 		const vector<GameObject*>& gameObjects = pair.second;
-		for (GameObject* object : gameObjects) {
+		for (GameObject* object : gameObjects) 
 			object->Render();
-		}
 	}
 }
 
 void EffectManager::Update()
 {
-	for (const auto& pair : totalObject) {
+	for (const auto& pair : totalObject) 
+	{
 		const vector<GameObject*>& gameObjects = pair.second;
-		for (GameObject* object : gameObjects) {
+		for (GameObject* object : gameObjects) 
+		{
 			Effect* effect = (Effect*)object;
 			effect->Update();
 		}

@@ -5,7 +5,7 @@ class Character : public GameObject
 public:
     enum State
     {
-        IDLE, MOVE, BUBBLE, ALIVE, DIE
+        IDLE, MOVE, BUBBLE, ALIVE, DIE, HIT
     };
 
 protected:
@@ -31,7 +31,8 @@ public:
 
     void SetAction(int state);
 
-    void MinusBubbleCurCnt() { if (bubbleCurCnt > 0) bubbleCurCnt--; }
+    void PlusBubbleCurCnt() { bubbleCurCnt++; }
+    void MinusBubbleCurCnt() {  if (bubbleCurCnt > 0) bubbleCurCnt--; }
 
     Stat GetStat() { return stat; }
 

@@ -8,7 +8,6 @@ GameScene::GameScene()
     player = new Player();
     player->SetGlobalPosition(CENTER);
 
-    TileObjectManager::Get();
     BubbleManager::Get();
     ItemManager::Get();
     EffectManager::Get();
@@ -27,7 +26,6 @@ void GameScene::Update()
 {
     player->Update();
 
-    TileObjectManager::Get()->Update();
     TileManager::Get()->Update();
     BubbleManager::Get()->Update();
     ItemManager::Get()->Update();
@@ -37,12 +35,11 @@ void GameScene::Update()
 
 void GameScene::Render()
 {
-    RenderManager::Get()->Render();
-    TileObjectManager::Get()->Render();
-    TileManager::Get()->Render();
-    ItemManager::Get()->Render();
+    RenderManager::Get()->Render("BGTile");
+    RenderManager::Get()->Render("GameObject");
+    RenderManager::Get()->Render("BGTileTxt");
+
     EffectManager::Get()->Render();
-    MonsterManager::Get()->Render();
 }
 
 void GameScene::PostRender()
@@ -51,5 +48,13 @@ void GameScene::PostRender()
 
 void GameScene::Start()
 {
-    TileManager::Get()->LoadGameMap();
+    TileManager::Get()->LoadMapData();
+    TileManager::Get()->LoadMapSize();
+    MonsterManager::Get()->LoadMonster();
+}
+
+void GameScene::End()
+{
+    TileManager::Get()->ClearObjTile();
+    MonsterManager::Get()->ClearMonster();
 }

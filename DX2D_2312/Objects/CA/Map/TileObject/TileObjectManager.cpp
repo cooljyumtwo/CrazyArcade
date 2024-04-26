@@ -20,7 +20,6 @@ void TileObjectManager::Update()
 		((TileObject*)obstacle)->Update();
 
 	}
-		
 }
 
 
@@ -32,7 +31,6 @@ void TileObjectManager::Render()
 
 TileObject* TileObjectManager::Collision(string key, Collider* collider)
 {
-
 	return nullptr;
 }
 

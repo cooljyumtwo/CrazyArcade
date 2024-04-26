@@ -6,6 +6,7 @@ private:
     int MAX_SPEED = 5;
 
 public:
+    MonsterMove();
     MonsterMove(Transform* target, int key, float speed = 50.0f);
 
     void Update() override;

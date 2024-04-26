@@ -15,7 +15,7 @@ GameManager::GameManager()
 	UIManager::Get()->Add("MapEdit", new MapEditUI());
 	UIManager::Get()->Add("Game", new GameUI());
 
-	SCENE->ChangeScene("MapEdit");
+	SCENE->ChangeScene("Game");
 }
 
 GameManager::~GameManager()
@@ -36,6 +36,12 @@ void GameManager::Update()
 
 	if (KEY->Down(VK_F2))
 		OnDraw();
+
+	if (KEY->Down(VK_F4))
+		SCENE->ChangeScene("MapEdit");
+
+	if (KEY->Down(VK_F5))
+		SCENE->ChangeScene("Game");
 }
 
 void GameManager::Render()

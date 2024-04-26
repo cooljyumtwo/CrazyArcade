@@ -73,7 +73,6 @@ void Character::Attack()
 {
     if (KEY->Down(VK_SPACE) && bubbleCurCnt < stat.bubbleCnt)
     {
-        bubbleCurCnt++;
         BubbleManager::Get()->Spawn(GetLocalPosition(), stat.bubblePower, this);
         MonsterManager::Get()->Spawn(GetLocalPosition());
     }

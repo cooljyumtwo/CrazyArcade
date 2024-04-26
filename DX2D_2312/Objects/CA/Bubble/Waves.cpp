@@ -9,11 +9,11 @@ Waves::Waves()
 
 Waves::~Waves()
 {
-	for (auto it = waves.begin(); it != waves.end(); ++it) {
+	for (auto it = waves.begin(); it != waves.end(); ++it) 
+	{
 		auto& waveList = it->second;
-		for (Wave* wave : waveList) {
+		for (Wave* wave : waveList) 
 			delete wave;
-		}
 	}
 }
 
@@ -21,12 +21,14 @@ void Waves::Update()
 {
 	if (!IsActive()) return;
 
-	for (auto it = waves.begin(); it != waves.end(); ++it) {
+	for (auto it = waves.begin(); it != waves.end(); ++it) 
+	{
 		auto& waveList = it->second;
-		for (Wave* wave : waveList) {
-				wave->Update();
-		}
+		for (Wave* wave : waveList) 
+			wave->Update();
 	}
+
+	ClearWaves();
 
 	UpdateWorld();
 }
@@ -138,11 +140,20 @@ void Waves::Spawn(const Vector2& pos, int power)
 
 void Waves::ClearWaves()
 {
+	int count = 0;
+	int wavesSize = 0;
 	for (auto it = waves.begin(); it != waves.end(); ++it) 
 	{
 		auto& waveList = it->second;
-		for (Wave* wave : waveList) {
-			wave->SetActive(false);
+		for (Wave* wave : waveList) 
+		{
+			wavesSize++;
+			if (!wave->IsActive()) count++;
 		}
+
 	}
+	if (count == wavesSize)
+		SetActive(false);
+	else
+		SetActive(true);
 }

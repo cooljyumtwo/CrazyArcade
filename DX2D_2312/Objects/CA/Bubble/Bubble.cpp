@@ -63,10 +63,11 @@ void Bubble::CreatActions()
 		},1);
 
 	action->GetClip(0)->SetEvent([this]() {
+		if (target)
+			target->MinusBubbleCurCnt();
+
 		TileManager::Get()->SetIdxBgTileType(posTileIdx,Tile::BASIC);
 		SetActive(false);
-		if(target)
-			target->MinusBubbleCurCnt();
 		});
 	actions[POP] = action;
 	
@@ -94,6 +95,9 @@ void Bubble::Spawn(const Vector2& pos, int power, Character* target)
 	posTileIdx = tile->GetCurIdx();
 
 	tile->SetType(Tile::OBSTACLE);
+
+	if(target)
+		target->PlusBubbleCurCnt();
 }
 
 float Bubble::GetDepth()

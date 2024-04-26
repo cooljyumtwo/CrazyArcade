@@ -1,5 +1,10 @@
 #include "Framework.h"
 
+MonsterMove::MonsterMove()
+{
+    SetMoveTime();
+}
+
 MonsterMove::MonsterMove(Transform* target, int key, float speed)
 {
     SetTarget(target);
@@ -29,8 +34,6 @@ void MonsterMove::Update()
     Move();
 
     target->UpdateWorld();
-
-
 }
 
 void MonsterMove::Move()
@@ -64,12 +67,13 @@ void MonsterMove::Move()
     int speed = (character->GetStat().speed > MAX_SPEED) ? MAX_SPEED : character->GetStat().speed;
     target->Translate(velocity * speed * moveSpeed * DELTA);
 
-    TileManager::Get()->PushPlayer(character);
-    TileManager::Get()->CheckMapPosPlayer(character);
+    if (TileManager::Get()->PushPlayer(character))
+        RandomCompass();
+
+    if (TileManager::Get()->CheckMapPosPlayer(character))
+        RandomCompass();
 
     BubbleManager::Get()->PushPlayer(character);
-
-    ItemManager::Get()->Collision(character);
 
     if (compass == W) velocity.x = 1.0f;
 }

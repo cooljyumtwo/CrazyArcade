@@ -41,3 +41,17 @@ void RenderManager::Add(string key, GameObject* gameObj)
 {
 	gameObjects[key].push_back(gameObj);
 }
+
+void RenderManager::Remove(string key, GameObject* gameObj)
+{
+	auto& gameObjList = gameObjects[key];
+
+	for (auto it = gameObjList.begin(); it != gameObjList.end(); ++it)
+	{
+		if (*it == gameObj)
+		{
+			gameObjList.erase(it);
+			return;
+		}
+	}
+}
