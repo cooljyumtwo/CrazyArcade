@@ -2,18 +2,16 @@
 
 MonsterManager::MonsterManager()
 {
-	totalObject["Monster"].resize(4);
+	//totalObject["Monster"].resize(4);
 
-	MonsterData monsterData;
-	monsterData = DataManager::Get()->GetMonsterData(0);
+	//MonsterData monsterData;
+	//monsterData = DataManager::Get()->GetMonsterData(0);
 
-	for (GameObject*& monster : totalObject["Monster"])
-	{
-		monster = new Monster(monsterData.key, monsterData.speed, monsterData.isBubble);
-		RenderManager::Get()->Add("GameObject", monster);
-	//	Tile* tile = TileManager::Get()->GetBgTile(Vector2{ (float)Random(3,10), (float)Random(3,10) });
-		//MonsterManager::Get()->Spawn(tile->GetGlobalPosition());
-	}
+	//for (GameObject*& monster : totalObject["Monster"])
+	//{
+	//	monster = new Monster(monsterData.key, monsterData.speed, monsterData.isBubble);
+	//	RenderManager::Get()->Add("GameObject", monster);
+	//}
 }
 
 MonsterManager::~MonsterManager()
@@ -22,10 +20,13 @@ MonsterManager::~MonsterManager()
 
 void MonsterManager::Update()
 {
-	for (const auto& pair : totalObject) {
+	for (const auto& pair : totalObject) 
+	{
 		const vector<GameObject*>& gameObjects = pair.second;
-		for (GameObject* object : gameObjects) {
-			object->Update();
+		for (GameObject* object : gameObjects) 
+		{
+			if(object)
+				object->Update();
 		}
 	}
 }
@@ -36,22 +37,53 @@ void MonsterManager::Render()
 
 void MonsterManager::Spawn(const Vector2& pos)
 {
-	Monster* monster = Pop("Monster", true);
-	monster->Spawn(pos);
+	//Monster* monster = Pop("Monster", true);
+	//monster->Spawn(pos);
 }
 
-void MonsterManager::Collision(Character* target)
+void MonsterManager::LoadMonster()
 {
-	for (GameObject* object : totalObject["Item"])
+	BinaryReader* reader = new BinaryReader(PATH + TileManager::mapNameStr + ".map");
+
+	if (reader->IsFailed())
 	{
-		if (!object->IsActive()) continue;
+		delete reader;
+		return;
+	}
 
-		Monster* monster = (Monster*)object;
-		if (monster->GetCollider()->IsCollision(target->GetCollider()))
+	int size = reader->UInt();
+
+	totalObject["LoadMonster"].resize(size);
+
+	for (GameObject*& monsterObj : totalObject["LoadMonster"])
+	{
+		int key = reader->Int();
+		Vector2 curIdx = reader->Vector();
+		Vector2 pos = TileManager::Get()->GetBgTile(curIdx)->GetGlobalPosition();
+
+		MonsterData monsterData;
+		monsterData = DataManager::Get()->GetMonsterData(key);
+
+		monsterObj = new Monster(monsterData.key, monsterData.speed, monsterData.isBubble, monsterData.hp);
+
+		Monster* monster = (Monster*)monsterObj;
+		monster->Spawn(pos);
+
+		RenderManager::Get()->Add("GameObject", monster);
+	}
+
+	delete reader;
+}
+
+void MonsterManager::ClearMonster()
+{
+	for (auto& pair : totalObject)
+	{
+		vector<GameObject*>& gameObjects = pair.second;
+		for (GameObject*& object : gameObjects)
 		{
-			monster->SetActive(false);
-
-			Player* player = (Player*)target;
+			RenderManager::Get()->Remove("GameObject", object);
+			delete object;
 		}
 	}
 }

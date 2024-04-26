@@ -69,6 +69,7 @@ void DataManager::LoadMonsterData()
 		data.name = datas[1];
 		data.speed = stof(datas[2]);
 		data.isBubble = stoi(datas[3]);
+		data.hp = stoi(datas[4]);
 
 		monsterDatas[data.key] = data;
 	}

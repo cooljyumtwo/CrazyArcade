@@ -16,6 +16,7 @@ struct MonsterData
 	string name;
 	float speed;
 	bool isBubble;
+	int hp;
 };
 
 class DataManager : public Singleton<DataManager>

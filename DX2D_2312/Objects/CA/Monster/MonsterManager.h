@@ -3,6 +3,8 @@
 class MonsterManager : public PoolingManager<Monster>, public Singleton<MonsterManager>
 {
 private:
+    const string PATH = "ResourcesCA/TextData/Map/Monster/";
+private:
     friend class Singleton;
 
     MonsterManager();
@@ -14,7 +16,8 @@ public:
 
     void Spawn(const Vector2& pos);
 
-    void Collision(Character* target);
+    void LoadMonster();
+    void ClearMonster();
 
 private:
     int sizeItemDatas;

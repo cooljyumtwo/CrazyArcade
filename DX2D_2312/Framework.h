@@ -161,6 +161,7 @@ typedef function<void(void*)> ObjectParamEvent;
 
 #include "Objects/CA/Monster/MonsterMove.h"
 #include "Objects/CA/Monster/MonsterDie.h"
+#include "Objects/CA/Monster/MonsterHit.h"
 #include "Objects/CA/Monster/Monster.h"
 #include "Objects/CA/Monster/MonsterManager.h"
 

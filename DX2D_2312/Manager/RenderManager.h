@@ -15,6 +15,7 @@ public:
 	void Render(string key);
 
 	void Add(string key, GameObject* gameObj);
+	void Remove(string key, GameObject* gameObj);
 
 private:
 	map<string, vector<GameObject*>> gameObjects;

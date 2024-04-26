@@ -1,5 +1,7 @@
 #include "Framework.h"
 
+string TileManager::mapNameStr = "Map3";
+
 TileManager::TileManager()
 {
     SetTag("TileManager");
@@ -20,9 +22,6 @@ TileManager::~TileManager()
 
 void TileManager::Render()
 {
-    RenderManager::Get()->Render("BGTile");
-    RenderManager::Get()->Render("GameObject");
-    RenderManager::Get()->Render("BGTileTxt");
 }
 
 void TileManager::Update()
@@ -76,9 +75,9 @@ void TileManager::CreateBGTile()
         }
 }
 
-void TileManager::LoadMapData(string file)
+void TileManager::LoadMapData()
 {
-    BinaryReader* reader = new BinaryReader(file);
+    BinaryReader* reader = new BinaryReader(PATH + mapNameStr + ".map");
 
     if (reader->IsFailed())
     {
@@ -118,14 +117,13 @@ void TileManager::LoadMapSize()
     mapSize["Down"] = bgTiles[0][SIZE_Y - 1]->GetGlobalPosition().y - Tile::TILE_SIZE;
 }
 
-void TileManager::LoadMonster()
-{
-}
-
 void TileManager::ClearObjTile()
 {
     for (ObstacleTile* tile : objTiles)
+    {
+        RenderManager::Get()->Remove("GameObject", tile);
         delete tile;
+    }
 
     objTiles.clear();
 
@@ -142,7 +140,6 @@ void TileManager::AddObjTile(const Vector2& pos, const Vector2& size, const Vect
     BasicTile* bgTile = (BasicTile*)bgTiles[idx.x][idx.y];
     bgTile->SetObstacleTile(tile);
     bgTile->SetType(Tile::OBSTACLE);
-
 
     objTiles.push_back(tile);
     tile->UpdateWorld();
@@ -188,8 +185,7 @@ Tile* TileManager::GetNearPosTileState(GameObject* target, Tile::Type type)
     if(minDistanceTile)
         minDistanceTile->SetType(type);
 
-    RenderManager::Get()->Add("GameObject", target);
-        
+    RenderManager::Get()->Add("GameObject", target);  
 
     return minDistanceTile;
 }
@@ -209,7 +205,7 @@ Tile* TileManager::GetNearPosTileState(Vector2 pos)
     return bgTiles[calPos.x][calPos.y];
 }
 
-void TileManager::PushPlayer(Character* player)
+bool TileManager::PushPlayer(Character* player)
 {
     for (Tile* objTile : objTiles)
     {
@@ -241,22 +237,26 @@ void TileManager::PushPlayer(Character* player)
             }
 
             player->UpdateWorld();
+            return true;
         }
     }
+    return false;
 }
 
-void TileManager::CheckMapPosPlayer(Character* player)
+bool TileManager::CheckMapPosPlayer(Character* player)
 {
     Vector2 pos = player->GetGlobalPosition();
-    if (pos.x < mapSize["Left"])
+
+    if (pos.x < mapSize["Left"]) 
         player->Translate(Vector2::Right() * (mapSize["Left"] - pos.x));
-
-    if (pos.x + Tile::TILE_SIZE > mapSize["Right"])
+    else if (pos.x + Tile::TILE_SIZE > mapSize["Right"]) 
         player->Translate(Vector2::Left() * ((pos.x + Tile::TILE_SIZE) - mapSize["Right"]));
-
-    if (pos.y > mapSize["Up"])
+    else if (pos.y > mapSize["Up"]) 
         player->Translate(Vector2::Down() * (pos.y - mapSize["Up"]));
-
-    if (pos.y - Tile::TILE_SIZE - OFFSET < mapSize["Down"])
+    else if (pos.y - Tile::TILE_SIZE - OFFSET < mapSize["Down"]) 
         player->Translate(Vector2::Up() * (mapSize["Down"] - (pos.y - Tile::TILE_SIZE - OFFSET)));
+    else 
+        return false;
+
+    return true;
 }
