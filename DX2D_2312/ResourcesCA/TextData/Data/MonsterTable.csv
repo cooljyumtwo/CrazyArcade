@@ -1,3 +1,5 @@
-key,name,speed,isBubble
-0,Jjoljjol-i,50.0f,0
-1,beoleog-i,100.0f,1
+key,name,speed,isBubble,hp
+0,Jjoljjol-i,50.0f,0,1
+1,beoleog-i,100.0f,0,1
+2,pudadag,100.0f,0,2
+3,gamgyul -i,50.0f,0,1
