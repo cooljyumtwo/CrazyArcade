@@ -14,6 +14,7 @@ public:
 	void Update() override;
 
 	void PostRender();
+
 private:
 	int maxHp;
 	Type type;

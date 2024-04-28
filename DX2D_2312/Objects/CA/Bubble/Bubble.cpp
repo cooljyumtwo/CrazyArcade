@@ -100,6 +100,11 @@ void Bubble::Spawn(const Vector2& pos, int power, Character* target)
 		target->PlusBubbleCurCnt();
 }
 
+void Bubble::Pop()
+{
+	SetAction(POP);
+}
+
 float Bubble::GetDepth()
 {
 	return collider->Bottom();

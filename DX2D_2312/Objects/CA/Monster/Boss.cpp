@@ -36,6 +36,8 @@ void Boss::Update()
 
 	hpBar->SetLocalScale(GetLocalScale());
 	hpBar->UpdateWorld();
+
+	BubbleManager::Get()->CollisionBoss(this);
 }
 
 void Boss::PostRender()

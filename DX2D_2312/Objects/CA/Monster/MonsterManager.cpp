@@ -4,8 +4,9 @@ MonsterManager::MonsterManager()
 {
 	boss = new Boss(101, 30.0f, true, 10);
 	RenderManager::Get()->Add("GameObject", boss);
-	boss->Spawn(CENTER);
+	boss->Spawn(TileManager::Get()->GetBGTiles()[1][5]->GetGlobalPosition());
 
+	LoadBossMonster();
 }
 
 MonsterManager::~MonsterManager()
@@ -39,8 +40,7 @@ void MonsterManager::LoadBossMonster()
 	for (GameObject*& monsterObj : totalObject["SpawnBossMonster"])
 	{
 		int key = Random(0,4);
-		Vector2 curIdx = Random({ 0,0 }, {(float)TileManager::Get()->SIZE_X ,(float)TileManager::Get()->SIZE_Y });
-		Vector2 pos = TileManager::Get()->GetBgTile(curIdx)->GetGlobalPosition();
+		
 
 		MonsterData monsterData;
 		monsterData = DataManager::Get()->GetMonsterData(key);
@@ -48,7 +48,7 @@ void MonsterManager::LoadBossMonster()
 		monsterObj = new Monster(monsterData.key, monsterData.speed, monsterData.isBubble, monsterData.hp);
 
 		Monster* monster = (Monster*)monsterObj;
-		monster->Spawn(pos);
+		//monster->Spawn(pos);
 
 		RenderManager::Get()->Add("GameObject", monster);
 	}
@@ -56,12 +56,8 @@ void MonsterManager::LoadBossMonster()
 
 void MonsterManager::Spawn(const Vector2& pos)
 {
+	Pop("SpawnBossMonster")->Spawn(pos);
 
-	for (GameObject*& monsterObj : totalObject["SpawnBossMonster"])
-	{
-		if (!monsterObj->IsActive())
-			monsterObj->SetActive(true);
-	}
 }
 
 void MonsterManager::LoadMonster()
@@ -109,4 +105,18 @@ void MonsterManager::ClearMonster()
 			delete object;
 		}
 	}
+}
+
+void MonsterManager::Collision(Character* character)
+{
+	for (const auto& pair : totalObject)
+	{
+		const vector<GameObject*>& gameObjects = pair.second;
+		for (GameObject* object : gameObjects)
+		{
+			Monster* monster = (Monster*)object;
+			monster->Collision(character);
+		}
+	}
+	boss->Collision(character);
 }

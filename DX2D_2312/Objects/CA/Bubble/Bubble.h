@@ -29,6 +29,8 @@ public:
 	bool GetIsTarget() { return  isTarget; }
 	void SetIsTarget(bool isTarget) {this->isTarget = isTarget;}
 
+	void Pop();
+
 protected:
 	int power;
 

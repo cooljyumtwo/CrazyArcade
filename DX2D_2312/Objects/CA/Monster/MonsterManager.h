@@ -19,6 +19,7 @@ public:
 
     void LoadMonster();
     void ClearMonster();
+    void Collision(Character* character);
 
 private:
     int sizeItemDatas;

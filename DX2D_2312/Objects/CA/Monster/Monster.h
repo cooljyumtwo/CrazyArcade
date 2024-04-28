@@ -19,6 +19,10 @@ public:
 
 	void RemoveHitColliders();
 
+	void Collision(Character* character);
+	Character* GetPlayer() {return player;}
+
+
 protected:
 	int key;
 	int hp;
@@ -26,4 +30,6 @@ protected:
 	bool isBubble;
 
 	vector<Collider*> hitColliders;
+
+	Character* player;
 };

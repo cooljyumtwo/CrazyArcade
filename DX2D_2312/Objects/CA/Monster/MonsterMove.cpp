@@ -42,6 +42,8 @@ void MonsterMove::Move()
 
     Character* character = (Character*)target;
 
+
+
     switch (compass)
     {
     case CharacterAction::S:
@@ -89,22 +91,50 @@ void MonsterMove::RandomCompass()
 
     int randomCompass = Random(0, 4);
     Character* character = (Character*)target;
+    Monster* monster = (Monster*)target;
+    Character* player = monster->GetPlayer();
+    Vector2 cp = character->GetGlobalPosition();
+    Vector2 pp = player->GetGlobalPosition();
+    Vector2 distance = cp - pp;
 
-    switch (randomCompass)
-    {
-    case CharacterAction::S:
-        SetCompass(Compass::S);
-        break;
-    case CharacterAction::N:
-        SetCompass(Compass::N);
-        break;
-    case CharacterAction::E:
-        SetCompass(Compass::E);
-        break;
-    case CharacterAction::W:
-        SetCompass(Compass::W);
-        break;
-    default:
-        break;
-    }
+        if (distance.x < distance.y) //аб©Л
+        {
+            if (distance.x > 0)
+            {
+                SetCompass(Compass::W); 
+            }
+            else
+            {
+                SetCompass(Compass::E);
+            }
+        }
+        else
+        {
+            if (distance.y > 0)
+            {
+                SetCompass(Compass::S);
+            }
+            else
+            {
+                SetCompass(Compass::N);
+            }
+        }
+
+    //switch (randomCompass)
+    //{
+    //case CharacterAction::S:
+    //    SetCompass(Compass::S);
+    //    break;
+    //case CharacterAction::N:
+    //    SetCompass(Compass::N);
+    //    break;
+    //case CharacterAction::E:
+    //    SetCompass(Compass::E);
+    //    break;
+    //case CharacterAction::W:
+    //    SetCompass(Compass::W);
+    //    break;
+    //default:
+    //    break;
+    //}
 }

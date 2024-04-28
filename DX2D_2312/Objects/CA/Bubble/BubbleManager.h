@@ -19,6 +19,8 @@ public:
 
 	void PushPlayer(Character* player);
 
+	void CollisionBoss(Boss* boss);
+
 public:
 	vector<GameObject*> bubbles;
 	vector<Wave*> waves;

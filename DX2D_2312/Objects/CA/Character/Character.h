@@ -37,6 +37,8 @@ public:
 
     Stat GetStat() { return stat; }
 
+
+
 protected:
     void Move();
     void Attack();

@@ -6,6 +6,8 @@ Monster::Monster(int key, float speed, bool isBubble, int hp)
     SetActive(false);
 
     CreateActions();
+
+    curState = MOVE;
 }
 
 Monster::~Monster()
@@ -50,7 +52,12 @@ void Monster::Hit(Collider* collider)
     hp--;
 
     if (hp <= 0)
-        SetAction(DIE);
+    {
+        if(isBubble)
+            SetAction(BUBBLE);
+        else 
+            SetAction(DIE);
+    }
     else 
     {
         SetAction(HIT);
@@ -62,8 +69,6 @@ void Monster::Spawn(const Vector2& pos)
 {
     SetActive(true);
     SetGlobalPosition(pos);
-    
-    curState = MOVE;
 }
 
 void Monster::RemoveHitColliders()
@@ -80,6 +85,19 @@ void Monster::RemoveHitColliders()
         {
             iter = hitColliders.erase(iter);
         }
+    }
+}
+
+void Monster::Collision(Character* character)
+{
+    player = character;
+    if (collider->IsCollision(character->GetCollider()))
+    {
+        if (curState == BUBBLE)
+            SetAction(DIE);
+        else
+            character->SetAction(DIE);
+        
     }
 }
 

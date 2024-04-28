@@ -19,6 +19,7 @@ Character::~Character()
 
 void Character::Update()
 {
+    if (!IsActive()) return;
     Move();
     Attack();
     Bubble();
@@ -26,6 +27,8 @@ void Character::Update()
     actions[curState]->Update();
 
     UpdateWorld();    
+
+    MonsterManager::Get()->Collision(this);
 }
 
 void Character::Render()

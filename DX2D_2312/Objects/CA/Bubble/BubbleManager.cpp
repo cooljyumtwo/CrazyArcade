@@ -87,3 +87,16 @@ void BubbleManager::PushPlayer(Character* player)
 		}
 	}
 }
+
+void BubbleManager::CollisionBoss(Boss* boss)
+{
+	for (GameObject*& bubbleObj : totalObject["BasicBubble"])
+	{
+		Bubble* bubble = (Bubble*)bubbleObj;
+
+		if (bubble->GetCollider()->IsCollision(boss->GetCollider()))
+		{
+			bubble->Pop();
+		}
+	}
+}
