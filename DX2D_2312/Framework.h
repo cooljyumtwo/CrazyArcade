@@ -163,6 +163,7 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/Monster/MonsterBubble.h"
 #include "Objects/CA/Monster/Monster.h"
 #include "Objects/CA/Monster/BossHit.h"
+#include "Objects/CA/Monster/BossAttack.h"
 #include "Objects/CA/Monster/Boss.h"
 #include "Objects/CA/Monster/MonsterManager.h"
 

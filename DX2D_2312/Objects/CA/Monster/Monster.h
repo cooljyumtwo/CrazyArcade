@@ -19,7 +19,7 @@ public:
 
 	void RemoveHitColliders();
 
-private:
+protected:
 	int key;
 	int hp;
 	float speed;

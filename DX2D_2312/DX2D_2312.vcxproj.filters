@@ -303,6 +303,9 @@
     <ClInclude Include="Objects\CA\Monster\BossHit.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Objects\CA\Monster\BossAttack.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DX2D_2312.cpp">
@@ -555,6 +558,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Objects\CA\Monster\BossHit.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\CA\Monster\BossAttack.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

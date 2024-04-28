@@ -107,7 +107,7 @@ void Character::AddAction(string file, int frameX, int frameY)
 
 void Character::SetColliderSize(Vector2 size)
 {
-    collider->SetSize({ size.x * 0.7f , Tile::TILE_SIZE * 0.6f });
+    collider->SetSize({ size.x * 0.7f , size.x * 0.7f });
 }
 
 void Character::SetAction(int state)

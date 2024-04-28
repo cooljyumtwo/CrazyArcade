@@ -14,6 +14,7 @@ public:
     void Update();
     void Render();
 
+    void LoadBossMonster();
     void Spawn(const Vector2& pos);
 
     void LoadMonster();
