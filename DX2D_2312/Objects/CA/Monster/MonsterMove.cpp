@@ -5,14 +5,14 @@ MonsterMove::MonsterMove()
     SetMoveTime();
 }
 
-MonsterMove::MonsterMove(Transform* target, int key, float speed)
+MonsterMove::MonsterMove(Transform* target, int key, float speed, int max_frameX)
 {
     SetTarget(target);
 
-    LoadClip(ToWString(PATH) + L"Monster/" + to_wstring(key) + L"/Move_Down.png", 2, 1, true);
-    LoadClip(ToWString(PATH) + L"Monster/" + to_wstring(key) + L"/Move_Up.png", 2, 1, true);
-    LoadClip(ToWString(PATH) + L"Monster/" + to_wstring(key) + L"/Move_Right.png", 2, 1, true);
-    LoadClip(ToWString(PATH) + L"Monster/" + to_wstring(key) + L"/Move_Right.png", 2, 1, true);
+    LoadClip(ToWString(PATH) + L"Monster/" + to_wstring(key) + L"/Move_Down.png", max_frameX, 1, true);
+    LoadClip(ToWString(PATH) + L"Monster/" + to_wstring(key) + L"/Move_Up.png", max_frameX, 1, true);
+    LoadClip(ToWString(PATH) + L"Monster/" + to_wstring(key) + L"/Move_Right.png", max_frameX, 1, true);
+    LoadClip(ToWString(PATH) + L"Monster/" + to_wstring(key) + L"/Move_Right.png", max_frameX, 1, true);
 
     SetMoveTime();
     SetMoveSpeed(speed);
@@ -24,7 +24,7 @@ void MonsterMove::Update()
 
     playTime += DELTA;
 
-    if (playTime>moveTime)
+    if (playTime > moveTime)
     {
         playTime -= moveTime; 
         RandomCompass();

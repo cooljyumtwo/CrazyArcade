@@ -142,8 +142,6 @@ typedef function<void(void*)> ObjectParamEvent;
 
 #include "Objects/Map/Floor.h"
 #include "Objects/Map/FloorManager.h"
-//#include "Objects/Map/GameTileMap.h"
-//#include "Objects/Map/Tile.h"
 
 #include "Objects/CA/DataManager.h"
 
@@ -162,7 +160,10 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/Monster/MonsterMove.h"
 #include "Objects/CA/Monster/MonsterDie.h"
 #include "Objects/CA/Monster/MonsterHit.h"
+#include "Objects/CA/Monster/MonsterBubble.h"
 #include "Objects/CA/Monster/Monster.h"
+#include "Objects/CA/Monster/BossHit.h"
+#include "Objects/CA/Monster/Boss.h"
 #include "Objects/CA/Monster/MonsterManager.h"
 
 #include "Objects/CA/Item/Item.h"

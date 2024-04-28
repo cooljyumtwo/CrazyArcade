@@ -198,6 +198,9 @@
     <ClInclude Include="Objects\CA\Character\CharacterDie.h" />
     <ClInclude Include="Objects\CA\Character\CharacterIdle.h" />
     <ClInclude Include="Objects\CA\Character\CharacterMove.h" />
+    <ClInclude Include="Objects\CA\Monster\Boss.h" />
+    <ClInclude Include="Objects\CA\Monster\BossHit.h" />
+    <ClInclude Include="Objects\CA\Monster\MonsterBubble.h" />
     <ClInclude Include="Objects\CA\Monster\MonsterDie.h" />
     <ClInclude Include="Objects\CA\Monster\MonsterHit.h" />
     <ClInclude Include="Objects\CA\Monster\MonsterManager.h" />
@@ -304,7 +307,10 @@
     <ClCompile Include="Objects\CA\Map\TileManager.cpp" />
     <ClCompile Include="Objects\CA\Map\TileObject\TileObject.cpp" />
     <ClCompile Include="Objects\CA\Map\TileObject\TileObjectManager.cpp" />
+    <ClCompile Include="Objects\CA\Monster\Boss.cpp" />
+    <ClCompile Include="Objects\CA\Monster\BossHit.cpp" />
     <ClCompile Include="Objects\CA\Monster\Monster.cpp" />
+    <ClCompile Include="Objects\CA\Monster\MonsterBubble.cpp" />
     <ClCompile Include="Objects\CA\Monster\MonsterDie.cpp" />
     <ClCompile Include="Objects\CA\Monster\MonsterHit.cpp" />
     <ClCompile Include="Objects\CA\Monster\MonsterManager.cpp" />

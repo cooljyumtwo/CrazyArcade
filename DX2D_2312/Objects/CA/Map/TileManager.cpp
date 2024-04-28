@@ -245,7 +245,7 @@ bool TileManager::PushPlayer(Character* player)
 
 bool TileManager::CheckMapPosPlayer(Character* player)
 {
-    Vector2 pos = player->GetGlobalPosition();
+    Vector2 pos = player->GetCollider()->GetGlobalPosition();
 
     if (pos.x < mapSize["Left"]) 
         player->Translate(Vector2::Right() * (mapSize["Left"] - pos.x));

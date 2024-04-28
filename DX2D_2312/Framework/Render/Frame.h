@@ -11,6 +11,10 @@ public:
 	void Render();
 
 	Vector2 GetSize() { return size; }
+	void SetSize(Vector2 size) 
+	{ 
+		this->size = size; 
+	}
 	Material* GetMaterial() { return material; }
 
 private:

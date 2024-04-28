@@ -22,4 +22,6 @@ public:
 private:
     int sizeItemDatas;
     int totalProbability = 0;
+
+    Boss* boss;
 };

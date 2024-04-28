@@ -2,7 +2,6 @@
 
 class Monster : public Character
 {
-private:
 	
 public:
 	Monster(int key, float speed, bool isBubble = false, int hp = 1);
@@ -11,14 +10,20 @@ public:
 	void Update() override;
 	void CreateActions() override;
 
-	void Hit();
-	void Die();
+	void CheckHit();
+	void Hit(Collider* collider);
+
+	void PlusHp() { hp++; }
 
 	void Spawn(const Vector2& pos);
+
+	void RemoveHitColliders();
 
 private:
 	int key;
 	int hp;
 	float speed;
 	bool isBubble;
+
+	vector<Collider*> hitColliders;
 };

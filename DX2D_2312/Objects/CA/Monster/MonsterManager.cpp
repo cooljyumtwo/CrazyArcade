@@ -2,16 +2,9 @@
 
 MonsterManager::MonsterManager()
 {
-	//totalObject["Monster"].resize(4);
-
-	//MonsterData monsterData;
-	//monsterData = DataManager::Get()->GetMonsterData(0);
-
-	//for (GameObject*& monster : totalObject["Monster"])
-	//{
-	//	monster = new Monster(monsterData.key, monsterData.speed, monsterData.isBubble);
-	//	RenderManager::Get()->Add("GameObject", monster);
-	//}
+	boss = new Boss(100, 50.0f,true,10);
+	RenderManager::Get()->Add("GameObject", boss);
+	boss->Spawn(CENTER);
 }
 
 MonsterManager::~MonsterManager()
@@ -29,6 +22,7 @@ void MonsterManager::Update()
 				object->Update();
 		}
 	}
+	boss->Update();
 }
 
 void MonsterManager::Render()
@@ -37,8 +31,6 @@ void MonsterManager::Render()
 
 void MonsterManager::Spawn(const Vector2& pos)
 {
-	//Monster* monster = Pop("Monster", true);
-	//monster->Spawn(pos);
 }
 
 void MonsterManager::LoadMonster()

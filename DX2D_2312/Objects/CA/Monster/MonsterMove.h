@@ -7,7 +7,7 @@ private:
 
 public:
     MonsterMove();
-    MonsterMove(Transform* target, int key, float speed = 50.0f);
+    MonsterMove(Transform* target, int key, float speed = 50.0f, int max_frameX = 2);
 
     void Update() override;
 
@@ -15,6 +15,7 @@ public:
     void SetMoveTime();
     void RandomCompass();
 
+private:
     float playTime = 0.0f;
     float moveTime = 0.0f;
 };

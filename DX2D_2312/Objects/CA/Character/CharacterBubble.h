@@ -10,6 +10,7 @@ public:
     void Start();
     void End();
 
+
 private:
     void Move();
     void Alive();

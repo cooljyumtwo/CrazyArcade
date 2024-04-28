@@ -11,9 +11,9 @@ public:
 protected:
     struct Stat 
     {
-        int bubbleCnt = 1;
-        int bubblePower = 1;
-        int speed = 2;
+        int bubbleCnt = 3;
+        int bubblePower = 3;
+        int speed = 3;
     };
 
 public:
@@ -28,6 +28,7 @@ public:
     void UpdateWorld() override;
 
     RectCollider* GetCollider() { return collider; }
+    void SetColliderSize(Vector2 size);
 
     void SetAction(int state);
 

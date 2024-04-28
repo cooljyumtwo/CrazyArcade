@@ -1,5 +1,6 @@
-key,name,speed,isBubble,hp
-0,Jjoljjol-i,50.0f,0,1
-1,beoleog-i,100.0f,0,1
-2,pudadag,100.0f,0,2
-3,gamgyul -i,50.0f,0,1
+key,name,speed,isBubble,hp,isBoss,type
+0,Jjoljjol-i,50.0f,0,1,0,0
+1,Beoleog-i,100.0f,0,1,0,0
+2,Pudadag,100.0f,0,2,0,0
+3,Gamgyul-i,50.0f,0,1,0,0
+100,GiantOctopus,40.0f,1,10,1,1

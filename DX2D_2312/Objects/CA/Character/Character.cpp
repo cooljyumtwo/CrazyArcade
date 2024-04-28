@@ -2,8 +2,7 @@
 
 Character::Character()
 {
-
-    collider = new RectCollider({ Tile::TILE_SIZE * 0.9f , Tile::TILE_SIZE * 0.6f });
+    collider = new RectCollider({ Tile::TILE_SIZE * 0.7f ,  Tile::TILE_SIZE * 0.6f });
     collider->Translate(Vector2::Down() * Tile::TILE_SIZE * 0.2f);
     collider->SetParent(this);
     collider->SetTag("Character");
@@ -104,6 +103,11 @@ void Character::AddAction(string file, int frameX, int frameY)
     action->LoadClip(actionFile, frameX, frameY, true);
 
     actions[MOVE] = action;
+}
+
+void Character::SetColliderSize(Vector2 size)
+{
+    collider->SetSize({ size.x * 0.7f , Tile::TILE_SIZE * 0.6f });
 }
 
 void Character::SetAction(int state)
