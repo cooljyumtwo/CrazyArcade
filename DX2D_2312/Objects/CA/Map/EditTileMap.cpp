@@ -62,8 +62,6 @@ void EditTileMap::Render()
 
     if (ImGui::TreeNode((tag + "EditTileMap_Transform").c_str()))
     {
-        //ImGui::DragFloat2("Pos", (float*)&localPosition, 1.0f);
-
         Save();
         ImGui::SameLine();
         Load();
@@ -420,6 +418,7 @@ void EditTileMap::AddObjTile(const Vector2& pos, const Vector2& size, const Vect
     ObstacleTile* tile = new ObstacleTile(textureFile, pos);
     tile->SetParent(this);
     tile->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5);
+    tile->GetCollider()->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5 * -1);
     tile->Update();
     tile->SetCurIdx(idx);
     tile->SetTexture(textureFile);

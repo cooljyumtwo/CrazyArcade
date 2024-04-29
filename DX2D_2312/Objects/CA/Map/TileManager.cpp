@@ -151,7 +151,7 @@ void TileManager::AddObjTile(const Vector2& pos, const Vector2& size, const Vect
 {
     ObstacleTile* tile = new ObstacleTile(textureFile, pos, true);
     tile->SetParent(this);
-    tile->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5);
+    tile->GetCollider()->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5 * -1);
     tile->Update();
     tile->SetCurIdx(idx);
     

@@ -21,7 +21,7 @@ GameManager::GameManager()
 	UIManager::Get()->Add("MapEdit", new MapEditUI());
 	UIManager::Get()->Add("Game", new GameUI());
 
-	SCENE->ChangeScene("WaitRoom");
+	SCENE->ChangeScene("MapEdit");
 }
 
 GameManager::~GameManager()
