@@ -1,6 +1,6 @@
 #include "Framework.h"
 
-Button::Button(wstring textureFile, bool isAdd) : Quad(textureFile, isAdd)
+Button::Button(wstring textureFile) : Quad(textureFile)
 {
     collider = new RectCollider(size);
     collider->SetParent(this);

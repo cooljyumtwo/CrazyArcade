@@ -13,7 +13,7 @@ protected:
     const Float4 DOWN_COLOR = { 0.5f, 0.5f, 0.5f, 1.0f };
 
 public:
-    Button(wstring textureFile = L"Resources/Textures/UI/Button.png", bool isAdd = false);
+    Button(wstring textureFile = L"Resources/Textures/UI/Button.png");
     ~Button();
 
     void Update() override;

@@ -50,6 +50,8 @@ void GameScene::PostRender()
 
 void GameScene::Start()
 {
+    StageData stageData = DataManager::Get()->GetStageData(WaitRoomUI::stageKey);
+    TileManager::Get()->SetMap(stageData.stage1);
     TileManager::Get()->LoadMapData();
     TileManager::Get()->LoadMapSize();
     MonsterManager::Get()->LoadMonster();

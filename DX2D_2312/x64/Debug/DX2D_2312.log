@@ -5,7 +5,10 @@ F:\git\CrazyArcade\DX2D_2312\Framework\Render\Texture.h(14,64): warning C4244: '
 F:\git\CrazyArcade\DX2D_2312\Framework\Render\Texture.h(14,37): warning C4244: '인수': 'const size_t'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 'Framework.cpp'을(를) 컴파일하는 중)
   
-F:\git\CrazyArcade\DX2D_2312\Objects\CA\DataManager.h(32,44): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\git\CrazyArcade\DX2D_2312\Objects\CA\DataManager.h(43,44): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 'Framework.cpp'을(를) 컴파일하는 중)
+  
+F:\git\CrazyArcade\DX2D_2312\Objects\CA\DataManager.h(48,46): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 'Framework.cpp'을(를) 컴파일하는 중)
   
 F:\git\CrazyArcade\DX2D_2312\Objects\CA\Bubble\Wave.h(7,24): warning C4244: '초기화 중': 'float'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
@@ -243,7 +246,6 @@ F:\git\CrazyArcade\DX2D_2312\Framework\Utilities\Font.cpp(140,68): warning C4267
   Keyboard.cpp
   Observer.cpp
   Timer.cpp
-  tinyxml2.cpp
   Utility.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xutility(4537,18): warning C4244: '=': 'wchar_t'에서 'char'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '/Framework/Utilities/Utility.cpp'을(를) 컴파일하는 중)
@@ -284,15 +286,16 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.3351
               _SizeTy=unsigned __int64
           ]
   
+  tinyxml2.cpp
   GameManager.cpp
   RenderManager.cpp
   SceneManager.cpp
   UIManager.cpp
+  DNode.cpp
   Dijkstra.cpp
 F:\git\CrazyArcade\DX2D_2312\Objects\Algorithm\Dijkstra.cpp(158,29): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '/Objects/Algorithm/Dijkstra.cpp'을(를) 컴파일하는 중)
   
-  DNode.cpp
   Action.cpp
 F:\git\CrazyArcade\DX2D_2312\Objects\Basic\Action.cpp(70,51): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '/Objects/Basic/Action.cpp'을(를) 컴파일하는 중)
@@ -342,6 +345,8 @@ F:\git\CrazyArcade\DX2D_2312\Framework\Render\Mesh.h(69,53): warning C4267: '인
   		F:\git\CrazyArcade\DX2D_2312\Objects\Basic\Quad.cpp(56,22):
   		'Quad::SetTexture'에서 'Mesh<VertexUV>::UpdateVertices'에 대한 첫 번째 참조를 확인하세요.
   
+  Bubble.cpp
+  BubbleManager.cpp
   Wave.cpp
 F:\git\CrazyArcade\DX2D_2312\Objects\CA\Bubble\Wave.h(7,24): warning C4244: '초기화 중': 'float'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '/Objects/CA/Bubble/Wave.cpp'을(를) 컴파일하는 중)
@@ -364,7 +369,6 @@ F:\git\CrazyArcade\DX2D_2312\Objects\CA\Character\CharacterMove.cpp(68,34): warn
   DataManager.cpp
   Item.cpp
   ItemManager.cpp
-  BasicTile.cpp
   EditTileMap.cpp
 F:\git\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(147,25): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
@@ -408,8 +412,6 @@ F:\git\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(447,25): warning C42
 F:\git\CrazyArcade\DX2D_2312\Objects\CA\Map\EditTileMap.cpp(448,25): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '/Objects/CA/Map/EditTileMap.cpp'을(를) 컴파일하는 중)
   
-  ObstacleTile.cpp
-  Tile.cpp
   TileManager.cpp
 F:\git\CrazyArcade\DX2D_2312\Objects\CA\Map\TileManager.cpp(29,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   (소스 파일 '/Objects/CA/Map/TileManager.cpp'을(를) 컴파일하는 중)
@@ -447,10 +449,13 @@ F:\git\CrazyArcade\DX2D_2312\Objects\CA\Map\TileManager.cpp(223,26): warning C42
 F:\git\CrazyArcade\DX2D_2312\Objects\CA\Map\TileManager.cpp(223,36): warning C4244: '인수': 'float'에서 'const unsigned __int64'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '/Objects/CA/Map/TileManager.cpp'을(를) 컴파일하는 중)
   
+  TileObject.cpp
   코드를 생성하고 있습니다...
   컴파일하고 있습니다...
-  TileObject.cpp
   TileObjectManager.cpp
+  BasicTile.cpp
+  ObstacleTile.cpp
+  Tile.cpp
   Boss.cpp
   BossAttack.cpp
   BossHit.cpp
@@ -465,8 +470,7 @@ F:\git\CrazyArcade\DX2D_2312\Objects\CA\Monster\MonsterMove.cpp(68,34): warning 
   
   GameUI.cpp
   MapEditUI.cpp
-  Bubble.cpp
-  BubbleManager.cpp
+  MapSelectButton.cpp
   StartUI.cpp
 F:\git\CrazyArcade\DX2D_2312\Objects\CA\UI\StartUI.cpp(82,39): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '/Objects/CA/UI/StartUI.cpp'을(를) 컴파일하는 중)
@@ -475,10 +479,10 @@ F:\git\CrazyArcade\DX2D_2312\Objects\CA\UI\StartUI.cpp(83,39): warning C4244: '=
   (소스 파일 '/Objects/CA/UI/StartUI.cpp'을(를) 컴파일하는 중)
   
   WaitRoomUI.cpp
-F:\git\CrazyArcade\DX2D_2312\Objects\CA\UI\WaitRoomUI.cpp(82,39): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\git\CrazyArcade\DX2D_2312\Objects\CA\UI\WaitRoomUI.cpp(201,39): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '/Objects/CA/UI/WaitRoomUI.cpp'을(를) 컴파일하는 중)
   
-F:\git\CrazyArcade\DX2D_2312\Objects\CA\UI\WaitRoomUI.cpp(83,39): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\git\CrazyArcade\DX2D_2312\Objects\CA\UI\WaitRoomUI.cpp(202,39): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   (소스 파일 '/Objects/CA/UI/WaitRoomUI.cpp'을(를) 컴파일하는 중)
   
   Floor.cpp
@@ -489,10 +493,17 @@ F:\git\CrazyArcade\DX2D_2312\Objects\Map\FloorManager.cpp(77,29): warning C4267:
 F:\git\CrazyArcade\DX2D_2312\Objects\Map\FloorManager.cpp(122,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   (소스 파일 '/Objects/Map/FloorManager.cpp'을(를) 컴파일하는 중)
   
-  Amazon.cpp
   코드를 생성하고 있습니다...
   컴파일하고 있습니다...
+  Amazon.cpp
   Button.cpp
+  ImageFont.cpp
+F:\git\CrazyArcade\DX2D_2312\Objects\UI\ImageFont.cpp(11,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  (소스 파일 '/Objects/UI/ImageFont.cpp'을(를) 컴파일하는 중)
+  
+F:\git\CrazyArcade\DX2D_2312\Objects\UI\ImageFont.cpp(29,19): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Objects/UI/ImageFont.cpp'을(를) 컴파일하는 중)
+  
   Panel.cpp
   ProgressBar.cpp
   GameScene.cpp

@@ -4,7 +4,7 @@ class WaitRoomUI : public UI
 {
     const float MAX_FRAME_TIME = 0.1f;
     const float MAX_FRAME_COUNT = 13;
-    const wstring PATH = L"ResourcesCA/Textures/UI/Start/";
+    const wstring PATH_WAITROOM = PATH + L"/WaitRoom/";
 
 public:
     WaitRoomUI();
@@ -16,13 +16,26 @@ public:
     void PostRender() override;
 
     void CreateUIs();
+    void CreateMapSelectWindow();
     void CreateBuffers();
+    void CreateMapSelectLineBtns();
 
     void PlayIntro();
 
 private:
     Quad* bg;
-    Button* startBtn;
+    Quad* mapSelectImg;
+    Button* mapSelectBtn;
+    Button* gameStartBtn;
+
+
+    Quad* mapSelectWindow;
+    Quad* mapSelectWindowMapImg;
+    Quad* mapSelectWindowMapTxt;
+    MapSelectButton* mapSelectLine;
+    Button* acceptBtn;
+    Button* cancelBtn;
+    vector<MapSelectButton*> mapSelectLineBtns;
 
     IntValueBuffer* valueBuffer;
 
@@ -38,5 +51,8 @@ private:
 
     ImageFont* font;
     float time = 0.0f;
+    int selectKey;
 
+public:
+    static int stageKey;
 };

@@ -19,6 +19,17 @@ struct MonsterData
 	int hp;
 };
 
+struct StageData
+{
+	int key;
+	int num;
+	int type;
+	string stage1;
+	string stage2;
+	string stage3;
+	int level;
+};
+
 class DataManager : public Singleton<DataManager>
 {
 private:
@@ -33,11 +44,16 @@ public:
 
 	MonsterData GetMonsterData(int key) { return monsterDatas[key]; }
 
+	StageData GetStageData(int key) { return stageDatas[key]; }
+	int SizeStageData() { return stageDatas.size(); }
+
 private:
 	void LoadItemData();
 	void LoadMonsterData();
+	void LoadStageData();
 
 public:
 	map<int, ItemData> itemDatas;
 	map<int, MonsterData> monsterDatas;
+	map<int, StageData> stageDatas;
 };

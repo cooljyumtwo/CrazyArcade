@@ -146,6 +146,7 @@ typedef function<void(void*)> ObjectParamEvent;
 
 #include "Objects/CA/DataManager.h"
 
+#include "Objects/CA/UI/MapSelectButton.h"
 #include "Objects/CA/UI/UI.h"
 #include "Objects/CA/UI/StartUI.h"
 #include "Objects/CA/UI/WaitRoomUI.h"

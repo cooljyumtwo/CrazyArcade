@@ -75,12 +75,14 @@ F:\git\CrazyArcade\DX2D_2312\Objects\CA\UI\GameUI.cpp;F:\git\CrazyArcade\DX2D_23
 F:\git\CrazyArcade\DX2D_2312\Objects\CA\UI\MapEditUI.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\MapEditUI.obj
 F:\git\CrazyArcade\DX2D_2312\Objects\CA\Bubble\Bubble.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\Bubble.obj
 F:\git\CrazyArcade\DX2D_2312\Objects\CA\Bubble\BubbleManager.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\BubbleManager.obj
+F:\git\CrazyArcade\DX2D_2312\Objects\CA\UI\MapSelectButton.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\MapSelectButton.obj
 F:\git\CrazyArcade\DX2D_2312\Objects\CA\UI\StartUI.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\StartUI.obj
 F:\git\CrazyArcade\DX2D_2312\Objects\CA\UI\WaitRoomUI.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\WaitRoomUI.obj
 F:\git\CrazyArcade\DX2D_2312\Objects\Map\Floor.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\Floor.obj
 F:\git\CrazyArcade\DX2D_2312\Objects\Map\FloorManager.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\FloorManager.obj
 F:\git\CrazyArcade\DX2D_2312\Objects\TileGame\Amazon.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\Amazon.obj
 F:\git\CrazyArcade\DX2D_2312\Objects\UI\Button.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\Button.obj
+F:\git\CrazyArcade\DX2D_2312\Objects\UI\ImageFont.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\ImageFont.obj
 F:\git\CrazyArcade\DX2D_2312\Objects\UI\Panel.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\Panel.obj
 F:\git\CrazyArcade\DX2D_2312\Objects\UI\ProgressBar.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\ProgressBar.obj
 F:\git\CrazyArcade\DX2D_2312\Scenes\CA\GameScene.cpp;F:\git\CrazyArcade\DX2D_2312\x64\Debug\GameScene.obj

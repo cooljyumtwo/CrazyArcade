@@ -10,7 +10,7 @@ ImageFont::ImageFont(wstring path, float interval)
 
     FOR(LENGTH)
     {
-        quads[i] = new Quad(fontSize, false);
+        quads[i] = new Quad(fontSize);
         quads[i]->SetParent(this);
     }
 }

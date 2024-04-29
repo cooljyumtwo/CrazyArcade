@@ -51,7 +51,7 @@ void StartUI::CreateUIs()
 	bgTexs.resize(introBgs.size());
 
 	FOR(introBgs.size())
-		bgTexs[i] = Texture::Add(PATH + introBgs[i]);
+		bgTexs[i] = Texture::Add(PATH_START + introBgs[i]);
 
 	//bg
 	bg = new Quad(Vector2{ SCREEN_WIDTH, SCREEN_HEIGHT });
@@ -61,7 +61,7 @@ void StartUI::CreateUIs()
 	bg->Update();
 
 	//btn
-	startBtn = new Button(PATH + L"GameStartBtn.png");
+	startBtn = new Button(PATH_START + L"GameStartBtn.png");
 	startBtn->Translate(CENTER);
 	startBtn->SetTag("Start_StartBtn");
 	startBtn->Load();
@@ -72,7 +72,7 @@ void StartUI::CreateUIs()
 		});
 
 	//fade
-	secondMap = Texture::Add(PATH + L"FadeWhite.png");
+	secondMap = Texture::Add(PATH_START + L"FadeWhite.png");
 }
 
 void StartUI::CreateBuffers()

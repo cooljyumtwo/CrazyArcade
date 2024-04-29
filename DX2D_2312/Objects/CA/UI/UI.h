@@ -2,6 +2,9 @@
 
 class UI
 {
+protected:
+	const wstring PATH = L"ResourcesCA/Textures/UI/";
+
 public:
 	virtual ~UI() = default;
 

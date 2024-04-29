@@ -4,7 +4,7 @@ class StartUI : public UI
 {
     const float MAX_FRAME_TIME = 0.1f;
     const float MAX_FRAME_COUNT = 13;
-    const wstring PATH = L"ResourcesCA/Textures/UI/Start/";
+    const wstring PATH_START = PATH + L"/Start/";
     
 public:
     StartUI();

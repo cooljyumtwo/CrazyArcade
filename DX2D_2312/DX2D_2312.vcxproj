@@ -231,6 +231,8 @@
     <ClInclude Include="Objects\ShootingGame\UI\ItemManager.h" />
     <ClInclude Include="Objects\TileGame\Amazon.h" />
     <ClInclude Include="Objects\UI\Button.h" />
+    <ClInclude Include="Objects\UI\ImageFont.h" />
+    <ClInclude Include="Objects\CA\UI\MapSelectButton.h" />
     <ClInclude Include="Objects\UI\Panel.h" />
     <ClInclude Include="Objects\UI\ProgressBar.h" />
     <ClInclude Include="Resource.h" />
@@ -325,12 +327,14 @@
     <ClCompile Include="Objects\CA\UI\MapEditUI.cpp" />
     <ClCompile Include="Objects\CA\Bubble\Bubble.cpp" />
     <ClCompile Include="Objects\CA\Bubble\BubbleManager.cpp" />
+    <ClCompile Include="Objects\CA\UI\MapSelectButton.cpp" />
     <ClCompile Include="Objects\CA\UI\StartUI.cpp" />
     <ClCompile Include="Objects\CA\UI\WaitRoomUI.cpp" />
     <ClCompile Include="Objects\Map\Floor.cpp" />
     <ClCompile Include="Objects\Map\FloorManager.cpp" />
     <ClCompile Include="Objects\TileGame\Amazon.cpp" />
     <ClCompile Include="Objects\UI\Button.cpp" />
+    <ClCompile Include="Objects\UI\ImageFont.cpp" />
     <ClCompile Include="Objects\UI\Panel.cpp" />
     <ClCompile Include="Objects\UI\ProgressBar.cpp" />
     <ClCompile Include="Scenes\CA\GameScene.cpp" />
