@@ -99,6 +99,31 @@ float4 Negative(float2 uv)
 	return float4((1.0f - tex1).rgb, 1.0f);
 }
 
+float4 FadeIn(float2 uv)
+{
+    float4 tex1 = map.Sample(samp, uv);
+	
+    float2 temp = uv;
+    float4 tex2 = secondMap.Sample(samp, temp);
+    float alpha = saturate(time * 0.1);
+
+    tex2.a *= alpha;
+
+    return lerp(tex1, tex2, tex2.a);
+}
+
+float4 Covering(float2 uv)
+{
+    float4 tex1 = map.Sample(samp, uv);
+	
+    float2 temp = uv;
+    float4 tex2 = secondMap.Sample(samp, temp);
+
+    tex2.a *= 1.0f;
+
+    return lerp(tex1, tex2, tex2.a);
+}
+
 float4 PS(Input input) : SV_TARGET
 {
 	float4 baseColor = map.Sample(samp, input.uv);
@@ -120,7 +145,11 @@ float4 PS(Input input) : SV_TARGET
 	else if (select == 8)
 		return RevSubtract(input.uv);
 	else if (select == 9)
-		return Negative(input.uv);
+		return Negative(input.uv);	
+	else if (select == 10)
+        return FadeIn(input.uv);
+    else if (select == 11)
+        return Covering(input.uv);
 	
 	return baseColor * color;
 }

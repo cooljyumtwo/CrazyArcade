@@ -42,8 +42,6 @@ void MonsterMove::Move()
 
     Character* character = (Character*)target;
 
-
-
     switch (compass)
     {
     case CharacterAction::S:
@@ -77,7 +75,7 @@ void MonsterMove::Move()
 
     BubbleManager::Get()->PushPlayer(character);
 
-    if (compass == W) velocity.x = 1.0f;
+    //if (compass == W) velocity.x = 1.0f;
 }
 
 void MonsterMove::SetMoveTime()
@@ -89,52 +87,52 @@ void MonsterMove::RandomCompass()
 {
     velocity = { 0, 0 };
 
-    int randomCompass = Random(0, 4);
-    Character* character = (Character*)target;
-    Monster* monster = (Monster*)target;
-    Character* player = monster->GetPlayer();
-    Vector2 cp = character->GetGlobalPosition();
-    Vector2 pp = player->GetGlobalPosition();
-    Vector2 distance = cp - pp;
+    int randomCompassType = Random(0, 2);
+
+    if (randomCompassType) //사용자 방향
+    {
+        Monster* monster = (Monster*)target;
+        Character* player = monster->GetPlayer();
+
+        if (!player) return;
+
+        Vector2 distance = monster->GetGlobalPosition() - player->GetGlobalPosition();
 
         if (distance.x < distance.y) //좌우
         {
             if (distance.x > 0)
-            {
-                SetCompass(Compass::W); 
-            }
+                SetCompass(Compass::W);
             else
-            {
                 SetCompass(Compass::E);
-            }
         }
-        else
+        else //상하
         {
             if (distance.y > 0)
-            {
                 SetCompass(Compass::S);
-            }
             else
-            {
                 SetCompass(Compass::N);
-            }
         }
+    }
+    else //무작위 방향
+    {
+        int randomCompass = Random(0, 4);
 
-    //switch (randomCompass)
-    //{
-    //case CharacterAction::S:
-    //    SetCompass(Compass::S);
-    //    break;
-    //case CharacterAction::N:
-    //    SetCompass(Compass::N);
-    //    break;
-    //case CharacterAction::E:
-    //    SetCompass(Compass::E);
-    //    break;
-    //case CharacterAction::W:
-    //    SetCompass(Compass::W);
-    //    break;
-    //default:
-    //    break;
-    //}
+        switch (randomCompass)
+        {
+        case CharacterAction::S:
+            SetCompass(Compass::S);
+            break;
+        case CharacterAction::N:
+            SetCompass(Compass::N);
+            break;
+        case CharacterAction::E:
+            SetCompass(Compass::E);
+            break;
+        case CharacterAction::W:
+            SetCompass(Compass::W);
+            break;
+        default:
+            break;
+        }
+    }
 }

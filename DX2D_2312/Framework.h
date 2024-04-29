@@ -139,6 +139,7 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/UI/ProgressBar.h"
 #include "Objects/UI/Button.h"
 #include "Objects/UI/Panel.h"
+#include "Objects/UI/ImageFont.h"
 
 #include "Objects/Map/Floor.h"
 #include "Objects/Map/FloorManager.h"
@@ -146,6 +147,8 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/DataManager.h"
 
 #include "Objects/CA/UI/UI.h"
+#include "Objects/CA/UI/StartUI.h"
+#include "Objects/CA/UI/WaitRoomUI.h"
 #include "Objects/CA/UI/MapEditUI.h"
 #include "Objects/CA/UI/GameUI.h"
 

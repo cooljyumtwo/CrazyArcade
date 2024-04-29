@@ -15,6 +15,7 @@ GameScene::GameScene()
     MonsterManager::Get();
 
     RenderManager::Get()->Add("GameObject", player);
+
 }
 
 GameScene::~GameScene()

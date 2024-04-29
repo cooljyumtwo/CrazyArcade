@@ -21,9 +21,12 @@ public:
     void ClearMonster();
     void Collision(Character* character);
 
+    void SetIsRoad() { isRoad = !isRoad; }
+
 private:
     int sizeItemDatas;
     int totalProbability = 0;
 
+    bool isRoad = true;
     Boss* boss;
 };

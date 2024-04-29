@@ -15,6 +15,8 @@ MonsterManager::~MonsterManager()
 
 void MonsterManager::Update()
 {
+	if (!isRoad) return;
+
 	for (const auto& pair : totalObject) 
 	{
 		const vector<GameObject*>& gameObjects = pair.second;
@@ -109,6 +111,8 @@ void MonsterManager::ClearMonster()
 
 void MonsterManager::Collision(Character* character)
 {
+	if (!isRoad) return;
+
 	for (const auto& pair : totalObject)
 	{
 		const vector<GameObject*>& gameObjects = pair.second;

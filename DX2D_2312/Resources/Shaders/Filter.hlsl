@@ -13,7 +13,7 @@ cbuffer ColorBuffer : register(b0)
 cbuffer SelectBuffer : register(b1)
 {
 	int selectNum;
-	int scale;
+    int scale;
 	int2 imageSize;
 }
 
@@ -22,9 +22,9 @@ SamplerState samp : register(s0);
 
 float4 Grayscale(float4 baseColor)
 {
-	float scale = (baseColor.r + baseColor.g + baseColor.b) / 3;	
+	float scale_ = (baseColor.r + baseColor.g + baseColor.b) / 3;	
 	
-	return float4(scale.rrr, baseColor.a);
+    return float4(scale_.rrr, scale * 0.01f);
 }
 
 float4 Grayscale2(float4 baseColor)
@@ -37,7 +37,7 @@ float4 Grayscale2(float4 baseColor)
 	//float scale = grayColor.r + grayColor.g + grayColor.b;
 	float scale = dot(baseColor.rgb, float3(0.3f, 0.59f, 0.11f));
 	
-	return float4(scale.rrr, baseColor.a);
+    return float4(scale.rrr,  scale * 0.01f);
 }
 
 float4 Sepia(float4 baseColor)
@@ -134,8 +134,6 @@ float4 GaussianBlur(float2 uv)
 float4 PS(Input input) : SV_TARGET
 {
 	float4 baseColor = map.Sample(samp, input.uv);
-    
-	return Grayscale(baseColor);
 	
 	if (selectNum == 1)
 		return Grayscale(baseColor);

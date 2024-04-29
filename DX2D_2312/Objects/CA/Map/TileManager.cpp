@@ -40,6 +40,24 @@ void TileManager::Update()
     UpdateWorld();
 
     EffectManager::Get()->Update();
+
+    if (KEY->Down('N'))
+    {
+        TileManager::Get()->SetMapName("Map1");
+        TileManager::Get()->LoadMapData();
+
+        MonsterManager::Get()->LoadMonster();
+        MonsterManager::Get()->LoadBossMonster();
+        MonsterManager::Get()->SetIsRoad();
+    }
+
+    if (KEY->Down('M'))
+    {
+        MonsterManager::Get()->SetIsRoad();
+        MonsterManager::Get()->ClearMonster();
+
+    }
+
 }
 
 void TileManager::CreateBGTile()

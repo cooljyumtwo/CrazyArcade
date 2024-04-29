@@ -1,5 +1,7 @@
 #include "Framework.h"
 
+#include "Scenes/CA/StartScene.h"
+#include "Scenes/CA/WaitRoomScene.h"
 #include "Scenes/CA/MapEditScene.h"
 #include "Scenes/CA/GameScene.h"
 
@@ -9,13 +11,17 @@ GameManager::GameManager()
 {
 	Create();
 
+	SCENE->Add("Start", new StartScene());
+	SCENE->Add("WaitRoom", new WaitRoomScene());
 	SCENE->Add("MapEdit", new MapEditScene());
 	SCENE->Add("Game", new GameScene());
 
+	UIManager::Get()->Add("Start", new StartUI());
+	UIManager::Get()->Add("WaitRoom", new WaitRoomUI());
 	UIManager::Get()->Add("MapEdit", new MapEditUI());
 	UIManager::Get()->Add("Game", new GameUI());
 
-	SCENE->ChangeScene("Game");
+	SCENE->ChangeScene("WaitRoom");
 }
 
 GameManager::~GameManager()
