@@ -2,38 +2,46 @@
 
 GameUI::GameUI()
 {
-	BG = new Quad(L"ResourcesCA/Textures/BG/GameBg.png");
-	BG->Translate(CENTER);
+	bg = new Quad(L"ResourcesCA/Textures/BG/GameBg.png");
+	bg->Translate(CENTER);
 
-	GameTxt = new Quad(L"ResourcesCA/Textures/UI/Game/GameOver.png");
-	GameTxt->SetTag("Game_GameTxt");
-	GameTxt->Load();
+	gameTxt = new Quad(L"ResourcesCA/Textures/UI/Game/GameStart.png");
+	gameTxt->SetTag("Game_GameTxt");
+	gameTxt->Load();
+	gameTxt->SetActive(false);
+
+	bossReadyTxt = new Quad(L"ResourcesCA/Textures/UI/Game/Ready.png");
+	bossReadyTxt->SetTag("Game_BossReadyTxt");
+	bossReadyTxt->Load();
+	bossReadyTxt->SetActive(true);
+
+	resultWindow = new Quad(L"ResourcesCA/Textures/UI/Game/ResultWindow.png");
+	resultWindow->SetTag("Game_ResultWindow");
+	resultWindow->Load();
+	resultWindow->SetActive(false);
 
 	//gameTxtTexs
 	gameTxtTexs.resize(gameTxtStrs.size());
 
 	FOR(gameTxtStrs.size())
 		gameTxtTexs[i] = Texture::Add(PATH_GAME + gameTxtStrs[i]);
-
 }
 
 GameUI::~GameUI()
 {
-	delete BG;
-	delete GameTxt;
+	delete bg;
+	delete gameTxt;
 }
 
 void GameUI::Update()
 {
-	BG->UpdateWorld();
-	GameTxt->UpdateWorld();
+	bg->UpdateWorld();
+	gameTxt->UpdateWorld();
+	bossReadyTxt->UpdateWorld();
+	resultWindow->UpdateWorld();
 
-	if (frameTime<5.0f)
-	{
-		frameTime += DELTA;
-		GameTxt->SetActive(!GameTxt->IsActive());
-	}
-	else { GameTxt->SetActive(false); }
+	AniBossTxt();
+	AniGameTxt();
 }
 
 void GameUI::PreRender()
@@ -42,18 +50,81 @@ void GameUI::PreRender()
 
 void GameUI::Render()
 {
-	BG->Render();
-	GameTxt->Render();
-	GameTxt->RenderUI();
+	bg->Render();
 
+	resultWindow->RenderUI();
 }
 
 void GameUI::PostRender()
 {
-	GameTxt->Render();
+	bossReadyTxt->Render();
+	gameTxt->Render();
+	resultWindow->Render();
 }
 
 void GameUI::SetGameTxt(State state)
 {
-	GameTxt->GetMaterial()->SetTexture(gameTxtTexs[(int)state]);
+	if (curState == GAMEOVER) return;
+
+	curState = state;
+	gameTxt->GetMaterial()->SetTexture(gameTxtTexs[(int)curState]);
+	count = 0;
 }
+
+void GameUI::AniGameTxt()
+{
+	if (curState == START)
+	{
+		if (count > MAX_COUNT) 
+			return;
+	}
+	else 
+	{
+		if (count > MAX_COUNT * 2) 
+		{
+			resultWindow->SetActive(false);
+			if (curState == GAMEOVER)
+				SCENE->ChangeScene("WaitRoom");
+			else
+				StageManager::Get()->NextStage();
+
+			return;
+		}
+	}
+		
+	frameTime += DELTA;
+
+	if (frameTime > MAX_FRAME_TIME)
+	{
+		frameTime -= MAX_FRAME_TIME;
+		
+		if(count <= MAX_COUNT)
+			gameTxt->SetActive(!gameTxt->IsActive());
+		else
+		{
+			resultWindow->SetActive(true);
+		}
+
+		count++;
+	}	
+}
+
+void GameUI::AniBossTxt()
+{
+	if (!bossReadyTxt->IsActive()) return;
+
+	if (bossReadyTxt->GetGlobalPosition().x + bossReadyTxt->GetSize().x < 0)
+		bossReadyTxt->SetActive(false);
+
+	if (count >= 2)
+		bossReadyTxt->Translate(Vector2::Left() * 10.0f);
+}
+
+void GameUI::End()
+{
+	count = MAX_COUNT;
+	curState = START;
+	bossReadyTxt->Load();
+}
+
+

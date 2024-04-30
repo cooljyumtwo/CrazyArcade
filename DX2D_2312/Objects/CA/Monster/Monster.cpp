@@ -52,17 +52,23 @@ void Monster::Hit(Collider* collider)
     hp--;
 
     if (hp <= 0)
-    {
-        if(isBubble)
+    {        
+        if (isBubble)
             SetAction(BUBBLE);
-        else 
-            SetAction(DIE);
+        else
+            Die();
     }
     else 
     {
         SetAction(HIT);
         hitColliders.push_back(collider);
     }
+}
+
+void Monster::Die()
+{
+    SetAction(DIE);
+    MonsterManager::Get()->AddKillMonster();
 }
 
 void Monster::Spawn(const Vector2& pos)
@@ -90,14 +96,15 @@ void Monster::RemoveHitColliders()
 
 void Monster::Collision(Character* character)
 {
+    if (curState == DIE) return;
+
     player = character;
     if (collider->IsCollision(character->GetCollider()))
     {
         if (curState == BUBBLE)
-            SetAction(DIE);
+            Die();
         else
             character->SetAction(DIE);
-        
     }
 }
 

@@ -12,8 +12,9 @@ public:
 	~Boss();
 
 	void Update() override;
-
 	void PostRender();
+
+	void Attack();
 
 private:
 	int maxHp;

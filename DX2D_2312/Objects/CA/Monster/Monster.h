@@ -12,6 +12,7 @@ public:
 
 	void CheckHit();
 	void Hit(Collider* collider);
+	void Die();
 
 	void PlusHp() { hp++; }
 

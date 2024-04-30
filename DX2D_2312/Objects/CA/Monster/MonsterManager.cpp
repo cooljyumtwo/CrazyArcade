@@ -2,11 +2,6 @@
 
 MonsterManager::MonsterManager()
 {
-	boss = new Boss(101, 30.0f, true, 10);
-	RenderManager::Get()->Add("GameObject", boss);
-	boss->Spawn(TileManager::Get()->GetBGTiles()[1][5]->GetGlobalPosition());
-
-	LoadBossMonster();
 }
 
 MonsterManager::~MonsterManager()
@@ -26,12 +21,14 @@ void MonsterManager::Update()
 				object->Update();
 		}
 	}
-	boss->Update();
+	if (boss)
+		boss->Update();
 }
 
 void MonsterManager::Render()
 {
-	boss->PostRender();
+	if (boss)
+		boss->PostRender();
 }
 
 void MonsterManager::LoadBossMonster()
@@ -42,7 +39,6 @@ void MonsterManager::LoadBossMonster()
 	for (GameObject*& monsterObj : totalObject["SpawnBossMonster"])
 	{
 		int key = Random(0,4);
-		
 
 		MonsterData monsterData;
 		monsterData = DataManager::Get()->GetMonsterData(key);
@@ -59,11 +55,23 @@ void MonsterManager::LoadBossMonster()
 void MonsterManager::Spawn(const Vector2& pos)
 {
 	Pop("SpawnBossMonster")->Spawn(pos);
+	spawnMonster++;
+}
 
+void MonsterManager::BossSpawn(const Vector2& pos)
+{
+	boss = new Boss(101, 30.0f, true, 1);
+	RenderManager::Get()->Add("GameObject", boss);
+	boss->Spawn(TileManager::Get()->GetBGTiles()[1][5]->GetGlobalPosition());
+
+	LoadBossMonster();
 }
 
 void MonsterManager::LoadMonster()
 {
+	killMonster = 0;
+	spawnMonster = 0;
+
 	BinaryReader* reader = new BinaryReader(PATH + TileManager::mapNameStr + ".map");
 
 	if (reader->IsFailed())
@@ -91,6 +99,7 @@ void MonsterManager::LoadMonster()
 		monster->Spawn(pos);
 
 		RenderManager::Get()->Add("GameObject", monster);
+		spawnMonster++;
 	}
 
 	delete reader;
@@ -107,6 +116,12 @@ void MonsterManager::ClearMonster()
 			delete object;
 		}
 	}
+	if (boss)
+	{
+		RenderManager::Get()->Remove("GameObject", boss);
+		delete boss;
+	}
+
 }
 
 void MonsterManager::Collision(Character* character)
@@ -122,5 +137,14 @@ void MonsterManager::Collision(Character* character)
 			monster->Collision(character);
 		}
 	}
-	boss->Collision(character);
+	if(boss)
+		boss->Collision(character);
+}
+
+void MonsterManager::AddKillMonster()
+{
+	killMonster++;
+
+	if (killMonster >= spawnMonster)
+		StageManager::Get()->Clear();
 }

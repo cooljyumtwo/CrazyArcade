@@ -13,9 +13,9 @@ GameScene::GameScene()
     EffectManager::Get();
     DataManager::Get();
     MonsterManager::Get();
+    StageManager::Get();
 
     RenderManager::Get()->Add("GameObject", player);
-
 }
 
 GameScene::~GameScene()
@@ -50,11 +50,9 @@ void GameScene::PostRender()
 
 void GameScene::Start()
 {
-    StageData stageData = DataManager::Get()->GetStageData(WaitRoomUI::stageKey);
-    TileManager::Get()->SetMap(stageData.stage1);
-    TileManager::Get()->LoadMapData();
-    TileManager::Get()->LoadMapSize();
-    MonsterManager::Get()->LoadMonster();
+    //player->SetInit();
+    StageManager::Get()->LoadStage();
+    MonsterManager::Get()->BossSpawn(CENTER);
 }
 
 void GameScene::End()

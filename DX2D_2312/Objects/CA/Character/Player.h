@@ -12,6 +12,8 @@ public:
     void AddItem(Item* item);
     void Attack();
 
+    void Die();
+
 private:
     Item* item;
 };

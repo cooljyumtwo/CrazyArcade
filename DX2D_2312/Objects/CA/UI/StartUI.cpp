@@ -68,7 +68,7 @@ void StartUI::CreateUIs()
 	startBtn->SetActive(false);
 	startBtn->GetMaterial()->SetPixelShader(L"Multi.hlsl");
 	startBtn->SetEvent([]() {
-		SCENE->ChangeScene("Game");
+		SCENE->ChangeScene("WaitRoom");
 		});
 
 	//fade

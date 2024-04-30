@@ -10,6 +10,8 @@ public:
     WaitRoomUI();
     ~WaitRoomUI();
 
+    void Start() override;
+
     void Update() override;
     void PreRender() override;
     void Render() override;

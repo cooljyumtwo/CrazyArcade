@@ -13,7 +13,6 @@ public:
     void Start() override;
     void End() override;
 
-
 private:
     EditTileMap* tileMap;
     Player* player;

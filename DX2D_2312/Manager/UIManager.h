@@ -18,6 +18,7 @@ public:
 	void Add(string key, UI* scene);
 
 	void ChangeUI(string key);
+	UI* GetUI(string key) { return UIs[key]; }
 
 private:
 	map<string, UI*> UIs;

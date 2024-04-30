@@ -16,6 +16,7 @@ public:
 
     void LoadBossMonster();
     void Spawn(const Vector2& pos);
+    void BossSpawn(const Vector2& pos);
 
     void LoadMonster();
     void ClearMonster();
@@ -23,10 +24,17 @@ public:
 
     void SetIsRoad() { isRoad = !isRoad; }
 
+    void AddKillMonster();
+
+
+
 private:
     int sizeItemDatas;
     int totalProbability = 0;
 
     bool isRoad = true;
     Boss* boss;
+
+    int killMonster = 0;
+    int spawnMonster = 0;
 };

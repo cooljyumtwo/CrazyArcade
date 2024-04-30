@@ -27,6 +27,8 @@ public:
 
     void UpdateWorld() override;
 
+    void SetInit();
+    
     RectCollider* GetCollider() { return collider; }
     void SetColliderSize(Vector2 size);
 
@@ -36,8 +38,6 @@ public:
     void MinusBubbleCurCnt() {  if (bubbleCurCnt > 0) bubbleCurCnt--; }
 
     Stat GetStat() { return stat; }
-
-
 
 protected:
     void Move();

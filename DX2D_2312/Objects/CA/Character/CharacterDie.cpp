@@ -10,4 +10,5 @@ CharacterDie::CharacterDie(Transform* target)
 void CharacterDie::End()
 {
 	target->SetActive(false);
+	StageManager::Get()->Gameover();
 }

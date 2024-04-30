@@ -20,6 +20,7 @@ Character::~Character()
 void Character::Update()
 {
     if (!IsActive()) return;
+
     Move();
     Attack();
     Bubble();
@@ -57,6 +58,15 @@ void Character::UpdateWorld()
     collider->UpdateWorld();
 }
 
+void Character::SetInit()
+{
+    //stat.bubbleCnt = 1;
+    //stat.bubblePower = 1;
+    //stat.speed = 1;
+
+    //SetActive(true);
+}
+
 void Character::Move()
 {
     if (curState == BUBBLE || curState == ALIVE || curState == DIE) return;
@@ -76,7 +86,6 @@ void Character::Attack()
     if (KEY->Down(VK_SPACE) && bubbleCurCnt < stat.bubbleCnt)
     {
         BubbleManager::Get()->Spawn(GetLocalPosition(), stat.bubblePower, this);
-        MonsterManager::Get()->Spawn(GetLocalPosition());
     }
 }
 

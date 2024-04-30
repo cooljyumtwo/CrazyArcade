@@ -1,5 +1,5 @@
 #include "Framework.h"
-int WaitRoomUI::stageKey = 0;
+int WaitRoomUI::stageKey = 1;
 
 WaitRoomUI::WaitRoomUI()
 {
@@ -12,8 +12,6 @@ WaitRoomUI::WaitRoomUI()
 	font->SetLocalPosition(CENTER);
 	font->UpdateWorld();
 	font->SetAligned(ImageFont::AlignedType::R);
-
-
 }
 
 WaitRoomUI::~WaitRoomUI()
@@ -38,6 +36,11 @@ WaitRoomUI::~WaitRoomUI()
 		delete mapSelectBtn;
 	}
 	mapSelectLineBtns.clear();
+}
+
+void WaitRoomUI::Start()
+{
+	mapSelectWindow->SetActive(false);
 }
 
 void WaitRoomUI::Update()
@@ -192,6 +195,7 @@ void WaitRoomUI::CreateMapSelectWindow()
 	cancelBtn->SetEvent([this]() {
 		mapSelectWindow->SetActive(false);
 		});
+
 }
 
 void WaitRoomUI::CreateBuffers()

@@ -2,12 +2,14 @@
 
 class GameUI : public UI
 {
+    const float MAX_FRAME_TIME = 0.3f;
+    const int MAX_COUNT = 5;
 public:
     enum State
     {
-        READY, START, CLEAR, GAMEOVER
+        START, CLEAR, GAMEOVER
     };
-    const wstring PATH_GAME = PATH + L"/Game/";
+    const wstring PATH_GAME = PATH + L"Game/";
 
 public:
     GameUI();
@@ -19,14 +21,25 @@ public:
     void PostRender() override;
 
     void SetGameTxt(State state);
+    void AniGameTxt();
+    void AniBossTxt();
 
+    void End() override;
 
 private:
-    Quad* BG;
-    Quad* GameTxt;
+    Quad* bg;
+    Quad* gameTxt;
+    Quad* bossReadyTxt;
+
+    State curState;
+
+    Quad* resultWindow;
+    Font* numMonster;
 
     float frameTime = 0.0f;
+    int count = MAX_COUNT;
 
     vector<Texture*> gameTxtTexs;
-    vector<wstring> gameTxtStrs = { L"Ready.png", L"GameStart.png", L"Clear.png", L"GameOver.png"};
+    vector<wstring> gameTxtStrs = { L"GameStart.png", L"Clear.png", L"GameOver.png"};
+
 };
