@@ -39,6 +39,7 @@ void StageManager::NextStage()
 {
 	if (countStage > maxStage) return;
 
+	if (countStage == 2) MonsterManager::Get()->BossSpawn(CENTER);
 	TileManager::Get()->SetMap(stageMapNames[countStage]);
 	TileManager::Get()->LoadMapData();
 	TileManager::Get()->LoadMapSize();

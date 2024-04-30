@@ -144,14 +144,15 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/Map/Floor.h"
 #include "Objects/Map/FloorManager.h"
 
-#include "Objects/CA/DataManager.h"
-
 #include "Objects/CA/UI/MapSelectButton.h"
 #include "Objects/CA/UI/UI.h"
 #include "Objects/CA/UI/StartUI.h"
 #include "Objects/CA/UI/WaitRoomUI.h"
 #include "Objects/CA/UI/MapEditUI.h"
 #include "Objects/CA/UI/GameUI.h"
+
+#include "Objects/CA/DataManager.h"
+#include "Objects/CA/StageManager.h"
 
 #include "Objects/CA/Character/CharacterAction.h"
 #include "Objects/CA/Character/CharacterIdle.h"

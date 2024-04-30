@@ -62,7 +62,7 @@ void MonsterManager::BossSpawn(const Vector2& pos)
 {
 	boss = new Boss(101, 30.0f, true, 1);
 	RenderManager::Get()->Add("GameObject", boss);
-	boss->Spawn(TileManager::Get()->GetBGTiles()[1][5]->GetGlobalPosition());
+	boss->Spawn(pos);
 
 	LoadBossMonster();
 }

@@ -50,9 +50,8 @@ void GameScene::PostRender()
 
 void GameScene::Start()
 {
-    //player->SetInit();
+    player->SetInit();
     StageManager::Get()->LoadStage();
-    MonsterManager::Get()->BossSpawn(CENTER);
 }
 
 void GameScene::End()

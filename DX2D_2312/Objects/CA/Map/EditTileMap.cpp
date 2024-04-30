@@ -6,6 +6,7 @@ EditTileMap::EditTileMap()
 
     CreateBGTile();
     CreateSampleButtons();
+    CreatePlayerTile();
 
     Transform::Load();
 
@@ -21,6 +22,7 @@ EditTileMap::~EditTileMap()
             delete bgTiles[x][y];
         }
     }
+    delete playerPosTile;
 }
 
 void EditTileMap::Render()
@@ -45,6 +47,8 @@ void EditTileMap::Render()
         iter++;
     }
 
+    playerPosTile->Render();
+
     for (UINT y = 0; y < sizeY; y++)
     {
         for (UINT x = 0; x < sizeX; x++)
@@ -54,8 +58,8 @@ void EditTileMap::Render()
     }
 
     //ImGui
-    const char* list[] = {"BASIC", "OBSTACLE","MONSTER"};
-    if (ImGui::Combo("Type", &type, list, 3)) 
+    const char* list[] = {"BASIC", "OBSTACLE","MONSTER","PLAYER_POS_SET"};
+    if (ImGui::Combo("Type", &type, list, 4)) 
     {
         SetType();
     }
@@ -173,6 +177,11 @@ void EditTileMap::CreateSampleButtons()
     case 2:
         typePath = L"ResourcesCA/Textures/Character/Monster/Monster_Collection/";
         break;
+    case 3:
+        isClick = true;
+        sampleTextures.clear();
+        return;
+        break;
     default:
         break;
     }
@@ -191,6 +200,26 @@ void EditTileMap::CreateSampleButtons()
 
         result = FindNextFile(handle, &findData);
     }
+}
+
+void EditTileMap::CreatePlayerTile()
+{
+    wstring textureFile = selectTextureFile;
+
+    playerPosTile = new ObstacleTile(textureFile, CENTER);
+    playerPosTile->SetParent(this);
+    playerPosTile->SetTexture(L"ResourcesCA/Textures/Tiles/PlayerTile.png");
+    playerPosTile->UpdateWorld();
+}
+
+void EditTileMap::SetPlayerPos(Vector2 curIdx)
+{
+    playerPosTile->SetCurIdx(curIdx);
+    playerPosTile->SetLocalPosition(bgTiles[curIdx.x][curIdx.y]->GetLocalPosition());
+    playerPosTile->UpdateWorld();
+
+    RemoveObjTile(playerPosTile->GetCollider()->GetGlobalPosition());
+    RemoveMonster(playerPosTile->GetGlobalPosition());
 }
 
 void EditTileMap::SetType()
@@ -397,10 +426,15 @@ void EditTileMap::CheckAddObjTile(Vector2 pos)
                         AddObjTile(tile->GetLocalPosition(), tile->GetSize(), tile->GetCurIdx());
                         tile->SetType(Tile::OBSTACLE);
                     }
-                    else 
+                    else if (type == 2)
                     {
                         AddMonster(tile->GetLocalPosition(), tile->GetCurIdx());
                     }
+                    
+                }
+                if (type == 3 && KEY->Press(VK_LBUTTON))
+                {
+                    SetPlayerPos(tile->GetCurIdx());
                 }
             }
             else
@@ -481,14 +515,20 @@ void EditTileMap::AddMonster(const Vector2& pos, const Vector2& idx, wstring tex
     posStr = fileName.find(L'.');
     wstring numStr = fileName.substr(0, posStr);
     int num = stoi(numStr);
-    RemoveMonster(tile->GetCollider()->GetGlobalPosition());
+    
 
     monsterTiles.push_back(make_pair(tile, num));
+    if (num > 100)
+    {
+        tile->GetCollider()->SetSize({ Tile::TILE_SIZE * 3,Tile::TILE_SIZE * 3 });
+        RemoveMonster(tile->GetCollider()->GetGlobalPosition(), tile->GetCollider());
+    }
 
+    RemoveMonster(tile->GetCollider()->GetGlobalPosition());
     RemoveObjTile(tile->GetCollider()->GetGlobalPosition());
 }
 
-void EditTileMap::RemoveMonster(const Vector2& pos)
+void EditTileMap::RemoveMonster(const Vector2& pos, Collider* collider)
 {
     for (auto iter = monsterTiles.begin(); iter != monsterTiles.end(); )
     {
@@ -500,9 +540,16 @@ void EditTileMap::RemoveMonster(const Vector2& pos)
             delete tile;
             iter = monsterTiles.erase(iter);
         }
+        //else if (collider != nullptr && tile->GetCollider()->IsCollision(collider))
+        //{
+        //    delete tile;
+        //    iter = monsterTiles.erase(iter);
+        //}
         else
         {
             iter++;
         }
+
+
     }
 }

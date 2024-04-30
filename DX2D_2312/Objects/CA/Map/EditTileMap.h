@@ -15,6 +15,9 @@ public:
 private:
     void CreateBGTile();
     void CreateSampleButtons();     
+    void CreatePlayerTile();
+
+    void SetPlayerPos(Vector2 curIdx);
 
     void SetType();
 
@@ -34,7 +37,7 @@ private:
 
     void ClearMonster();
     void AddMonster(const Vector2& pos, const Vector2& idx, wstring textureFile = L"");
-    void RemoveMonster(const Vector2& pos);
+    void RemoveMonster(const Vector2& pos , Collider* collider = nullptr);
 
 private:
     int type = 0;
@@ -51,4 +54,6 @@ private:
     vector<ObstacleTile*> objTiles;
     vector<pair<Tile*,int>> monsterTiles;
     vector<Texture*> sampleTextures;
+
+    Tile* playerPosTile;
 };

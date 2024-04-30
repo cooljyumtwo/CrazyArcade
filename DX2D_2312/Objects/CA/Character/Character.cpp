@@ -60,11 +60,12 @@ void Character::UpdateWorld()
 
 void Character::SetInit()
 {
-    //stat.bubbleCnt = 1;
-    //stat.bubblePower = 1;
-    //stat.speed = 1;
+    stat.bubbleCnt = 1;
+    stat.bubblePower = 1;
+    stat.speed = 1;
 
-    //SetActive(true);
+    SetAction(IDLE);
+    SetActive(true);
 }
 
 void Character::Move()

@@ -219,6 +219,7 @@
     <ClInclude Include="Objects\CA\Map\TileObject\TileObject.h" />
     <ClInclude Include="Objects\CA\Map\TileObject\TileObjectManager.h" />
     <ClInclude Include="Objects\CA\Monster\Monster.h" />
+    <ClInclude Include="Objects\CA\StageManager.h" />
     <ClInclude Include="Objects\CA\UI\GameUI.h" />
     <ClInclude Include="Objects\CA\UI\MapEditUI.h" />
     <ClInclude Include="Objects\CA\UI\StartUI.h" />
@@ -323,6 +324,7 @@
     <ClCompile Include="Objects\CA\Monster\MonsterHit.cpp" />
     <ClCompile Include="Objects\CA\Monster\MonsterManager.cpp" />
     <ClCompile Include="Objects\CA\Monster\MonsterMove.cpp" />
+    <ClCompile Include="Objects\CA\StageManager.cpp" />
     <ClCompile Include="Objects\CA\UI\GameUI.cpp" />
     <ClCompile Include="Objects\CA\UI\MapEditUI.cpp" />
     <ClCompile Include="Objects\CA\Bubble\Bubble.cpp" />
