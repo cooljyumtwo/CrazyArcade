@@ -54,7 +54,8 @@ void Player::AddItem(Item* item)
 
 void Player::RemoveItem()
 {
-    item = nullptr;
+    ItemData data;
+    item->SetData(data);
 
     UI* curUI = UIManager::Get()->GetUI("Game");
     GameUI* gameUI = (GameUI*)curUI;

@@ -4,6 +4,7 @@ class MonsterManager : public PoolingManager<Monster>, public Singleton<MonsterM
 {
 private:
     const string PATH = "ResourcesCA/TextData/Map/Monster/";
+    const int CHECK_BOSS_IDX = 100;
 private:
     friend class Singleton;
 
@@ -16,7 +17,6 @@ public:
 
     void LoadBossMonster();
     void Spawn(const Vector2& pos);
-    void BossSpawn(const Vector2& pos);
 
     void LoadMonster();
     void ClearMonster();
@@ -31,7 +31,7 @@ private:
     int totalProbability = 0;
 
     bool isRoad = true;
-    Boss* boss;
+    bool isSpawnBoss = false;
 
     int killMonster = 0;
     int spawnMonster = 0;

@@ -92,7 +92,7 @@ void GameUI::AniGameTxt()
 		{
 			resultWindow->SetActive(false);
 			if (curState == GAMEOVER)
-				SCENE->ChangeScene("WaitRoom");
+				StageManager::Get()->End();
 			else
 				StageManager::Get()->NextStage();
 

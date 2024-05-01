@@ -10,7 +10,7 @@ MonsterManager::~MonsterManager()
 
 void MonsterManager::Update()
 {
-	if (!isRoad) return;
+	//if (!isRoad) return;
 
 	for (const auto& pair : totalObject) 
 	{
@@ -21,19 +21,15 @@ void MonsterManager::Update()
 				object->Update();
 		}
 	}
-	if (boss)
-		boss->Update();
 }
 
 void MonsterManager::Render()
 {
-
 }
 
 void MonsterManager::LoadBossMonster()
 {
 	totalObject["SpawnBossMonster"].resize(10);
-
 
 	for (GameObject*& monsterObj : totalObject["SpawnBossMonster"])
 	{
@@ -45,7 +41,6 @@ void MonsterManager::LoadBossMonster()
 		monsterObj = new Monster(monsterData.key, monsterData.speed, monsterData.isBubble, monsterData.hp);
 
 		Monster* monster = (Monster*)monsterObj;
-		//monster->Spawn(pos);
 
 		RenderManager::Get()->Add("GameObject", monster);
 	}
@@ -57,17 +52,10 @@ void MonsterManager::Spawn(const Vector2& pos)
 	spawnMonster++;
 }
 
-void MonsterManager::BossSpawn(const Vector2& pos)
-{
-	boss = new Boss(101, 30.0f, true, 1);
-	RenderManager::Get()->Add("GameObject", boss);
-	boss->Spawn(pos);
-
-	LoadBossMonster();
-}
-
 void MonsterManager::LoadMonster()
 {
+	ClearMonster();
+
 	killMonster = 0;
 	spawnMonster = 0;
 	cntBoss = 0;
@@ -93,7 +81,7 @@ void MonsterManager::LoadMonster()
 		MonsterData monsterData;
 		monsterData = DataManager::Get()->GetMonsterData(key);
 
-		if (key>=100)
+		if (key >= CHECK_BOSS_IDX)
 		{
 			monsterObj = new Boss(monsterData.key, monsterData.speed, monsterData.isBubble, monsterData.hp);
 			Boss* monster = (Boss*)monsterObj;
@@ -103,38 +91,35 @@ void MonsterManager::LoadMonster()
 			LoadBossMonster();
 
 			cntBoss++;
+
+			isSpawnBoss = true;
 		}
-		else {
+		else 
+		{
 			monsterObj = new Monster(monsterData.key, monsterData.speed, monsterData.isBubble, monsterData.hp);
 			spawnMonster++;
 			Monster* monster = (Monster*)monsterObj;
 			monster->Spawn(pos);
 			RenderManager::Get()->Add("GameObject", monster);
 		}
-
-		
 	}
 
+	isRoad = true;
 	delete reader;
 }
 
 void MonsterManager::ClearMonster()
 {
+//	isRoad = false;
+
 	for (auto& pair : totalObject)
 	{
 		vector<GameObject*>& gameObjects = pair.second;
 		for (GameObject*& object : gameObjects)
 		{
-			RenderManager::Get()->Remove("GameObject", object);
-			delete object;
+			object->SetActive(false);
 		}
 	}
-	if (boss)
-	{
-		RenderManager::Get()->Remove("GameObject", boss);
-		delete boss;
-	}
-
 }
 
 void MonsterManager::Collision(Character* character)
@@ -147,11 +132,10 @@ void MonsterManager::Collision(Character* character)
 		for (GameObject* object : gameObjects)
 		{
 			Monster* monster = (Monster*)object;
-			monster->Collision(character);
+			if(monster->IsActive())
+				monster->Collision(character);
 		}
 	}
-	if(boss)
-		boss->Collision(character);
 }
 
 void MonsterManager::AddKillMonster(bool isBoss)
@@ -161,6 +145,9 @@ void MonsterManager::AddKillMonster(bool isBoss)
 	if (isBoss)
 		cntBoss--;
 
-	if (killMonster >= spawnMonster && cntBoss <= 0)
+	if ((isSpawnBoss || killMonster >= spawnMonster) && cntBoss <= 0)
+	{
+		isRoad = false;
 		StageManager::Get()->Clear();
+	}
 }

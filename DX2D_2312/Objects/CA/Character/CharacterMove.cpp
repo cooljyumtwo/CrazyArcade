@@ -85,7 +85,6 @@ void CharacterMove::Move()
         playTime = 0.0f;
     }
 
-
     ItemManager::Get()->Collision(character);
 
     if (compass == W) velocity.x = 1.0f;

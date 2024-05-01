@@ -14,6 +14,7 @@ public:
     void Move();
     void SetMoveTime();
     void RandomCompass();
+    void End();
 
 private:
     float playTime = 0.0f;

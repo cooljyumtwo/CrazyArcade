@@ -28,6 +28,10 @@ Boss::Boss(int key, float speed, bool isBubble, int hp, Type type)
 
 Boss::~Boss()
 {
+	for (auto action : actions)
+		delete action.second;
+
+	RenderManager::Get()->Remove("HpBar", hpBar);
 	delete hpBar;
 }
 
@@ -65,10 +69,13 @@ void Boss::Attack()
 
 void Boss::Hit(Collider* collider)
 {
-	Monster::Hit(collider);
+	if (curState == DIE || curState == BUBBLE) return;
+
 	if (hp <= maxHp * 0.5f)
 	{
 		curType = MOVE;
 		curState = curType;
 	}
+
+	Monster::Hit(collider);
 }

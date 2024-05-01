@@ -80,13 +80,14 @@ void GameManager::Render()
 	SCENE->Render();
 	UIManager::Get()->PostRender();
 
-	cursor->Render();
 
 	Font::Get()->GetDC()->EndDraw();
 
 	ImGui::Render();
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 	
+	cursor->Render();
+
 	Device::Get()->Present();
 }
 

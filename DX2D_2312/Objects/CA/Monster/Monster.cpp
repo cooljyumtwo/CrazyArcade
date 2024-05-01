@@ -12,6 +12,8 @@ Monster::Monster(int key, float speed, bool isBubble, int hp, bool isBoss)
 
 Monster::~Monster()
 {
+    for (auto action : actions)
+        delete action.second;
 }
 
 void Monster::Update()
@@ -22,12 +24,12 @@ void Monster::Update()
 
     UpdateWorld();
 
-    CheckHit();
+    CheckTileHit();
 
     RemoveHitColliders();
 }
 
-void Monster::CheckHit()
+void Monster::CheckTileHit()
 {
     if (curState == DIE) return;
 
@@ -37,18 +39,26 @@ void Monster::CheckHit()
 
     if (tile->GetType() == Tile::ATTACK)
     {
-        for (Collider* hitCollider : hitColliders)
-        {
-            if (hitCollider == tile->GetCollider())
-                return;
-        }
-
         Hit(tile->GetCollider());
     }
 }
 
+bool Monster::CheckHitCollider(Collider* collider)
+{
+    for (Collider* hitCollider : hitColliders)
+    {
+        if (hitCollider == collider)
+            return false;
+    }
+
+    hitColliders.push_back(collider);
+    return true;
+}
+
 void Monster::Hit(Collider* collider)
 {
+    if(!CheckHitCollider(collider)) return;
+
     hp--;
 
     if (hp <= 0)
@@ -61,7 +71,6 @@ void Monster::Hit(Collider* collider)
     else 
     {
         SetAction(HIT);
-        hitColliders.push_back(collider);
     }
 }
 

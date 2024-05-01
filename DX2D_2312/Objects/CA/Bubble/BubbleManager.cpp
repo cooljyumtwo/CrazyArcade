@@ -80,7 +80,6 @@ Bubble* BubbleManager::PushPlayer(Character* player, bool isPlayerMaxSpeed)
 						bubble->SetPushDirection(Bubble::R);
 						return bubble;
 					}
-
 				}
 			}
 			else
@@ -122,6 +121,7 @@ void BubbleManager::CollisionBoss(Boss* boss)
 		if (bubble->GetCollider()->IsCollision(boss->GetCollider()))
 		{
 			bubble->Pop();
+			boss->Hit(bubble->GetCollider());
 		}
 	}
 }

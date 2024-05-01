@@ -7,6 +7,6 @@ protected:
 public:
     CharacterDie(Transform* target);
 
+    void Start();
     void End();
-
 };

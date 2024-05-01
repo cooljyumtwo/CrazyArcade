@@ -42,7 +42,7 @@ public:
 protected:
 	int power;
 
-	float playTime = 0.0f;
+	float playTime = 0.0;
 
 	bool isTarget = false;
 	bool isPush = false;

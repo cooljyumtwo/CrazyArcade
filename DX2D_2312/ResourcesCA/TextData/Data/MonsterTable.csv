@@ -4,4 +4,4 @@ key,name,speed,isBubble,hp,isBoss,type
 2,Pudadag,30.0f,0,2,0,0
 3,Gamgyul-i,20.0f,0,1,0,0
 100,GiantOctopus,40.0f,1,10,1,1
-101,Penguin,40.0f,1,10,1,1
+101,Penguin,40.0f,1,4,1,1

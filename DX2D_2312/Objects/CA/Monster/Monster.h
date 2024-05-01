@@ -10,7 +10,8 @@ public:
 	void Update() override;
 	void CreateActions() override;
 
-	void CheckHit();
+	void CheckTileHit();
+	bool CheckHitCollider(Collider* collider);
 	void Hit(Collider* collider);
 	void Die();
 
@@ -22,7 +23,6 @@ public:
 
 	void Collision(Character* character);
 	Character* GetPlayer() {return player;}
-
 
 protected:
 	int key;

@@ -23,7 +23,7 @@ public:
     Compass GetCompass() { return compass; }
 
 protected:
-    float moveSpeed = 120.0f;
+    float moveSpeed = 150.0f;
 
     Transform* target;
     Vector2 velocity;

@@ -41,7 +41,6 @@ void Character::Render()
 
 void Character::PostRender()
 {
-   // collider->RenderUI();
 }
 
 float Character::GetDepth()
@@ -67,7 +66,7 @@ void Character::SetInit()
 
 void Character::Move()
 {
-    if (curState == BUBBLE || curState == ALIVE || curState == DIE) return;
+    if (curState == BUBBLE || curState == ALIVE ||  curState == DIE) return;
 
     bool isMove = false;
 

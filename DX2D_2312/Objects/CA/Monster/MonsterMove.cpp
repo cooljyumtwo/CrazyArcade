@@ -136,3 +136,8 @@ void MonsterMove::RandomCompass()
         }
     }
 }
+
+void MonsterMove::End()
+{
+    
+}

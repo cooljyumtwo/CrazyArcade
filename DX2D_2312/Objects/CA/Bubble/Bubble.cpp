@@ -59,7 +59,7 @@ void Bubble::CreatActions()
 			posTileIdx = tile->GetCurIdx();
 		TileManager::Get()->SetIdxBgTileType(posTileIdx,Tile::ATTACK);
 		BubbleManager::Get()->SpawnWaves(this->GetGlobalPosition(), power);
-		},1);
+		},3);
 
 	action->GetClip(0)->SetEvent([this]() {
 		if (target)
@@ -104,6 +104,7 @@ void Bubble::Pop()
 {
 	TileManager::Get()->SetIdxBgTileType(posTileIdx, Tile::BASIC);
 	SetAction(POP);
+	playTime = 0.0f;
 }
 
 void Bubble::Push()
@@ -133,8 +134,6 @@ void Bubble::Push()
 		default:
 			break;
 		}
-
-	
 }
 
 void Bubble::SetAction(int state)

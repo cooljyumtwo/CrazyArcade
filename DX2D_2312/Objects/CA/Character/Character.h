@@ -12,7 +12,7 @@ protected:
     struct Stat 
     {
         int bubbleCnt = 3;
-        int bubblePower = 3;
+        int bubblePower = 1;
         int speed = 3;
     };
 

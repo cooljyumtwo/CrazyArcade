@@ -55,7 +55,6 @@ void TileManager::Update()
     {
         MonsterManager::Get()->SetIsRoad();
         MonsterManager::Get()->ClearMonster();
-
     }
 
 }
@@ -144,7 +143,6 @@ void TileManager::ClearObjTile()
     }
 
     objTiles.clear();
-
 }
 
 void TileManager::AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx, const wstring textureFile)

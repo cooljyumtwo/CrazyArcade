@@ -7,6 +7,12 @@ StageManager::StageManager()
 void StageManager::SetStageData()
 {
 	stageData = DataManager::Get()->GetStageData(WaitRoomUI::stageKey);
+	userHp = PLAYER_SPAWN_HP;
+}
+
+void StageManager::SetPlayer(Character* playerCharacter)
+{
+	this->playerCharacter = playerCharacter; 
 }
 
 void StageManager::LoadStage()
@@ -32,44 +38,65 @@ void StageManager::LoadStage()
 	stageMapNames[1] = stageData.stage2;
 	stageMapNames[2] = stageData.stage3;
 
+	SpawnPlayer();
+
 	NextStage();
 }
 
 void StageManager::NextStage()
 {
-	if (countStage > maxStage) return;
-
-	if (countStage == 2) MonsterManager::Get()->BossSpawn(CENTER);
+	if (countStage >= maxStage)
+	{
+		SCENE->ChangeScene("WaitRoom");
+		return;
+	}
+		
 	TileManager::Get()->SetMap(stageMapNames[countStage]);
 	TileManager::Get()->LoadMapData();
 	TileManager::Get()->LoadMapSize();
+
 	MonsterManager::Get()->LoadMonster();
-	Ready();
+
+	Start();
 
 	countStage++;
 }
 
-void StageManager::Ready()
+void StageManager::SpawnPlayer()
+{
+	playerCharacter->SetInit();
+	Player* player = (Player*)playerCharacter;
+	player->LoadPos();
+}
+
+void StageManager::SetGameUIState(GameUI::State state)
 {
 	UI* curUI = UIManager::Get()->GetUI("Game");
 	gameUI = (GameUI*)curUI;
-	gameUI->SetGameTxt(GameUI::State::START);
+	gameUI->SetGameTxt(state);
+}
+
+void StageManager::Start()
+{
+	SetGameUIState(GameUI::State::START);
 }
 
 void StageManager::Clear()
 {
-	UI* curUI = UIManager::Get()->GetUI("Game");
-	gameUI = (GameUI*)curUI;
-	gameUI->SetGameTxt(GameUI::State::CLEAR);
+	SetGameUIState(GameUI::State::CLEAR);
 }
 
 void StageManager::Gameover()
 {
-	UI* curUI = UIManager::Get()->GetUI("Game");
-	gameUI = (GameUI*)curUI;
-	gameUI->SetGameTxt(GameUI::State::GAMEOVER);
+	if (userHp > 0)
+		SpawnPlayer();
+	else
+		SetGameUIState(GameUI::State::GAMEOVER);
+
+	userHp--;
 }
 
 void StageManager::End()
 {
+	SCENE->ChangeScene("WaitRoom");
 }

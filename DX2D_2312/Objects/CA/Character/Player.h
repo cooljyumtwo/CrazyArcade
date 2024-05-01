@@ -19,8 +19,7 @@ public:
 
     bool GetIsBubblePush() { return isBubblePush; }
 
-
 private:
     Item* item;
-    bool isBubblePush = false;
+    bool isBubblePush = true;
 };

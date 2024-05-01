@@ -51,9 +51,8 @@ void GameScene::PostRender()
 
 void GameScene::Start()
 {
+    StageManager::Get()->SetPlayer(player);
     StageManager::Get()->LoadStage();
-    player->SetInit();
-    player->LoadPos();
 }
 
 void GameScene::End()
