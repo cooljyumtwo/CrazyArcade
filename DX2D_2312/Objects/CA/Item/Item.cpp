@@ -4,14 +4,12 @@ Item::Item()
 {
     SetActive(false); 
 
-    collider = new RectCollider({ Tile::TILE_SIZE, Tile::TILE_SIZE });
     collider->SetParent(this);
     collider->GetColor()->SetColor(0.0f,1.0f,1.0f);
 
     shadow = new Quad(PATH + L"Shadow.png");
     shadow->SetParent(this);
     shadow->Translate(Vector2::Down() * Vector2{ 0, 20.0f});
-    
 }
 
 void Item::Update()

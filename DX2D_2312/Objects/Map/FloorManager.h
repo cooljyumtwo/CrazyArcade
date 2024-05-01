@@ -17,7 +17,7 @@ public:
 
     void Load();
 
-    RectCollider* Collision(Collider* collider);
+    Collider* Collision(Collider* collider);
 
     Quad* GetBG() { return background; }    
 private:

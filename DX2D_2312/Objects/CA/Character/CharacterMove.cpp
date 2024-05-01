@@ -67,10 +67,24 @@ void CharacterMove::Move()
     int speed = (character->GetStat().speed > MAX_SPEED) ? MAX_SPEED : character->GetStat().speed;
     target->Translate(velocity * speed * moveSpeed * DELTA );
 
-    TileManager::Get()->PushPlayer(character);
+    TileManager::Get()->PushGameObject(character);
     TileManager::Get()->CheckMapPosPlayer(character);
 
-    BubbleManager::Get()->PushPlayer(character);
+    Player* player = (Player*)target;
+    Bubble* bubble = BubbleManager::Get()->PushPlayer(character, player->GetIsBubblePush());
+    if (bubble)
+    {
+        playTime += DELTA;
+        if (playTime < MAX_PUSH_TIME)
+        {
+            bubble->SetIsPush(true);
+        }
+    }
+    else 
+    {
+        playTime = 0.0f;
+    }
+
 
     ItemManager::Get()->Collision(character);
 

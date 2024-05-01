@@ -12,9 +12,6 @@ Wave::Wave()
 
 Wave::~Wave()
 {
-	delete collider;
-
-	//Áú¹®¿é
 	for (auto& pair : actions) 
 		delete pair.second;
 	actions.clear();

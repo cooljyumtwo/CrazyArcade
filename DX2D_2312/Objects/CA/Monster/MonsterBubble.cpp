@@ -6,8 +6,3 @@ MonsterBubble::MonsterBubble(Transform* target, int key, int max_frameX)
 
     LoadClip(ToWString(PATH) + L"Monster/" + to_wstring(key) + L"/Bubble.png", max_frameX, 1, true);
 }
-
-void MonsterBubble::Update()
-{
-    CharacterAction::Update();
-}

@@ -201,6 +201,7 @@
     <ClInclude Include="Objects\CA\Monster\Boss.h" />
     <ClInclude Include="Objects\CA\Monster\BossHit.h" />
     <ClInclude Include="Objects\CA\Monster\BossAttack.h" />
+    <ClInclude Include="Objects\CA\Monster\BossIdle.h" />
     <ClInclude Include="Objects\CA\Monster\MonsterBubble.h" />
     <ClInclude Include="Objects\CA\Monster\MonsterDie.h" />
     <ClInclude Include="Objects\CA\Monster\MonsterHit.h" />
@@ -318,6 +319,7 @@
     <ClCompile Include="Objects\CA\Monster\Boss.cpp" />
     <ClCompile Include="Objects\CA\Monster\BossAttack.cpp" />
     <ClCompile Include="Objects\CA\Monster\BossHit.cpp" />
+    <ClCompile Include="Objects\CA\Monster\BossIdle.cpp" />
     <ClCompile Include="Objects\CA\Monster\Monster.cpp" />
     <ClCompile Include="Objects\CA\Monster\MonsterBubble.cpp" />
     <ClCompile Include="Objects\CA\Monster\MonsterDie.cpp" />

@@ -8,7 +8,6 @@ Button::Button(wstring textureFile) : Quad(textureFile)
 
 Button::~Button()
 {
-    delete collider;
 }
 
 void Button::Update()

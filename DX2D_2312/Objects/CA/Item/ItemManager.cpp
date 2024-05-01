@@ -41,11 +41,16 @@ void ItemManager::SetTotalProbability()
 
 void ItemManager::Spawn(const Vector2& pos)
 {
-	Item* item = Pop("Item", true);
+	int randomSpawn = Random(0, 3); // Spawn or not
 
-	int random = Random(0, totalProbability);
-	random %= sizeItemDatas;
-	item->Spawn(pos, DataManager::Get()->GetItemData(random));
+	if (randomSpawn == 0) //one-third
+	{
+		Item* item = Pop("Item", true);
+
+		int random = Random(0, totalProbability);
+		random %= sizeItemDatas;
+		item->Spawn(pos, DataManager::Get()->GetItemData(random));
+	}
 }
 
 void ItemManager::Collision(Character* target)

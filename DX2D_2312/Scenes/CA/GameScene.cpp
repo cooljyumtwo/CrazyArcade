@@ -46,12 +46,14 @@ void GameScene::Render()
 
 void GameScene::PostRender()
 {
+    RenderManager::Get()->Render("HpBar");
 }
 
 void GameScene::Start()
 {
-    player->SetInit();
     StageManager::Get()->LoadStage();
+    player->SetInit();
+    player->LoadPos();
 }
 
 void GameScene::End()

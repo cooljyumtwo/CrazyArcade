@@ -1,7 +1,7 @@
 #include "Framework.h"
 
-Monster::Monster(int key, float speed, bool isBubble, int hp) 
-    : Character(), key(key), speed(speed), isBubble(isBubble), hp(hp)
+Monster::Monster(int key, float speed, bool isBubble, int hp, bool isBoss) 
+    : Character(), key(key), speed(speed), isBubble(isBubble), hp(hp),isBoss(isBoss)
 {
     SetActive(false);
 
@@ -68,7 +68,7 @@ void Monster::Hit(Collider* collider)
 void Monster::Die()
 {
     SetAction(DIE);
-    MonsterManager::Get()->AddKillMonster();
+    MonsterManager::Get()->AddKillMonster(isBoss);
 }
 
 void Monster::Spawn(const Vector2& pos)

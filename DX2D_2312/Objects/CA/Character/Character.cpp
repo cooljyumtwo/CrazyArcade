@@ -2,8 +2,7 @@
 
 Character::Character()
 {
-    collider = new RectCollider({ Tile::TILE_SIZE * 0.7f ,  Tile::TILE_SIZE * 0.6f });
-    collider->Translate(Vector2::Down() * Tile::TILE_SIZE * 0.2f);
+//   collider = new RectCollider({ Tile::TILE_SIZE * 0.7f ,  Tile::TILE_SIZE * 0.6f });
     collider->SetParent(this);
     collider->SetTag("Character");
     collider->Load();
@@ -13,8 +12,6 @@ Character::~Character()
 {
     for (auto action : actions)
         delete action.second;
-
-    delete collider;
 }
 
 void Character::Update()
@@ -44,7 +41,7 @@ void Character::Render()
 
 void Character::PostRender()
 {
-    collider->RenderUI();
+   // collider->RenderUI();
 }
 
 float Character::GetDepth()
@@ -60,9 +57,9 @@ void Character::UpdateWorld()
 
 void Character::SetInit()
 {
-    stat.bubbleCnt = 1;
-    stat.bubblePower = 1;
-    stat.speed = 1;
+    stat.bubbleCnt = 2;
+    stat.bubblePower = 2;
+    stat.speed = 2;
 
     SetAction(IDLE);
     SetActive(true);
@@ -116,11 +113,6 @@ void Character::AddAction(string file, int frameX, int frameY)
     action->LoadClip(actionFile, frameX, frameY, true);
 
     actions[MOVE] = action;
-}
-
-void Character::SetColliderSize(Vector2 size)
-{
-    collider->SetSize({ size.x * 0.7f , size.x * 0.7f });
 }
 
 void Character::SetAction(int state)

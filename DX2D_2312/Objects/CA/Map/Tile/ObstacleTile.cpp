@@ -14,5 +14,6 @@ ObstacleTile::~ObstacleTile()
 void ObstacleTile::End()
 {
 	SetActive(false);
+	ItemManager::Get()->Spawn(GetGlobalPosition());
 	EffectManager::Get()->Play("RemoveObstacle", GetGlobalPosition());
 }

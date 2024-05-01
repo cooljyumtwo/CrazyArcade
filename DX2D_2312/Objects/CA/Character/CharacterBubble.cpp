@@ -53,15 +53,22 @@ void CharacterBubble::Move()
     target->Translate(velocity * moveSpeed * 0.5f * DELTA);
 
     Character* character = (Character*)target;
-    TileManager::Get()->PushPlayer(character);
+    TileManager::Get()->PushGameObject(character);
 }
 
 void CharacterBubble::Alive()
 {
     if (KEY->Down(VK_CONTROL))
     {
-        Character* character = (Character*)target;
-        character->SetAction(Character::ALIVE);
+        Player* player = (Player*)target;
+        Item* item = player->GetItem();
+
+        if (!item) return;
+
+        if(item->GetData().name == "BubbleNeedle")
+           player->SetAction(Character::ALIVE);
+
+        player->RemoveItem();
     }
 }
 

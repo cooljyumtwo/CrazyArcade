@@ -42,7 +42,5 @@ private:
 	State curState = START;
 	Direction direction = R;
 
-	RectCollider* collider;
-
 	map<State, Action*> actions;
 };

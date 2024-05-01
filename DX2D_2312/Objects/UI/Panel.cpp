@@ -15,7 +15,6 @@ Panel::Panel(wstring textureFile)
 
 Panel::~Panel()
 {
-    delete collider;
     delete closeBtn;
 }
 

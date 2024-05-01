@@ -17,6 +17,7 @@ private:
 
 private:
 	Scene* scene;
+	Button* cursor;
 
 public:
 	static bool isDraw;

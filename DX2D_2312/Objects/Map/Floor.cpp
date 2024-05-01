@@ -9,7 +9,6 @@ Floor::Floor(wstring file)
 
 Floor::~Floor()
 {
-    delete collider;
 }
 
 void Floor::Update()

@@ -23,7 +23,7 @@ void MonsterHit::Update()
         playHitTime -= MAX_HIT_TIME;
 
         Monster* monster = (Monster*)target;
-        monster->SetAction(Character::MOVE);
+        monster->SetAction(monster->curType);
         monster->PlusHp();
     }
 }

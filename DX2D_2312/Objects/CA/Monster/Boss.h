@@ -5,16 +5,18 @@ private:
 	const wstring PATH = L"ResourcesCA/Textures/Character/Monster/";
 	enum Type 
 	{
-		Octopus
+		Penguin
 	};
 public:
-	Boss(int key, float speed, bool isBubble = true, int hp = 1, Type type = Octopus);
+	Boss(int key, float speed, bool isBubble = true, int hp = 1, Type type = Penguin);
 	~Boss();
 
 	void Update() override;
-	void PostRender();
+	void Render() override;
 
 	void Attack();
+
+	void Hit(Collider* collider);
 
 private:
 	int maxHp;
@@ -23,5 +25,4 @@ private:
 
 	float playTime = 0.0f;
 	float attackTime = 5.0f;
-
 };

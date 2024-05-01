@@ -27,8 +27,7 @@ void MonsterManager::Update()
 
 void MonsterManager::Render()
 {
-	if (boss)
-		boss->PostRender();
+
 }
 
 void MonsterManager::LoadBossMonster()
@@ -71,6 +70,7 @@ void MonsterManager::LoadMonster()
 {
 	killMonster = 0;
 	spawnMonster = 0;
+	cntBoss = 0;
 
 	BinaryReader* reader = new BinaryReader(PATH + TileManager::mapNameStr + ".map");
 
@@ -93,13 +93,26 @@ void MonsterManager::LoadMonster()
 		MonsterData monsterData;
 		monsterData = DataManager::Get()->GetMonsterData(key);
 
-		monsterObj = new Monster(monsterData.key, monsterData.speed, monsterData.isBubble, monsterData.hp);
+		if (key>=100)
+		{
+			monsterObj = new Boss(monsterData.key, monsterData.speed, monsterData.isBubble, monsterData.hp);
+			Boss* monster = (Boss*)monsterObj;
+			monster->Spawn(pos);
+			RenderManager::Get()->Add("GameObject", monster);
 
-		Monster* monster = (Monster*)monsterObj;
-		monster->Spawn(pos);
+			LoadBossMonster();
 
-		RenderManager::Get()->Add("GameObject", monster);
-		spawnMonster++;
+			cntBoss++;
+		}
+		else {
+			monsterObj = new Monster(monsterData.key, monsterData.speed, monsterData.isBubble, monsterData.hp);
+			spawnMonster++;
+			Monster* monster = (Monster*)monsterObj;
+			monster->Spawn(pos);
+			RenderManager::Get()->Add("GameObject", monster);
+		}
+
+		
 	}
 
 	delete reader;
@@ -141,10 +154,13 @@ void MonsterManager::Collision(Character* character)
 		boss->Collision(character);
 }
 
-void MonsterManager::AddKillMonster()
+void MonsterManager::AddKillMonster(bool isBoss)
 {
 	killMonster++;
 
-	if (killMonster >= spawnMonster)
+	if (isBoss)
+		cntBoss--;
+
+	if (killMonster >= spawnMonster && cntBoss <= 0)
 		StageManager::Get()->Clear();
 }

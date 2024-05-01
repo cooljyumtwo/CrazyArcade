@@ -30,8 +30,6 @@ public:
 
     void SetInven() { isField = false; }
 
-    RectCollider* GetCollider() { return collider; }
-
     void Play();
 
 private:
@@ -40,8 +38,6 @@ private:
 private:
     Quad* shadow;
     ItemData data;
-
-    RectCollider* collider;
 
     bool isField = false;    
 

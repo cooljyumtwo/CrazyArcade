@@ -24,12 +24,16 @@ public:
     void AniGameTxt();
     void AniBossTxt();
 
+    void SetItemSlotImg(bool isItem, wstring imgStr = L"");
+
     void End() override;
 
 private:
     Quad* bg;
     Quad* gameTxt;
     Quad* bossReadyTxt;
+
+    Quad* itemSlotImg;
 
     State curState;
 

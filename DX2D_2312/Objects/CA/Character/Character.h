@@ -28,9 +28,6 @@ public:
     void UpdateWorld() override;
 
     void SetInit();
-    
-    RectCollider* GetCollider() { return collider; }
-    void SetColliderSize(Vector2 size);
 
     void SetAction(int state);
 
@@ -52,8 +49,6 @@ protected:
 
 protected:
     Stat stat;
-
-    RectCollider* collider;
 
     map<State, Action*> actions;
 

@@ -30,9 +30,12 @@ private:
     void SaveMonster(string file);
     void LoadMonster(string file);
 
+    void SavePlayerPos(string file);
+    void LoadPlayerPos(string file);
+
     void ClearObjTile();
     void CheckAddObjTile(Vector2 pos);
-    void AddObjTile(const Vector2& pos, const Vector2& size, const Vector2& idx);
+    void AddObjTile(const Vector2& pos, const Vector2& size, const Vector2& idx, bool isAdd = false);
     void RemoveObjTile(const Vector2& pos);
 
     void ClearMonster();

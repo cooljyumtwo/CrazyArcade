@@ -15,7 +15,6 @@ Tile::Tile(wstring textureFile, Vector2 pos, Type type)
 
 Tile::~Tile()
 {
-    delete collider;
 }
 
 void Tile::Render()

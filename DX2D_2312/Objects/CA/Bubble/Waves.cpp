@@ -119,8 +119,6 @@ void Waves::Spawn(const Vector2& pos, int power)
 
 				basicTile->SetObstacleTile(nullptr);
 				basicTile->SetType(Tile::BASIC);
-
-				ItemManager::Get()->Spawn(tile->GetGlobalPosition());
 				break;
 			}
 

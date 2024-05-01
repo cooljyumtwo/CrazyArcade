@@ -67,7 +67,7 @@ void MonsterMove::Move()
     int speed = (character->GetStat().speed > MAX_SPEED) ? MAX_SPEED : character->GetStat().speed;
     target->Translate(velocity * speed * moveSpeed * DELTA);
 
-    if (TileManager::Get()->PushPlayer(character))
+    if (TileManager::Get()->PushGameObject(character))
         RandomCompass();
 
     if (TileManager::Get()->CheckMapPosPlayer(character))

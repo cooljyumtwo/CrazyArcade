@@ -21,8 +21,6 @@ public:
 
     void UpdateWorld() override;
 
-    RectCollider* GetCollider() { return collider; }
-
     static bool IsCompare(Tile* tile1, Tile* tile2);
 
     void SetType(Type changeType) { this->type = changeType; }
@@ -39,8 +37,6 @@ protected:
     Vector2 curIdx;
 
     Type type = BASIC;
-
-    RectCollider* collider;
 
     TileObject* tileObj = nullptr;
 };

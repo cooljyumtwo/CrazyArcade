@@ -130,7 +130,7 @@ void FloorManager::Load()
     delete reader;
 }
 
-RectCollider* FloorManager::Collision(Collider* collider)
+Collider* FloorManager::Collision(Collider* collider)
 {
     for (Floor* floor : floors)
     {

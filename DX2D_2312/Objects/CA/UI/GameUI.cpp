@@ -19,6 +19,12 @@ GameUI::GameUI()
 	resultWindow->SetTag("Game_ResultWindow");
 	resultWindow->Load();
 	resultWindow->SetActive(false);
+	
+	wstring str = L"ResourcesCA/Textures/Item/BubbleNeedle.png"; 
+	itemSlotImg = new Quad(Vector2{40, 40});
+	itemSlotImg->SetTag("Game_ItemSlotImg");
+	itemSlotImg->Load();
+	itemSlotImg->SetActive(false);
 
 	//gameTxtTexs
 	gameTxtTexs.resize(gameTxtStrs.size());
@@ -39,6 +45,7 @@ void GameUI::Update()
 	gameTxt->UpdateWorld();
 	bossReadyTxt->UpdateWorld();
 	resultWindow->UpdateWorld();
+	itemSlotImg->UpdateWorld();
 
 	AniBossTxt();
 	AniGameTxt();
@@ -52,7 +59,7 @@ void GameUI::Render()
 {
 	bg->Render();
 
-	resultWindow->RenderUI();
+	itemSlotImg->RenderUI();
 }
 
 void GameUI::PostRender()
@@ -60,6 +67,7 @@ void GameUI::PostRender()
 	bossReadyTxt->Render();
 	gameTxt->Render();
 	resultWindow->Render();
+	itemSlotImg->Render();
 }
 
 void GameUI::SetGameTxt(State state)
@@ -118,6 +126,14 @@ void GameUI::AniBossTxt()
 
 	if (count >= 2)
 		bossReadyTxt->Translate(Vector2::Left() * 10.0f);
+}
+
+void GameUI::SetItemSlotImg(bool isItem, wstring imgStr)
+{
+	itemSlotImg->SetActive(isItem);
+	
+	if(isItem)
+		itemSlotImg->GetMaterial()->SetTexture(Texture::Add(imgStr));
 }
 
 void GameUI::End()

@@ -48,13 +48,12 @@ void BubbleManager::SpawnWaves(const Vector2& pos, int power)
 	wave->Spawn(pos, power);
 }
 
-void BubbleManager::PushPlayer(Character* player)
+Bubble* BubbleManager::PushPlayer(Character* player, bool isPlayerMaxSpeed)
 {
 	for (GameObject*& bubbleObj : totalObject["BasicBubble"])
 	{
 		Bubble* bubble = (Bubble*)bubbleObj;
 		Vector2 overlab;
-
 
 		if (bubble->GetCollider()->IsCollision(player->GetCollider(), &overlab))
 		{
@@ -62,30 +61,56 @@ void BubbleManager::PushPlayer(Character* player)
 
 			if (overlab.x < overlab.y)
 			{
-				if (player->GetGlobalPosition().x > bubble->GetGlobalPosition().x)
+				if (player->GetGlobalPosition().x > bubble->GetGlobalPosition().x) // ¿Þ
 				{
-					player->Translate(Vector2::Right() * overlab.x);
+					if (!isPlayerMaxSpeed)
+						player->Translate(Vector2::Right() * overlab.x);
+					else
+					{
+						bubble->SetPushDirection(Bubble::L);
+						return bubble;
+					}
 				}
-				else
+				else //¿À
 				{
-					player->Translate(Vector2::Left() * overlab.x);
+					if (!isPlayerMaxSpeed)
+						player->Translate(Vector2::Left() * overlab.x);
+					else
+					{
+						bubble->SetPushDirection(Bubble::R);
+						return bubble;
+					}
+
 				}
 			}
 			else
 			{
-				if (player->GetGlobalPosition().y > bubble->GetGlobalPosition().y)
+				if (player->GetGlobalPosition().y > bubble->GetGlobalPosition().y)//¾Æ·¡
 				{
-					player->Translate(Vector2::Up() * overlab.y);
+					if (!isPlayerMaxSpeed)
+						player->Translate(Vector2::Up() * overlab.y);
+					else
+					{
+						bubble->SetPushDirection(Bubble::D);
+						return bubble;
+					}
 				}
-				else
+				else//À§
 				{
-					player->Translate(Vector2::Down() * overlab.y);
+					if (!isPlayerMaxSpeed)
+						player->Translate(Vector2::Down() * overlab.y);
+					else
+					{
+						bubble->SetPushDirection(Bubble::U);
+						return bubble;
+					}
 				}
 			}
 
 			player->UpdateWorld();
 		}
 	}
+	return nullptr;
 }
 
 void BubbleManager::CollisionBoss(Boss* boss)

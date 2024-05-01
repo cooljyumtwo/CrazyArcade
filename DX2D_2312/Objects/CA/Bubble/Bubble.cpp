@@ -3,17 +3,12 @@
 Bubble::Bubble()
 {
 	SetActive(false);
-
 	CreatActions();
-
-	collider = new RectCollider({ Tile::TILE_SIZE-10.0f, Tile::TILE_SIZE - 10.0f });
-	collider->SetParent(this);
+	SetColliderSize({ Tile::TILE_SIZE + OFFSET_SIZE, Tile::TILE_SIZE + OFFSET_SIZE });
 }
 
 Bubble::~Bubble()
 {
-	delete collider;
-
 	for (auto& pair : actions)
 		delete pair.second;
 	actions.clear();
@@ -23,9 +18,10 @@ void Bubble::Update()
 {
 	if (!this->IsActive()) return;
 	
-
+	Push();
 
 	playTime += DELTA;
+
 	if (playTime > MAX_PLAY_TIME)
 	{
 		playTime -= MAX_PLAY_TIME;
@@ -54,10 +50,13 @@ void Bubble::CreatActions()
 	action->LoadClip(ToWString(PATH) + L"Stand.png", 3, 1, true, 1.4f);
 	actions[STAND] = action;
 
-
 	action = new Action();
 	action->LoadClip(ToWString(PATH) + L"Pop.png", 6, 1, false, 2.0f);
 	action->GetClip(0)->SetEvent([this]() {
+		TileManager::Get()->SetIdxBgTileType(posTileIdx, Tile::BASIC);
+		Tile* tile = TileManager::Get()->GetNearPosTileState(this->GetGlobalPosition());
+		if (tile)
+			posTileIdx = tile->GetCurIdx();
 		TileManager::Get()->SetIdxBgTileType(posTileIdx,Tile::ATTACK);
 		BubbleManager::Get()->SpawnWaves(this->GetGlobalPosition(), power);
 		},1);
@@ -76,6 +75,7 @@ void Bubble::CreatActions()
 void Bubble::Spawn(const Vector2& pos, int power, Character* target)
 {
 	isTarget = true;
+	isPush = false;
 
 	UpdateWorld();
 	collider->UpdateWorld();
@@ -102,12 +102,39 @@ void Bubble::Spawn(const Vector2& pos, int power, Character* target)
 
 void Bubble::Pop()
 {
+	TileManager::Get()->SetIdxBgTileType(posTileIdx, Tile::BASIC);
 	SetAction(POP);
 }
 
-float Bubble::GetDepth()
+void Bubble::Push()
 {
-	return collider->Bottom();
+	if (curState == POP) return;
+	if (pushDirection == NONE) return;
+	if (!isPush) return;
+	TileManager::Get()->PushGameObject(this);
+		switch (pushDirection)
+		{
+		case Bubble::R:
+			if (TileManager::Get()->GetMapsize("Right") - Tile::TILE_SIZE > GetGlobalPosition().x)
+				Translate(Vector2::Right() * 5.0f);
+			break;
+		case Bubble::L:
+			if (TileManager::Get()->GetMapsize("Left") < GetGlobalPosition().x)
+				Translate(Vector2::Left() * 5.0f);
+			break;
+		case Bubble::U:
+			if (TileManager::Get()->GetMapsize("Up") > GetGlobalPosition().y)
+				Translate(Vector2::Up() * 5.0f);
+			break;
+		case Bubble::D:
+			if (TileManager::Get()->GetMapsize("Down") + Tile::TILE_SIZE < GetGlobalPosition().y)
+				Translate(Vector2::Down() * 5.0f); //°íÄ¡±â
+			break;
+		default:
+			break;
+		}
+
+	
 }
 
 void Bubble::SetAction(int state)

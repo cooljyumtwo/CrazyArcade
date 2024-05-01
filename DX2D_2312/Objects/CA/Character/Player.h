@@ -10,10 +10,17 @@ public:
     ~Player();
 
     void AddItem(Item* item);
+    Item* GetItem() { return item; }
+    void RemoveItem();
+
     void Attack();
 
-    void Die();
+    void LoadPos();
+
+    bool GetIsBubblePush() { return isBubblePush; }
+
 
 private:
     Item* item;
+    bool isBubblePush = false;
 };

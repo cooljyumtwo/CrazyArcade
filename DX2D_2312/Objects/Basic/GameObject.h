@@ -13,6 +13,9 @@ public:
 
 	Material* GetMaterial() { return material; }
 
+	RectCollider* GetCollider() { return collider; }
+	void SetColliderSize(Vector2 size) { collider->SetSize({ size.x * 0.7f , size.x * 0.7f }); }
+
 	virtual float GetDepth();
 
 	static bool Compare(GameObject* obj1, GameObject* obj2);
@@ -20,4 +23,6 @@ public:
 protected:
 	Material* material;
 	MatrixBuffer* worldBuffer;
+
+	RectCollider* collider;
 };

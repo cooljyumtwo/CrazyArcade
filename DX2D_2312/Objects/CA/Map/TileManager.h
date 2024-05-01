@@ -9,6 +9,7 @@ public:
 private:
 	string PATH = "ResourcesCA/TextData/Map/";
 	float OFFSET = 10.0f;
+	float OFFSET_MAP_SIZE_UP = 5.0f;
 
 private:
 	friend class Singleton;
@@ -29,6 +30,8 @@ public:
 	void SetIdxBgTileType(Vector2 idx,Tile::Type type) { bgTiles[idx.x][idx.y]->SetType(type); }
 	Tile* GetBgTile(Vector2 idx) {return bgTiles[idx.x][idx.y];}
 
+	float GetMapsize(string key) { return mapSize[key]; }
+
 	void CreateBGTile();
 	void LoadMapData();
 	void LoadMapSize();
@@ -42,7 +45,7 @@ public:
 	Tile* GetNearPosTileState(GameObject* target, Tile::Type type = Tile::BASIC);
 	Tile* GetNearPosTileState(Vector2 pos);
 
-	bool PushPlayer(Character* player);
+	bool PushGameObject(GameObject* player);
 	bool CheckMapPosPlayer(Character* player);
 
 public:

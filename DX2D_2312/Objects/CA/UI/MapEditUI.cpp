@@ -37,5 +37,4 @@ void MapEditUI::Render()
 void MapEditUI::PostRender()
 {
 	exitBtn->Render();
-	exitBtn->RenderUI();
 }

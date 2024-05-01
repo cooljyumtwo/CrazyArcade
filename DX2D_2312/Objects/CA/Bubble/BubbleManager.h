@@ -17,7 +17,7 @@ public:
 	void Spawn(const Vector2& pos, int power, Character* target = nullptr);
 	void SpawnWaves(const Vector2& pos, int power);
 
-	void PushPlayer(Character* player);
+	Bubble* PushPlayer(Character* player, bool isPlayerMaxSpeed = false);
 
 	void CollisionBoss(Boss* boss);
 

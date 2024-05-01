@@ -22,6 +22,8 @@ GameManager::GameManager()
 	UIManager::Get()->Add("Game", new GameUI());
 
 	SCENE->ChangeScene("MapEdit");
+
+	ShowCursor(false);
 }
 
 GameManager::~GameManager()
@@ -31,7 +33,6 @@ GameManager::~GameManager()
 
 void GameManager::Update()
 {
-
 	Keyboard::Get()->Update();
 	Timer::Get()->Update();
 
@@ -48,6 +49,9 @@ void GameManager::Update()
 
 	if (KEY->Down(VK_F5))
 		SCENE->ChangeScene("Game");
+
+	cursor->SetLocalPosition(mousePos);
+	cursor->Update();
 }
 
 void GameManager::Render()
@@ -76,6 +80,8 @@ void GameManager::Render()
 	SCENE->Render();
 	UIManager::Get()->PostRender();
 
+	cursor->Render();
+
 	Font::Get()->GetDC()->EndDraw();
 
 	ImGui::Render();
@@ -103,6 +109,8 @@ void GameManager::Create()
 	Font::Get()->AddStyle("Default", L"¹è¹Î À»Áö·Î10³âÈÄÃ¼");
 	Font::Get()->AddStyle("Button", L"¸¼Àº °íµñ", 40,
 		DWRITE_TEXT_ALIGNMENT_CENTER, DWRITE_PARAGRAPH_ALIGNMENT_FAR);
+
+	cursor = new Button(L"ResourcesCA/Textures/UI/Mouse/MouseImg.png");
 }
 
 void GameManager::Delete()

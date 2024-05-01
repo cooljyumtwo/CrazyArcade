@@ -4,10 +4,14 @@ GameObject::GameObject()
 {
 	material = new Material();
 	worldBuffer = new MatrixBuffer();
+
+	collider = new RectCollider({ Tile::TILE_SIZE - 10.0f, Tile::TILE_SIZE - 10.0f });
+	collider->SetParent(this);
 }
 
 GameObject::~GameObject()
 {
+	delete collider;
 	delete material;
 	delete worldBuffer;
 }
@@ -22,7 +26,7 @@ void GameObject::SetRender()
 
 float GameObject::GetDepth()
 {
-	return localPosition.y;
+	return collider->Bottom();
 }
 
 bool GameObject::Compare(GameObject* obj1, GameObject* obj2)

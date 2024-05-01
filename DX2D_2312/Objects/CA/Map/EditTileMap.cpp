@@ -49,35 +49,16 @@ void EditTileMap::Render()
 
     playerPosTile->Render();
 
-    for (UINT y = 0; y < sizeY; y++)
-    {
-        for (UINT x = 0; x < sizeX; x++)
-        {
-           bgTiles[x][y]->PostRender();
-        }
-    }
-
     //ImGui
     const char* list[] = {"BASIC", "OBSTACLE","MONSTER","PLAYER_POS_SET"};
     if (ImGui::Combo("Type", &type, list, 4)) 
     {
         SetType();
     }
-
-    if (ImGui::TreeNode((tag + "EditTileMap_Transform").c_str()))
-    {
-        Save();
-        ImGui::SameLine();
-        Load();
-
-        ImGui::TreePop();
-    }
-
-    ImGui::DragFloat2("Pos", (float*)&localPosition, 1.0f);
-    if (ImGui::Button("S"))
-        Transform::Save();
-    if (ImGui::Button("L"))
-        Transform::Load();
+    
+    Save();
+    ImGui::SameLine();
+    Load();
 }
 
 void EditTileMap::Update()
@@ -134,7 +115,7 @@ void EditTileMap::RenderSampleButtons()
 
             count++;
 
-            if (count % 5)
+            if (count % 2)
                 ImGui::SameLine();
         }
 
@@ -244,6 +225,7 @@ void EditTileMap::Save()
 
             SaveMapData(path + file);
             SaveMonster(path + "Monster/" + file);
+            SavePlayerPos(path + "Player/" + file);
         }
 
         DIALOG->Close();
@@ -270,6 +252,7 @@ void EditTileMap::Load()
 
             LoadMapData(path + file);
             LoadMonster(path + "Monster/" + file);
+            LoadPlayerPos(path + "Player/" + file);
         }
 
         DIALOG->Close();
@@ -390,6 +373,31 @@ void EditTileMap::LoadMonster(string file)
     delete reader;
 }
 
+void EditTileMap::SavePlayerPos(string file)
+{
+    BinaryWriter* writer = new BinaryWriter(file);
+
+    writer->Vector(playerPosTile->GetCurIdx());
+
+    delete writer;
+}
+
+void EditTileMap::LoadPlayerPos(string file)
+{
+    BinaryReader* reader = new BinaryReader(file);
+
+    if (reader->IsFailed())
+    {
+        delete reader;
+        return;
+    }
+
+    Vector2 curIdx = reader->Vector();
+    SetPlayerPos(curIdx);
+    
+    delete reader;
+}
+
 void EditTileMap::ClearObjTile()
 {
     for (ObstacleTile* tile : objTiles)
@@ -423,8 +431,9 @@ void EditTileMap::CheckAddObjTile(Vector2 pos)
                     else if(type == 1)
                     {
                         Vector2 size = tile->GetSize();
-                        AddObjTile(tile->GetLocalPosition(), tile->GetSize(), tile->GetCurIdx());
-                        tile->SetType(Tile::OBSTACLE);
+                        Vector2 pos = tile->GetLocalPosition();
+
+                        AddObjTile(tile->GetLocalPosition(), tile->GetSize(), tile->GetCurIdx(), true);
                     }
                     else if (type == 2)
                     {
@@ -445,17 +454,22 @@ void EditTileMap::CheckAddObjTile(Vector2 pos)
     }
 }
 
-void EditTileMap::AddObjTile(const Vector2& pos, const Vector2& size, const Vector2& idx)
+void EditTileMap::AddObjTile(const Vector2& pos, const Vector2& size, const Vector2& idx , bool isAdd)
 {
     wstring textureFile = selectTextureFile;
     
     ObstacleTile* tile = new ObstacleTile(textureFile, pos);
     tile->SetParent(this);
-    tile->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5);
+    if(isAdd)
+        tile->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5);
     tile->GetCollider()->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5 * -1);
+
     tile->Update();
     tile->SetCurIdx(idx);
     tile->SetTexture(textureFile);
+
+    if (tile->GetCollider()->IsCollision(playerPosTile->GetCollider()))
+        return;
 
     bgTiles[idx.x][idx.y]->SetType(Tile::OBSTACLE);
 
@@ -502,30 +516,35 @@ void EditTileMap::ClearMonster()
 
 void EditTileMap::AddMonster(const Vector2& pos, const Vector2& idx, wstring textureFile)
 {
-   if(textureFile.empty())
-       textureFile = selectTextureFile;
+    if (textureFile.empty())
+        textureFile = selectTextureFile;
 
     Tile* tile = new Tile(textureFile, pos);
     tile->SetParent(this);
     tile->Update();
     tile->SetCurIdx(idx);
 
+    if (tile->GetCollider()->IsCollision(playerPosTile->GetCollider()))
+        return;
+
     size_t posStr = textureFile.find_last_of(L'/');
     wstring fileName = textureFile.substr(posStr + 1);
     posStr = fileName.find(L'.');
     wstring numStr = fileName.substr(0, posStr);
     int num = stoi(numStr);
-    
 
-    monsterTiles.push_back(make_pair(tile, num));
     if (num > 100)
     {
-        tile->GetCollider()->SetSize({ Tile::TILE_SIZE * 3,Tile::TILE_SIZE * 3 });
+        tile->GetCollider()->SetSize({ Tile::TILE_SIZE * 4,Tile::TILE_SIZE * 4 });
+        tile->GetCollider()->GetColor()->SetColor(1.0f, 0.0f, 0.0f);
         RemoveMonster(tile->GetCollider()->GetGlobalPosition(), tile->GetCollider());
     }
 
     RemoveMonster(tile->GetCollider()->GetGlobalPosition());
     RemoveObjTile(tile->GetCollider()->GetGlobalPosition());
+
+
+    monsterTiles.push_back(make_pair(tile, num));
 }
 
 void EditTileMap::RemoveMonster(const Vector2& pos, Collider* collider)
@@ -540,16 +559,14 @@ void EditTileMap::RemoveMonster(const Vector2& pos, Collider* collider)
             delete tile;
             iter = monsterTiles.erase(iter);
         }
-        //else if (collider != nullptr && tile->GetCollider()->IsCollision(collider))
-        //{
-        //    delete tile;
-        //    iter = monsterTiles.erase(iter);
-        //}
+        else if (collider != nullptr && tile->GetCollider()->IsCollision(collider))
+        {
+            delete tile;
+            iter = monsterTiles.erase(iter);
+        }
         else
         {
             iter++;
         }
-
-
     }
 }

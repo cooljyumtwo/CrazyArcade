@@ -131,7 +131,7 @@ void TileManager::LoadMapSize()
 {
     mapSize["Left"] = bgTiles[0][0]->GetGlobalPosition().x;
     mapSize["Right"] = bgTiles[SIZE_X - 1][0]->GetGlobalPosition().x + Tile::TILE_SIZE;
-    mapSize["Up"] = bgTiles[0][0]->GetGlobalPosition().y;
+    mapSize["Up"] = bgTiles[0][0]->GetGlobalPosition().y - OFFSET_MAP_SIZE_UP;
     mapSize["Down"] = bgTiles[0][SIZE_Y - 1]->GetGlobalPosition().y - Tile::TILE_SIZE;
 }
 
@@ -178,7 +178,6 @@ void TileManager::PopObjTile()
     }
 }
 
-
 Tile* TileManager::GetNearPosTileState(GameObject* target, Tile::Type type)
 {
     float minDistance = Distance(bgTiles[0][0]->GetGlobalPosition(), target->GetGlobalPosition());
@@ -223,38 +222,38 @@ Tile* TileManager::GetNearPosTileState(Vector2 pos)
     return bgTiles[calPos.x][calPos.y];
 }
 
-bool TileManager::PushPlayer(Character* player)
+bool TileManager::PushGameObject(GameObject* obj)
 {
     for (Tile* objTile : objTiles)
     {
         Vector2 overlab;
 
-        if (objTile->GetCollider()->IsCollision(player->GetCollider(), &overlab))
+        if (objTile->GetCollider()->IsCollision(obj->GetCollider(), &overlab))
         {
             if (overlab.x < overlab.y) 
             {
-                if (player->GetGlobalPosition().x > objTile->GetGlobalPosition().x)
+                if (obj->GetGlobalPosition().x > objTile->GetGlobalPosition().x)
                 {
-                    player->Translate(Vector2::Right()*overlab.x);
+                    obj->Translate(Vector2::Right()*overlab.x);
                 }
                 else 
                 {
-                    player->Translate(Vector2::Left() * overlab.x);
+                    obj->Translate(Vector2::Left() * overlab.x);
                 }
             }
             else 
             {
-                if (player->GetGlobalPosition().y > objTile->GetGlobalPosition().y)
+                if (obj->GetGlobalPosition().y > objTile->GetGlobalPosition().y)
                 {
-                    player->Translate(Vector2::Up() * overlab.y);
+                    obj->Translate(Vector2::Up() * overlab.y);
                 }
                 else
                 {
-                    player->Translate(Vector2::Down() * overlab.y);
+                    obj->Translate(Vector2::Down() * overlab.y);
                 }
             }
 
-            player->UpdateWorld();
+            obj->UpdateWorld();
             return true;
         }
     }

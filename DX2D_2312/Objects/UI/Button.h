@@ -35,13 +35,10 @@ public:
         textColor = color, textStyle = style;
     }
 
-    RectCollider* GetCollider() { return collider; }
-
 protected:
     void ClickEvent();
 
 protected:
-    RectCollider* collider;
 
     Event clickEvent = nullptr;
     IntParamEvent clickIntParamEvent = nullptr;

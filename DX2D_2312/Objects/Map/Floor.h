@@ -8,9 +8,4 @@ public:
 
     void Update() override;
     void Render() override;
-
-    RectCollider* GetCollider() { return collider; }
-
-private:
-    RectCollider* collider;
 };

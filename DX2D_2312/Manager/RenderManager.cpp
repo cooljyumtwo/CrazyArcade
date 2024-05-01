@@ -15,7 +15,6 @@ void RenderManager::Render()
 
 void RenderManager::Render(string key)
 {
-
 	sort(gameObjects[key].begin(), gameObjects[key].end(), &GameObject::Compare);
 
 	if (key == "BGTileTxt")

@@ -33,19 +33,53 @@ void Player::AddItem(Item* item)
             break;
         case Item::U_SPEED:
             stat.speed += item->GetData().value;
-            if (stat.speed > MAX_STAT[item->GetData().type]) 
+            if (stat.speed > MAX_STAT[item->GetData().type])
+            {
                 stat.speed = MAX_STAT[item->GetData().type];
+                isBubblePush = true;
+            }
             break;
         default:
             break;
         }
     }
     else
+    {
         this->item->SetData(item->GetData());
+        UI* curUI = UIManager::Get()->GetUI("Game");
+        GameUI* gameUI = (GameUI*)curUI;
+        gameUI->SetItemSlotImg(true, L"ResourcesCA/Textures/Item/" + item->GetData().textureFile);
+    }
+}
+
+void Player::RemoveItem()
+{
+    item = nullptr;
+
+    UI* curUI = UIManager::Get()->GetUI("Game");
+    GameUI* gameUI = (GameUI*)curUI;
+    gameUI->SetItemSlotImg(false);
 }
 
 void Player::Attack()
 {
 
    // Character::Attack();
+}
+
+void Player::LoadPos()
+{
+    BinaryReader* reader = new BinaryReader("ResourcesCA/TextData/Map/Player/" + TileManager::mapNameStr + ".map");
+
+    if (reader->IsFailed())
+    {
+        delete reader;
+        return;
+    }
+
+    Vector2 curIdx = reader->Vector();
+    Vector2 pos = TileManager::Get()->GetBgTile(curIdx)->GetGlobalPosition();
+    SetLocalPosition(pos);
+
+    delete reader;
 }

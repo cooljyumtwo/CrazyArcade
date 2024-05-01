@@ -15,8 +15,6 @@ private:
     void Drag();    
 
 private:
-    RectCollider* collider;
-
     Vector2 offset;    
 
     Button* closeBtn;

@@ -24,9 +24,7 @@ public:
 
     void SetIsRoad() { isRoad = !isRoad; }
 
-    void AddKillMonster();
-
-
+    void AddKillMonster(bool isBoss = false);
 
 private:
     int sizeItemDatas;
@@ -37,4 +35,5 @@ private:
 
     int killMonster = 0;
     int spawnMonster = 0;
+    int cntBoss = 0;
 };
