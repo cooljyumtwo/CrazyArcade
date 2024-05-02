@@ -70,6 +70,9 @@
 #pragma comment(lib, "d2d1.lib")
 #pragma comment(lib, "dwrite.lib")
 
+//FMOD
+#include <FMOD/fmod.hpp>
+
 using namespace std;
 using namespace DirectX;
 
@@ -95,6 +98,7 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Framework/Utilities/BinaryWriter.h"
 #include "Framework/Utilities/BinaryReader.h"
 #include "Framework/Utilities/tinyxml2.h"
+#include "Framework/Utilities/Audio.h"
 
 #include "Framework/Device/Device.h"
 

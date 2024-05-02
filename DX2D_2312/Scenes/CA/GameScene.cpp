@@ -3,6 +3,8 @@
 
 GameScene::GameScene()
 {
+    Audio::Get()->Add("BubbleAdd", "ResourcesCA/Audio/BubbleAdd.wav", false, false);
+
     CAM->SetFix(false);
 
     player = new Player();

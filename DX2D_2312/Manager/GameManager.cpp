@@ -33,6 +33,7 @@ GameManager::~GameManager()
 
 void GameManager::Update()
 {
+	Audio::Get()->Update();
 	Keyboard::Get()->Update();
 	Timer::Get()->Update();
 
@@ -98,6 +99,8 @@ void GameManager::Create()
 	Environment::Get();
 	Font::Get();
 	UIManager::Get();
+	Audio::Get();
+
 
 	ImGui::CreateContext();
 	ImGui::StyleColorsDark();
@@ -120,6 +123,7 @@ void GameManager::Delete()
 	Keyboard::Delete();
 	Timer::Delete();
 	Font::Delete();
+	Audio::Delete();
 
 	Shader::Delete();
 	Texture::Delete();

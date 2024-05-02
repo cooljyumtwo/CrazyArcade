@@ -21,6 +21,7 @@ C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Render\Texture.cpp;C:\Cooljyum\Crazy
 C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Shader\PixelShader.cpp;C:\Cooljyum\CrazyArcade\DX2D_2312\x64\Debug\PixelShader.obj
 C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Shader\Shader.cpp;C:\Cooljyum\CrazyArcade\DX2D_2312\x64\Debug\Shader.obj
 C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Shader\VertexShader.cpp;C:\Cooljyum\CrazyArcade\DX2D_2312\x64\Debug\VertexShader.obj
+C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Utilities\Audio.cpp;C:\Cooljyum\CrazyArcade\DX2D_2312\x64\Debug\Audio.obj
 C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Utilities\BinaryReader.cpp;C:\Cooljyum\CrazyArcade\DX2D_2312\x64\Debug\BinaryReader.obj
 C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Utilities\BinaryWriter.cpp;C:\Cooljyum\CrazyArcade\DX2D_2312\x64\Debug\BinaryWriter.obj
 C:\Cooljyum\CrazyArcade\DX2D_2312\Framework\Utilities\Font.cpp;C:\Cooljyum\CrazyArcade\DX2D_2312\x64\Debug\Font.obj
