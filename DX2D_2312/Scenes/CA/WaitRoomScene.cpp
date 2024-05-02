@@ -20,3 +20,8 @@ void WaitRoomScene::Render()
 void WaitRoomScene::PostRender()
 {
 }
+
+void WaitRoomScene::Start()
+{
+	GameManager::isGUI = false;
+}

@@ -86,9 +86,7 @@ void Bubble::Spawn(const Vector2& pos, int power, Character* target)
 	if (tile->GetType() == Tile::OBSTACLE) return;
 
 	if (!Audio::Get()->IsPlaySound("BubbleAdd"))
-	{
 		Audio::Get()->Play("BubbleAdd");
-	}
 
 	SetActive(true);
 	SetAction(STAND);

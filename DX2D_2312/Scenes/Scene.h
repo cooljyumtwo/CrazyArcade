@@ -11,6 +11,7 @@ public:
 	virtual void Render() = 0;
 	virtual void PostRender() = 0;
 
+
 	virtual void Start() {}
 	virtual void End() {}
 };

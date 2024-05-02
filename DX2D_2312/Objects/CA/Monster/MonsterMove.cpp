@@ -33,6 +33,14 @@ void MonsterMove::Update()
 
     Move();
 
+    Monster* monster = (Monster*)target;
+    if (monster->GetIsBoss())
+    {
+        if (!Audio::Get()->IsPlaySound("BossMove"))
+            Audio::Get()->Play("BossMove");
+    }
+
+
     target->UpdateWorld();
 }
 

@@ -114,8 +114,9 @@ void Waves::Spawn(const Vector2& pos, int power)
 				BasicTile* basicTile = (BasicTile*)tile;
 
 				ObstacleTile* obstacleTile = (ObstacleTile*)basicTile->GetObstacleTile();
-				if (obstacleTile != nullptr && obstacleTile->IsActive())
-					obstacleTile->End();
+				if (obstacleTile != nullptr)
+					if(obstacleTile->IsActive())
+						obstacleTile->End();
 
 				basicTile->SetObstacleTile(nullptr);
 				basicTile->SetType(Tile::BASIC);

@@ -50,6 +50,17 @@ void StageManager::NextStage()
 		SCENE->ChangeScene("WaitRoom");
 		return;
 	}
+
+	if (countStage <= 0)
+	{
+		if (!Audio::Get()->IsPlaySound("GameStart"))
+			Audio::Get()->Play("GameStart");
+	}
+	else 
+	{
+		if (!Audio::Get()->IsPlaySound("NextLevelReady"))
+			Audio::Get()->Play("NextLevelReady");
+	}
 		
 	TileManager::Get()->SetMap(stageMapNames[countStage]);
 	TileManager::Get()->LoadMapData();
@@ -83,6 +94,9 @@ void StageManager::Start()
 
 void StageManager::Clear()
 {
+	if (!Audio::Get()->IsPlaySound("Clear"))
+		Audio::Get()->Play("Clear");
+
 	SetGameUIState(GameUI::State::CLEAR);
 }
 
@@ -91,12 +105,20 @@ void StageManager::Gameover()
 	if (userHp > 0)
 		SpawnPlayer();
 	else
+	{
+		if (!Audio::Get()->IsPlaySound("Lose"))
+			Audio::Get()->Play("Lose");
+
 		SetGameUIState(GameUI::State::GAMEOVER);
+	}
 
 	userHp--;
 }
 
 void StageManager::End()
 {
+	//if (!Audio::Get()->IsPlaySound(""))
+	//	Audio::Get()->Play("");
+
 	SCENE->ChangeScene("WaitRoom");
 }

@@ -31,34 +31,38 @@ void Transform::UpdateWorld()
 
 void Transform::RenderUI()
 {
-	if (ImGui::TreeNode((tag + "_Transform").c_str()))
+	if (GameManager::isGUI) 
 	{
-		ImGui::Checkbox("Active", &isActive);
+		if (ImGui::TreeNode((tag + "_Transform").c_str()))
+		{
+			ImGui::Checkbox("Active", &isActive);
 
-		ImGui::DragFloat2("Pos", (float*)&localPosition, 1.0f);
+			ImGui::DragFloat2("Pos", (float*)&localPosition, 1.0f);
 
-		Float3 rot;
-		rot.x = XMConvertToDegrees(localRotation.x);
-		rot.y = XMConvertToDegrees(localRotation.y);
-		rot.z = XMConvertToDegrees(localRotation.z);
+			Float3 rot;
+			rot.x = XMConvertToDegrees(localRotation.x);
+			rot.y = XMConvertToDegrees(localRotation.y);
+			rot.z = XMConvertToDegrees(localRotation.z);
 
-		ImGui::DragFloat3("Rot", (float*)&rot, 0.1f, -180.0f, 180.0f);
+			ImGui::DragFloat3("Rot", (float*)&rot, 0.1f, -180.0f, 180.0f);
 
-		localRotation.x = XMConvertToRadians(rot.x);
-		localRotation.y = XMConvertToRadians(rot.y);
-		localRotation.z = XMConvertToRadians(rot.z);
+			localRotation.x = XMConvertToRadians(rot.x);
+			localRotation.y = XMConvertToRadians(rot.y);
+			localRotation.z = XMConvertToRadians(rot.z);
 
-		ImGui::DragFloat2("Scale", (float*)&localScale, 0.1f);
+			ImGui::DragFloat2("Scale", (float*)&localScale, 0.1f);
 
-		if (ImGui::Button("Save"))
-			Save();
+			if (ImGui::Button("Save"))
+				Save();
 
-		if (ImGui::Button("Load"))
-			Load();
+			if (ImGui::Button("Load"))
+				Load();
 
-		ImGui::TreePop();
+			ImGui::TreePop();
+		}
 	}
 }
+
 
 void Transform::Save()
 {

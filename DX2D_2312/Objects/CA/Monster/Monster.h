@@ -22,7 +22,10 @@ public:
 	void RemoveHitColliders();
 
 	void Collision(Character* character);
+
 	Character* GetPlayer() {return player;}
+
+	bool GetIsBoss() { return isBoss; }
 
 protected:
 	int key;

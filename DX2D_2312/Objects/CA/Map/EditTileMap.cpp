@@ -50,15 +50,18 @@ void EditTileMap::Render()
     playerPosTile->Render();
 
     //ImGui
-    const char* list[] = {"BASIC", "OBSTACLE","MONSTER","PLAYER_POS_SET"};
-    if (ImGui::Combo("Type", &type, list, 4)) 
+    if (GameManager::isGUI) 
     {
-        SetType();
+        const char* list[] = { "BASIC", "OBSTACLE","MONSTER","PLAYER_POS_SET" };
+        if (ImGui::Combo("Type", &type, list, 4))
+        {
+            SetType();
+        }
+
+        Save();
+        ImGui::SameLine();
+        Load();
     }
-    
-    Save();
-    ImGui::SameLine();
-    Load();
 }
 
 void EditTileMap::Update()
@@ -99,15 +102,15 @@ void EditTileMap::UpdateWorld()
 
 void EditTileMap::RenderSampleButtons()
 {
-    UINT width = 5;
+    UINT width = 2;
 
-    if (ImGui::TreeNode("Sample Buttons"))
+    if (ImGui::TreeNode("---Objects---"))
     {
         int count = 0;
 
         for (Texture* texture : sampleTextures)
         {
-            if (ImGui::ImageButton(texture->GetSRV(), ImVec2(50, 50)))
+            if (ImGui::ImageButton(texture->GetSRV(), ImVec2(40, 40)))
             {
                 selectTextureFile = texture->GetFile();
                 isClick = true;
@@ -115,7 +118,7 @@ void EditTileMap::RenderSampleButtons()
 
             count++;
 
-            if (count % 2)
+            if (count % width)
                 ImGui::SameLine();
         }
 
@@ -211,7 +214,7 @@ void EditTileMap::SetType()
 
 void EditTileMap::Save()
 {
-    string key = "SaveEditTile";
+    string key = "SaveMap";
     string path = "ResourcesCA/TextData/Map/";
 
     if (ImGui::Button(key.c_str()))
@@ -234,7 +237,7 @@ void EditTileMap::Save()
 
 void EditTileMap::Load()
 {
-    string key = "LoadEditTile";
+    string key = "LoadMap";
 
     if (ImGui::Button(key.c_str()))
         DIALOG->OpenDialog(key, key, ".map");

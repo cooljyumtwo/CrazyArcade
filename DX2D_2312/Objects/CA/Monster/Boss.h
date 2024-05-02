@@ -3,10 +3,12 @@ class Boss : public Monster
 {
 private:
 	const wstring PATH = L"ResourcesCA/Textures/Character/Monster/";
+
 	enum Type 
 	{
 		Penguin
 	};
+
 public:
 	Boss(int key, float speed, bool isBubble = true, int hp = 1, Type type = Penguin);
 	~Boss();
@@ -20,6 +22,7 @@ public:
 
 private:
 	int maxHp;
+
 	Type type;
 	ProgressBar* hpBar;
 

@@ -13,7 +13,7 @@ protected:
     const Float4 DOWN_COLOR = { 0.5f, 0.5f, 0.5f, 1.0f };
 
 public:
-    Button(wstring textureFile = L"Resources/Textures/UI/Button.png");
+    Button(wstring textureFile = L"Resources/Textures/UI/Button.png", bool isSound = false);
     ~Button();
 
     void Update() override;
@@ -54,4 +54,6 @@ protected:
 
     string textColor = "Black";
     string textStyle = "Button";
+
+    bool isSound;
 };

@@ -10,6 +10,18 @@ MonsterDie::MonsterDie(Transform* target ,int key, int max_frameX)
 void MonsterDie::Start()
 {
 	Play();
+
+	Monster* monster = (Monster*)target;
+	if (monster->GetIsBoss())
+	{
+		if (!Audio::Get()->IsPlaySound("BossDie"))
+			Audio::Get()->Play("BossDie");
+	}
+	else 
+	{
+		if (!Audio::Get()->IsPlaySound("MonsterDie"))
+			Audio::Get()->Play("MonsterDie");
+	}
 }
 
 void MonsterDie::End()

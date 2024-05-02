@@ -5,13 +5,12 @@ MapEditUI::MapEditUI()
 	BG = new Quad(L"ResourcesCA/Textures/BG/MapEdit.png");
 	BG->Translate(CENTER);
 
-	exitBtn = new Button(L"ResourcesCA/Textures/UI/Button_StartBtn.png");
+	exitBtn = new Button(L"ResourcesCA/Textures/UI/MapEdit/OkBtn.png", true);
 	exitBtn->Translate(CENTER);
 	exitBtn->Load();
 	exitBtn->SetEvent([]() {
-		SCENE->ChangeScene("Game"); 
+		SCENE->ChangeScene("WaitRoom"); 
 		});
-
 }
 
 MapEditUI::~MapEditUI()
@@ -32,6 +31,7 @@ void MapEditUI::PreRender()
 void MapEditUI::Render()
 {
 	BG->Render();
+	exitBtn->RenderUI();
 }
 
 void MapEditUI::PostRender()

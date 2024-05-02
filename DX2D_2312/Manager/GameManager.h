@@ -2,6 +2,9 @@
 
 class GameManager
 {
+private :
+	const Vector2 CURSOR_OFFSET = { 15.0f, -20.0f };
+
 public:
 	GameManager();
 	~GameManager();
@@ -21,4 +24,5 @@ private:
 
 public:
 	static bool isDraw;
+	static bool isGUI;
 };

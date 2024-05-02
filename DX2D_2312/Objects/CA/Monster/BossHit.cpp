@@ -7,9 +7,10 @@ BossHit::BossHit(Transform* target, int key, int max_frameX)
 	LoadClip(ToWString(PATH) + L"Monster/" + to_wstring(key) + L"/Hit.png", max_frameX, 1, false);
 }
 
-void BossHit::Update()
+void BossHit::Start()
 {
-	CharacterAction::Update();
+	if (!Audio::Get()->IsPlaySound("BossHit"))
+		Audio::Get()->Play("BossHit");
 }
 
 void BossHit::End()
@@ -17,5 +18,3 @@ void BossHit::End()
 	Boss* boss = (Boss*)target;
 	boss->SetAction(boss->curType);
 }
-
-

@@ -1,6 +1,6 @@
 #include "Framework.h"
 
-Button::Button(wstring textureFile) : Quad(textureFile)
+Button::Button(wstring textureFile, bool isSound) : Quad(textureFile), isSound(isSound)
 {
     collider = new RectCollider(size);
     collider->SetParent(this);
@@ -47,9 +47,20 @@ void Button::ClickEvent()
             isDownCheck = true;
 
         if (KEY->Press(VK_LBUTTON))
+        {
+            if (!Audio::Get()->IsPlaySound("BtnClick") && isSound)
+                Audio::Get()->Play("BtnClick");
+
             state = DOWN;
+        }
         else
+        {
+            if (!Audio::Get()->IsPlaySound("BtnHover") 
+                && IsActive() && state !=OVER && isSound )
+                Audio::Get()->Play("BtnHover");
+
             state = OVER;
+        }
 
         if (isDownCheck && KEY->Up(VK_LBUTTON))
         {

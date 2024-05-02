@@ -5,7 +5,8 @@
 #include "Scenes/CA/MapEditScene.h"
 #include "Scenes/CA/GameScene.h"
 
-bool GameManager::isDraw = true;
+bool GameManager::isDraw = false;
+bool GameManager::isGUI = false;
 
 GameManager::GameManager()
 {
@@ -51,8 +52,18 @@ void GameManager::Update()
 	if (KEY->Down(VK_F5))
 		SCENE->ChangeScene("Game");
 
-	cursor->SetLocalPosition(mousePos);
+	if (KEY->Down(VK_F6))
+	{
+		isGUI = !isGUI;
+	}
+
+	cursor->SetLocalPosition(mousePos + CURSOR_OFFSET);
 	cursor->Update();
+
+	if (KEY->Press(VK_LBUTTON))
+	{
+
+	}
 }
 
 void GameManager::Render()
@@ -69,6 +80,11 @@ void GameManager::Render()
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();
 
+	if (isGUI) 
+	{
+		ImGui::Begin("Edit", &isGUI, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize);
+	}
+
 	Font::Get()->SetColor("White");
 	Font::Get()->SetStyle("Default");
 
@@ -79,14 +95,17 @@ void GameManager::Render()
 
 	UIManager::Get()->Render();
 	SCENE->Render();
+	
+	Font::Get()->GetDC()->EndDraw();
 	UIManager::Get()->PostRender();
 
-
-	Font::Get()->GetDC()->EndDraw();
-
+	if (isGUI) 
+	{
+		ImGui::End();
+	}
 	ImGui::Render();
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
-	
+
 	cursor->Render();
 
 	Device::Get()->Present();
@@ -100,7 +119,6 @@ void GameManager::Create()
 	Font::Get();
 	UIManager::Get();
 	Audio::Get();
-
 
 	ImGui::CreateContext();
 	ImGui::StyleColorsDark();

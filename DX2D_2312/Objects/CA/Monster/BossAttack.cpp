@@ -13,6 +13,9 @@ BossAttack::BossAttack(Transform* target, int key, int max_frameX)
 void BossAttack::Start()
 {
 	CharacterAction::Start();
+
+	if (!Audio::Get()->IsPlaySound("BossMonsterSpawn"))
+		Audio::Get()->Play("BossMonsterSpawn");
 }
 
 void BossAttack::End()

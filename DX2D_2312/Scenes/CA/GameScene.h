@@ -2,6 +2,9 @@
 
 class GameScene : public Scene
 {
+private:
+    const string AUDIO_PATH = "ResourcesCA/Audio/";
+
 public:
     GameScene();
     ~GameScene();

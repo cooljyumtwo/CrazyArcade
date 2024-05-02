@@ -25,5 +25,13 @@ void MapEditScene::Render()
 
 void MapEditScene::PostRender()
 {
-    tileMap->RenderSampleButtons();
+    if (GameManager::isGUI) 
+    {
+        tileMap->RenderSampleButtons();
+    }
+}
+
+void MapEditScene::Start()
+{
+    GameManager::isGUI = true;
 }
