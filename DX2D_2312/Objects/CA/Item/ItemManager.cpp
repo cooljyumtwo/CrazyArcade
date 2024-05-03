@@ -69,3 +69,12 @@ void ItemManager::Collision(Character* target)
 		}
 	}
 }
+
+void ItemManager::ClearItems()
+{
+	for (GameObject* object : totalObject["Item"])
+	{
+		if (object->IsActive())
+			object->SetActive(false);
+	}
+}

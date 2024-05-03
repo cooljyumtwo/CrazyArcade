@@ -27,7 +27,7 @@ public:
 
 	void CreateActions();
 
-	void Spawn(const Vector2& pos, Direction direction = R ,State state = START);
+	void Spawn(const Vector2& pos, Direction direction = R, State state = START);
 
 	Action* GetAction() { return actions[curState]; }
 
@@ -36,7 +36,7 @@ public:
 
 private:
 	int power;
-	
+
 	Vector2 posTileIdx;
 
 	State curState = START;

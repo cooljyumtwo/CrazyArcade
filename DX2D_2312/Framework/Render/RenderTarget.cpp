@@ -62,7 +62,7 @@ void RenderTarget::CreateSRV()
 void RenderTarget::CreateProjection()
 {
     Matrix orthographic = XMMatrixOrthographicOffCenterLH(
-        0.0f, width, 0.0f, height, -1.0f, 1.0f);
+        0, width, 0, height, -1.0f, 1.0f);
 
     projectionBuffer = new MatrixBuffer();
     projectionBuffer->Set(orthographic);    

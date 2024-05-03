@@ -1,7 +1,7 @@
 #include "Framework.h"
 
 MapSelectButton::MapSelectButton(wstring textureFile, int key)
-	:Button(textureFile), key(key)
+	:Button(textureFile, true), key(key)
 {
 	font = new ImageFont( L"ResourcesCA/Textures/UI/ResultNumber/");
 }

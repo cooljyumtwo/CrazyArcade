@@ -22,6 +22,11 @@ void CharacterBubble::Start()
     Action::Start();
 
     SetCompass(Compass::E);
+
+    if (!Audio::Get()->IsPlaySound("CharacterBubble"))
+    {
+        Audio::Get()->Play("CharacterBubble");
+    }
 }
 
 void CharacterBubble::End()

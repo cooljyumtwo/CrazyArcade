@@ -13,9 +13,7 @@ public:
     Item* GetItem() { return item; }
     void RemoveItem();
 
-    void Attack();
-
-    void LoadPos();
+    void LoadPos(bool isSpawn = false);
 
     bool GetIsBubblePush() { return isBubblePush; }
 

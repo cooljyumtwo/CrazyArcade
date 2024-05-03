@@ -18,6 +18,7 @@ private:
 
 private:
     UINT width, height;
+    float startPosX, startPosY;
 
     ID3D11Texture2D* rtvTexture;
     ID3D11RenderTargetView* rtv;

@@ -14,7 +14,7 @@ public:
 	Material* GetMaterial() { return material; }
 
 	RectCollider* GetCollider() { return collider; }
-	void SetColliderSize(Vector2 size) { collider->SetSize({ size.x * 0.7f , size.x * 0.7f }); }
+	void SetColliderSize(Vector2 size, float offset = 0.7f) { collider->SetSize({ size.x * offset , size.x * offset }); }
 
 	virtual float GetDepth();
 

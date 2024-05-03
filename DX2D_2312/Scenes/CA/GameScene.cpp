@@ -3,24 +3,6 @@
 
 GameScene::GameScene()
 {
-    Audio::Get()->Add("BtnClick", AUDIO_PATH + "BtnClick.mp3", false, false);
-    Audio::Get()->Add("BtnHover", AUDIO_PATH + "BtnHover.wav", false, false);
-
-    Audio::Get()->Add("BubbleAdd", AUDIO_PATH + "BubbleAdd.wav", false, false);
-
-    Audio::Get()->Add("MonsterDie", AUDIO_PATH + "MonsterDie.wav", false, false);
-
-    Audio::Get()->Add("BossDie", AUDIO_PATH + "BossDie.wav", false, false);
-    Audio::Get()->Add("BossHit", AUDIO_PATH + "BossHit.wav", false, false);
-    Audio::Get()->Add("BossMove", AUDIO_PATH + "BossMove.wav", false, false);
-    Audio::Get()->Add("BossMonsterSpawn", AUDIO_PATH + "BossMonsterSpawn.wav", false, false);
-    Audio::Get()->Add("BossBubble", AUDIO_PATH + "BossBubble.wav", false, false);
-
-    Audio::Get()->Add("GameStart", AUDIO_PATH + "GameStart.wav", false, false);
-    Audio::Get()->Add("Clear", AUDIO_PATH + "Clear.wav", false, false);
-    Audio::Get()->Add("Lose", AUDIO_PATH + "Lose.wav", false, false);
-    Audio::Get()->Add("NextLevelReady", AUDIO_PATH + "NextLevelReady.wav", false, false);
-
     CAM->SetFix(false);
 
     player = new Player();
@@ -54,12 +36,13 @@ void GameScene::Update()
 
 void GameScene::Render()
 {
-    RenderManager::Get()->Render("BGTile");
+    RenderManager::Get()->Render("BGTileRander");
     RenderManager::Get()->Render("GameObject");
     RenderManager::Get()->Render("BGTileTxt");
 
     EffectManager::Get()->Render();
     MonsterManager::Get()->Render();
+    TileManager::Get()->Render();
 }
 
 void GameScene::PostRender()
@@ -73,10 +56,18 @@ void GameScene::Start()
     StageManager::Get()->LoadStage();
 
     GameManager::isGUI = false;
+
+    if (!Audio::Get()->IsPlaySound("GameBgm"))
+    {
+        Audio::Get()->Play("GameBgm", 0.5f);
+    }
 }
 
 void GameScene::End()
 {
     TileManager::Get()->ClearObjTile();
     MonsterManager::Get()->ClearMonster();
+
+    Audio::Get()->Stop("GameBgm");
+    Audio::Get()->Stop("GameBossBgm");
 }

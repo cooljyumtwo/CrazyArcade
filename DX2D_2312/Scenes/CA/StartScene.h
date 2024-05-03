@@ -2,6 +2,9 @@
 
 class StartScene : public Scene
 {
+private:
+    const string AUDIO_PATH = "ResourcesCA/Audio/";
+
 public:
     StartScene();
     ~StartScene();
@@ -10,6 +13,10 @@ public:
     void Render() override;
     void PostRender() override;
 
+    void Start() override;
+    void End() override;
+
+    void CreateAudio();
 private:
 
 };

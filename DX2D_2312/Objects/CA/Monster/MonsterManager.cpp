@@ -59,6 +59,7 @@ void MonsterManager::LoadMonster()
 	killMonster = 0;
 	spawnMonster = 0;
 	cntBoss = 0;
+	isSpawnBoss = false;
 
 	BinaryReader* reader = new BinaryReader(PATH + TileManager::mapNameStr + ".map");
 

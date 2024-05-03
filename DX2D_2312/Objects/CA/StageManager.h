@@ -16,7 +16,7 @@ public:
 	void SetPlayer(Character* playerCharacter);
 	void LoadStage();
 	void NextStage();
-	void SpawnPlayer();
+	void SpawnPlayer(bool isSpawn = false);
 
 	void Start();
 	void Clear();

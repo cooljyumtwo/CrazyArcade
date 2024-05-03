@@ -10,6 +10,11 @@ CharacterAlive::CharacterAlive(Transform* target)
 void CharacterAlive::Start()
 {
 	Action::Start();
+
+	if (!Audio::Get()->IsPlaySound("CharacterLive"))
+	{
+		Audio::Get()->Play("CharacterLive"); 
+	}
 }
 
 void CharacterAlive::End()

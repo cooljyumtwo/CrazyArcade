@@ -30,6 +30,14 @@ struct StageData
 	int level;
 };
 
+struct TileData
+{
+	int key;
+	int num;
+	bool isPop;
+	bool isPush;
+};
+
 class DataManager : public Singleton<DataManager>
 {
 private:
@@ -47,13 +55,17 @@ public:
 	StageData GetStageData(int key) { return stageDatas[key]; }
 	int SizeStageData() { return stageDatas.size(); }
 
+	TileData GetTileData(int key) { return tileDatas[key]; }
+
 private:
 	void LoadItemData();
 	void LoadMonsterData();
 	void LoadStageData();
+	void LoadTileData();
 
 public:
 	map<int, ItemData> itemDatas;
 	map<int, MonsterData> monsterDatas;
 	map<int, StageData> stageDatas;
+	map<int, TileData> tileDatas;
 };

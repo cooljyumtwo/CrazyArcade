@@ -83,7 +83,6 @@ void MonsterMove::Move()
 
     BubbleManager::Get()->PushPlayer(character);
 
-    //if (compass == W) velocity.x = 1.0f;
 }
 
 void MonsterMove::SetMoveTime()
@@ -123,24 +122,56 @@ void MonsterMove::RandomCompass()
     }
     else //무작위 방향
     {
-        int randomCompass = Random(0, 4);
+        int randomCompass = Random(0, 4); // 어디부터 체크할지 
 
-        switch (randomCompass)
+        Vector2 curPos = target->GetGlobalPosition();
+        vector<Vector2> checkPos;
+
+        vector<Vector2> offsets = {
+                        Vector2{0, -1},  // 남쪽
+            Vector2{0, 1}, // 북쪽
+
+            Vector2{1, 0},   // 동쪽
+               Vector2{-1, 0} // 서쪽
+        };
+
+        checkPos.resize(offsets.size());
+
+        FOR(offsets.size()) 
         {
-        case CharacterAction::S:
-            SetCompass(Compass::S);
-            break;
-        case CharacterAction::N:
-            SetCompass(Compass::N);
-            break;
-        case CharacterAction::E:
-            SetCompass(Compass::E);
-            break;
-        case CharacterAction::W:
-            SetCompass(Compass::W);
-            break;
-        default:
-            break;
+            int idx = (i + randomCompass) % offsets.size(); // 인덱스 계산
+            checkPos[i] = (curPos + offsets[i] * Tile::TILE_SIZE);
+        }
+
+        int compass;
+        FOR(checkPos.size())
+        {
+            Tile* tile = TileManager::Get()->GetNearPosTileState(checkPos[i]);
+
+            if (!tile) continue; // 타일이 유효하지 않으면 다음으로 넘어감
+
+            if (tile->GetType() == Tile::BASIC)
+            {
+                compass = (i + randomCompass) % offsets.size(); // 선택된 방향 계산
+                switch (i)
+                {
+                case CharacterAction::S:
+                    SetCompass(Compass::S);
+                    break;
+                case CharacterAction::N:
+                    SetCompass(Compass::N);
+                    break;
+                case CharacterAction::E:
+                    SetCompass(Compass::E);
+                    break;
+                case CharacterAction::W:
+                    SetCompass(Compass::W);
+                    break;
+                default:
+                    break;
+                }
+                return;
+            }
         }
     }
 }

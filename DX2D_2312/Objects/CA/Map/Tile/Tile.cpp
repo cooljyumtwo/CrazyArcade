@@ -8,9 +8,8 @@ Tile::Tile(wstring textureFile, Vector2 pos, Type type)
     type = type;
     
     SetLocalPosition(pos);
-
-    collider = new RectCollider(size);
-    collider->SetParent(this);
+    SetColliderSize(TILE_SIZE, 1.0f);
+    collider->GetColor()->SetColor(1.0f,0,1.0f);
 }
 
 Tile::~Tile()

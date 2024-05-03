@@ -34,4 +34,14 @@ void MapEditScene::PostRender()
 void MapEditScene::Start()
 {
     GameManager::isGUI = true;
+
+    if (!Audio::Get()->IsPlaySound("MapEditBgm"))
+    {
+        Audio::Get()->Play("MapEditBgm", 0.5f);
+    }
+}
+
+void MapEditScene::End()
+{
+    Audio::Get()->Stop("MapEditBgm");
 }

@@ -22,7 +22,7 @@ GameManager::GameManager()
 	UIManager::Get()->Add("MapEdit", new MapEditUI());
 	UIManager::Get()->Add("Game", new GameUI());
 
-	SCENE->ChangeScene("MapEdit");
+	SCENE->ChangeScene("Start");
 
 	ShowCursor(false);
 }
@@ -59,11 +59,6 @@ void GameManager::Update()
 
 	cursor->SetLocalPosition(mousePos + CURSOR_OFFSET);
 	cursor->Update();
-
-	if (KEY->Press(VK_LBUTTON))
-	{
-
-	}
 }
 
 void GameManager::Render()
@@ -85,13 +80,14 @@ void GameManager::Render()
 		ImGui::Begin("Edit", &isGUI, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize);
 	}
 
-	Font::Get()->SetColor("White");
+	Font::Get()->SetColor("Red");
 	Font::Get()->SetStyle("Default");
 
 	Font::Get()->GetDC()->BeginDraw();
 
 	string fps = "FPS : " + to_string(Timer::Get()->GetFPS());
-	Font::Get()->RenderText(fps, { 0, SCREEN_HEIGHT - 10 });
+	//Font::Get()->RenderText(fps, { 0, SCREEN_HEIGHT - 10 });
+
 
 	UIManager::Get()->Render();
 	SCENE->Render();
@@ -127,9 +123,11 @@ void GameManager::Create()
 	ImGui_ImplDX11_Init(DEVICE, DC);
 
 	Font::Get()->AddColor("White", 1, 1, 1);
+	Font::Get()->AddColor("Red", 1, 0, 0);
 	Font::Get()->AddColor("Black", 0, 0, 0);
-	Font::Get()->AddStyle("Default", L"¹è¹Î À»Áö·Î10³âÈÄÃ¼");
-	Font::Get()->AddStyle("Button", L"¸¼Àº °íµñ", 40,
+	Font::Get()->AddStyle("Default", L"Open Sans",20);
+	Font::Get()->AddStyle("NickName", L"Quicksand", 20);
+	Font::Get()->AddStyle("Button", L"Quicksand", 20,
 		DWRITE_TEXT_ALIGNMENT_CENTER, DWRITE_PARAGRAPH_ALIGNMENT_FAR);
 
 	cursor = new Button(L"ResourcesCA/Textures/UI/Mouse/MouseImg.png");

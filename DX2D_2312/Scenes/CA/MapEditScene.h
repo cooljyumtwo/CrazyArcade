@@ -11,10 +11,8 @@ public:
     void PostRender() override;
 
     void Start() override;
+    void End() override;
 
 private:
     EditTileMap* tileMap;
-    Player* player;
-    Quad* quad;
-    TileObject* t;
 };

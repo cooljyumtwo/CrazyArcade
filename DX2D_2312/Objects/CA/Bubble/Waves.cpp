@@ -114,19 +114,22 @@ void Waves::Spawn(const Vector2& pos, int power)
 				BasicTile* basicTile = (BasicTile*)tile;
 
 				ObstacleTile* obstacleTile = (ObstacleTile*)basicTile->GetObstacleTile();
-				if (obstacleTile != nullptr)
-					if(obstacleTile->IsActive())
-						obstacleTile->End();
+				try {
+					if (obstacleTile != nullptr)
+						if (obstacleTile->IsActive())
+							obstacleTile->End();
+				}
+				catch (const std::exception& ex) {
+					// IsActive() 호출 중 예외 발생 시 처리
+					return;
+				}
 
 				basicTile->SetObstacleTile(nullptr);
 				basicTile->SetType(Tile::BASIC);
 				break;
 			}
 
-			else 
-				tile->SetType(Tile::ATTACK);
-
-			if (i == power-1)
+			if (i == power - 1)
 				waveList[i]->Spawn(pos, waveType, Wave::END);
 			else
 				waveList[i]->Spawn(pos, waveType, Wave::START);

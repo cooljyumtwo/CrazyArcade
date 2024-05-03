@@ -10,7 +10,7 @@ BubbleManager::BubbleManager()
 		RenderManager::Get()->Add("GameObject", bubble);
 	}
 
-	totalObject["BasicWaves"].resize(POOL_SIZE);
+	totalObject["BasicWaves"].resize(10);
 
 	for (GameObject*& waves : totalObject["BasicWaves"])
 	{
@@ -121,7 +121,6 @@ void BubbleManager::CollisionBoss(Boss* boss)
 		if (bubble->GetCollider()->IsCollision(boss->GetCollider()))
 		{
 			bubble->Pop();
-			boss->Hit(bubble->GetCollider());
 		}
 	}
 }

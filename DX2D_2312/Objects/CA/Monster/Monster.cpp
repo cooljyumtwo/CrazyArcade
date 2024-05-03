@@ -24,6 +24,14 @@ void Monster::Update()
 
     UpdateWorld();
 
+    //HitColliders Erase (When Anymore No Collision )
+    for (int i = 0; i < hitColliders.size(); i++)
+    {
+            hitColliders.erase(hitColliders.begin() + i);
+            break;
+       
+    }
+
     CheckTileHit();
 
     RemoveHitColliders();
@@ -57,6 +65,7 @@ bool Monster::CheckHitCollider(Collider* collider)
 
 void Monster::Hit(Collider* collider)
 {
+    if (curState == HIT) return;
     if(!CheckHitCollider(collider)) return;
 
     hp--;

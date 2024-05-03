@@ -230,7 +230,6 @@ void EditTileMap::Save()
             SaveMonster(path + "Monster/" + file);
             SavePlayerPos(path + "Player/" + file);
         }
-
         DIALOG->Close();
     }
 }
@@ -282,9 +281,7 @@ void EditTileMap::SaveMapData(string file)
 
     for (ObstacleTile* tile : objTiles)
     {
-        writer->WString(
-            tile->GetTexture()
-        );
+        writer->WString(tile->GetTexture());
         writer->Vector(tile->GetLocalPosition());
         writer->Vector(tile->GetCurIdx());
     }

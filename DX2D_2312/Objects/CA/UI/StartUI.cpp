@@ -41,8 +41,6 @@ void StartUI::Render()
 void StartUI::PostRender()
 {
 	startBtn->RenderUI();
-
-	ImGui::DragFloat("time", &outlineBuffer->Get()[0]);
 }
 
 void StartUI::CreateUIs()

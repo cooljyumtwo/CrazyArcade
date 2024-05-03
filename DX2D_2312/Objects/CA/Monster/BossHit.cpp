@@ -11,6 +11,8 @@ void BossHit::Start()
 {
 	if (!Audio::Get()->IsPlaySound("BossHit"))
 		Audio::Get()->Play("BossHit");
+
+	CharacterAction::Start();
 }
 
 void BossHit::End()

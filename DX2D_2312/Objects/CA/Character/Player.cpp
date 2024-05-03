@@ -15,6 +15,11 @@ Player::~Player()
 
 void Player::AddItem(Item* item)
 {
+    if (!Audio::Get()->IsPlaySound("ItemAdd"))
+    {
+        Audio::Get()->Play("ItemAdd");
+    }
+
     Item::Type type = (Item::Type)item->GetData().type;
    
     if (type < Item::B_NEEDLE)
@@ -39,6 +44,9 @@ void Player::AddItem(Item* item)
                 isBubblePush = true;
             }
             break;
+        case Item::B_PUSH:
+            isBubblePush = true;
+            break;
         default:
             break;
         }
@@ -62,13 +70,7 @@ void Player::RemoveItem()
     gameUI->SetItemSlotImg(false);
 }
 
-void Player::Attack()
-{
-
-   // Character::Attack();
-}
-
-void Player::LoadPos()
+void Player::LoadPos(bool isSpawn)
 {
     BinaryReader* reader = new BinaryReader("ResourcesCA/TextData/Map/Player/" + TileManager::mapNameStr + ".map");
 
@@ -80,7 +82,14 @@ void Player::LoadPos()
 
     Vector2 curIdx = reader->Vector();
     Vector2 pos = TileManager::Get()->GetBgTile(curIdx)->GetGlobalPosition();
+    
     SetLocalPosition(pos);
+
+    if (isSpawn) 
+    {
+        RemoveItem();
+        isBubblePush = false;
+    }
 
     delete reader;
 }

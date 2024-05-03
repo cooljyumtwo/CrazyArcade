@@ -10,7 +10,7 @@ public:
 	void Update() override;
 	void CreateActions() override;
 
-	void CheckTileHit();
+	virtual void CheckTileHit();
 	bool CheckHitCollider(Collider* collider);
 	void Hit(Collider* collider);
 	void Die();

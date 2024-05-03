@@ -1,4 +1,5 @@
 #include "Framework.h"
+#include "Boss.h"
 
 Boss::Boss(int key, float speed, bool isBubble, int hp, Type type) 
 	: Monster(key, speed, isBubble, hp, true), type(type)
@@ -56,26 +57,62 @@ void Boss::Render()
 
 void Boss::Attack()
 {
-	if (curState == BUBBLE || curState == DIE) return;
+	if (curState == BUBBLE || curState == DIE || curState == HIT) return;
 
 	playTime += DELTA;
 
-	if (playTime > attackTime && hp <= maxHp * 0.5f)
+	if (playTime > attackTime)
 	{
 		playTime -= attackTime;
 		SetAction(ATTACK);
 	}
 }
 
-void Boss::Hit(Collider* collider)
+void Boss::CheckTileHit()
 {
-	if (curState == DIE || curState == BUBBLE) return;
+	if (curState == DIE || curState == HIT) return;
+	Vector2 curPos = GetCollider()->GetGlobalPosition();
+	vector<Vector2> checkPos;
 
-	if (hp <= maxHp * 0.5f)
-	{
-		curType = MOVE;
-		curState = curType;
+	vector<Vector2> offsets = {
+		Vector2{-1, -1}, Vector2{-1, 0}, Vector2{-1, 1},
+		Vector2{0, -1}, Vector2{0, 0}, Vector2{0, 1},
+		Vector2{1, -1}, Vector2{1, 0}, Vector2{1, 1}
+	};
+
+	for (const auto& offset : offsets) {
+		checkPos.push_back(curPos + offset * Tile::TILE_SIZE);
 	}
 
+	for (Vector2 pos : checkPos)
+	{
+		Tile* tile = TileManager::Get()->GetNearPosTileState(pos);
+
+		if (!tile) return;
+
+		if (tile->GetType() == Tile::ATTACK)
+		{
+			Hit(tile->GetCollider());
+		}
+	}
+}
+
+void Boss::Hit(Collider* collider)
+{
+	if (curState == DIE || curState == BUBBLE || curState == HIT) return;
+
 	Monster::Hit(collider);
+	CheckMode();
+}
+
+void Boss::CheckMode()
+{
+	if (hp <= maxHp * 0.5f)
+	{
+		modeState = ANGRY;
+		curType = MOVE;
+		attackTime = ANGRY_STAY_TIME;
+	}
+	else
+		modeState = NORMAL;
 }

@@ -36,6 +36,9 @@ public:
 	void LoadMapData();
 	void LoadMapSize();
 
+	void CreateRanderTarget();
+	void SetRanderTarget();
+
 	void SetMapName(string mapNameStr) {this->mapNameStr= mapNameStr;}
 
 	void ClearObjTile();
@@ -60,4 +63,7 @@ public:
 	Vector2 tileSize;
 
 	static string mapNameStr;
+
+	RenderTarget* bgTileTarget;
+	Quad* bgTileMap;
 };

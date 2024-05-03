@@ -25,5 +25,10 @@ void MonsterHit::Update()
         Monster* monster = (Monster*)target;
         monster->SetAction(monster->curType);
         monster->PlusHp();
+
+        if (!Audio::Get()->IsPlaySound("MonsterChangeIdle"))
+        {
+            Audio::Get()->Play("MonsterChangeIdle");
+        }
     }
 }

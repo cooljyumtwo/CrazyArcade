@@ -17,6 +17,8 @@ public:
     void Spawn(const Vector2& pos);
 
     void Collision(Character* target);
+    
+    void ClearItems();
 
 private:
     int sizeItemDatas;

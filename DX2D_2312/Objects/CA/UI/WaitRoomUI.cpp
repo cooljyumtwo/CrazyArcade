@@ -1,4 +1,5 @@
 #include "Framework.h"
+
 int WaitRoomUI::stageKey = 1;
 
 WaitRoomUI::WaitRoomUI()
@@ -7,11 +8,9 @@ WaitRoomUI::WaitRoomUI()
 	CreateMapSelectWindow();
 	CreateMapSelectLineBtns();
 	CreateBuffers();
+	CreateFonts();
 
-	font = new ImageFont(PATH+L"/ResultNumber/");
-	font->SetLocalPosition(CENTER);
-	font->UpdateWorld();
-	font->SetAligned(ImageFont::AlignedType::R);
+	fontpos = CENTER;
 }
 
 WaitRoomUI::~WaitRoomUI()
@@ -26,6 +25,8 @@ WaitRoomUI::~WaitRoomUI()
 	delete mapSelectWindowMapTxt;
 	delete acceptBtn;
 	delete cancelBtn;
+	delete mapEditBtn;
+	delete exitBtn;
 
 	delete valueBuffer;
 	delete outlineBuffer;
@@ -53,14 +54,17 @@ void WaitRoomUI::Update()
 	gameStartBtn->Update();
 	acceptBtn->Update();
 	cancelBtn->Update();
+	mapEditBtn->Update();
+	exitBtn->Update();
+	cancelBtn->Update();
+	mapEditBtn->Update();
+	exitBtn->Update();
+	bg->Update();
 
 	for (MapSelectButton* mapSelectBtn : mapSelectLineBtns)
 	{
 		mapSelectBtn->Update();
 	}
-
-	//PlayIntro();
-
 }
 
 void WaitRoomUI::PreRender()
@@ -85,50 +89,42 @@ void WaitRoomUI::Render()
 	mapSelectLine->Render();
 	acceptBtn->Render();
 	cancelBtn->Render();
+	mapEditBtn->Render();
+	exitBtn->Render();
 
 	for (MapSelectButton* mapSelectBtn : mapSelectLineBtns)
 	{
 		mapSelectBtn->Render();
 	}
 
-	//font->Render();
+	string id = "°­ÀÚ±è¹èÂî";
+	Font::Get()->SetColor("Black");
+	Font::Get()->RenderText(id, {48.0f, 392.0f});
+
 }
 
 void WaitRoomUI::PostRender()
 {
-	mapSelectLine->RenderUI();
-
-	//ImGui::DragFloat("time", &outlineBuffer->Get()[0]);
-
-	//int min = time / 60;
-	//int second = (int)time % 60;
-
-	//char str[100] = {};
-	//sprintf_s(str, "%.2d : %.2d", min, second);
-	//Font::Get()->RenderText(str, CENTER);
+	exitBtn->RenderUI();
+	bg->RenderUI();
 }
 
 void WaitRoomUI::CreateUIs()
 {
-	//bgTexs
-	bgTexs.resize(introBgs.size());
-
-	FOR(introBgs.size())
-		bgTexs[i] = Texture::Add(PATH + introBgs[i]);
-
 	//bg
 	bg = new Quad(PATH_WAITROOM + L"WaitRoomBG.png");
 	bg->Translate(CENTER);
+	bg->SetTag("WaitRoom_BG");
+	bg->Load();
 	bg->Update();
 
-	mapSelectImg = new Quad(PATH_WAITROOM + L"Map1.png");
+	mapSelectImg = new Quad(PATH_WAITROOM + L"stage1-1.png");
 	mapSelectImg->SetTag("WaitRoom_MapSelectImg");
 	mapSelectImg->Load();
 	mapSelectImg->Update();
 
-
 	//btn
-	mapSelectBtn = new Button(PATH_WAITROOM + L"MapSelectBtn.png");
+	mapSelectBtn = new Button(PATH_WAITROOM + L"MapSelectBtn.png", true);
 	mapSelectBtn->Translate(CENTER);
 	mapSelectBtn->SetTag("WaitRoom_MapSelectBtn");
 	mapSelectBtn->Load();
@@ -136,7 +132,7 @@ void WaitRoomUI::CreateUIs()
 		mapSelectWindow->SetActive(true);
 		}); 
 	//btn
-	gameStartBtn = new Button(PATH_WAITROOM + L"GameStartBtn.png");
+	gameStartBtn = new Button(PATH_WAITROOM + L"GameStartBtn.png", true);
 	gameStartBtn->Translate(CENTER);
 	gameStartBtn->SetTag("WaitRoom_GameStartBtn");
 	gameStartBtn->Load();
@@ -144,9 +140,17 @@ void WaitRoomUI::CreateUIs()
 		SCENE->ChangeScene("Game");
 		mapSelectWindow->SetActive(false);
 		}); 
+	//btn
+	exitBtn = new Button(PATH_WAITROOM + L"ExitBtn.png", true);
+	exitBtn->Translate(CENTER);
+	exitBtn->SetTag("WaitRoom_ExitBtn");
+	exitBtn->Load();
+	exitBtn->SetEvent([this]() {
+		CloseWindow();
+		});
 
 	//fade
-	secondMap = Texture::Add(PATH + L"FadeWhite.png");
+	secondMap = Texture::Add(PATH + L"FadeBlack.png");
 }
 
 void WaitRoomUI::CreateMapSelectWindow()
@@ -156,7 +160,7 @@ void WaitRoomUI::CreateMapSelectWindow()
 	mapSelectWindow->Translate(CENTER);
 	mapSelectWindow->Update(); 
 
-	mapSelectWindowMapImg = new Quad(PATH_WAITROOM + L"Map1.png");
+	mapSelectWindowMapImg = new Quad(PATH_WAITROOM + L"stage1-1.png");
 	mapSelectWindowMapImg->SetParent(mapSelectWindow);
 	mapSelectWindowMapImg->SetTag("WaitRoom_MapSelectImgMapImg");
 	mapSelectWindowMapImg->Load();
@@ -176,7 +180,7 @@ void WaitRoomUI::CreateMapSelectWindow()
 
 
 	//btn
-	acceptBtn = new Button(PATH_WAITROOM + L"AcceptBtn.png");
+	acceptBtn = new Button(PATH_WAITROOM + L"AcceptBtn.png", true);
 	acceptBtn->SetTag("WaitRoom_AcceptBtn");
 	acceptBtn->Load();
 	acceptBtn->SetParent(mapSelectWindow);
@@ -188,12 +192,21 @@ void WaitRoomUI::CreateMapSelectWindow()
 		});
 
 	//btn
-	cancelBtn = new Button(PATH_WAITROOM + L"CancelBtn.png");
+	cancelBtn = new Button(PATH_WAITROOM + L"CancelBtn.png", true);
 	cancelBtn->SetTag("WaitRoom_CancelBtn");
 	cancelBtn->Load();
 	cancelBtn->SetParent(mapSelectWindow);
 	cancelBtn->SetEvent([this]() {
 		mapSelectWindow->SetActive(false);
+		});
+
+	//btn
+	mapEditBtn = new Button(PATH_WAITROOM + L"EditBtn.png", true);
+	mapEditBtn->SetTag("WaitRoom_MapEditBtn");
+	mapEditBtn->Load();
+	mapEditBtn->SetParent(mapSelectWindow);
+	mapEditBtn->SetEvent([this]() {
+		SCENE->ChangeScene("MapEdit");
 		});
 
 }
@@ -236,30 +249,34 @@ void WaitRoomUI::CreateMapSelectLineBtns()
 	}
 }
 
+void WaitRoomUI::CreateFonts()
+{
+	font = new ImageFont(PATH + L"/ResultNumber/");
+	font->SetLocalPosition(CENTER);
+	font->UpdateWorld();
+	font->SetAligned(ImageFont::AlignedType::R);
+}
+
 void WaitRoomUI::PlayIntro()
 {
 	frameTime += DELTA;
 
-	if (frameTime > MAX_FRAME_TIME && count < MAX_FRAME_COUNT * 4)
+	if (frameTime > MAX_FRAME_TIME && count < MAX_FRAME_COUNT * 2)
 	{
 		frameTime -= MAX_FRAME_TIME;
 
-		if (count >= MAX_FRAME_COUNT && count < MAX_FRAME_COUNT * 2)
+		if (count >= MAX_FRAME_COUNT )
 		{
-			outlineBuffer->Get()[0] -= 1;
-			bg->GetMaterial()->SetTexture(bgTexs[1]);
-		}
-		else if (count >= MAX_FRAME_COUNT * 3)
-		{
-			outlineBuffer->Get()[0] -= 1;
-			bg->GetMaterial()->SetTexture(bgTexs[2]);
-			mapSelectBtn->SetActive(true);
+			DestroyWindow(hWnd);
 		}
 		else
 			outlineBuffer->Get()[0] += 1;
 		count++;
 	}
+}
 
-	if (count > MAX_FRAME_COUNT * 4)
-		isEndIntro = true;
+void WaitRoomUI::CloseWindow()
+{
+	PlayIntro();
+	DestroyWindow(hWnd);
 }

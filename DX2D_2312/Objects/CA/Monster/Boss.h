@@ -9,6 +9,14 @@ private:
 		Penguin
 	};
 
+	enum ModeState
+	{
+		NORMAL, ANGRY
+	};
+
+	const float NORMAL_ATTACk_TIME = 10.0f;
+	const float ANGRY_STAY_TIME = 5.0f;
+
 public:
 	Boss(int key, float speed, bool isBubble = true, int hp = 1, Type type = Penguin);
 	~Boss();
@@ -18,7 +26,10 @@ public:
 
 	void Attack();
 
+	void CheckTileHit() override;
 	void Hit(Collider* collider);
+
+	void CheckMode();
 
 private:
 	int maxHp;
@@ -26,6 +37,8 @@ private:
 	Type type;
 	ProgressBar* hpBar;
 
+	ModeState modeState = NORMAL;
+
 	float playTime = 0.0f;
-	float attackTime = 5.0f;
+	float attackTime = NORMAL_ATTACk_TIME;
 };

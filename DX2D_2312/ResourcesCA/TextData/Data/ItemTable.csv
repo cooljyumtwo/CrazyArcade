@@ -3,3 +3,6 @@ key,name,type,value,probability,image
 1,BubbleCntUp,1,1,100,BubbleCntUp.png
 2,Speed,2,1,100,Speed.png
 3,BubbleNeedle,10,1,50,BubbleNeedle.png
+4,PushShoes,3,1,100,PushShoes.png
+5,MaxBubblePower,0,10,50,MaxBubblePower.png
+6,MaxSpeed,2,10,50,MaxSpeed.png

@@ -21,8 +21,11 @@ public:
     void CreateMapSelectWindow();
     void CreateBuffers();
     void CreateMapSelectLineBtns();
+    void CreateFonts();
 
     void PlayIntro();
+
+    void CloseWindow();
 
 private:
     Quad* bg;
@@ -37,6 +40,8 @@ private:
     MapSelectButton* mapSelectLine;
     Button* acceptBtn;
     Button* cancelBtn;
+    Button* mapEditBtn;
+    Button* exitBtn;
     vector<MapSelectButton*> mapSelectLineBtns;
 
     IntValueBuffer* valueBuffer;
@@ -48,13 +53,12 @@ private:
     int count = 0;
     bool isEndIntro = false;
 
-    vector<Texture*> bgTexs;
-    vector<wstring> introBgs = { L"IntroLogo.png", L"IntroTitle.png", L"loginBG.png" };
 
     ImageFont* font;
     float time = 0.0f;
     int selectKey;
 
+    Vector2 fontpos;
 public:
     static int stageKey;
 };

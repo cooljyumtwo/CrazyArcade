@@ -9,8 +9,8 @@ private:
 public:
     enum Type
     {
-        B_POWER, B_CNTUP, U_SPEED, 
-        B_NEEDLE
+        B_POWER, B_CNTUP, U_SPEED, B_PUSH,
+        B_NEEDLE = 10
     };
 
 public:

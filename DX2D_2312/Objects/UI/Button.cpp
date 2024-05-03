@@ -49,7 +49,7 @@ void Button::ClickEvent()
         if (KEY->Press(VK_LBUTTON))
         {
             if (!Audio::Get()->IsPlaySound("BtnClick") && isSound)
-                Audio::Get()->Play("BtnClick");
+                Audio::Get()->Play("BtnClick",1.5f);
 
             state = DOWN;
         }
@@ -57,7 +57,7 @@ void Button::ClickEvent()
         {
             if (!Audio::Get()->IsPlaySound("BtnHover") 
                 && IsActive() && state !=OVER && isSound )
-                Audio::Get()->Play("BtnHover");
+                Audio::Get()->Play("BtnHover", 1.3f);
 
             state = OVER;
         }

@@ -43,6 +43,8 @@ private:
     float frameTime = 0.0f;
     int count = MAX_COUNT;
 
+    Button* exitBtn;
+
     vector<Texture*> gameTxtTexs;
     vector<wstring> gameTxtStrs = { L"GameStart.png", L"Clear.png", L"GameOver.png"};
 

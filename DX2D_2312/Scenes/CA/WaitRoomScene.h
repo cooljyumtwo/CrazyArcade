@@ -11,6 +11,7 @@ public:
     void PostRender() override;
 
     void Start() override;
+    void End() override;
 
 private:
 

@@ -7,6 +7,7 @@ TileManager::TileManager()
     SetTag("TileManager");
 
     CreateBGTile();
+    CreateRanderTarget();
 
     Transform::Load(); 
 
@@ -18,14 +19,19 @@ TileManager::TileManager()
 
 TileManager::~TileManager()
 {
+    delete bgTileTarget;
+    delete bgTileMap;
 }
 
 void TileManager::Render()
 {
+    bgTileMap->RenderUI();
+    RenderUI();
 }
 
 void TileManager::Update()
 {
+    bgTileMap->UpdateWorld();
     FOR_X(SIZE_X)
         FOR_Y(SIZE_Y)
             bgTiles[x][y]->UpdateWorld();
@@ -35,7 +41,6 @@ void TileManager::Update()
         tile->Update();
         tile->UpdateWorld();
     }
-       
 
     UpdateWorld();
 
@@ -107,7 +112,10 @@ void TileManager::LoadMapData()
 
     FOR_Y(SIZE_Y)
         FOR_X(SIZE_X)
-        bgTiles[x][y]->SetTexture(reader->WString());
+        {
+            bgTiles[x][y]->SetTexture(reader->WString());  
+            bgTiles[x][y]->SetType(Tile::BASIC);
+        }
 
     
     int size = reader->UInt();
@@ -124,6 +132,8 @@ void TileManager::LoadMapData()
     }
 
     delete reader;
+
+    SetRanderTarget();
 }
 
 void TileManager::LoadMapSize()
@@ -132,6 +142,26 @@ void TileManager::LoadMapSize()
     mapSize["Right"] = bgTiles[SIZE_X - 1][0]->GetGlobalPosition().x + Tile::TILE_SIZE;
     mapSize["Up"] = bgTiles[0][0]->GetGlobalPosition().y - OFFSET_MAP_SIZE_UP;
     mapSize["Down"] = bgTiles[0][SIZE_Y - 1]->GetGlobalPosition().y - Tile::TILE_SIZE;
+}
+
+void TileManager::CreateRanderTarget()
+{
+    bgTileTarget = new RenderTarget();
+    Texture* targetTexture = Texture::Add(L"BGTileMap", bgTileTarget->GetSRV());
+
+    bgTileMap = new Quad(Vector2{ SCREEN_WIDTH, SCREEN_HEIGHT });
+    bgTileMap->GetMaterial()->SetTexture(targetTexture);
+    bgTileMap->SetLocalPosition(CENTER);
+    bgTileMap->UpdateWorld();
+
+    RenderManager::Get()->Add("BGTileRander", bgTileMap);
+}
+
+void TileManager::SetRanderTarget()
+{
+    bgTileTarget->Set();
+    RenderManager::Get()->Render("BG");
+    RenderManager::Get()->Render("BGTile");
 }
 
 void TileManager::ClearObjTile()
@@ -147,7 +177,19 @@ void TileManager::ClearObjTile()
 
 void TileManager::AddObjTile(const Vector2& pos, const Vector2& size, const Vector2 idx, const wstring textureFile)
 {
-    ObstacleTile* tile = new ObstacleTile(textureFile, pos, true);
+    //TileData
+    size_t posStr = textureFile.find_last_of(L'/');
+    wstring fileName = textureFile.substr(posStr + 1);
+
+    size_t startPos = fileName.find_first_of(L"(");
+    size_t endPos = fileName.find_first_of(L")");
+    wstring numStr = fileName.substr(startPos + 1, endPos - startPos - 1);
+    int num = stoi(numStr);
+
+    TileData tileData = DataManager::Get()->GetTileData(num);
+
+    //Create
+    ObstacleTile* tile = new ObstacleTile(textureFile, pos, tileData.isPop);
     tile->SetParent(this);
     tile->GetCollider()->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5 * -1);
     tile->Update();
@@ -232,7 +274,7 @@ bool TileManager::PushGameObject(GameObject* obj)
             {
                 if (obj->GetGlobalPosition().x > objTile->GetGlobalPosition().x)
                 {
-                    obj->Translate(Vector2::Right()*overlab.x);
+                    obj->Translate(Vector2::Right() * overlab.x);
                 }
                 else 
                 {
@@ -262,14 +304,16 @@ bool TileManager::CheckMapPosPlayer(Character* player)
 {
     Vector2 pos = player->GetCollider()->GetGlobalPosition();
 
+    float size = round(player->GetCollider()->Size().y / Tile::TILE_SIZE);
+
     if (pos.x < mapSize["Left"]) 
         player->Translate(Vector2::Right() * (mapSize["Left"] - pos.x));
-    else if (pos.x + Tile::TILE_SIZE > mapSize["Right"]) 
-        player->Translate(Vector2::Left() * ((pos.x + Tile::TILE_SIZE) - mapSize["Right"]));
+    else if (pos.x + Tile::TILE_SIZE* size > mapSize["Right"])
+        player->Translate(Vector2::Left() * ((pos.x + Tile::TILE_SIZE * size) - mapSize["Right"]));
     else if (pos.y > mapSize["Up"]) 
         player->Translate(Vector2::Down() * (pos.y - mapSize["Up"]));
-    else if (pos.y - Tile::TILE_SIZE - OFFSET < mapSize["Down"]) 
-        player->Translate(Vector2::Up() * (mapSize["Down"] - (pos.y - Tile::TILE_SIZE - OFFSET)));
+    else if (pos.y - Tile::TILE_SIZE * size - OFFSET < mapSize["Down"])
+        player->Translate(Vector2::Up() * (mapSize["Down"] - (pos.y - Tile::TILE_SIZE * size - OFFSET)));
     else 
         return false;
 

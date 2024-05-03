@@ -8,6 +8,8 @@ void StageManager::SetStageData()
 {
 	stageData = DataManager::Get()->GetStageData(WaitRoomUI::stageKey);
 	userHp = PLAYER_SPAWN_HP;
+	countStage = 0;
+	maxStage = 0;
 }
 
 void StageManager::SetPlayer(Character* playerCharacter)
@@ -18,7 +20,6 @@ void StageManager::SetPlayer(Character* playerCharacter)
 void StageManager::LoadStage()
 {
 	SetStageData();
-	countStage = 0;
 
 	if (stageData.stage1 != "")
 	{
@@ -38,8 +39,6 @@ void StageManager::LoadStage()
 	stageMapNames[1] = stageData.stage2;
 	stageMapNames[2] = stageData.stage3;
 
-	SpawnPlayer();
-
 	NextStage();
 }
 
@@ -50,6 +49,16 @@ void StageManager::NextStage()
 		SCENE->ChangeScene("WaitRoom");
 		return;
 	}
+	if (countStage == maxStage - 1)
+	{
+		Audio::Get()->Stop("GameBgm");
+
+		if (!Audio::Get()->IsPlaySound("GameBossBgm"))
+		{
+			Audio::Get()->Play("GameBossBgm", 0.5f);
+		}
+	}
+
 
 	if (countStage <= 0)
 	{
@@ -68,16 +77,20 @@ void StageManager::NextStage()
 
 	MonsterManager::Get()->LoadMonster();
 
+	ItemManager::Get()->ClearItems();
+
+	SpawnPlayer(true);
+
 	Start();
 
 	countStage++;
 }
 
-void StageManager::SpawnPlayer()
+void StageManager::SpawnPlayer(bool isSpawn)
 {
 	playerCharacter->SetInit();
 	Player* player = (Player*)playerCharacter;
-	player->LoadPos();
+	player->LoadPos(isSpawn);
 }
 
 void StageManager::SetGameUIState(GameUI::State state)
@@ -103,7 +116,13 @@ void StageManager::Clear()
 void StageManager::Gameover()
 {
 	if (userHp > 0)
+	{	
+		if (!Audio::Get()->IsPlaySound("PlayerSpawn"))
+		{
+			Audio::Get()->Play("PlayerSpawn");
+		}
 		SpawnPlayer();
+	}
 	else
 	{
 		if (!Audio::Get()->IsPlaySound("Lose"))

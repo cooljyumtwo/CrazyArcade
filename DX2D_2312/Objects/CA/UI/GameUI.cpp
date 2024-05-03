@@ -4,6 +4,9 @@ GameUI::GameUI()
 {
 	bg = new Quad(L"ResourcesCA/Textures/BG/GameBg.png");
 	bg->Translate(CENTER);
+	bg->UpdateWorld();
+
+	RenderManager::Get()->Add("BG", bg);
 
 	gameTxt = new Quad(L"ResourcesCA/Textures/UI/Game/GameStart.png");
 	gameTxt->SetTag("Game_GameTxt");
@@ -31,12 +34,20 @@ GameUI::GameUI()
 
 	FOR(gameTxtStrs.size())
 		gameTxtTexs[i] = Texture::Add(PATH_GAME + gameTxtStrs[i]);
+
+	exitBtn = new Button(L"ResourcesCA/Textures/UI/Game/ExitBtn.png", true);
+	exitBtn->SetTag("Game_exitBtn");
+	exitBtn->Load();
+	exitBtn->SetEvent([]() {
+		SCENE->ChangeScene("WaitRoom");
+		});
 }
 
 GameUI::~GameUI()
 {
 	delete bg;
 	delete gameTxt;
+	delete exitBtn;
 }
 
 void GameUI::Update()
@@ -46,6 +57,7 @@ void GameUI::Update()
 	bossReadyTxt->UpdateWorld();
 	resultWindow->UpdateWorld();
 	itemSlotImg->UpdateWorld();
+	exitBtn->Update();
 
 	AniBossTxt();
 	AniGameTxt();
@@ -57,9 +69,6 @@ void GameUI::PreRender()
 
 void GameUI::Render()
 {
-	bg->Render();
-
-	itemSlotImg->RenderUI();
 }
 
 void GameUI::PostRender()
@@ -68,12 +77,11 @@ void GameUI::PostRender()
 	gameTxt->Render();
 	resultWindow->Render();
 	itemSlotImg->Render();
+	exitBtn->Render();
 }
 
 void GameUI::SetGameTxt(State state)
 {
-	if (curState == GAMEOVER) return;
-
 	curState = state;
 	gameTxt->GetMaterial()->SetTexture(gameTxtTexs[(int)curState]);
 	count = 0;

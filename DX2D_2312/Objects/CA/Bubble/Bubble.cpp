@@ -4,7 +4,7 @@ Bubble::Bubble()
 {
 	SetActive(false);
 	CreatActions();
-	SetColliderSize({ Tile::TILE_SIZE + OFFSET_SIZE, Tile::TILE_SIZE + OFFSET_SIZE });
+	SetColliderSize({ Tile::TILE_SIZE, Tile::TILE_SIZE}, 1.0f);
 }
 
 Bubble::~Bubble()
@@ -55,15 +55,23 @@ void Bubble::CreatActions()
 	action->GetClip(0)->SetEvent([this]() {
 		TileManager::Get()->SetIdxBgTileType(posTileIdx, Tile::BASIC);
 		Tile* tile = TileManager::Get()->GetNearPosTileState(this->GetGlobalPosition());
+
 		if (tile)
 			posTileIdx = tile->GetCurIdx();
+
 		TileManager::Get()->SetIdxBgTileType(posTileIdx,Tile::ATTACK);
 		BubbleManager::Get()->SpawnWaves(this->GetGlobalPosition(), power);
-		},3);
+
+		},4);
 
 	action->GetClip(0)->SetEvent([this]() {
 		if (target)
 			target->MinusBubbleCurCnt();
+
+		if (!Audio::Get()->IsPlaySound("BubblePop"))
+		{
+			Audio::Get()->Play("BubblePop", 1.5f);
+		}
 
 		TileManager::Get()->SetIdxBgTileType(posTileIdx,Tile::BASIC);
 		SetActive(false);
@@ -86,7 +94,7 @@ void Bubble::Spawn(const Vector2& pos, int power, Character* target)
 	if (tile->GetType() == Tile::OBSTACLE) return;
 
 	if (!Audio::Get()->IsPlaySound("BubbleAdd"))
-		Audio::Get()->Play("BubbleAdd");
+		Audio::Get()->Play("BubbleAdd", 1.5f);
 
 	SetActive(true);
 	SetAction(STAND);
@@ -115,28 +123,30 @@ void Bubble::Push()
 	if (curState == POP) return;
 	if (pushDirection == NONE) return;
 	if (!isPush) return;
+
 	TileManager::Get()->PushGameObject(this);
-		switch (pushDirection)
-		{
-		case Bubble::R:
-			if (TileManager::Get()->GetMapsize("Right") - Tile::TILE_SIZE > GetGlobalPosition().x)
-				Translate(Vector2::Right() * 5.0f);
-			break;
-		case Bubble::L:
-			if (TileManager::Get()->GetMapsize("Left") < GetGlobalPosition().x)
-				Translate(Vector2::Left() * 5.0f);
-			break;
-		case Bubble::U:
-			if (TileManager::Get()->GetMapsize("Up") > GetGlobalPosition().y)
-				Translate(Vector2::Up() * 5.0f);
-			break;
-		case Bubble::D:
-			if (TileManager::Get()->GetMapsize("Down") + Tile::TILE_SIZE < GetGlobalPosition().y)
-				Translate(Vector2::Down() * 5.0f); //고치기
-			break;
-		default:
-			break;
-		}
+
+	switch (pushDirection)
+	{
+	case Bubble::R:
+		if (TileManager::Get()->GetMapsize("Right") - Tile::TILE_SIZE > GetGlobalPosition().x)
+			Translate(Vector2::Right() * 5.0f);
+		break;
+	case Bubble::L:
+		if (TileManager::Get()->GetMapsize("Left") < GetGlobalPosition().x)
+			Translate(Vector2::Left() * 5.0f);
+		break;
+	case Bubble::U:
+		if (TileManager::Get()->GetMapsize("Up") > GetGlobalPosition().y)
+			Translate(Vector2::Up() * 5.0f);
+		break;
+	case Bubble::D:
+		if (TileManager::Get()->GetMapsize("Down") + Tile::TILE_SIZE < GetGlobalPosition().y)
+			Translate(Vector2::Down() * 5.0f); //고치기
+		break;
+	default:
+		break;
+	}
 }
 
 void Bubble::SetAction(int state)
