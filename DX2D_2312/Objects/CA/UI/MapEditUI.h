@@ -12,6 +12,6 @@ public:
     void PostRender() override;
 
 private:
-    Quad* BG;
+    Quad* bg;
     Button* exitBtn;
 };

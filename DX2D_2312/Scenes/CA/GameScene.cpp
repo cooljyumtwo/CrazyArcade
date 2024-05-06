@@ -40,6 +40,7 @@ void GameScene::Render()
     RenderManager::Get()->Render("GameObject");
     RenderManager::Get()->Render("BGTileTxt");
 
+
     EffectManager::Get()->Render();
     MonsterManager::Get()->Render();
     TileManager::Get()->Render();

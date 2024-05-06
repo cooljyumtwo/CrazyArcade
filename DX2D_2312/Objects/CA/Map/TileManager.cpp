@@ -146,9 +146,12 @@ void TileManager::LoadMapSize()
 
 void TileManager::CreateRanderTarget()
 {
+    //최적화를 위한 RenderTarget
     bgTileTarget = new RenderTarget();
+
     Texture* targetTexture = Texture::Add(L"BGTileMap", bgTileTarget->GetSRV());
 
+    //RenderTarget을 띄울 이미지
     bgTileMap = new Quad(Vector2{ SCREEN_WIDTH, SCREEN_HEIGHT });
     bgTileMap->GetMaterial()->SetTexture(targetTexture);
     bgTileMap->SetLocalPosition(CENTER);
@@ -157,8 +160,10 @@ void TileManager::CreateRanderTarget()
     RenderManager::Get()->Add("BGTileRander", bgTileMap);
 }
 
+
 void TileManager::SetRanderTarget()
 {
+    //렌더할 이미지 Set()
     bgTileTarget->Set();
     RenderManager::Get()->Render("BG");
     RenderManager::Get()->Render("BGTile");
@@ -189,7 +194,7 @@ void TileManager::AddObjTile(const Vector2& pos, const Vector2& size, const Vect
     TileData tileData = DataManager::Get()->GetTileData(num);
 
     //Create
-    ObstacleTile* tile = new ObstacleTile(textureFile, pos, tileData.isPop);
+    ObstacleTile* tile = new ObstacleTile(textureFile, pos, tileData.isPop, tileData.isPush);
     tile->SetParent(this);
     tile->GetCollider()->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5 * -1);
     tile->Update();
@@ -213,7 +218,7 @@ void TileManager::PopObjTile()
         if (tiletype == Tile::ATTACK)
         {
             ObstacleTile* tile = (ObstacleTile*)objTile;
-            tile->End();
+            tile->Deactivate();
         }
     }
 }
@@ -249,48 +254,91 @@ Tile* TileManager::GetNearPosTileState(GameObject* target, Tile::Type type)
 
 Tile* TileManager::GetNearPosTileState(Vector2 pos)
 {
+    // 만약 위치(pos)가 지도 범위를 벗어난다면 nullptr 반환
     if (pos.x < mapSize["Left"] || pos.x + Tile::TILE_SIZE > mapSize["Right"]
-        || pos.y > mapSize["Up"] || pos.y - Tile::TILE_SIZE < mapSize["Down"]) 
+        || pos.y > mapSize["Up"] || pos.y - Tile::TILE_SIZE < mapSize["Down"])
         return nullptr;
 
+    // 첫 번째 타일의 위치를 가져옴 //기준이 되는 Tile
     Vector2 firstTilePos = bgTiles[0][0]->GetGlobalPosition();
 
-    Vector2 calPos = { pos.x - firstTilePos.x,firstTilePos.y-pos.y };
-     calPos /=  Tile::TILE_SIZE;
-     calPos= { round(calPos.x), round(calPos.y) };
+    // 타일 좌표계로 변환
+    Vector2 calPos = { pos.x - firstTilePos.x, firstTilePos.y - pos.y };
+    calPos /= Tile::TILE_SIZE;
+    calPos = { round(calPos.x), round(calPos.y) };
 
+    // 변환된 타일 좌표에 해당하는 타일 반환
     return bgTiles[calPos.x][calPos.y];
 }
 
-bool TileManager::PushGameObject(GameObject* obj)
+
+bool TileManager::PushGameObject(GameObject* obj, bool isPlayer)
 {
+    //AABB충돌
     for (Tile* objTile : objTiles)
     {
-        Vector2 overlab;
+        Vector2 overlab; //겹치는 부분
 
         if (objTile->GetCollider()->IsCollision(obj->GetCollider(), &overlab))
         {
-            if (overlab.x < overlab.y) 
+            ObstacleTile* obstacleTile = (ObstacleTile*)objTile;
+            bool isPush = obstacleTile->GetIsPush();
+
+            if (overlab.x < overlab.y) //좌우충돌
             {
-                if (obj->GetGlobalPosition().x > objTile->GetGlobalPosition().x)
-                {
-                    obj->Translate(Vector2::Right() * overlab.x);
-                }
-                else 
-                {
-                    obj->Translate(Vector2::Left() * overlab.x);
-                }
+
+                if (isPush)
+                    if (obj->GetGlobalPosition().x > objTile->GetGlobalPosition().x) //왼쪽충돌
+                        if (!isPush || !isPlayer)
+                            obj->Translate(Vector2::Right() * overlab.x);
+                        else
+                        {
+                            if (obstacleTile->GetCurIdx().x == 0) return true;
+                            Vector2 pos = obstacleTile->GetLocalPosition();
+                            Vector2 movePos = obstacleTile->GetLocalPosition() + (Vector2::Left() * Tile::TILE_SIZE);
+                            obstacleTile->SetTargetPos(movePos);
+                            obstacleTile->SetCurIdx(Vector2{ obstacleTile->GetCurIdx().x - 1 ,obstacleTile->GetCurIdx().y });
+                        }
+                else //오른쪽충돌
+                    if (!isPush || !isPlayer)
+                        obj->Translate(Vector2::Left() * overlab.x);
+                    else
+                    {
+                        if (obstacleTile->GetCurIdx().x == TileManager::Get()->SIZE_X - 1) return true;
+
+                        Vector2 pos = obstacleTile->GetLocalPosition();
+                        Vector2 movePos = obstacleTile->GetLocalPosition() + (Vector2::Right() * Tile::TILE_SIZE);
+                        obstacleTile->SetTargetPos(movePos);
+                        obstacleTile->SetCurIdx(Vector2{ obstacleTile->GetCurIdx().x + 1,obstacleTile->GetCurIdx().y });
+
+                    }
             }
-            else 
+            else //상하충돌
             {
-                if (obj->GetGlobalPosition().y > objTile->GetGlobalPosition().y)
-                {
-                    obj->Translate(Vector2::Up() * overlab.y);
-                }
-                else
-                {
-                    obj->Translate(Vector2::Down() * overlab.y);
-                }
+                if (obj->GetGlobalPosition().y > objTile->GetGlobalPosition().y) //아래쪽충돌
+                    if (!isPush || !isPlayer)
+                        obj->Translate(Vector2::Up() * overlab.y);
+                    else
+                    {
+                        if (obstacleTile->GetCurIdx().y == TileManager::Get()->SIZE_Y - 1) return true;
+                        Vector2 pos = obstacleTile->GetLocalPosition();
+                        Vector2 movePos = obstacleTile->GetLocalPosition() + (Vector2::Down() * Tile::TILE_SIZE);
+                        obstacleTile->SetTargetPos(movePos);
+                        obstacleTile->SetCurIdx(Vector2{ obstacleTile->GetCurIdx().x,obstacleTile->GetCurIdx().y + 1});
+
+                    }
+                else //위쪽충돌
+                    if (!isPush || !isPlayer)
+                        obj->Translate(Vector2::Down() * overlab.y);
+                    else
+                    {
+                        if (obstacleTile->GetCurIdx().y == 0) return true;
+                        Vector2 pos = obstacleTile->GetLocalPosition();
+                        Vector2 movePos = obstacleTile->GetLocalPosition() + (Vector2::Up() * Tile::TILE_SIZE);
+                        obstacleTile->SetTargetPos(movePos);
+                        obstacleTile->SetCurIdx(Vector2{ obstacleTile->GetCurIdx().x,obstacleTile->GetCurIdx().y - 1 });
+
+                    }
             }
 
             obj->UpdateWorld();

@@ -44,4 +44,6 @@ private:
     int count = 1;
 
     float playTime = 0.0f;
+
+    OutlineBuffer* outlineBuffer;
 };

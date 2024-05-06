@@ -2,6 +2,8 @@
 
 class EditTileMap : public Transform 
 {
+private:
+    const int TYPE_NUM = 4;
 public:
     EditTileMap();
     ~EditTileMap();

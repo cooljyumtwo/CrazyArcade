@@ -6,6 +6,9 @@ Character::Character()
     collider->SetParent(this);
     collider->SetTag("Character");
     collider->Load();
+
+    outlineBuffer = new OutlineBuffer();
+
 }
 
 Character::~Character()
@@ -18,21 +21,30 @@ void Character::Update()
 {
     if (!IsActive()) return;
 
-    Move();
-    Attack();
-    Bubble();
+    SpawnAni();
+
+    UpdateWorld();
+
+    if (!isEndSpawnAni) return;
 
     actions[curState]->Update();
 
-    UpdateWorld();    
+    outlineBuffer->GetData().imageSize = actions[curState]->GetCurClip()->GetCurFrame()->GetSize();
+
+    Move();
+    Attack();
+    Bubble();   
 
     MonsterManager::Get()->Collision(this);
+
 }
 
 void Character::Render()
 {
     worldBuffer->Set(world);
     worldBuffer->SetVS(0);
+
+    outlineBuffer->SetPS(1);
 
     actions[curState]->Render();
 
@@ -62,6 +74,27 @@ void Character::SetInit()
 
     SetAction(IDLE);
     SetActive(true);
+
+    countSpawnEffect = 0;
+}
+
+void Character::SpawnAni()
+{
+    spawnTime += DELTA;
+    if (spawnTime > SPAWN_ANI_TIME * 0.5f && countSpawnEffect < SPAWN_ANI_MAX_COUNT)
+    {
+        actions[curState]->GetCurClip()->GetCurFrame()->GetMaterial()->SetPixelShader(L"Filter.hlsl");
+        if (spawnTime > SPAWN_ANI_TIME)
+        {
+            actions[curState]->GetCurClip()->GetCurFrame()->GetMaterial()->SetPixelShader(L"PixelUV.hlsl");
+            spawnTime -= SPAWN_ANI_TIME;
+            countSpawnEffect++;
+        }
+    }
+    if ( countSpawnEffect >= SPAWN_ANI_MAX_COUNT)
+    {
+        isEndSpawnAni = true;
+    }
 }
 
 void Character::Move()

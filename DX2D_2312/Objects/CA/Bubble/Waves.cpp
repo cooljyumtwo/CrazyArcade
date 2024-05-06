@@ -109,25 +109,26 @@ void Waves::Spawn(const Vector2& pos, int power)
 
 			if (!tile) continue;
 
+			//물풍선 파도를 생성할때 상하좌우 확인하는 for문
+			//파도가 생성할 해당 Pos의 Type이 OBSTACLE일 경우
 			if (tile->GetType() == Tile::OBSTACLE)
 			{
 				BasicTile* basicTile = (BasicTile*)tile;
-
 				ObstacleTile* obstacleTile = (ObstacleTile*)basicTile->GetObstacleTile();
-				try {
-					if (obstacleTile != nullptr)
-						if (obstacleTile->IsActive())
-							obstacleTile->End();
-				}
-				catch (const std::exception& ex) {
-					// IsActive() 호출 중 예외 발생 시 처리
-					return;
+
+				// 장애물 타일이 존재하고 활성화되어 있다면
+				if (obstacleTile != nullptr && obstacleTile->IsActive())
+				{
+					// 장애물 타일을 비활성화 상태로 설정
+					obstacleTile->Deactivate();
 				}
 
+				// 기본 타일의 장애물 타일을 제거하고 기본 타일로 설정
 				basicTile->SetObstacleTile(nullptr);
 				basicTile->SetType(Tile::BASIC);
 				break;
 			}
+
 
 			if (i == power - 1)
 				waveList[i]->Spawn(pos, waveType, Wave::END);

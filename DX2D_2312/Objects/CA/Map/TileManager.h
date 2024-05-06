@@ -48,7 +48,7 @@ public:
 	Tile* GetNearPosTileState(GameObject* target, Tile::Type type = Tile::BASIC);
 	Tile* GetNearPosTileState(Vector2 pos);
 
-	bool PushGameObject(GameObject* player);
+	bool PushGameObject(GameObject* player, bool isPlayer = false);
 	bool CheckMapPosPlayer(Character* player);
 
 public:

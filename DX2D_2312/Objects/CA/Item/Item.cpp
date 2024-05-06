@@ -10,6 +10,10 @@ Item::Item()
     shadow = new Quad(PATH + L"Shadow.png");
     shadow->SetParent(this);
     shadow->Translate(Vector2::Down() * Vector2{ 0, 20.0f});
+
+
+    outlineBuffer = new OutlineBuffer();
+
 }
 
 void Item::Update()
@@ -19,6 +23,8 @@ void Item::Update()
     shadow->UpdateWorld();
     UpdateWorld();
     collider->UpdateWorld();
+
+    outlineBuffer->GetData().imageSize = this->GetSize();
 
     Play();
 }
@@ -30,6 +36,8 @@ void Item::Render()
     shadow->Render();
     Quad::Render();
     collider->Render();
+
+
 }
 
 void Item::Spawn(const Vector2& pos, ItemData data)

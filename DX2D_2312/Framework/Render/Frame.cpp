@@ -35,7 +35,6 @@ void Frame::Render()
 {
 	material->Set();
 	mesh->Draw();
-	
 }
 
 void Frame::MakeMesh(Vector2 startUV, Vector2 endUV, Vector2 pos)

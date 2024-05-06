@@ -22,7 +22,7 @@ GameManager::GameManager()
 	UIManager::Get()->Add("MapEdit", new MapEditUI());
 	UIManager::Get()->Add("Game", new GameUI());
 
-	SCENE->ChangeScene("Start");
+	SCENE->ChangeScene("MapEdit");
 
 	ShowCursor(false);
 }
@@ -46,9 +46,12 @@ void GameManager::Update()
 	if (KEY->Down(VK_F2))
 		OnDraw();
 
+	if (KEY->Down(VK_F3))
+		SCENE->ChangeScene("WaitRoom");	
+
 	if (KEY->Down(VK_F4))
 		SCENE->ChangeScene("MapEdit");
-
+	
 	if (KEY->Down(VK_F5))
 		SCENE->ChangeScene("Game");
 
@@ -80,14 +83,15 @@ void GameManager::Render()
 		ImGui::Begin("Edit", &isGUI, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize);
 	}
 
-	Font::Get()->SetColor("Red");
-	Font::Get()->SetStyle("Default");
+	Font::Get()->SetColor("Yellow");
+	Font::Get()->SetStyle("FPS");
 
 	Font::Get()->GetDC()->BeginDraw();
 
 	string fps = "FPS : " + to_string(Timer::Get()->GetFPS());
-	//Font::Get()->RenderText(fps, { 0, SCREEN_HEIGHT - 10 });
+	Font::Get()->RenderText(fps, { 0, SCREEN_HEIGHT - 10 });
 
+	Font::Get()->SetStyle("Default");
 
 	UIManager::Get()->Render();
 	SCENE->Render();
@@ -123,9 +127,10 @@ void GameManager::Create()
 	ImGui_ImplDX11_Init(DEVICE, DC);
 
 	Font::Get()->AddColor("White", 1, 1, 1);
-	Font::Get()->AddColor("Red", 1, 0, 0);
+	Font::Get()->AddColor("Yellow", 1, 1, 0);
 	Font::Get()->AddColor("Black", 0, 0, 0);
-	Font::Get()->AddStyle("Default", L"Open Sans",20);
+	Font::Get()->AddStyle("Default", L"Open Sans",10);
+	Font::Get()->AddStyle("FPS", L"Open Sans",20);
 	Font::Get()->AddStyle("NickName", L"Quicksand", 20);
 	Font::Get()->AddStyle("Button", L"Quicksand", 20,
 		DWRITE_TEXT_ALIGNMENT_CENTER, DWRITE_PARAGRAPH_ALIGNMENT_FAR);

@@ -2,8 +2,8 @@
 
 MapEditUI::MapEditUI()
 {
-	BG = new Quad(L"ResourcesCA/Textures/BG/MapEdit.png");
-	BG->Translate(CENTER);
+	bg = new Quad(L"ResourcesCA/Textures/BG/MapEdit.png");
+	bg->Translate(CENTER);
 
 	exitBtn = new Button(L"ResourcesCA/Textures/UI/MapEdit/OkBtn.png", true);
 	exitBtn->SetTag("MapEdit_exitBtn");
@@ -19,7 +19,7 @@ MapEditUI::~MapEditUI()
 
 void MapEditUI::Update()
 {
-	BG->UpdateWorld();
+	bg->UpdateWorld();
 	exitBtn->Update();
 }
 
@@ -30,7 +30,7 @@ void MapEditUI::PreRender()
 
 void MapEditUI::Render()
 {
-	BG->Render();
+	bg->Render();
 }
 
 void MapEditUI::PostRender()

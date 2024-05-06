@@ -10,7 +10,6 @@ void RenderManager::Update()
 
 void RenderManager::Render()
 {
-
 }
 
 void RenderManager::Render(string key)

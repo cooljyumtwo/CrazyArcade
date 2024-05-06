@@ -37,18 +37,19 @@ void Monster::Update()
     RemoveHitColliders();
 }
 
+
 void Monster::CheckTileHit()
 {
     if (curState == DIE) return;
 
+    //몬스터와 제일 가까운 타일을 받아온다.
     Tile* tile = TileManager::Get()->GetNearPosTileState(GetCollider()->GetGlobalPosition());
 
-    if (!tile) return;
+    if (!tile) return; //타일이 없으면 return
 
+    //해당 타일이 ATTACK이면 Hit
     if (tile->GetType() == Tile::ATTACK)
-    {
         Hit(tile->GetCollider());
-    }
 }
 
 bool Monster::CheckHitCollider(Collider* collider)

@@ -24,7 +24,7 @@ float4 Grayscale(float4 baseColor)
 {
 	float scale_ = (baseColor.r + baseColor.g + baseColor.b) / 3;	
 	
-    return float4(scale_.rrr, scale * 0.01f);
+    return float4(float3(1.0f, 1.0f, 1.0f), baseColor.a);
 }
 
 float4 Grayscale2(float4 baseColor)
@@ -134,6 +134,9 @@ float4 GaussianBlur(float2 uv)
 float4 PS(Input input) : SV_TARGET
 {
 	float4 baseColor = map.Sample(samp, input.uv);
+	
+	
+    return Grayscale(baseColor);
 	
 	if (selectNum == 1)
 		return Grayscale(baseColor);

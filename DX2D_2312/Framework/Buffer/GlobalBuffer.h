@@ -94,9 +94,9 @@ class OutlineBuffer : public ConstBuffer
 private:
 	struct Data
 	{
-		Float4 color = { 1, 0, 0, 1 };
+		Float4 color = { 1, 1, 0, 1 };
 		Vector2 imageSize;
-		float weight = 1;
+		float weight = 3;
 
 		float padding;
 	};

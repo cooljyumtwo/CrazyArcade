@@ -92,4 +92,8 @@ void Player::LoadPos(bool isSpawn)
     }
 
     delete reader;
+
+    countSpawnEffect = 0;
+    isEndSpawnAni = false;
+    spawnTime = 0.0f;
 }

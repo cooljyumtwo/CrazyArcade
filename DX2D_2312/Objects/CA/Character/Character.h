@@ -2,6 +2,9 @@
 
 class Character : public GameObject
 {
+    const int SPAWN_ANI_MAX_COUNT = 8;
+    const float SPAWN_ANI_TIME = 0.3f;
+
 public:
     enum State
     {
@@ -36,6 +39,8 @@ public:
 
     Stat GetStat() { return stat; }
 
+    void SpawnAni();
+
 protected:
     void Move();
     void Attack();
@@ -57,4 +62,11 @@ protected:
     Vector2 posIdx;
 
     int bubbleCurCnt = 0;
+
+    OutlineBuffer* outlineBuffer;
+
+    float spawnTime = 0.0f;
+    int countSpawnEffect = 0;
+
+    bool isEndSpawnAni = false;
 };
