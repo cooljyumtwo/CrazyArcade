@@ -194,7 +194,7 @@ void TileManager::AddObjTile(const Vector2& pos, const Vector2& size, const Vect
     TileData tileData = DataManager::Get()->GetTileData(num);
 
     //Create
-    ObstacleTile* tile = new ObstacleTile(textureFile, pos, tileData.isPop, tileData.isPush);
+    ObstacleTile* tile = new ObstacleTile(textureFile, pos, tileData.isPop, true);
     tile->SetParent(this);
     tile->GetCollider()->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5 * -1);
     tile->Update();
@@ -296,8 +296,8 @@ bool TileManager::PushGameObject(GameObject* obj, bool isPlayer)
                             if (obstacleTile->GetCurIdx().x == 0) return true;
                             Vector2 pos = obstacleTile->GetLocalPosition();
                             Vector2 movePos = obstacleTile->GetLocalPosition() + (Vector2::Left() * Tile::TILE_SIZE);
-                            obstacleTile->SetTargetPos(movePos);
-                            obstacleTile->SetCurIdx(Vector2{ obstacleTile->GetCurIdx().x - 1 ,obstacleTile->GetCurIdx().y });
+                            obstacleTile->SetTargetPos(bgTiles[obstacleTile->GetCurIdx().x - 1][obstacleTile->GetCurIdx().y]);
+                          
                         }
                 else //오른쪽충돌
                     if (!isPush || !isPlayer)
@@ -308,8 +308,9 @@ bool TileManager::PushGameObject(GameObject* obj, bool isPlayer)
 
                         Vector2 pos = obstacleTile->GetLocalPosition();
                         Vector2 movePos = obstacleTile->GetLocalPosition() + (Vector2::Right() * Tile::TILE_SIZE);
-                        obstacleTile->SetTargetPos(movePos);
-                        obstacleTile->SetCurIdx(Vector2{ obstacleTile->GetCurIdx().x + 1,obstacleTile->GetCurIdx().y });
+                       // obstacleTile->SetTargetPos(movePos);
+                        obstacleTile->SetTargetPos(bgTiles[obstacleTile->GetCurIdx().x + 1][obstacleTile->GetCurIdx().y]);
+                       
 
                     }
             }
@@ -323,8 +324,9 @@ bool TileManager::PushGameObject(GameObject* obj, bool isPlayer)
                         if (obstacleTile->GetCurIdx().y == TileManager::Get()->SIZE_Y - 1) return true;
                         Vector2 pos = obstacleTile->GetLocalPosition();
                         Vector2 movePos = obstacleTile->GetLocalPosition() + (Vector2::Down() * Tile::TILE_SIZE);
-                        obstacleTile->SetTargetPos(movePos);
-                        obstacleTile->SetCurIdx(Vector2{ obstacleTile->GetCurIdx().x,obstacleTile->GetCurIdx().y + 1});
+                     //   obstacleTile->SetTargetPos(movePos);
+                        obstacleTile->SetTargetPos(bgTiles[obstacleTile->GetCurIdx().x][obstacleTile->GetCurIdx().y+1]);
+                      
 
                     }
                 else //위쪽충돌
@@ -335,8 +337,9 @@ bool TileManager::PushGameObject(GameObject* obj, bool isPlayer)
                         if (obstacleTile->GetCurIdx().y == 0) return true;
                         Vector2 pos = obstacleTile->GetLocalPosition();
                         Vector2 movePos = obstacleTile->GetLocalPosition() + (Vector2::Up() * Tile::TILE_SIZE);
-                        obstacleTile->SetTargetPos(movePos);
-                        obstacleTile->SetCurIdx(Vector2{ obstacleTile->GetCurIdx().x,obstacleTile->GetCurIdx().y - 1 });
+                       // obstacleTile->SetTargetPos(movePos);
+                        obstacleTile->SetTargetPos(bgTiles[obstacleTile->GetCurIdx().x][obstacleTile->GetCurIdx().y - 1]);
+                    
 
                     }
             }

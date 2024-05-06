@@ -135,7 +135,7 @@ void GameManager::Create()
 	Font::Get()->AddStyle("Button", L"Quicksand", 20,
 		DWRITE_TEXT_ALIGNMENT_CENTER, DWRITE_PARAGRAPH_ALIGNMENT_FAR);
 
-	cursor = new Button(L"ResourcesCA/Textures/UI/Mouse/MouseImg.png");
+	cursor = new Button(L"ResourcesCA/Textures/UI/Etc/MouseImg.png");
 }
 
 void GameManager::Delete()

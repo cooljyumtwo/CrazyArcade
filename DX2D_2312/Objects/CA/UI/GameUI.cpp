@@ -2,7 +2,7 @@
 
 GameUI::GameUI()
 {
-	bg = new Quad(L"ResourcesCA/Textures/BG/GameBg.png");
+	bg = new Quad(L"ResourcesCA/Textures/UI/Game/GameBg.png");
 	bg->Translate(CENTER);
 	bg->UpdateWorld();
 

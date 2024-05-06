@@ -22,17 +22,14 @@ void StageManager::LoadStage()
 	SetStageData();
 
 	if (stageData.stage1 != "")
-	{
 		maxStage++;
-	}
+
 	if (stageData.stage2 != "")
-	{
 		maxStage++;
-	}
+
 	if (stageData.stage3 != "")
-	{
 		maxStage++;
-	}
+
 	stageMapNames.resize(maxStage);
 
 	stageMapNames[0] = stageData.stage1;

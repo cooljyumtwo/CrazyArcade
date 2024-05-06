@@ -4,6 +4,7 @@ class StageManager : public Singleton<StageManager>
 {
 public:
 	const int PLAYER_SPAWN_HP = 3;
+
 private:
 	friend class Singleton;
 
@@ -28,8 +29,10 @@ public:
 	
 public:
 	StageData stageData;
+
 	int countStage;
 	int maxStage;
+
 	vector<string> stageMapNames;
 
 	GameUI* gameUI;

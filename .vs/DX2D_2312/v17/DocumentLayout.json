@@ -3,92 +3,40 @@
   "WorkspaceRootPath": "C:\\Cooljyum\\CrazyArcade\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\StageManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\StageManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\StageManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\StageManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Monster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Monster\\Monster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Boss.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Monster\\Boss.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Boss.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Monster\\Boss.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\TileManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Map\\TileManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\ResourcesCA\\TextData\\Data\\MonsterTable.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\ResourcesCA\\TextData\\Data\\MonsterTable.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Resources\\TextData\\EnemyTable.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Resources\\TextData\\EnemyTable.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterAction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\CharacterAction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\RenderManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Manager\\RenderManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Manager\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Manager\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Collision\\Collider.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Framework\\Collision\\Collider.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\Bubble.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Bubble\\Bubble.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\TileManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Map\\TileManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\GameScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Scenes\\CA\\GameScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Basic\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\RenderManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Manager\\RenderManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\StartScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Scenes\\CA\\StartScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -111,12 +59,12 @@
       "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Bubble\\Waves.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\BubbleManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Bubble\\BubbleManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\Character.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -137,6 +85,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Action.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Basic\\Action.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Collision\\Collider.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Framework\\Collision\\Collider.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Material.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -167,8 +119,8 @@
       "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Item\\Item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterAction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Character\\CharacterAction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\Basic\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Frame.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -187,8 +139,36 @@
       "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\UI\\MapEditUI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\StartScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Scenes\\CA\\StartScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\GameScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Scenes\\CA\\GameScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Boss.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Monster\\Boss.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\RenderManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Manager\\RenderManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\RenderManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Manager\\RenderManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Manager\\SceneManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Manager\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Manager\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\MapSelectButton.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -205,6 +185,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\EditTileMap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Map\\EditTileMap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\StageManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\StageManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\DataManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -247,10 +231,6 @@
       "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Monster\\MonsterManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\Bubble.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Bubble\\Bubble.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\MonsterHit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Monster\\MonsterHit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -283,8 +263,16 @@
       "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Monster\\MonsterMove.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Boss.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Monster\\Boss.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\BossHit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Monster\\BossHit.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Monster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8C207B8-C530-4793-A088-B99AF6659F19}|DX2D_2312\\DX2D_2312.vcxproj|solutionrelative:DX2D_2312\\Objects\\CA\\Monster\\Monster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
@@ -318,336 +306,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Tile.h",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.h",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.h",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.h",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-03T00:15:20.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Boss.h",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Boss.h",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Monster\\Boss.h",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Boss.h",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Monster\\Boss.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T20:42:02.501Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Monster.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Monster.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Monster\\Monster.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Monster.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Monster\\Monster.cpp",
-              "ViewState": "AQIAAB8AAAAAAAAAAAArwDYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T20:33:57.425Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Tile.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.cpp",
-              "ViewState": "AQIAABUAAAAAAAAAAAAMwCEAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-03T00:15:19.631Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "StageManager.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\StageManager.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\StageManager.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\StageManager.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\StageManager.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEMAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T19:53:23.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StageManager.h",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\StageManager.h",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\StageManager.h",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\StageManager.h*",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\StageManager.h*",
-              "ViewState": "AQIAABIAAAAAAAAAAAArwCIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-06T03:46:26.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Boss.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Boss.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Monster\\Boss.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Boss.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Monster\\Boss.cpp",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAmwB0AAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T20:33:33.516Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TileManager.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\TileManager.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\TileManager.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\TileManager.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\TileManager.cpp",
-              "ViewState": "AQIAAM0AAAAAAAAAAAAowNkAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T19:50:41.655Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Character.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\Character.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\Character.cpp",
-              "ViewState": "AQIAAG0AAAAAAAAAAAAIwIEAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-05T14:36:35.395Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Collider.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Collision\\Collider.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Framework\\Collision\\Collider.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Collision\\Collider.cpp",
-              "RelativeToolTip": "DX2D_2312\\Framework\\Collision\\Collider.cpp",
-              "ViewState": "AQIAABUAAAAAAAAAAAAIwB0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-05T18:02:03.657Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "GameScene.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\GameScene.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\CA\\GameScene.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\GameScene.cpp",
-              "RelativeToolTip": "DX2D_2312\\Scenes\\CA\\GameScene.cpp",
-              "ViewState": "AQIAACIAAAAAAAAAAAAWwC0AAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T21:35:10.058Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "EnemyTable.csv",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Resources\\TextData\\EnemyTable.csv",
-              "RelativeDocumentMoniker": "DX2D_2312\\Resources\\TextData\\EnemyTable.csv",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Resources\\TextData\\EnemyTable.csv",
-              "RelativeToolTip": "DX2D_2312\\Resources\\TextData\\EnemyTable.csv",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2024-05-06T02:22:58.368Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MonsterTable.csv",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\ResourcesCA\\TextData\\Data\\MonsterTable.csv",
-              "RelativeDocumentMoniker": "DX2D_2312\\ResourcesCA\\TextData\\Data\\MonsterTable.csv",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\ResourcesCA\\TextData\\Data\\MonsterTable.csv",
-              "RelativeToolTip": "DX2D_2312\\ResourcesCA\\TextData\\Data\\MonsterTable.csv",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwYAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2024-05-06T02:23:11.849Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "GameManager.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Manager\\GameManager.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.cpp",
-              "RelativeToolTip": "DX2D_2312\\Manager\\GameManager.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T22:11:14.006Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "GameManager.h",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.h",
-              "RelativeDocumentMoniker": "DX2D_2312\\Manager\\GameManager.h",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.h",
-              "RelativeToolTip": "DX2D_2312\\Manager\\GameManager.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-05T14:18:12.75Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "RenderManager.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\RenderManager.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Manager\\RenderManager.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\RenderManager.cpp",
-              "RelativeToolTip": "DX2D_2312\\Manager\\RenderManager.cpp",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAowBAAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-05T14:28:16.975Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "TileManager.h",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\TileManager.h",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\TileManager.h",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\TileManager.h",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\TileManager.h",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAADMAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T19:51:49.09Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "GameObject.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\GameObject.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Basic\\GameObject.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\GameObject.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\Basic\\GameObject.cpp",
-              "ViewState": "AQIAABUAAAAAAAAAAAAowCMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-05T16:56:52.821Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "RenderManager.h",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\RenderManager.h",
-              "RelativeDocumentMoniker": "DX2D_2312\\Manager\\RenderManager.h",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\RenderManager.h",
-              "RelativeToolTip": "DX2D_2312\\Manager\\RenderManager.h",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABAAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-05T14:28:27.725Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "StartScene.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\StartScene.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\CA\\StartScene.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\StartScene.cpp",
-              "RelativeToolTip": "DX2D_2312\\Scenes\\CA\\StartScene.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T21:35:11.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
               "Title": "ObstacleTile.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.cpp",
               "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.cpp",
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAbAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAwBkAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-05T21:35:25.978Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "DataManager.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\DataManager.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\DataManager.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\DataManager.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\DataManager.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "DocumentIndex": 1,
+              "Title": "TileManager.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\TileManager.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\TileManager.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\TileManager.cpp*",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\TileManager.cpp*",
+              "ViewState": "AQIAAD4BAAAAAAAAAAAAwFQBAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T19:48:11.979Z",
+              "WhenOpened": "2024-05-02T19:50:41.655Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ObstacleTile.h",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.h",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.h",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.h",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-05T19:02:42.509Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "MonsterManager.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\MonsterManager.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Monster\\MonsterManager.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\MonsterManager.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Monster\\MonsterManager.cpp",
-              "ViewState": "AQIAAIYAAAAAAAAAAAAMwJQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T22:25:37.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Player.h",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Player.h",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\Player.h",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Player.h",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\Player.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-05T16:10:03.628Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 9,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Player.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\Player.cpp",
@@ -655,220 +344,85 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\Player.cpp",
               "ViewState": "AQIAABgAAAAAAAAAAAAIwGEAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T22:28:28.419Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T22:28:28.419Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "CharacterMove.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp",
-              "ViewState": "AQIAADYAAAAAAAAAAADwv0UAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-05T18:58:39.49Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Waves.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\Waves.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Bubble\\Waves.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\Waves.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Bubble\\Waves.cpp",
-              "ViewState": "AQIAAGgAAAAAAAAAAAAAAHQAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T22:18:42.681Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "BubbleManager.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\BubbleManager.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Bubble\\BubbleManager.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\BubbleManager.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Bubble\\BubbleManager.cpp",
-              "ViewState": "AQIAADIAAAAAAAAAAADgv0UAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T22:05:41.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Character.h",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.h",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\Character.h",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.h",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\Character.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAlAAAA",
+              "DocumentIndex": 7,
+              "Title": "TileManager.h",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\TileManager.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\TileManager.h",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\TileManager.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\TileManager.h",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAADIAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-05T14:42:43.748Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T19:51:49.09Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "CharacterIdle.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "DocumentIndex": 6,
+              "Title": "Bubble.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\Bubble.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Bubble\\Bubble.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\Bubble.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Bubble\\Bubble.cpp",
+              "ViewState": "AQIAACMAAAAAAAAAAAAewFcAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-05T18:19:53.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T22:02:13.84Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Filter.hlsl",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Resources\\Shaders\\Filter.hlsl",
-              "RelativeDocumentMoniker": "DX2D_2312\\Resources\\Shaders\\Filter.hlsl",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Resources\\Shaders\\Filter.hlsl",
-              "RelativeToolTip": "DX2D_2312\\Resources\\Shaders\\Filter.hlsl",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-05T16:42:59.305Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "StartUI.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\StartUI.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\UI\\StartUI.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\StartUI.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\UI\\StartUI.cpp",
-              "ViewState": "AQIAADcAAAAAAAAAAAAIwEIAAAA1AAAA",
+              "DocumentIndex": 5,
+              "Title": "Tile.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.cpp",
+              "ViewState": "AQIAABUAAAAAAAAAAAAMwCEAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T21:50:14.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-03T00:15:19.631Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Action.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Action.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Basic\\Action.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Action.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\Basic\\Action.cpp",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAADYAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-05T18:01:58.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Material.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Material.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Framework\\Render\\Material.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Material.cpp",
-              "RelativeToolTip": "DX2D_2312\\Framework\\Render\\Material.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-05T18:02:12.525Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "Material.h",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Material.h",
-              "RelativeDocumentMoniker": "DX2D_2312\\Framework\\Render\\Material.h",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Material.h",
-              "RelativeToolTip": "DX2D_2312\\Framework\\Render\\Material.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA9AAAA",
+              "DocumentIndex": 0,
+              "Title": "ObstacleTile.h",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.h",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\Tile\\ObstacleTile.h",
+              "ViewState": "AQIAAAIAAAAAAAAAAAD4vxUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-05T18:02:20.33Z",
+              "WhenOpened": "2024-05-05T19:02:42.509Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Item.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Item\\Item.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Item\\Item.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Item\\Item.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Item\\Item.cpp",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAmwA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-05T16:18:01.987Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "MapEditUI.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\MapEditUI.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\UI\\MapEditUI.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\MapEditUI.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\UI\\MapEditUI.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T20:24:20.931Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Frame.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Frame.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Framework\\Render\\Frame.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Frame.cpp",
-              "RelativeToolTip": "DX2D_2312\\Framework\\Render\\Frame.cpp",
-              "ViewState": "AQIAABUAAAAAAAAAAAAmwCQAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-05T16:58:13.642Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "Frame.h",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Frame.h",
-              "RelativeDocumentMoniker": "DX2D_2312\\Framework\\Render\\Frame.h",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Frame.h",
-              "RelativeToolTip": "DX2D_2312\\Framework\\Render\\Frame.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAMAAAA",
+              "DocumentIndex": 10,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Player.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\Player.h",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Player.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\Player.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-05T14:01:31.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-05T16:10:03.628Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "Item.h",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Item\\Item.h",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Item\\Item.h",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Item\\Item.h",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Item\\Item.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAYAAAA",
+              "DocumentIndex": 3,
+              "Title": "Tile.h",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.h",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\Tile\\Tile.h",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAwB8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-05T16:18:09.853Z",
+              "WhenOpened": "2024-05-03T00:15:20.496Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "Quad.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Quad.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Basic\\Quad.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Quad.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\Basic\\Quad.cpp",
-              "ViewState": "AQIAABgAAAAAAAAAAAAmwCUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-05T16:50:43.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 4,
               "Title": "CharacterAction.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterAction.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterAction.cpp",
@@ -881,7 +435,283 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 8,
+              "Title": "CharacterMove.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\CharacterMove.cpp",
+              "ViewState": "AQIAADQAAAAAAAAAAAAAAEUAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-05T18:58:39.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MonsterManager.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\MonsterManager.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Monster\\MonsterManager.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\MonsterManager.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Monster\\MonsterManager.cpp",
+              "ViewState": "AQIAAIYAAAAAAAAAAAAMwJQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-02T22:25:37.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DataManager.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\DataManager.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\DataManager.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\DataManager.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\DataManager.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-02T19:48:11.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Waves.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\Waves.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Bubble\\Waves.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\Waves.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Bubble\\Waves.cpp",
+              "ViewState": "AQIAAGYAAAAAAAAAAABAwHQAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-02T22:18:42.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BubbleManager.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\BubbleManager.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Bubble\\BubbleManager.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\BubbleManager.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Bubble\\BubbleManager.cpp",
+              "ViewState": "AQIAADIAAAAAAAAAAADgv0UAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-02T22:05:41.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Character.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\Character.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\Character.cpp",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAIwGMAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-05T14:36:35.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Character.h",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\Character.h",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\Character.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\Character.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-05T14:42:43.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CharacterIdle.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\CharacterIdle.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-05T18:19:53.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Filter.hlsl",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Resources\\Shaders\\Filter.hlsl",
+              "RelativeDocumentMoniker": "DX2D_2312\\Resources\\Shaders\\Filter.hlsl",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Resources\\Shaders\\Filter.hlsl",
+              "RelativeToolTip": "DX2D_2312\\Resources\\Shaders\\Filter.hlsl",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-05T16:42:59.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Collider.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Collision\\Collider.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Framework\\Collision\\Collider.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Collision\\Collider.cpp",
+              "RelativeToolTip": "DX2D_2312\\Framework\\Collision\\Collider.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-05T18:02:03.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "StartUI.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\StartUI.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\UI\\StartUI.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\StartUI.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\UI\\StartUI.cpp",
+              "ViewState": "AQIAADcAAAAAAAAAAAAIwEIAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-02T21:50:14.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Action.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Action.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Basic\\Action.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Action.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Basic\\Action.cpp",
+              "ViewState": "AQIAACIAAAAAAAAAAABAwDYAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-05T18:01:58.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Material.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Material.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Framework\\Render\\Material.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Material.cpp",
+              "RelativeToolTip": "DX2D_2312\\Framework\\Render\\Material.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-05T18:02:12.525Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Material.h",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Material.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Framework\\Render\\Material.h",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Material.h",
+              "RelativeToolTip": "DX2D_2312\\Framework\\Render\\Material.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-05T18:02:20.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Item.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Item\\Item.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Item\\Item.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Item\\Item.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Item\\Item.cpp",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAmwA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-05T16:18:01.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "MapEditUI.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\MapEditUI.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\UI\\MapEditUI.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\MapEditUI.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\UI\\MapEditUI.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-02T20:24:20.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Frame.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Frame.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Framework\\Render\\Frame.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Frame.cpp",
+              "RelativeToolTip": "DX2D_2312\\Framework\\Render\\Frame.cpp",
+              "ViewState": "AQIAABUAAAAAAAAAAAAmwCQAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-05T16:58:13.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Frame.h",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Frame.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Framework\\Render\\Frame.h",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Render\\Frame.h",
+              "RelativeToolTip": "DX2D_2312\\Framework\\Render\\Frame.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-05T14:01:31.645Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "GameObject.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\GameObject.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Basic\\GameObject.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\GameObject.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Basic\\GameObject.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-05T16:56:52.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Item.h",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Item\\Item.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Item\\Item.h",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Item\\Item.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Item\\Item.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-05T16:18:09.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Quad.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Quad.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\Basic\\Quad.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\Basic\\Quad.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\Basic\\Quad.cpp",
+              "ViewState": "AQIAABgAAAAAAAAAAAAmwCUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-05T16:50:43.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Boss.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Boss.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Monster\\Boss.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Boss.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Monster\\Boss.cpp",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAmwEkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-02T20:33:33.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "StartScene.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\StartScene.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\CA\\StartScene.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\StartScene.cpp",
+              "RelativeToolTip": "DX2D_2312\\Scenes\\CA\\StartScene.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-02T21:35:11.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
               "Title": "MapEditUI.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\MapEditUI.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\UI\\MapEditUI.h",
@@ -889,12 +719,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\UI\\MapEditUI.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-05T16:26:06.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-05T16:26:06.908Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 31,
               "Title": "GlobalBuffer.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Framework\\Buffer\\GlobalBuffer.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Framework\\Buffer\\GlobalBuffer.h",
@@ -902,12 +731,11 @@
               "RelativeToolTip": "DX2D_2312\\Framework\\Buffer\\GlobalBuffer.h",
               "ViewState": "AQIAADsAAAAAAAAAAAAmwGkAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-05T16:08:57.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-05T16:08:57.417Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 32,
               "Title": "GameUI.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\GameUI.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\UI\\GameUI.cpp",
@@ -915,12 +743,59 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\UI\\GameUI.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T20:25:38.994Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T20:25:38.994Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 35,
+              "Title": "GameScene.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\GameScene.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\CA\\GameScene.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\GameScene.cpp",
+              "RelativeToolTip": "DX2D_2312\\Scenes\\CA\\GameScene.cpp",
+              "ViewState": "AQIAABwAAAAAAAAAAAAWwB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-02T21:35:10.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "GameManager.h",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Manager\\GameManager.h",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.h",
+              "RelativeToolTip": "DX2D_2312\\Manager\\GameManager.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-05T14:18:12.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "RenderManager.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\RenderManager.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Manager\\RenderManager.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\RenderManager.cpp",
+              "RelativeToolTip": "DX2D_2312\\Manager\\RenderManager.cpp",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAMwCwAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-05T14:28:16.975Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "RenderManager.h",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\RenderManager.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Manager\\RenderManager.h",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\RenderManager.h",
+              "RelativeToolTip": "DX2D_2312\\Manager\\RenderManager.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-05T14:28:27.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
               "Title": "SceneManager.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\SceneManager.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Manager\\SceneManager.cpp",
@@ -928,12 +803,11 @@
               "RelativeToolTip": "DX2D_2312\\Manager\\SceneManager.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-05T14:28:30.811Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-05T14:28:30.811Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 66,
               "Title": "BossHit.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\BossHit.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Monster\\BossHit.cpp",
@@ -941,12 +815,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Monster\\BossHit.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T20:34:05.347Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T20:34:05.347Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 47,
               "Title": "DataManager.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\DataManager.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\DataManager.h",
@@ -954,12 +827,23 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\DataManager.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T19:48:13.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T19:48:13.716Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 46,
+              "Title": "StageManager.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\StageManager.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\StageManager.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\StageManager.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\StageManager.cpp",
+              "ViewState": "AQIAAC4AAAAAAAAAAABUwDYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-02T19:53:23.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
               "Title": "MapSelectButton.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\MapSelectButton.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\UI\\MapSelectButton.h",
@@ -967,12 +851,23 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\UI\\MapSelectButton.h",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T20:25:41.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T20:25:41.617Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 40,
+              "Title": "GameManager.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Manager\\GameManager.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Manager\\GameManager.cpp",
+              "RelativeToolTip": "DX2D_2312\\Manager\\GameManager.cpp",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAmwDMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-02T22:11:14.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
               "Title": "EditTileMap.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\EditTileMap.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\EditTileMap.h",
@@ -980,12 +875,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\EditTileMap.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-03T01:49:14.573Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-03T01:49:14.573Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 42,
               "Title": "MapSelectButton.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\MapSelectButton.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\UI\\MapSelectButton.cpp",
@@ -993,12 +887,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\UI\\MapSelectButton.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T20:25:42.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T20:25:42.216Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 49,
               "Title": "WaitRoomScene.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\WaitRoomScene.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\CA\\WaitRoomScene.cpp",
@@ -1006,12 +899,11 @@
               "RelativeToolTip": "DX2D_2312\\Scenes\\CA\\WaitRoomScene.cpp",
               "ViewState": "AQIAABEAAAAAAAAAAAAmwBkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T21:40:45.471Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T21:40:45.471Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 45,
               "Title": "EditTileMap.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Map\\EditTileMap.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Map\\EditTileMap.cpp",
@@ -1019,12 +911,23 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Map\\EditTileMap.cpp",
               "ViewState": "AQIAABwAAAAAAAAAAAAkwDcAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T22:15:29.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T22:15:29.899Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 65,
+              "Title": "Boss.h",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Boss.h",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Monster\\Boss.h",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Boss.h",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Monster\\Boss.h",
+              "ViewState": "AQIAAAYAAAAAAAAAAABIwBoAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-02T20:42:02.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
               "Title": "MapEditScene.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\MapEditScene.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\CA\\MapEditScene.cpp",
@@ -1032,12 +935,11 @@
               "RelativeToolTip": "DX2D_2312\\Scenes\\CA\\MapEditScene.cpp",
               "ViewState": "AQIAABgAAAAAAAAAAAAmwC0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T21:42:18.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T21:42:18.859Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 52,
               "Title": "GameScene.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\GameScene.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\CA\\GameScene.h",
@@ -1045,12 +947,11 @@
               "RelativeToolTip": "DX2D_2312\\Scenes\\CA\\GameScene.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T21:42:36.895Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T21:42:36.895Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 48,
               "Title": "WaitRoomUI.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\WaitRoomUI.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\UI\\WaitRoomUI.cpp",
@@ -1058,12 +959,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\UI\\WaitRoomUI.cpp",
               "ViewState": "AQIAAFAAAAAAAAAAAAAmwGUAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T20:25:48.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T20:25:48.222Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 72,
               "Title": "StageTable.csv",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\ResourcesCA\\TextData\\Data\\StageTable.csv",
               "RelativeDocumentMoniker": "DX2D_2312\\ResourcesCA\\TextData\\Data\\StageTable.csv",
@@ -1071,12 +971,11 @@
               "RelativeToolTip": "DX2D_2312\\ResourcesCA\\TextData\\Data\\StageTable.csv",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2024-04-29T15:39:11.625Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-29T15:39:11.625Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 50,
               "Title": "WaitRoomUI.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\WaitRoomUI.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\UI\\WaitRoomUI.h",
@@ -1084,12 +983,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\UI\\WaitRoomUI.h",
               "ViewState": "AQIAACoAAAAAAAAAAAAmwDYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T21:51:05.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T21:51:05.13Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 61,
               "Title": "StartScene.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\StartScene.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\CA\\StartScene.h",
@@ -1097,12 +995,11 @@
               "RelativeToolTip": "DX2D_2312\\Scenes\\CA\\StartScene.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T21:41:33.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T21:41:33.834Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 54,
               "Title": "MapEditScene.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\MapEditScene.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\CA\\MapEditScene.h",
@@ -1110,25 +1007,11 @@
               "RelativeToolTip": "DX2D_2312\\Scenes\\CA\\MapEditScene.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T21:42:09.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T21:42:09.319Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "Bubble.cpp",
-              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\Bubble.cpp",
-              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Bubble\\Bubble.cpp",
-              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Bubble\\Bubble.cpp",
-              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Bubble\\Bubble.cpp",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAmwGAAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T22:02:13.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 51,
               "Title": "GameUI.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\GameUI.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\UI\\GameUI.h",
@@ -1136,12 +1019,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\UI\\GameUI.h",
               "ViewState": "AQIAABIAAAAAAAAAAADwvy0AAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T22:32:44.184Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T22:32:44.184Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 59,
               "Title": "CharacterAlive.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterAlive.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterAlive.cpp",
@@ -1149,12 +1031,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\CharacterAlive.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvw0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T22:03:43.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T22:03:43.237Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 55,
               "Title": "CharacterDie.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterDie.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterDie.cpp",
@@ -1162,12 +1043,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\CharacterDie.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T22:03:55.336Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T22:03:55.336Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 58,
               "Title": "CharacterBubble.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Character\\CharacterBubble.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Character\\CharacterBubble.cpp",
@@ -1175,12 +1055,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Character\\CharacterBubble.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvxkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T22:04:09.425Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T22:04:09.425Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 73,
               "Title": "string",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\string",
               "RelativeDocumentMoniker": "..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\string",
@@ -1188,12 +1067,11 @@
               "RelativeToolTip": "..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\string",
               "ViewState": "AQIAAAEBAAAAAAAAAAAhwBoBAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-02T22:15:20.746Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T22:15:20.746Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 56,
               "Title": "MonsterManager.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\MonsterManager.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Monster\\MonsterManager.h",
@@ -1201,12 +1079,23 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Monster\\MonsterManager.h",
               "ViewState": "AQIAAA8AAAAAAAAAAADwvwAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T22:25:34.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T22:25:34.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 67,
+              "Title": "Monster.cpp",
+              "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Monster.cpp",
+              "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Monster\\Monster.cpp",
+              "ToolTip": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\Monster.cpp",
+              "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Monster\\Monster.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-02T20:33:57.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
               "Title": "MonsterHit.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\MonsterHit.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Monster\\MonsterHit.cpp",
@@ -1214,12 +1103,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Monster\\MonsterHit.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvxYAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T22:04:25.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T22:04:25.013Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 60,
               "Title": "WaitRoomScene.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Scenes\\CA\\WaitRoomScene.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Scenes\\CA\\WaitRoomScene.h",
@@ -1227,12 +1115,11 @@
               "RelativeToolTip": "DX2D_2312\\Scenes\\CA\\WaitRoomScene.h",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvw0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T21:43:03.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T21:43:03.346Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 63,
               "Title": "Button.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\UI\\Button.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\UI\\Button.cpp",
@@ -1240,12 +1127,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\UI\\Button.cpp",
               "ViewState": "AQIAACoAAAAAAAAAAADwvzsAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T21:49:33.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T21:49:33.481Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 62,
               "Title": "StartUI.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\UI\\StartUI.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\UI\\StartUI.h",
@@ -1253,12 +1139,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\UI\\StartUI.h",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-02T21:50:18.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T21:50:18.937Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 64,
               "Title": "MonsterMove.cpp",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Objects\\CA\\Monster\\MonsterMove.cpp",
               "RelativeDocumentMoniker": "DX2D_2312\\Objects\\CA\\Monster\\MonsterMove.cpp",
@@ -1266,12 +1151,11 @@
               "RelativeToolTip": "DX2D_2312\\Objects\\CA\\Monster\\MonsterMove.cpp",
               "ViewState": "AQIAAF0AAAAAAAAAAADwv2UAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-02T19:56:06.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T19:56:06.333Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 74,
               "Title": "TileTable.csv",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\ResourcesCA\\TextData\\Data\\TileTable.csv",
               "RelativeDocumentMoniker": "DX2D_2312\\ResourcesCA\\TextData\\Data\\TileTable.csv",
@@ -1279,12 +1163,11 @@
               "RelativeToolTip": "DX2D_2312\\ResourcesCA\\TextData\\Data\\TileTable.csv",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2024-05-02T19:44:07.856Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T19:44:07.856Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 69,
               "Title": "imgui.h",
               "DocumentMoniker": "C:\\Cooljyum\\CrazyArcade\\DX2D_2312\\Libraries\\ImGui\\imgui.h",
               "RelativeDocumentMoniker": "DX2D_2312\\Libraries\\ImGui\\imgui.h",
@@ -1296,7 +1179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 68,
               "Title": "vector",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
               "RelativeDocumentMoniker": "..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
@@ -1304,12 +1187,11 @@
               "RelativeToolTip": "..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
               "ViewState": "AQIAAFEHAAAAAAAAAAArwGQHAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-04-30T15:04:10.206Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-30T15:04:10.206Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 70,
               "Title": "delete_scalar.cpp",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar.cpp",
               "RelativeDocumentMoniker": "..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar.cpp",
@@ -1317,12 +1199,11 @@
               "RelativeToolTip": "..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar.cpp",
               "ViewState": "AQIAAAwAAAAAAAAAAAAewCUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-01T01:12:38.965Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-01T01:12:38.965Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 71,
               "Title": "delete_scalar_size.cpp",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar_size.cpp",
               "RelativeDocumentMoniker": "..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar_size.cpp",
@@ -1330,8 +1211,7 @@
               "RelativeToolTip": "..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\delete_scalar_size.cpp",
               "ViewState": "AQIAAAMAAAAAAAAAAAAewB8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-01T01:13:12.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-01T01:13:12.577Z"
             }
           ]
         },

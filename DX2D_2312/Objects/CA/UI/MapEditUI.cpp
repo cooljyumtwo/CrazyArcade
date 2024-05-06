@@ -2,7 +2,7 @@
 
 MapEditUI::MapEditUI()
 {
-	bg = new Quad(L"ResourcesCA/Textures/BG/MapEdit.png");
+	bg = new Quad(L"ResourcesCA/Textures/UI/MapEdit/MapEditBG.png");
 	bg->Translate(CENTER);
 
 	exitBtn = new Button(L"ResourcesCA/Textures/UI/MapEdit/OkBtn.png", true);

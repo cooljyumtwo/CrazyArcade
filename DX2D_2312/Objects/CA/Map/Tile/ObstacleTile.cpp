@@ -1,7 +1,7 @@
 #include "Framework.h"
 
 ObstacleTile::ObstacleTile(wstring textureFile, Vector2 pos, bool isPop, bool isPush)
-	: Tile(textureFile, pos, Tile::OBSTACLE), isPop(isPop), isPush(isPush), targetPos(pos)
+	: Tile(textureFile, pos, Tile::OBSTACLE), isPop(isPop), isPush(isPush)
 {
 	SetColliderSize(TILE_SIZE, 0.9f);
 }
@@ -16,9 +16,35 @@ void ObstacleTile::Update()
 	Move();
 }
 
+void ObstacleTile::SetTarget(GameObject* target)
+{
+	if (isMove)
+		return;
+
+	this->target = target;
+
+	isMove = true;
+
+	Tile* tile = (Tile*)target;
+	SetCurIdx(tile->GetCurIdx());
+}
+
 void ObstacleTile::Move()
 {
-	SetLocalPosition(Lerp(localPosition, targetPos, DELTA));
+	if (target == nullptr)
+		return;
+
+	float distance = Distance(localPosition, target->GetLocalPosition());
+
+	if (distance < OFFSET_DISTANCE)
+	{
+		isMove = false;
+		target = nullptr;
+
+		return;
+	}
+
+	SetLocalPosition(Lerp(localPosition, target->GetLocalPosition(), DELTA * speed));
 }
 
 void ObstacleTile::Deactivate()
