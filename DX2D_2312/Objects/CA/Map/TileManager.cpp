@@ -194,7 +194,7 @@ void TileManager::AddObjTile(const Vector2& pos, const Vector2& size, const Vect
     TileData tileData = DataManager::Get()->GetTileData(num);
 
     //Create
-    ObstacleTile* tile = new ObstacleTile(textureFile, pos, tileData.isPop, true);
+    ObstacleTile* tile = new ObstacleTile(textureFile, pos, tileData.isPop, tileData.isPush);
     tile->SetParent(this);
     tile->GetCollider()->Translate(Vector2::Up() * (tile->GetSize().y - size.y) * 0.5 * -1);
     tile->Update();
@@ -286,69 +286,116 @@ bool TileManager::PushGameObject(GameObject* obj, bool isPlayer)
 
             if (overlab.x < overlab.y) //좌우충돌
             {
+                if (obj->GetGlobalPosition().x > objTile->GetGlobalPosition().x) //왼쪽충돌
+                {
+                    obj->Translate(Vector2::Right() * overlab.x);
 
-                if (isPush)
-                    if (obj->GetGlobalPosition().x > objTile->GetGlobalPosition().x) //왼쪽충돌
-                        if (!isPush || !isPlayer)
-                            obj->Translate(Vector2::Right() * overlab.x);
-                        else
-                        {
-                            if (obstacleTile->GetCurIdx().x == 0) return true;
-                            Vector2 pos = obstacleTile->GetLocalPosition();
-                            Vector2 movePos = obstacleTile->GetLocalPosition() + (Vector2::Left() * Tile::TILE_SIZE);
-                            obstacleTile->SetTargetPos(bgTiles[obstacleTile->GetCurIdx().x - 1][obstacleTile->GetCurIdx().y]);
-                          
-                        }
-                else //오른쪽충돌
-                    if (!isPush || !isPlayer)
-                        obj->Translate(Vector2::Left() * overlab.x);
-                    else
+                    if (isPush && isPlayer)
                     {
-                        if (obstacleTile->GetCurIdx().x == TileManager::Get()->SIZE_X - 1) return true;
+                        if (obstacleTile->GetCurIdx().x == 0) return true;
 
-                        Vector2 pos = obstacleTile->GetLocalPosition();
-                        Vector2 movePos = obstacleTile->GetLocalPosition() + (Vector2::Right() * Tile::TILE_SIZE);
-                       // obstacleTile->SetTargetPos(movePos);
-                        obstacleTile->SetTargetPos(bgTiles[obstacleTile->GetCurIdx().x + 1][obstacleTile->GetCurIdx().y]);
-                       
+                        Vector2 tileCurIdx = obstacleTile->GetCurIdx();
+
+                        BasicTile* curTile = (BasicTile*)bgTiles[tileCurIdx.x][tileCurIdx.y];
+                        BasicTile* targetTile = (BasicTile*)bgTiles[tileCurIdx.x - 1][tileCurIdx.y];
+
+                        if (targetTile->GetType() == Tile::OBSTACLE || MonsterManager::Get()->Collision(targetTile)) return true;
+                        if (obstacleTile->GetIsMove()) return true;
+
+                        curTile->SetObstacleTile(nullptr);
+                        curTile->SetType(Tile::BASIC);
+
+                        targetTile->SetObstacleTile(objTile);
+                        targetTile->SetType(Tile::OBSTACLE);
+
+                        obstacleTile->SetTarget(targetTile);
 
                     }
+                }
+                else //오른쪽충돌
+                {
+                    obj->Translate(Vector2::Left() * overlab.x);
+
+                    if (isPush && isPlayer)
+                    {
+                        if (obstacleTile->GetCurIdx().x == TileManager::Get()->SIZE_X-1) return true;
+
+                        Vector2 tileCurIdx = obstacleTile->GetCurIdx();
+
+                        BasicTile* curTile = (BasicTile*)bgTiles[tileCurIdx.x][tileCurIdx.y];
+                        BasicTile* targetTile = (BasicTile*)bgTiles[tileCurIdx.x + 1][tileCurIdx.y];
+
+                        if (targetTile->GetType() == Tile::OBSTACLE || MonsterManager::Get()->Collision(targetTile)) return true;
+                        if (obstacleTile->GetIsMove()) return true;
+
+                        curTile->SetObstacleTile(nullptr);
+                        curTile->SetType(Tile::BASIC);
+
+                        targetTile->SetObstacleTile(objTile);
+                        targetTile->SetType(Tile::OBSTACLE);
+
+                        obstacleTile->SetTarget(targetTile);
+                    }
+                }
             }
             else //상하충돌
             {
                 if (obj->GetGlobalPosition().y > objTile->GetGlobalPosition().y) //아래쪽충돌
-                    if (!isPush || !isPlayer)
-                        obj->Translate(Vector2::Up() * overlab.y);
-                    else
+                {
+                    obj->Translate(Vector2::Up() * overlab.y);
+
+                    if (isPush && isPlayer)
                     {
                         if (obstacleTile->GetCurIdx().y == TileManager::Get()->SIZE_Y - 1) return true;
-                        Vector2 pos = obstacleTile->GetLocalPosition();
-                        Vector2 movePos = obstacleTile->GetLocalPosition() + (Vector2::Down() * Tile::TILE_SIZE);
-                     //   obstacleTile->SetTargetPos(movePos);
-                        obstacleTile->SetTargetPos(bgTiles[obstacleTile->GetCurIdx().x][obstacleTile->GetCurIdx().y+1]);
-                      
 
+                        Vector2 tileCurIdx = obstacleTile->GetCurIdx();
+
+                        BasicTile* curTile = (BasicTile*)bgTiles[tileCurIdx.x][tileCurIdx.y];
+                        BasicTile* targetTile = (BasicTile*)bgTiles[tileCurIdx.x][tileCurIdx.y + 1];
+
+                        if (targetTile->GetType() == Tile::OBSTACLE || MonsterManager::Get()->Collision(targetTile)) return true;
+                        if (obstacleTile->GetIsMove()) return true;
+
+                        curTile->SetObstacleTile(nullptr);
+                        curTile->SetType(Tile::BASIC);
+
+                        targetTile->SetObstacleTile(objTile);
+                        targetTile->SetType(Tile::OBSTACLE);
+
+                        obstacleTile->SetTarget(targetTile);
                     }
+                }
                 else //위쪽충돌
-                    if (!isPush || !isPlayer)
-                        obj->Translate(Vector2::Down() * overlab.y);
-                    else
+                {
+                    obj->Translate(Vector2::Down() * overlab.y);
+
+                    if (isPush && isPlayer)
                     {
                         if (obstacleTile->GetCurIdx().y == 0) return true;
-                        Vector2 pos = obstacleTile->GetLocalPosition();
-                        Vector2 movePos = obstacleTile->GetLocalPosition() + (Vector2::Up() * Tile::TILE_SIZE);
-                       // obstacleTile->SetTargetPos(movePos);
-                        obstacleTile->SetTargetPos(bgTiles[obstacleTile->GetCurIdx().x][obstacleTile->GetCurIdx().y - 1]);
-                    
 
+                        Vector2 tileCurIdx = obstacleTile->GetCurIdx();
+
+                        BasicTile* curTile = (BasicTile*)bgTiles[tileCurIdx.x][tileCurIdx.y];
+                        BasicTile* targetTile = (BasicTile*)bgTiles[tileCurIdx.x][tileCurIdx.y - 1];
+
+                        if (targetTile->GetType() == Tile::OBSTACLE || MonsterManager::Get()->Collision(targetTile)) return true;
+                        if (obstacleTile->GetIsMove()) return true;
+
+                        curTile->SetObstacleTile(nullptr);
+                        curTile->SetType(Tile::BASIC);
+
+                        targetTile->SetObstacleTile(objTile);
+                        targetTile->SetType(Tile::OBSTACLE);
+
+                        obstacleTile->SetTarget(targetTile);
                     }
+                }
             }
-
             obj->UpdateWorld();
-            return true;
+            return true; // 충돌됨
         }
     }
-    return false;
+    return false; //충돌안됨
 }
 
 bool TileManager::CheckMapPosPlayer(Character* player)

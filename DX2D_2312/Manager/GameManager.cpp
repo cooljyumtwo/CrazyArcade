@@ -22,7 +22,7 @@ GameManager::GameManager()
 	UIManager::Get()->Add("MapEdit", new MapEditUI());
 	UIManager::Get()->Add("Game", new GameUI());
 
-	SCENE->ChangeScene("MapEdit");
+	SCENE->ChangeScene("Start");
 
 	ShowCursor(false);
 }
@@ -88,9 +88,12 @@ void GameManager::Render()
 
 	Font::Get()->GetDC()->BeginDraw();
 
-	string fps = "FPS : " + to_string(Timer::Get()->GetFPS());
-	Font::Get()->RenderText(fps, { 0, SCREEN_HEIGHT - 10 });
-
+	if (isDraw) 
+	{
+		string fps = "FPS : " + to_string(Timer::Get()->GetFPS());
+		Font::Get()->RenderText(fps, { 0, SCREEN_HEIGHT - 10 });
+	}
+	
 	Font::Get()->SetStyle("Default");
 
 	UIManager::Get()->Render();

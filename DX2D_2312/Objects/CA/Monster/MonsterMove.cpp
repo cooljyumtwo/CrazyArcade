@@ -105,19 +105,19 @@ void MonsterMove::RandomCompass()
 
         Vector2 distance = monster->GetGlobalPosition() - player->GetGlobalPosition();
 
-        if (distance.x < distance.y) //좌우
-        {
-            if (distance.x > 0)
-                SetCompass(Compass::W);
-            else
-                SetCompass(Compass::E);
-        }
-        else //상하
+        if (distance.x < distance.y) // 상하
         {
             if (distance.y > 0)
-                SetCompass(Compass::S);
+                SetCompass(Compass::S); // 플레이어가 몬스터보다 위에 있음
             else
-                SetCompass(Compass::N);
+                SetCompass(Compass::N); // 플레이어가 몬스터보다 아래에 있음
+        }
+        else // 좌우
+        {
+            if (distance.x > 0)
+                SetCompass(Compass::W); // 플레이어가 몬스터보다 왼쪽에 있음
+            else
+                SetCompass(Compass::E); // 플레이어가 몬스터보다 오른쪽에 있음
         }
     }
     else //무작위 방향
@@ -128,22 +128,21 @@ void MonsterMove::RandomCompass()
         vector<Vector2> checkPos;
 
         vector<Vector2> offsets = {
-                        Vector2{0, -1},  // 남쪽
-            Vector2{0, 1}, // 북쪽
-
+            Vector2{0, -1},  // 남쪽
+            Vector2{0, 1},   // 북쪽
             Vector2{1, 0},   // 동쪽
-               Vector2{-1, 0} // 서쪽
+            Vector2{-1, 0}   // 서쪽
         };
 
         checkPos.resize(offsets.size());
 
-        FOR(offsets.size()) 
+        FOR(offsets.size())
         {
             int idx = (i + randomCompass) % offsets.size(); // 인덱스 계산
-            checkPos[i] = (curPos + offsets[i] * Tile::TILE_SIZE);
+            checkPos[i] = (curPos + offsets[idx] * Tile::TILE_SIZE); // 방향 벡터 사용
         }
 
-        int compass;
+        int compass = -1; // 선택된 방향
         FOR(checkPos.size())
         {
             Tile* tile = TileManager::Get()->GetNearPosTileState(checkPos[i]);
@@ -153,18 +152,18 @@ void MonsterMove::RandomCompass()
             if (tile->GetType() == Tile::BASIC)
             {
                 compass = (i + randomCompass) % offsets.size(); // 선택된 방향 계산
-                switch (i)
+                switch (compass) // compass로 수정
                 {
-                case CharacterAction::S:
+                case 0: // 남쪽
                     SetCompass(Compass::S);
                     break;
-                case CharacterAction::N:
+                case 1: // 북쪽
                     SetCompass(Compass::N);
                     break;
-                case CharacterAction::E:
+                case 2: // 동쪽
                     SetCompass(Compass::E);
                     break;
-                case CharacterAction::W:
+                case 3: // 서쪽
                     SetCompass(Compass::W);
                     break;
                 default:

@@ -23,9 +23,9 @@ public:
     Character();
     ~Character();
 
-    void Update();
-    void Render(); 
-    void PostRender();
+    void Update() override;
+    void Render() override;
+
     float GetDepth() override;
 
     void UpdateWorld() override;
@@ -41,12 +41,12 @@ public:
 
     void SpawnAni();
 
+    void Die();
+
 protected:
     void Move();
     void Attack();
     void Bubble();
-
-    void Landing();
 
     virtual void CreateActions();
 

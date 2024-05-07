@@ -103,8 +103,15 @@ void Transform::Load()
 
 bool Transform::IsActive()
 {
-	if (parent == nullptr)
+	try 
+	{
+		if (parent == nullptr)
+			return isActive;
+	}
+	catch (...) 
+	{
 		return isActive;
+	}
 
 	if (isActive == false)
 		return false;

@@ -115,6 +115,8 @@ void Waves::Spawn(const Vector2& pos, int power)
 			{
 				BasicTile* basicTile = (BasicTile*)tile;
 				ObstacleTile* obstacleTile = (ObstacleTile*)basicTile->GetObstacleTile();
+				
+				if (obstacleTile == nullptr) return;
 
 				// 장애물 타일이 존재하고 활성화되어 있다면
 				if (obstacleTile != nullptr && obstacleTile->IsActive())

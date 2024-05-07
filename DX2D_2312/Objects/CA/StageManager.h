@@ -15,8 +15,10 @@ public:
 
 	void SetStageData();
 	void SetPlayer(Character* playerCharacter);
+
 	void LoadStage();
 	void NextStage();
+
 	void SpawnPlayer(bool isSpawn = false);
 
 	void Start();
@@ -24,6 +26,10 @@ public:
 	void Gameover();
 
 	void SetGameUIState(GameUI::State state);
+
+	void AddScore(int n) { score += n; }
+	UINT GetScore() { return score; }
+	int GetUserHp() { return userHp; }
 
 	void End();
 	
@@ -40,4 +46,6 @@ public:
 	Character* playerCharacter;
 	
 	int userHp = PLAYER_SPAWN_HP;
+
+	UINT score = 0;
 };

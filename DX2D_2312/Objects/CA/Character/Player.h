@@ -9,6 +9,9 @@ public:
     Player();
     ~Player();
 
+    void Update() override;
+    void PostRender();
+
     void AddItem(Item* item);
     Item* GetItem() { return item; }
     void RemoveItem();
@@ -19,5 +22,8 @@ public:
 
 private:
     Item* item;
+    
+    Quad* playerPosArrow;
+
     bool isBubblePush = true;
 };

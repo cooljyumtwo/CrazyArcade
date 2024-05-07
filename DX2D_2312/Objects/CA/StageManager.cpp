@@ -10,6 +10,12 @@ void StageManager::SetStageData()
 	userHp = PLAYER_SPAWN_HP;
 	countStage = 0;
 	maxStage = 0;
+	score = 0;
+
+	UI* curUI = UIManager::Get()->GetUI("Game");
+	GameUI* gameUI = (GameUI*)curUI;
+
+	gameUI->SetStateFont(0, userHp);
 }
 
 void StageManager::SetPlayer(Character* playerCharacter)
@@ -85,9 +91,10 @@ void StageManager::NextStage()
 
 void StageManager::SpawnPlayer(bool isSpawn)
 {
-	playerCharacter->SetInit();
 	Player* player = (Player*)playerCharacter;
 	player->LoadPos(isSpawn);
+
+	playerCharacter->SetInit();
 }
 
 void StageManager::SetGameUIState(GameUI::State state)
@@ -129,12 +136,13 @@ void StageManager::Gameover()
 	}
 
 	userHp--;
+
+	UI* curUI = UIManager::Get()->GetUI("Game");
+	GameUI* gameUI = (GameUI*)curUI;
+	gameUI->SetStateFont(0, userHp);
 }
 
 void StageManager::End()
 {
-	//if (!Audio::Get()->IsPlaySound(""))
-	//	Audio::Get()->Play("");
-
 	SCENE->ChangeScene("WaitRoom");
 }

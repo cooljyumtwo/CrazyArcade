@@ -22,6 +22,7 @@ public:
 	void RemoveHitColliders();
 
 	void Collision(Character* character);
+	bool Collision(Tile* tile);
 
 	Character* GetPlayer() {return player;}
 

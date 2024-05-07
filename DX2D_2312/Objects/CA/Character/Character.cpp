@@ -2,7 +2,6 @@
 
 Character::Character()
 {
-//   collider = new RectCollider({ Tile::TILE_SIZE * 0.7f ,  Tile::TILE_SIZE * 0.6f });
     collider->SetParent(this);
     collider->SetTag("Character");
     collider->Load();
@@ -51,10 +50,6 @@ void Character::Render()
     collider->Render();
 }
 
-void Character::PostRender()
-{
-}
-
 float Character::GetDepth()
 {
     return collider->Bottom();
@@ -68,14 +63,22 @@ void Character::UpdateWorld()
 
 void Character::SetInit()
 {
-    stat.bubbleCnt = 2;
-    stat.bubblePower = 2;
-    stat.speed = 2;
-
-    SetAction(IDLE);
-    SetActive(true);
+    stat.bubbleCnt = 1;
+    stat.bubblePower = 1;
+    stat.speed = 1;
 
     countSpawnEffect = 0;
+
+    SetAction(IDLE);
+    UpdateWorld();
+    SetActive(true);
+
+    UI* curUI = UIManager::Get()->GetUI("Game");
+    GameUI* gameUI = (GameUI*)curUI;
+
+    gameUI->SetStateFont(1, stat.bubbleCnt);
+    gameUI->SetStateFont(2, stat.bubblePower);
+    gameUI->SetStateFont(3, stat.bubblePower);
 }
 
 void Character::SpawnAni()
@@ -131,9 +134,9 @@ void Character::Bubble()
         SetAction(BUBBLE);
 }
 
-
-void Character::Landing()
+void Character::Die()
 {
+    SetAction(DIE);
 }
 
 void Character::AddAction(string file, int frameX, int frameY)

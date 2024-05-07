@@ -36,8 +36,6 @@ void Item::Render()
     shadow->Render();
     Quad::Render();
     collider->Render();
-
-
 }
 
 void Item::Spawn(const Vector2& pos, ItemData data)

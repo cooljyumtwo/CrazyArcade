@@ -163,6 +163,14 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/Character/CharacterDie.h"
 #include "Objects/CA/Character/Character.h"
 
+#include "Objects/CA/Map/TileObject/TileObject.h"
+#include "Objects/CA/Map/TileObject/TileObjectManager.h"
+#include "Objects/CA/Map/Tile/Tile.h"
+#include "Objects/CA/Map/Tile/BasicTile.h"
+#include "Objects/CA/Map/Tile/ObstacleTile.h"
+#include "Objects/CA/Map/TileManager.h"
+#include "Objects/CA/Map/EditTileMap.h"
+
 #include "Objects/CA/Monster/MonsterMove.h"
 #include "Objects/CA/Monster/MonsterDie.h"
 #include "Objects/CA/Monster/MonsterHit.h"
@@ -187,14 +195,6 @@ typedef function<void(void*)> ObjectParamEvent;
 #include "Objects/CA/Bubble/Waves.h"
 #include "Objects/CA/Bubble/Bubble.h"
 #include "Objects/CA/Bubble/BubbleManager.h"
-
-#include "Objects/CA/Map/TileObject/TileObject.h"
-#include "Objects/CA/Map/TileObject/TileObjectManager.h"
-#include "Objects/CA/Map/Tile/Tile.h"
-#include "Objects/CA/Map/Tile/BasicTile.h"
-#include "Objects/CA/Map/Tile/ObstacleTile.h"
-#include "Objects/CA/Map/TileManager.h"
-#include "Objects/CA/Map/EditTileMap.h"
 
 #include "Objects/TileGame/Amazon.h"
 

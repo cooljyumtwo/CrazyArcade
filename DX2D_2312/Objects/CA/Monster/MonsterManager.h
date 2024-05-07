@@ -21,10 +21,13 @@ public:
     void LoadMonster();
     void ClearMonster();
     void Collision(Character* character);
+    bool Collision(Tile* tile);
 
     void SetIsRoad() { isRoad = !isRoad; }
 
     void AddKillMonster(bool isBoss = false);
+
+    bool GetIsSpawnBoss() { return isSpawnBoss; }
 
 private:
     int sizeItemDatas;

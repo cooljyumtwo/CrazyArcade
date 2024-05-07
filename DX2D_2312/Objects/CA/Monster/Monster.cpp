@@ -7,7 +7,10 @@ Monster::Monster(int key, float speed, bool isBubble, int hp, bool isBoss)
 
     CreateActions();
 
-    curState = MOVE;
+    if(!isBoss)
+        curState = MOVE;
+    else 
+        curState = IDLE;
 }
 
 Monster::~Monster()
@@ -27,9 +30,11 @@ void Monster::Update()
     //HitColliders Erase (When Anymore No Collision )
     for (int i = 0; i < hitColliders.size(); i++)
     {
+        if (!hitColliders[i]->IsCollision(this->GetCollider()))
+        {
             hitColliders.erase(hitColliders.begin() + i);
             break;
-       
+        }
     }
 
     CheckTileHit();
@@ -66,7 +71,6 @@ bool Monster::CheckHitCollider(Collider* collider)
 
 void Monster::Hit(Collider* collider)
 {
-    if (curState == HIT) return;
     if(!CheckHitCollider(collider)) return;
 
     hp--;
@@ -86,7 +90,7 @@ void Monster::Hit(Collider* collider)
 
 void Monster::Die()
 {
-    SetAction(DIE);
+    Character::Die();
     MonsterManager::Get()->AddKillMonster(isBoss);
 }
 
@@ -94,6 +98,7 @@ void Monster::Spawn(const Vector2& pos)
 {
     SetActive(true);
     SetGlobalPosition(pos);
+    SetAction(MOVE);
 }
 
 void Monster::RemoveHitColliders()
@@ -118,13 +123,21 @@ void Monster::Collision(Character* character)
     if (curState == DIE) return;
 
     player = character;
+
     if (collider->IsCollision(character->GetCollider()))
     {
         if (curState == BUBBLE)
             Die();
         else
-            character->SetAction(DIE);
+        {
+            character->Die();
+        }
     }
+}
+
+bool Monster::Collision(Tile* tile)
+{
+    return collider->IsCollision(tile->GetCollider());
 }
 
 void Monster::CreateActions()

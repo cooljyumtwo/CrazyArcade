@@ -5,7 +5,7 @@ class BubbleManager : public Singleton<BubbleManager>, public PoolingManager<Gam
 private:
 	friend class Singleton;
 
-	const UINT POOL_SIZE = 10;
+	const UINT POOL_SIZE = 30;
 
 	BubbleManager();
 	~BubbleManager();

@@ -10,7 +10,7 @@ BubbleManager::BubbleManager()
 		RenderManager::Get()->Add("GameObject", bubble);
 	}
 
-	totalObject["BasicWaves"].resize(10);
+	totalObject["BasicWaves"].resize(POOL_SIZE);
 
 	for (GameObject*& waves : totalObject["BasicWaves"])
 	{

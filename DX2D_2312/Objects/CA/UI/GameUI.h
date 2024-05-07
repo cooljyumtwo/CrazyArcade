@@ -25,6 +25,7 @@ public:
     void AniBossTxt();
 
     void SetItemSlotImg(bool isItem, wstring imgStr = L"");
+    void SetStateFont(int idx, int num);
 
     void End() override;
 
@@ -38,7 +39,9 @@ private:
     State curState;
 
     Quad* resultWindow;
-    Font* numMonster;
+    ImageFont* resultKillMonsterFont;
+
+    vector<ImageFont*> stateFont;
 
     float frameTime = 0.0f;
     int count = MAX_COUNT;

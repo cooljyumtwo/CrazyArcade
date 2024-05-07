@@ -139,9 +139,26 @@ void MonsterManager::Collision(Character* character)
 	}
 }
 
+bool MonsterManager::Collision(Tile* tile)
+{
+	for (const auto& pair : totalObject)
+	{
+		const vector<GameObject*>& gameObjects = pair.second;
+		for (GameObject* object : gameObjects)
+		{
+			Monster* monster = (Monster*)object;
+			if (monster->IsActive())
+				if (monster->Collision(tile))
+					return true;
+		}
+	}
+	return false;
+}
+
 void MonsterManager::AddKillMonster(bool isBoss)
 {
 	killMonster++;
+	StageManager::Get()->AddScore(1);
 
 	if (isBoss)
 		cntBoss--;

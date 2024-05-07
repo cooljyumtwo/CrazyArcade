@@ -41,6 +41,25 @@ GameUI::GameUI()
 	exitBtn->SetEvent([]() {
 		SCENE->ChangeScene("WaitRoom");
 		});
+
+	resultKillMonsterFont = new ImageFont(L"ResourcesCA/Textures/UI/ResultNumber/");
+	resultKillMonsterFont->SetParent(resultWindow);
+	resultKillMonsterFont->SetLocalPosition(resultWindow->GetLocalPosition());
+	resultKillMonsterFont->Translate({ 58.0f, -33.0f });
+	resultKillMonsterFont->UpdateWorld();
+	resultKillMonsterFont->SetAligned(ImageFont::AlignedType::R);
+
+	stateFont.resize(4);
+	FOR(4)
+	{
+		stateFont[i] = new ImageFont(L"ResourcesCA/Textures/UI/ResultNumber/");
+
+		stateFont[i]->SetLocalPosition(666.0f,550.0f);
+		stateFont[i]->Translate({ 40.0f*i, 0.0f });
+		stateFont[i]->UpdateWorld();
+		stateFont[i]->SetAligned(ImageFont::AlignedType::R);
+		SetStateFont(i, 0);
+	}
 }
 
 GameUI::~GameUI()
@@ -58,6 +77,11 @@ void GameUI::Update()
 	resultWindow->UpdateWorld();
 	itemSlotImg->UpdateWorld();
 	exitBtn->Update();
+
+	FOR(4)
+	{
+		stateFont[i]->UpdateWorld();
+	}
 
 	AniBossTxt();
 	AniGameTxt();
@@ -78,6 +102,14 @@ void GameUI::PostRender()
 	resultWindow->Render();
 	itemSlotImg->Render();
 	exitBtn->Render();
+
+	resultKillMonsterFont->Render();	
+
+
+	FOR(4)
+	{
+		stateFont[i]->Render();
+	}
 }
 
 void GameUI::SetGameTxt(State state)
@@ -85,14 +117,21 @@ void GameUI::SetGameTxt(State state)
 	curState = state;
 	gameTxt->GetMaterial()->SetTexture(gameTxtTexs[(int)curState]);
 	count = 0;
+	gameTxt->SetActive(false);
+
+	if (MonsterManager::Get()->GetIsSpawnBoss())
+	{
+		bossReadyTxt->SetActive(true);
+	}
 }
 
 void GameUI::AniGameTxt()
 {
 	if (curState == START)
 	{
-		if (count > MAX_COUNT) 
+		if (count > MAX_COUNT)
 			return;
+		
 	}
 	else 
 	{
@@ -118,6 +157,7 @@ void GameUI::AniGameTxt()
 			gameTxt->SetActive(!gameTxt->IsActive());
 		else
 		{
+			resultKillMonsterFont->SetValue((UINT)StageManager::Get()->GetScore());
 			resultWindow->SetActive(true);
 		}
 
@@ -142,6 +182,11 @@ void GameUI::SetItemSlotImg(bool isItem, wstring imgStr)
 	
 	if(isItem)
 		itemSlotImg->GetMaterial()->SetTexture(Texture::Add(imgStr));
+}
+
+void GameUI::SetStateFont(int idx, int num)
+{
+	stateFont[idx]->SetValue((UINT)num);
 }
 
 void GameUI::End()

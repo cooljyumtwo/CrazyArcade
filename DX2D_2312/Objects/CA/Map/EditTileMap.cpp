@@ -11,6 +11,8 @@ EditTileMap::EditTileMap()
     Transform::Load();
 
     UpdateWorld();
+
+    SetPlayerPos({ 0,0 });
 }
 
 EditTileMap::~EditTileMap()

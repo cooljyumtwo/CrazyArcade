@@ -7,9 +7,11 @@ public:
 	void Update() override;
 	void Render() override;
 
-	ImageFont* GetFont() { return font; }
 	int GetKey() { return key; }
+
+	ImageFont* GetFont() { return font; }
 	void SetFont(int num = 0);
+
 private:
 	ImageFont* font;
 	int key;

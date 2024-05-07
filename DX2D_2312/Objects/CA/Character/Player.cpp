@@ -6,11 +6,27 @@ Player::Player() : Character()
     actions[curState]->Start();
 
     item = new Item();
+
+    playerPosArrow = new Quad(L"ResourcesCA/Textures/UI/Etc/PlayerArrow.png");
+    playerPosArrow->SetParent(this);
+    playerPosArrow->Translate(Vector2::Up() * Vector2 { 0, 40.0f });
 }
 
 Player::~Player()
 {
     delete item;
+    delete playerPosArrow;
+}
+
+void Player::Update()
+{
+    Character::Update();
+    playerPosArrow->UpdateWorld();
+}
+
+void Player::PostRender()
+{
+    playerPosArrow->Render();
 }
 
 void Player::AddItem(Item* item)
@@ -21,20 +37,28 @@ void Player::AddItem(Item* item)
     }
 
     Item::Type type = (Item::Type)item->GetData().type;
-   
+
+    UI* curUI = UIManager::Get()->GetUI("Game");
+    GameUI* gameUI = (GameUI*)curUI;
+
     if (type < Item::B_NEEDLE)
     {
         switch (type)
         {
         case Item::B_POWER:
             stat.bubblePower += item->GetData().value;
+            
             if (stat.bubblePower > MAX_STAT[item->GetData().type]) 
                 stat.bubblePower = MAX_STAT[item->GetData().type];
+
+            gameUI->SetStateFont(2, stat.bubblePower);
             break;
         case Item::B_CNTUP:
             stat.bubbleCnt += item->GetData().value;
             if (stat.bubbleCnt > MAX_STAT[item->GetData().type]) 
                 stat.bubbleCnt = MAX_STAT[item->GetData().type];
+
+            gameUI->SetStateFont(1, stat.bubbleCnt);
             break;
         case Item::U_SPEED:
             stat.speed += item->GetData().value;
@@ -43,6 +67,7 @@ void Player::AddItem(Item* item)
                 stat.speed = MAX_STAT[item->GetData().type];
                 isBubblePush = true;
             }
+            gameUI->SetStateFont(3, stat.speed);
             break;
         case Item::B_PUSH:
             isBubblePush = true;
@@ -54,8 +79,7 @@ void Player::AddItem(Item* item)
     else
     {
         this->item->SetData(item->GetData());
-        UI* curUI = UIManager::Get()->GetUI("Game");
-        GameUI* gameUI = (GameUI*)curUI;
+        
         gameUI->SetItemSlotImg(true, L"ResourcesCA/Textures/Item/" + item->GetData().textureFile);
     }
 }

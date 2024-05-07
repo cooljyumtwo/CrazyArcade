@@ -15,6 +15,7 @@ public:
 	bool GetIsPush() { return isPush; }
 	void SetIsPush(bool isPush) { this->isPush = isPush; }
 	
+	bool GetIsMove() { return isMove; }
 	void SetTarget(GameObject* target);
 
 	void Move();
@@ -29,5 +30,5 @@ private:
 
 	bool isMove = false;
 
-	float speed = 100.0f;
+	float speed = 5.0f;
 };
