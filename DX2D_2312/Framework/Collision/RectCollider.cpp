@@ -1,6 +1,6 @@
 #include "Framework.h"
 
-RectCollider::RectCollider(Vector2 size) : size(size)
+RectCollider::RectCollider(Vector2 size) : size(size) // 오프셋 초기화
 {
     tag = "Rect";
     type = Type::RECT;
@@ -17,30 +17,7 @@ RectCollider::RectCollider(Vector2 size) : size(size)
     mesh->CreateMesh();
 }
 
-//회전X
-//bool RectCollider::IsPointCollision(Vector2 point)
-//{
-//    if (point.x > Left() && point.x < Right())
-//    {
-//        if (point.y > Bottom() && point.y < Top())
-//            return true;
-//    }
-//
-//    return false;
-//}
-
-//역행렬
-//bool RectCollider::IsPointCollision(Vector2 point)
-//{
-//    Vector2 coord = point * XMMatrixInverse(nullptr, world);
-//
-//    if (abs(coord.x) < size.x * 0.5f && abs(coord.y) < size.y * 0.5f)
-//        return true;
-//
-//    return false;
-//}
-
-//Cross
+//Cross 방식
 bool RectCollider::IsPointCollision(Vector2 point)
 {
     bool isLeftTop = IsBetweenPoint(LeftTop(), RightTop(), LeftBottom(), point);
@@ -53,7 +30,7 @@ bool RectCollider::IsPointCollision(Vector2 point)
 bool RectCollider::IsRectCollision(RectCollider* rect, Vector2* overlap)
 {
     if (overlap)
-        return IsAABB(rect, overlap);    
+        return IsAABB(rect, overlap);
 
     return IsOBB(rect);
 }
@@ -82,28 +59,28 @@ Vector2 RectCollider::LeftTop()
 {
     Vector2 edge = Vector2(-size.x, +size.y) * 0.5f;
 
-    return edge * world;
+    return (edge + offset) * world;
 }
 
 Vector2 RectCollider::LeftBottom()
 {
     Vector2 edge = Vector2(-size.x, -size.y) * 0.5f;
 
-    return edge * world;
+    return (edge + offset) * world;
 }
 
 Vector2 RectCollider::RightTop()
 {
     Vector2 edge = Vector2(+size.x, +size.y) * 0.5f;
 
-    return edge * world;
+    return (edge + offset) * world;
 }
 
 Vector2 RectCollider::RightBottom()
 {
     Vector2 edge = Vector2(+size.x, -size.y) * 0.5f;
 
-    return edge * world;
+    return (edge + offset) * world;
 }
 
 float RectCollider::Left()
@@ -158,11 +135,11 @@ void RectCollider::SetSize(Vector2 size)
     vector<Vertex>& vertices = mesh->GetVertices();
     vertices.clear();
 
-    vertices.emplace_back(-halfSize.x, +halfSize.y);
-    vertices.emplace_back(+halfSize.x, +halfSize.y);
-    vertices.emplace_back(+halfSize.x, -halfSize.y);
-    vertices.emplace_back(-halfSize.x, -halfSize.y);
-    vertices.emplace_back(-halfSize.x, +halfSize.y);
+    vertices.emplace_back(-halfSize.x + offset.x, +halfSize.y + offset.y);
+    vertices.emplace_back(+halfSize.x + offset.x, +halfSize.y + offset.y);
+    vertices.emplace_back(+halfSize.x + offset.x, -halfSize.y + offset.y);
+    vertices.emplace_back(-halfSize.x + offset.x, -halfSize.y + offset.y);
+    vertices.emplace_back(-halfSize.x + offset.x, +halfSize.y + offset.y);
 
     mesh->UpdateVertices();
 }

@@ -67,6 +67,8 @@ void StageManager::NextStage()
 	{
 		if (!Audio::Get()->IsPlaySound("GameStart"))
 			Audio::Get()->Play("GameStart");
+
+		ItemManager::Get()->ClearItems();
 	}
 	else 
 	{
@@ -79,8 +81,6 @@ void StageManager::NextStage()
 	TileManager::Get()->LoadMapSize();
 
 	MonsterManager::Get()->LoadMonster();
-
-	ItemManager::Get()->ClearItems();
 
 	SpawnPlayer(true);
 

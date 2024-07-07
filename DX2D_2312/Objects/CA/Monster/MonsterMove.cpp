@@ -27,8 +27,9 @@ void MonsterMove::Update()
     if (playTime > moveTime)
     {
         playTime -= moveTime; 
-        RandomCompass();
         SetMoveTime();
+        nearTile = nullptr;
+        RandomCompass();
     }
 
     Move();
@@ -49,6 +50,11 @@ void MonsterMove::Move()
     velocity = { 0, 0 };
 
     Character* character = (Character*)target;
+
+    if (TileManager::Get()->GetNearPosTileState(target->GetGlobalPosition()) == nearTile)
+    {
+        nearTile = nullptr;
+    }
 
     switch (compass)
     {
@@ -75,14 +81,12 @@ void MonsterMove::Move()
     int speed = (character->GetStat().speed > MAX_SPEED) ? MAX_SPEED : character->GetStat().speed;
     target->Translate(velocity * speed * moveSpeed * DELTA);
 
-    if (TileManager::Get()->PushGameObject(character))
+    if (TileManager::Get()->PushGameObject(character) || TileManager::Get()->CheckMapPosPlayer(character))
+    {
         RandomCompass();
-
-    if (TileManager::Get()->CheckMapPosPlayer(character))
-        RandomCompass();
+    }
 
     BubbleManager::Get()->PushPlayer(character);
-
 }
 
 void MonsterMove::SetMoveTime()
@@ -92,32 +96,35 @@ void MonsterMove::SetMoveTime()
 
 void MonsterMove::RandomCompass()
 {
+    if (nearTile != nullptr) return;
+
     velocity = { 0, 0 };
 
-    int randomCompassType = Random(0, 2);
+    int randomCompassType = Random(0, 3);
 
-    if (randomCompassType) //사용자 방향
+    Monster* monster = (Monster*)target;
+
+    if (randomCompassType < 2) //사용자 방향
     {
-        Monster* monster = (Monster*)target;
         Character* player = monster->GetPlayer();
 
         if (!player) return;
 
-        Vector2 distance = monster->GetGlobalPosition() - player->GetGlobalPosition();
+        Vector2 distance = player->GetGlobalPosition() - monster->GetGlobalPosition();
 
-        if (distance.x < distance.y) // 상하
-        {
-            if (distance.y > 0)
-                SetCompass(Compass::S); // 플레이어가 몬스터보다 위에 있음
-            else
-                SetCompass(Compass::N); // 플레이어가 몬스터보다 아래에 있음
-        }
-        else // 좌우
+        if (abs(distance.x) > abs(distance.y)) // 좌우로 더 먼 거리
         {
             if (distance.x > 0)
-                SetCompass(Compass::W); // 플레이어가 몬스터보다 왼쪽에 있음
+                SetCompass(Compass::E); // 플레이어가 몬스터의 오른쪽에 있음
             else
-                SetCompass(Compass::E); // 플레이어가 몬스터보다 오른쪽에 있음
+                SetCompass(Compass::W); // 플레이어가 몬스터의 왼쪽에 있음
+        }
+        else // 상하로 더 먼 거리
+        {
+            if (distance.y > 0)
+                SetCompass(Compass::N); // 플레이어가 몬스터의 위에 있음
+            else
+                SetCompass(Compass::S); // 플레이어가 몬스터의 아래에 있음
         }
     }
     else //무작위 방향
@@ -152,6 +159,9 @@ void MonsterMove::RandomCompass()
             if (tile->GetType() == Tile::BASIC)
             {
                 compass = (i + randomCompass) % offsets.size(); // 선택된 방향 계산
+                nearTile = tile;
+                Vector2 tileIdx = tile->GetCurIdx();
+
                 switch (compass) // compass로 수정
                 {
                 case 0: // 남쪽
@@ -176,6 +186,5 @@ void MonsterMove::RandomCompass()
 }
 
 void MonsterMove::End()
-{
-    
+{   
 }

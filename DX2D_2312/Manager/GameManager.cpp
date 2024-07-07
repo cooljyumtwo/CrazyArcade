@@ -1,14 +1,13 @@
 #include "Framework.h"
-
 #include "Scenes/CA/StartScene.h"
 #include "Scenes/CA/WaitRoomScene.h"
 #include "Scenes/CA/MapEditScene.h"
 #include "Scenes/CA/GameScene.h"
 
-bool GameManager::isDraw = false;
-bool GameManager::isGUI = false;
+bool GameManager::isDraw = false; //화면 그릴지 말지 //전역 변수
+bool GameManager::isGUI = false; //GUI Editor 킬지 말지 //전역 변수
 
-GameManager::GameManager()
+GameManager::GameManager() //생성자
 {
 	Create();
 
@@ -24,10 +23,10 @@ GameManager::GameManager()
 
 	SCENE->ChangeScene("Start");
 
-	ShowCursor(false);
+	ShowCursor(false); //마우스 커서 안보이게 설정
 }
 
-GameManager::~GameManager()
+GameManager::~GameManager() //소멸자
 {
 	Delete();
 }

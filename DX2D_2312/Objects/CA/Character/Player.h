@@ -3,7 +3,7 @@
 class Player : public Character
 {
 private:
-    vector<int> MAX_STAT = { 2, 2, 2 };
+    vector<int> MAX_STAT = { 5, 5, 5 };
 
 public:
     Player();

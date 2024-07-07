@@ -24,7 +24,6 @@ void Collider::Render()
 {
     if (!IsActive()) return;
     
-
     worldBuffer->Set(world);
     worldBuffer->SetVS(0);
 

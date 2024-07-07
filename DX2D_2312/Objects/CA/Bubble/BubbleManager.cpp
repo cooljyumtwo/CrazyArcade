@@ -10,7 +10,7 @@ BubbleManager::BubbleManager()
 		RenderManager::Get()->Add("GameObject", bubble);
 	}
 
-	totalObject["BasicWaves"].resize(POOL_SIZE);
+	totalObject["BasicWaves"].resize(WAVE_POOL_SIZE);
 
 	for (GameObject*& waves : totalObject["BasicWaves"])
 	{
@@ -59,6 +59,8 @@ Bubble* BubbleManager::PushPlayer(Character* player, bool isPlayerMaxSpeed)
 		{
 			if (bubble->GetIsTarget()) continue;
 
+			if (bubble->GetIsPush()) bubble->SetIsPush(false);
+
 			if (overlab.x < overlab.y)
 			{
 				if (player->GetGlobalPosition().x > bubble->GetGlobalPosition().x) // ¿Þ
@@ -84,7 +86,7 @@ Bubble* BubbleManager::PushPlayer(Character* player, bool isPlayerMaxSpeed)
 			}
 			else
 			{
-				if (player->GetGlobalPosition().y > bubble->GetGlobalPosition().y)//¾Æ·¡
+				if (player->GetGlobalPosition().y > bubble->GetGlobalPosition().y) // ¾Æ·¡
 				{
 					if (!isPlayerMaxSpeed)
 						player->Translate(Vector2::Up() * overlab.y);

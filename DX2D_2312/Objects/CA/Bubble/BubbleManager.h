@@ -6,6 +6,7 @@ private:
 	friend class Singleton;
 
 	const UINT POOL_SIZE = 30;
+	const UINT WAVE_POOL_SIZE = 15;
 
 	BubbleManager();
 	~BubbleManager();

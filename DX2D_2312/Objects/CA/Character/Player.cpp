@@ -5,6 +5,9 @@ Player::Player() : Character()
     CreateActions();
     actions[curState]->Start();
 
+    collider->SetOffset(Vector2(0.0f,-5.0f));
+    collider->SetSize({ Tile::TILE_SIZE - 10.0f, Tile::TILE_SIZE - 10.0f });
+
     item = new Item();
 
     playerPosArrow = new Quad(L"ResourcesCA/Textures/UI/Etc/PlayerArrow.png");
@@ -112,12 +115,12 @@ void Player::LoadPos(bool isSpawn)
     if (isSpawn) 
     {
         RemoveItem();
-        isBubblePush = false;
     }
 
     delete reader;
 
-    countSpawnEffect = 0;
+    isBubblePush = false;
     isEndSpawnAni = false;
+    countSpawnEffect = 0;
     spawnTime = 0.0f;
 }

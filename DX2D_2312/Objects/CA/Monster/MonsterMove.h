@@ -19,4 +19,6 @@ public:
 private:
     float playTime = 0.0f;
     float moveTime = 0.0f;
+
+    Tile* nearTile = nullptr;
 };

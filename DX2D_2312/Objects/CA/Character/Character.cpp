@@ -7,7 +7,6 @@ Character::Character()
     collider->Load();
 
     outlineBuffer = new OutlineBuffer();
-
 }
 
 Character::~Character()
@@ -26,6 +25,8 @@ void Character::Update()
 
     if (!isEndSpawnAni) return;
 
+    UpdateInvincibility();
+
     actions[curState]->Update();
 
     outlineBuffer->GetData().imageSize = actions[curState]->GetCurClip()->GetCurFrame()->GetSize();
@@ -35,7 +36,6 @@ void Character::Update()
     Bubble();   
 
     MonsterManager::Get()->Collision(this);
-
 }
 
 void Character::Render()
@@ -83,6 +83,8 @@ void Character::SetInit()
 
 void Character::SpawnAni()
 {
+    if (isEndSpawnAni) return;
+
     spawnTime += DELTA;
     if (spawnTime > SPAWN_ANI_TIME * 0.5f && countSpawnEffect < SPAWN_ANI_MAX_COUNT)
     {
@@ -94,9 +96,11 @@ void Character::SpawnAni()
             countSpawnEffect++;
         }
     }
-    if ( countSpawnEffect >= SPAWN_ANI_MAX_COUNT)
+
+    if (countSpawnEffect >= SPAWN_ANI_MAX_COUNT)
     {
         isEndSpawnAni = true;
+        isInvincible = true;
     }
 }
 
@@ -136,6 +140,8 @@ void Character::Bubble()
 
 void Character::Die()
 {
+    if (isInvincible) return;
+
     SetAction(DIE);
 }
 
@@ -148,6 +154,19 @@ void Character::AddAction(string file, int frameX, int frameY)
     action->LoadClip(actionFile, frameX, frameY, true);
 
     actions[MOVE] = action;
+}
+
+void Character::UpdateInvincibility()
+{
+    if (isInvincible)
+    {
+        invincibleTime += DELTA;
+        if (invincibleTime >= INVINCIBLE_DURATION)
+        {
+            isInvincible = false;
+            invincibleTime = 0.0f;
+        }
+    }
 }
 
 void Character::SetAction(int state)

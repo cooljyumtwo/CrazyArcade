@@ -7,6 +7,10 @@ Monster::Monster(int key, float speed, bool isBubble, int hp, bool isBoss)
 
     CreateActions();
 
+    collider->SetOffset(Vector2(0.0f, -5.0f));
+    collider->SetSize({ Tile::TILE_SIZE - 10.0f, Tile::TILE_SIZE - 10.0f });
+
+
     if(!isBoss)
         curState = MOVE;
     else 

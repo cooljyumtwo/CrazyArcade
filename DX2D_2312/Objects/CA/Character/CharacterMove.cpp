@@ -65,7 +65,9 @@ void CharacterMove::Move()
     }
 
     int speed = (character->GetStat().speed > MAX_SPEED) ? MAX_SPEED : character->GetStat().speed;
-    target->Translate(velocity * speed * moveSpeed * DELTA );
+    float speedMultiplier = 1.0f + 0.3f * (speed - 1);
+
+    target->Translate(velocity * speedMultiplier * moveSpeed * DELTA );
 
     TileManager::Get()->PushGameObject(character, true);
     TileManager::Get()->CheckMapPosPlayer(character);

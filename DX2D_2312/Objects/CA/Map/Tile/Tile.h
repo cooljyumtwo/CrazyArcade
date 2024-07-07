@@ -3,7 +3,6 @@
 class Tile : public Quad
 {
 public:
-
     enum Type
     {
         BASIC, OBSTACLE , ATTACK

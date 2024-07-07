@@ -2,8 +2,9 @@
 
 class Character : public GameObject
 {
-    const int SPAWN_ANI_MAX_COUNT = 8;
+    const int SPAWN_ANI_MAX_COUNT = 5;
     const float SPAWN_ANI_TIME = 0.3f;
+    const float INVINCIBLE_DURATION = 3.0f;  // 3초 동안 무적
 
 public:
     enum State
@@ -43,6 +44,7 @@ public:
 
     void Die();
 
+
 protected:
     void Move();
     void Attack();
@@ -51,6 +53,8 @@ protected:
     virtual void CreateActions();
 
     void AddAction(string file, int frameX, int frameY);
+
+    void UpdateInvincibility();
 
 protected:
     Stat stat;
@@ -61,12 +65,14 @@ protected:
 
     Vector2 posIdx;
 
-    int bubbleCurCnt = 0;
-
     OutlineBuffer* outlineBuffer;
 
     float spawnTime = 0.0f;
+    float invincibleTime = 0.0f;
+
+    int bubbleCurCnt = 0;
     int countSpawnEffect = 0;
 
     bool isEndSpawnAni = false;
+    bool isInvincible = false;
 };

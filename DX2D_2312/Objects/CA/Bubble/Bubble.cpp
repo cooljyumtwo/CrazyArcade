@@ -47,11 +47,11 @@ void Bubble::Render()
 void Bubble::CreatActions()
 {
 	Action* action = new Action();
-	action->LoadClip(ToWString(PATH) + L"Stand.png", 3, 1, true, 1.4f);
+	action->LoadClip(ToWString(PATH) + L"Stand.png", 3, 1, true, 2.5f);
 	actions[STAND] = action;
 
 	action = new Action();
-	action->LoadClip(ToWString(PATH) + L"Pop.png", 6, 1, false, 2.0f);
+	action->LoadClip(ToWString(PATH) + L"Pop.png", 6, 1, false, 5.0f);
 	action->GetClip(0)->SetEvent([this]() {
 		TileManager::Get()->SetIdxBgTileType(posTileIdx, Tile::BASIC);
 		Tile* tile = TileManager::Get()->GetNearPosTileState(this->GetGlobalPosition());
@@ -76,8 +76,8 @@ void Bubble::CreatActions()
 		TileManager::Get()->SetIdxBgTileType(posTileIdx,Tile::BASIC);
 		SetActive(false);
 		});
+
 	actions[POP] = action;
-	
 }
 
 void Bubble::Spawn(const Vector2& pos, int power, Character* target)
@@ -90,8 +90,7 @@ void Bubble::Spawn(const Vector2& pos, int power, Character* target)
 
 	Tile* tile = TileManager::Get()->GetNearPosTileState(pos);
 
-	if (!tile) return;
-	if (tile->GetType() == Tile::OBSTACLE) return;
+	if (!tile || tile->GetType() == Tile::OBSTACLE) return;
 
 	if (!Audio::Get()->IsPlaySound("BubbleAdd"))
 		Audio::Get()->Play("BubbleAdd", 1.5f);
@@ -118,13 +117,29 @@ void Bubble::Pop()
 	playTime = 0.0f;
 }
 
+void Bubble::SetIsPush(bool isPush)
+{
+	if (this->isPush != isPush)
+	{
+		if (this->isPush)
+		{
+			SetTileType(Tile::OBSTACLE);
+		}
+		else 
+		{
+			SetTileType(Tile::BASIC);
+		}
+	}
+
+	this->isPush = isPush; 
+}
+
 void Bubble::Push()
 {
-	if (curState == POP) return;
-	if (pushDirection == NONE) return;
-	if (!isPush) return;
+	if (curState == POP || pushDirection == NONE || !isPush) return;
 
-	TileManager::Get()->PushGameObject(this);
+	if (TileManager::Get()->PushGameObject(this))
+		SetIsPush(false);
 
 	switch (pushDirection)
 	{
@@ -147,6 +162,12 @@ void Bubble::Push()
 	default:
 		break;
 	}
+}
+
+void Bubble::SetTileType(Tile::Type type)
+{
+	Tile* tile = TileManager::Get()->GetNearPosTileState(this->GetGlobalPosition());
+	tile->SetType(type);
 }
 
 void Bubble::SetAction(int state)
